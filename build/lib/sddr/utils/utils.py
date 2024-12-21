@@ -254,17 +254,14 @@ def _get_penalty_matrix_from_factor_info(factor_info):
     # a factor can be nested e.g. Spline(center(x)). The outer objects (e.g. Spline) are the last in the list 'pass_bins'
     outer_objects_in_factor = factor_info.state['pass_bins'][-1]
 
-    # use last=outermost object in factor. should only have a single element in the set. Explanation: the 'pass_bins' list contains tuples. 
-    # e.g. if an object is Spline(center(x1)+center(x2)) then 'pass_bins' is a list with two tuples,
-    # where the first tuple containts the name of the two center objects. There should only be one element in the outer tuple and this is 
-    # extracted here(we will check later, that this tuple contains indeed only one element)
+    # use last=outermost object in factor. should only have a single element in the set. Explanation: the 'pass_bins' list contains tuples. e.g. if an object is Spline(center(x1)+center(x2)) then 'pass_bins' is a list with two tuples,
+    # where the first tuple containts the name of the two center objects. There should only be one element in the outer tuple and this is extracted here(we will check later, that this tuple contains indeed only one element)
     obj_name = next(iter(outer_objects_in_factor))
 
     # obtain the actal statefull transform object that corresponds to the extracted object name
     obj = factor_info.state['transforms'][obj_name]
 
-    # check if the tuple indeed contained only one element and that the obtained object is a spline. 
-    # If both is true obatain and return the penalty matrix of this spline.
+    # check if the tuple indeed contained only one element and that the obtained object is a spline. If both is true obatain and return the penalty matrix of this spline.
     if (len(outer_objects_in_factor)==1) and isinstance(obj, Spline):
         P = obj.penalty_matrices
         
@@ -286,9 +283,13 @@ def _get_penalty_matrix_from_factor_info(factor_info):
 
 def get_P_from_design_matrix(dm, dfs):
     """
-    Computes and returns the penalty matrix that corresponds to a patsy design matrix. The penalties are multiplied by the regularization parameters lambda computed from given degrees of freedom.
-    The result is a single block diagonal penalty matrix that combines the penalty matrices of each term in the formula that was used to create the design matrix. Only smooting splines terms have a non-zero penalty matrix.
-    The degrees of freedom can either be given as a single value, then all individual penalty matrices are multiplied with a single lambda. Or they can be given as a list, then all (non-zero) penalty matrices are multiplied by different lambdas. The multiplication is in the order of the terms in the formula.
+    Computes and returns the penalty matrix that corresponds to a patsy design matrix. The penalties are multiplied by the regularization parameters lambda
+    computed from given degrees of freedom.
+    The result is a single block diagonal penalty matrix that combines the penalty matrices of each term in the formula that was used to create the design
+    matrix. Only smooting splines terms have a non-zero penalty matrix.
+    The degrees of freedom can either be given as a single value, then all individual penalty matrices are multiplied with a single lambda.
+    Or they can be given as a list, then all (non-zero) penalty matrices are multiplied by different lambdas. The multiplication is in the order of the terms
+    in the formula.
     
     Parameters
     ----------
@@ -468,7 +469,6 @@ def _orthogonalize(constraints, X):
     # An alternative way of saying this is that given any linear subspace V of dimension k, 
     # if V is an n × k matrix whose columns form an orthonormal basis for V then the orthogonal projector onto V is P=V V^T.
     Projection_Matrix = np.matmul(Q,Q.T)
-    
     constrained_X = X - np.matmul(Projection_Matrix,X)
     return constrained_X
 
@@ -478,10 +478,7 @@ def orthogonalize_spline_wrt_non_splines(structured_matrix,
                                          non_spline_info):
     '''
     Changes the structured matrix by orthogonalizing all spline terms with respect to all non spline terms.
-    Orthogonalization of spline term is only with respect to the non-spline terms that contain a subset of
-    the features that are input to the spline (inlcuding the intercept). E.g. spline(x3, bs='bs', df=9, degree=3)
-    is orthogonalized with respect to the intercept and x3. If any terms x2, x4 ... appear they are ignored in
-    this orthogonalization.
+    Orthogonalization of spline term is only with respect to the non-spline terms that contain a subset of the features that are input to the spline (inlcuding the intercept). E.g. spline(x3, bs='bs', df=9, degree=3) is orthogonalized with respect to the intercept and x3. If any terms x2, x4 ... appear they are ignored in this orthogonalization.
     
     The change on the structured matrix is done inplace!
     
@@ -516,11 +513,8 @@ def compute_orthogonalization_pattern_deepnets(net_feature_names,
                                                spline_info, 
                                                non_spline_info):
     '''
-    Computes the orthogonalization pattern that tells with respect to which structured terms the features of a deep neural network should be orthogonalized. 
-    Returned is a list of slices which is then used in the orthogonalization to slice the design matrix for the strucutred part of the formula.
-    Orthogonalization of deep net term is only with respect to the structured terms that contain a subset of the features that are input to the deep neural network 
-    (inlcuding the intercept). E.g. d1(x3) is orthogonalized with respect to the intercept,x3 and a spline that has as only input x3.
-    If any terms x2, x4 or a spline with another input than x2 e.g. spline(x1,x3) or spline(x1) appear they are ignored in this orthogonalization.
+    Computes the orthogonalization pattern that tells with respect to which structured terms the features of a deep neural network should be orthogonalized. Returned is a list of slices which is then used in the orthogonalization to slice the design matrix for the strucutred part of the formula.
+    Orthogonalization of deep net term is only with respect to the structured terms that contain a subset of the features that are input to the deep neural network (inlcuding the intercept). E.g. d1(x3) is orthogonalized with respect to the intercept,x3 and a spline that has as only input x3. If any terms x2, x4 or a spline with another input than x2 e.g. spline(x1,x3) or spline(x1) appear they are ignored in this orthogonalization.
     
     Parameters
     ----------
