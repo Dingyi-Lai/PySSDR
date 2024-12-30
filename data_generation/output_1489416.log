@@ -1,0 +1,21 @@
+
+============================= JOB FEEDBACK =============================
+
+Job ID: 1489416
+Cluster: haic
+User/Group: pa6512/scc
+Account: scc
+State: COMPLETED (exit code 0)
+Partition: normal
+Nodes: 1
+Cores per node: 152
+Nodelist: haicn1706
+CPU Utilized: 14-04:49:07
+CPU Efficiency: 91.20% of 15-13:42:32 core-walltime
+Job Wall-clock time: 02:27:31
+Starttime: Mon Dec 23 20:55:58 2024
+Endtime: Mon Dec 23 23:23:29 2024
+Memory Utilized: 17.10 GB
+Memory Efficiency: 13.36% of 128.00 GB
+Energy Consumed: 8476611 Joule / 2354.61416666667 Watthours
+Average node power draw: 957.700937747147 Watt
