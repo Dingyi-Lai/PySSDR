@@ -83,14 +83,15 @@ def generate_unstructured_effects(images, dnn_model, K):
 
 def combine_effects(unstructured_effects, linear_effects, nonlinear_effects, SNR):
     K = linear_effects.shape[1]
-    etas = np.zeros((linear_effects.shape[0], K))
-    a = np.zeros(K)  # Intercepts for each K
+    N = linear_effects.shape[0]  # Number of data points
+    etas = np.zeros((N, K))
+    a = np.zeros((N, K))  # Intercepts for each data point and K
 
     for k in range(K):
         etas[:, k] = linear_effects[:, k] + nonlinear_effects[:, k] + unstructured_effects[:, k]
         range_etas = np.ptp(etas[:, k])
-        a[k] = np.random.normal(0, range_etas/SNR, size=linear_effects.shape[0])  # Store intercept value (Gaussian noise)
-        etas[:, k] += a[k]
+        a[:, k] = np.random.normal(0, range_etas/SNR, size=N)  # Gaussian noise for each data point
+        etas[:, k] += a[:, k]  # Add noise to each data point
     
     return etas, a
 
