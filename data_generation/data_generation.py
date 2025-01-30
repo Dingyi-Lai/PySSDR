@@ -247,8 +247,8 @@ def scenarios_generate(n_list, distribution_list, SNR_list, grid_size, alpha_l, 
 # Scenario Setup
 # ---------------------------
 
-# n_list = [100, 500, 1000]
-n_list = [10]
+n_list = [100, 500, 1000]
+# n_list = [10]
 distribution_list = ["poisson", "gamma", "gaussian"]
 SNR_list=[1,8]
 
@@ -278,4 +278,4 @@ beta_nl = {
 }
 
 scenarios_generate(n_list, distribution_list, SNR_list, grid_size, alpha_l, beta_nl, n_rep=1, n_cores=n_core,
-                  compute_type='parallel')
+                  compute_type='serial') # parallel
