@@ -181,6 +181,7 @@ def generate_task(n_sample, distribution_list, SNR_list, grid_size, alpha_l, bet
     for i in range(n_sample):
         images[i] = generate_gp_image(grid_size, length_scale=0.2, random_state=(n_sample+n_rep)*n_sample-i)
     
+    scenario_index = '_'.join(map(str, ['n', n_sample, 'rep',n_rep]))
     save_with_var_name(X, 'X', 'npy', save_path, scenario_index, n_rep)
     save_with_var_name(linear_effects, 'linear_effects', 'npy', save_path, scenario_index, n_rep)
     save_with_var_name(Z, 'Z', 'npy', save_path, scenario_index, n_rep)
