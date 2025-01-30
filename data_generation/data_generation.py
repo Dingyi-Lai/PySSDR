@@ -181,18 +181,23 @@ def generate_task(n_sample, distribution_list, SNR_list, grid_size, alpha_l, bet
     for i in range(n_sample):
         images[i] = generate_gp_image(grid_size, length_scale=0.2, random_state=(n_sample+n_rep)*n_sample-i)
     
-    # Flatten images before passing to the DNN model
-    flattened_images = images.reshape(n_sample, -1)  
-    unstructured_effects, U_k, psi_k, b_k = generate_unstructured_effects(flattened_images, dnn_model, K)
-
-    logging.info(f"Generated X, Z, images and unstructured_effects: Number of obs {n_sample} | Replication {n_rep}")
-    scenario_index = '_'.join(map(str, ['n', n_sample, 'rep',n_rep]))
-
     save_with_var_name(X, 'X', 'npy', save_path, scenario_index, n_rep)
     save_with_var_name(linear_effects, 'linear_effects', 'npy', save_path, scenario_index, n_rep)
     save_with_var_name(Z, 'Z', 'npy', save_path, scenario_index, n_rep)
     save_with_var_name(nonlinear_effects, 'nonlinear_effects', 'npy', save_path, scenario_index, n_rep)
     save_with_var_name(images, 'images', 'npy', save_path, scenario_index, n_rep)
+    
+    # Flatten images before passing to the DNN model
+    flattened_images = images.reshape(n_sample, -1)  
+    logging.info(f"Generated X, Z and images: Number of obs {n_sample} | Replication {n_rep}")
+
+    
+    unstructured_effects, U_k, psi_k, b_k = generate_unstructured_effects(flattened_images, dnn_model, K)
+
+    logging.info(f"Generated unstructured_effects: Number of obs {n_sample} | Replication {n_rep}")
+    scenario_index = '_'.join(map(str, ['n', n_sample, 'rep',n_rep]))
+
+    
     save_with_var_name(unstructured_effects, 'unstructured_effects', 'npy', save_path, scenario_index, n_rep)
     save_with_var_name(U_k, 'U_k', 'npy', save_path, scenario_index, n_rep)
     save_with_var_name(psi_k, 'psi_k', 'npy', save_path, scenario_index, n_rep)
