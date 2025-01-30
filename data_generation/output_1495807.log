@@ -1,0 +1,22 @@
+Number of cores: <multiprocessing.pool.Pool state=RUN pool_size=152>
+
+============================= JOB FEEDBACK =============================
+
+Job ID: 1495807
+Cluster: haic
+User/Group: pa6512/scc
+Account: scc
+State: FAILED (exit code 1)
+Partition: normal
+Nodes: 1
+Cores per node: 152
+Nodelist: haicn1705
+CPU Utilized: 00:00:06
+CPU Efficiency: 0.30% of 00:32:56 core-walltime
+Job Wall-clock time: 00:00:13
+Starttime: Thu Jan 30 01:21:41 2025
+Endtime: Thu Jan 30 01:21:54 2025
+Memory Utilized: 3.96 MB
+Memory Efficiency: 0.00% of 128.00 GB
+Energy Consumed: 2978 Joule / 0.827222222222222 Watthours
+Average node power draw: 229.076923076923 Watt
