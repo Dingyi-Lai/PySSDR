@@ -247,7 +247,7 @@ distribution_list = ["poisson", "gamma", "gaussian"]
 SNR_list=[1,8]
 
 grid_size = 28
-n_core = mp.Pool(mp.cpu_count())
+n_core = mp.cpu_count()
 print(f"Number of cores: {n_core}")
 # Define coefficients
 alpha_l = {0: [3, -1], 1: [-0.5, 6]}
