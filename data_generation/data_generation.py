@@ -127,11 +127,11 @@ def add_SNR(scenario_index, rep, save_path, unstructured_effects, linear_effects
         raise ValueError(f"Unsupported distribution: {distribution}")
     
     
-    save_with_var_name(a, 'a', 'npy', save_path, scenario_index, rep)
-    save_with_var_name(etas, 'etas', 'npy', save_path, scenario_index, rep)
+    save_with_var_name(a, 'a', 'npy', save_path, scenario_index)
+    save_with_var_name(etas, 'etas', 'npy', save_path, scenario_index)
     # Generate response based on distribution
     responses = simulate_response(etas, distribution)
-    save_with_var_name(responses, 'responses', 'npy', save_path, scenario_index, rep)
+    save_with_var_name(responses, 'responses', 'npy', save_path, scenario_index)
 
 def simulate_response(etas, distribution="poisson"):
     n_samples = etas.shape[0]
@@ -151,7 +151,7 @@ def simulate_response(etas, distribution="poisson"):
     else:
         raise ValueError(f"Unsupported distribution: {distribution}")
 
-def save_with_var_name(var, var_name, var_type, save_path, scenario_index, rep):
+def save_with_var_name(var, var_name, var_type, save_path, scenario_index):
     if var_type == 'npy':
         np.save(f"{save_path}/{var_name}_{scenario_index}.npy", var)
     if var_type == 'keras':
@@ -182,11 +182,11 @@ def generate_task(n_sample, distribution_list, SNR_list, grid_size, alpha_l, bet
         images[i] = generate_gp_image(grid_size, length_scale=0.2, random_state=(n_sample+n_rep)*n_sample-i)
     
     scenario_index = '_'.join(map(str, ['n', n_sample, 'rep',n_rep]))
-    save_with_var_name(X, 'X', 'npy', save_path, scenario_index, n_rep)
-    save_with_var_name(linear_effects, 'linear_effects', 'npy', save_path, scenario_index, n_rep)
-    save_with_var_name(Z, 'Z', 'npy', save_path, scenario_index, n_rep)
-    save_with_var_name(nonlinear_effects, 'nonlinear_effects', 'npy', save_path, scenario_index, n_rep)
-    save_with_var_name(images, 'images', 'npy', save_path, scenario_index, n_rep)
+    save_with_var_name(X, 'X', 'npy', save_path, scenario_index)
+    save_with_var_name(linear_effects, 'linear_effects', 'npy', save_path, scenario_index)
+    save_with_var_name(Z, 'Z', 'npy', save_path, scenario_index)
+    save_with_var_name(nonlinear_effects, 'nonlinear_effects', 'npy', save_path, scenario_index)
+    save_with_var_name(images, 'images', 'npy', save_path, scenario_index)
     
     # Flatten images before passing to the DNN model
     flattened_images = images.reshape(n_sample, -1)  
@@ -196,14 +196,13 @@ def generate_task(n_sample, distribution_list, SNR_list, grid_size, alpha_l, bet
     unstructured_effects, U_k, psi_k, b_k = generate_unstructured_effects(flattened_images, dnn_model, K)
 
     logging.info(f"Generated unstructured_effects: Number of obs {n_sample} | Replication {n_rep}")
-    scenario_index = '_'.join(map(str, ['n', n_sample, 'rep',n_rep]))
 
     
-    save_with_var_name(unstructured_effects, 'unstructured_effects', 'npy', save_path, scenario_index, n_rep)
-    save_with_var_name(U_k, 'U_k', 'npy', save_path, scenario_index, n_rep)
-    save_with_var_name(psi_k, 'psi_k', 'npy', save_path, scenario_index, n_rep)
-    save_with_var_name(b_k, 'b_k', 'npy', save_path, scenario_index, n_rep)
-    save_with_var_name(dnn_model, 'dnn_model', 'keras', save_path, scenario_index, n_rep)
+    save_with_var_name(unstructured_effects, 'unstructured_effects', 'npy', save_path, scenario_index)
+    save_with_var_name(U_k, 'U_k', 'npy', save_path, scenario_index)
+    save_with_var_name(psi_k, 'psi_k', 'npy', save_path, scenario_index)
+    save_with_var_name(b_k, 'b_k', 'npy', save_path, scenario_index)
+    save_with_var_name(dnn_model, 'dnn_model', 'keras', save_path, scenario_index)
     
     # Combine effects
     # Parallel processing
@@ -214,7 +213,6 @@ def generate_task(n_sample, distribution_list, SNR_list, grid_size, alpha_l, bet
                                         for d in distribution_list])
     if compute_type == 'serial':
         for d in distribution_list:
-            print(d)
             combine_effects(scenario_index, n_rep, save_path, unstructured_effects, linear_effects, nonlinear_effects, d, SNR_list)    
     
 # ---------------------------
@@ -247,8 +245,8 @@ def scenarios_generate(n_list, distribution_list, SNR_list, grid_size, alpha_l, 
 # Scenario Setup
 # ---------------------------
 
-n_list = [100, 500, 1000]
-# n_list = [10]
+# n_list = [100, 500, 1000]
+n_list = [10]
 distribution_list = ["poisson", "gamma", "gaussian"]
 SNR_list=[1,8]
 
@@ -278,4 +276,4 @@ beta_nl = {
 }
 
 scenarios_generate(n_list, distribution_list, SNR_list, grid_size, alpha_l, beta_nl, n_rep=1, n_cores=n_core,
-                  compute_type='serial') # parallel
+                  compute_type='parallel') # serial
