@@ -1,0 +1,66 @@
+2025-02-10 16:38:35.537548: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-02-10 16:38:36.043812: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1739201916.374446  186037 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1739201916.738062  186037 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2025-02-10 16:38:38.752421: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+INFO:root:Starting parallel dataset generation...
+2025-02-10 16:40:04.626356: E external/local_xla/xla/stream_executor/cuda/cuda_driver.cc:152] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+2025-02-10 16:40:04.626356: E external/local_xla/xla/stream_executor/cuda/cuda_driver.cc:152] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+INFO:root:Generating dataset: Number of obs 10 | Replication 0
+INFO:root:Generating dataset: Number of obs 10 | Replication 1
+INFO:root:Saved X to /scratch/slurm_tmpdir/job_25246787/output_uc2/X_n_10_rep_1.npy
+INFO:root:Saved X to /scratch/slurm_tmpdir/job_25246787/output_uc2/X_n_10_rep_0.npy
+INFO:root:Saved linear_effects to /scratch/slurm_tmpdir/job_25246787/output_uc2/linear_effects_n_10_rep_1.npy
+INFO:root:Saved linear_effects to /scratch/slurm_tmpdir/job_25246787/output_uc2/linear_effects_n_10_rep_0.npy
+INFO:root:Saved Z to /scratch/slurm_tmpdir/job_25246787/output_uc2/Z_n_10_rep_1.npy
+INFO:root:Saved Z to /scratch/slurm_tmpdir/job_25246787/output_uc2/Z_n_10_rep_0.npy
+INFO:root:Saved nonlinear_effects to /scratch/slurm_tmpdir/job_25246787/output_uc2/nonlinear_effects_n_10_rep_1.npy
+INFO:root:Saved nonlinear_effects to /scratch/slurm_tmpdir/job_25246787/output_uc2/nonlinear_effects_n_10_rep_0.npy
+INFO:root:Saved images to /scratch/slurm_tmpdir/job_25246787/output_uc2/images_n_10_rep_1.npy
+INFO:root:Saved images to /scratch/slurm_tmpdir/job_25246787/output_uc2/images_n_10_rep_0.npy
+INFO:root:Generated X, Z and images: Number of obs 10 | Replication 1
+INFO:root:Generated X, Z and images: Number of obs 10 | Replication 0
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/usr/lib64/python3.9/multiprocessing/pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+  File "/usr/lib64/python3.9/multiprocessing/pool.py", line 51, in starmapstar
+    return list(itertools.starmap(args[0], args[1]))
+  File "/pfs/data5/home/kit/scc/pa6512/PySSDR/data_generation/data_generation_parallel.py", line 224, in generate_task
+    unstructured_effects, U_k, psi_k, b_k = generate_unstructured_effects(flattened_images, dnn_model, K)
+  File "/pfs/data5/home/kit/scc/pa6512/PySSDR/data_generation/data_generation_parallel.py", line 95, in generate_unstructured_effects
+    penultimate_layer_model = Model(inputs=dnn_model.input, outputs=dnn_model.layers[-2].output)
+  File "/opt/bwhpc/common/jupyter/ai/2024-11-29/lib/python3.9/site-packages/keras/src/ops/operation.py", line 254, in input
+    return self._get_node_attribute_at_index(0, "input_tensors", "input")
+  File "/opt/bwhpc/common/jupyter/ai/2024-11-29/lib/python3.9/site-packages/keras/src/ops/operation.py", line 285, in _get_node_attribute_at_index
+    raise AttributeError(
+AttributeError: The layer sequential has never been called and thus has no defined input.
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/pfs/data5/home/kit/scc/pa6512/PySSDR/data_generation/data_generation_parallel.py", line 310, in <module>
+    scenarios_generate(n_list, distribution_list, SNR_list, grid_size, alpha_l, beta_nl, n_rep, n_cores=n_core,
+  File "/pfs/data5/home/kit/scc/pa6512/PySSDR/data_generation/data_generation_parallel.py", line 260, in scenarios_generate
+    pool.starmap(generate_task, [(i, distribution_list, SNR_list, grid_size,
+  File "/usr/lib64/python3.9/multiprocessing/pool.py", line 372, in starmap
+    return self._map_async(func, iterable, starmapstar, chunksize).get()
+  File "/usr/lib64/python3.9/multiprocessing/pool.py", line 771, in get
+    raise self._value
+  File "/usr/lib64/python3.9/multiprocessing/pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+  File "/usr/lib64/python3.9/multiprocessing/pool.py", line 51, in starmapstar
+    return list(itertools.starmap(args[0], args[1]))
+  File "/pfs/data5/home/kit/scc/pa6512/PySSDR/data_generation/data_generation_parallel.py", line 224, in generate_task
+    unstructured_effects, U_k, psi_k, b_k = generate_unstructured_effects(flattened_images, dnn_model, K)
+  File "/pfs/data5/home/kit/scc/pa6512/PySSDR/data_generation/data_generation_parallel.py", line 95, in generate_unstructured_effects
+    penultimate_layer_model = Model(inputs=dnn_model.input, outputs=dnn_model.layers[-2].output)
+  File "/opt/bwhpc/common/jupyter/ai/2024-11-29/lib/python3.9/site-packages/keras/src/ops/operation.py", line 254, in input
+    return self._get_node_attribute_at_index(0, "input_tensors", "input")
+  File "/opt/bwhpc/common/jupyter/ai/2024-11-29/lib/python3.9/site-packages/keras/src/ops/operation.py", line 285, in _get_node_attribute_at_index
+    raise AttributeError(
+AttributeError: The layer sequential has never been called and thus has no defined input.

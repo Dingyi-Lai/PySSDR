@@ -14,7 +14,7 @@ from scipy.stats import poisson, gamma, norm
 from scipy.optimize import minimize_scalar
 import multiprocessing as mp
 from concurrent.futures import ThreadPoolExecutor
-
+mp.set_start_method("spawn") 
 # from sddr import Sddr  # Assuming you have pyssdr installed and configured correctly
 import logging
 from datetime import datetime
@@ -185,7 +185,13 @@ def save_with_var_name(var, var_name, var_type, save_path, scenario_index):
     if var_type == 'keras':
         var.save(f"{save_path}/{var_name}_{scenario_index}.keras")
     logging.info(f"Saved {var_name} to {save_path}/{var_name}_{scenario_index}.npy")
-    
+
+def read_with_var_name(var_name, var_type, save_path, scenario_index):
+    if var_type == 'npy':
+        return np.load(f"{save_path}/{var_name}_{scenario_index}.npy")
+    # if var_type == 'keras':
+    #     var.load_weights(f"{save_path}/{var_name}_{scenario_index}.keras")
+        
 # ---------------------------
 # Generate Task Function for Parallel Execution
 # ---------------------------
@@ -254,7 +260,7 @@ def scenarios_generate(n_list, distribution_list, SNR_list, grid_size, alpha_l, 
     n_r = [(i, r) for i in n_list for r in range(n_rep)]
     if compute_type == 'parallel':
         # Use pool.starmap to pass multiple arguments to the method
-        save_path = os.path.join(os.environ["TMPDIR"], "output")
+        save_path = os.path.join(os.environ["TMPDIR"], "output_uc2")
         os.makedirs(save_path, exist_ok=True)
         with mp.Pool(n_cores) as pool:
             pool.starmap(generate_task, [(i, distribution_list, SNR_list, grid_size, 
