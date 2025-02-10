@@ -1,0 +1,22 @@
+Number of cores: 152
+
+============================= JOB FEEDBACK =============================
+
+Job ID: 1500704
+Cluster: haic
+User/Group: pa6512/scc
+Account: scc
+State: FAILED (exit code 1)
+Partition: normal
+Nodes: 1
+Cores per node: 152
+Nodelist: haicn1711
+CPU Utilized: 00:03:48
+CPU Efficiency: 7.14% of 00:53:12 core-walltime
+Job Wall-clock time: 00:00:21
+Starttime: Mon Feb 10 14:20:29 2025
+Endtime: Mon Feb 10 14:20:50 2025
+Memory Utilized: 1.07 GB
+Memory Efficiency: 0.84% of 128.00 GB
+Energy Consumed: 5347 Joule / 1.48527777777778 Watthours
+Average node power draw: 254.619047619048 Watt

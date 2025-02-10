@@ -255,6 +255,7 @@ def scenarios_generate(n_list, distribution_list, SNR_list, grid_size, alpha_l, 
     if compute_type == 'parallel':
         # Use pool.starmap to pass multiple arguments to the method
         save_path = os.path.join(os.environ["TMPDIR"], "output")
+        os.makedirs(save_path, exist_ok=True)
         with mp.Pool(n_cores) as pool:
             pool.starmap(generate_task, [(i, distribution_list, SNR_list, grid_size, 
                                             alpha_l, beta_nl, r, save_path, compute_type) 
