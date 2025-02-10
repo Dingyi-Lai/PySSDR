@@ -10,6 +10,7 @@
 #SBATCH --mail-type=ALL              # Get email on job start, end, fail
 #SBATCH --mail-user=pa6512@kit.edu  # Your email for notifications
 
+export OMP_NUM_THREADS=$((${SLURM_CPUS_PER_TASK}/2))
 # Load necessary modules (adjust as needed)
 module load jupyter/ai
 
@@ -17,7 +18,7 @@ module load jupyter/ai
 cd $SLURM_SUBMIT_DIR
 
 # Run your Python script
-python data_generation.py
+python data_generation_parallel.py
 
 # Copy results from TMPDIR to home after job finishes
 cp -r $TMPDIR/output ~/PySSDR/data_generation
