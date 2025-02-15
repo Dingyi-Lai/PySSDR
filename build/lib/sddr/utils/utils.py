@@ -5,7 +5,7 @@ import warnings
 import os
 from torch import nn
 import torch
-import parser
+import ast
 from .splines import spline, Spline
 
 
@@ -356,9 +356,23 @@ def _get_input_features_for_functional_expression(functional_expression : str, f
             List of feature names that appear as input in functional_expression. here in the example ["x1","x2"].
     '''
     # co names are local variables of functions in a python expression
-    co_names = parser.expr(functional_expression).compile().co_names
-    co_names_set = set(co_names)
-    input_features = list(co_names_set.intersection(set(feature_names)))
+    # co_names = parser.expr(functional_expression).compile().co_names
+    # co_names_set = set(co_names)
+    # input_features = list(co_names_set.intersection(set(feature_names)))
+    # return input_features
+    class FeatureExtractor(ast.NodeVisitor):
+        def __init__(self):
+            self.variables = set()
+        
+        def visit_Name(self, node):
+            self.variables.add(node.id)
+            self.generic_visit(node)
+
+    tree = ast.parse(functional_expression, mode='eval')
+    extractor = FeatureExtractor()
+    extractor.visit(tree)
+    
+    input_features = list(extractor.variables.intersection(feature_names))
     return input_features
 
 

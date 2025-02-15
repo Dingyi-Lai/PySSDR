@@ -115,9 +115,11 @@ class Family():
             pred_trafo["scale"] = add_const + pred["scale"].exp()
 
             
-#         elif family == "Gamma":
-#             pred_trafo["concentration"] = add_const + pred["concentration"].exp()
-#             pred_trafo["rate"] = add_const + pred["rate"].exp()
+        elif self.family == "Gamma": # parameterization
+            # pred_trafo["concentration"] = add_const + pred["concentration"].exp()
+            # pred_trafo["rate"] = add_const + pred["rate"].exp()
+            pred_trafo["concentration"] = add_const + (pred["loc"].exp())**2/pred["scale"]**2
+            pred_trafo["rate"] = add_const + pred["scale"]**2/(pred["loc"].exp())
             
 #         elif family == "Beta":
 #             pred_trafo["concentration1"] = add_const + pred["concentration1"].exp()

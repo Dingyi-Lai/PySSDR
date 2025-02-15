@@ -29,7 +29,8 @@ class SddrFormulaNet(nn.Module):
         orthogonalization patterns for the deep neural networks, For each term in the design matrix wrt that the deep neural 
         network should be orthogonalized there is a slice in the list.
     p: float
-        Dropout rate, probability of an element to be zeroed, the recommend value should between 0.01-0.1(depending on the feature numbers). The dropout is used for eastimate uncertainty.
+        Dropout rate, probability of an element to be zeroed, the recommend value should between 0.01-0.1(depending on the feature numbers).
+        The dropout is used for eastimate uncertainty.
         
     Attributes
     ----------
