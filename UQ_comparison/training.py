@@ -1,13 +1,19 @@
 import numpy as np
-
-from sklearn.gaussian_process import GaussianProcessRegressor
-from sklearn.gaussian_process.kernels import RBF
+import pandas as pd
+import matplotlib.pyplot as plt
+# from sklearn.gaussian_process import GaussianProcessRegressor
+# from sklearn.gaussian_process.kernels import RBF
 import tensorflow as tf
+from PIL import Image
+from tensorflow import keras
 
-from tensorflow.keras import Input, Model
-from tensorflow.keras.models import load_model, Sequential
-from tensorflow.keras.layers import Dense, Flatten, ReLU
-# import torch.optim as optim
+from keras import Input, Model
+from keras.models import load_model, Sequential
+from keras.layers import Dense, Flatten, ReLU
+
+import torch
+import torch.nn as nn
+import torch.optim as optim
 
 from time import time
 from scipy.stats import poisson, gamma, norm
@@ -18,282 +24,596 @@ from concurrent.futures import ThreadPoolExecutor
 # from sddr import Sddr  # Assuming you have pyssdr installed and configured correctly
 import logging
 from datetime import datetime
+from itertools import product
+
 # import torch
 logging.basicConfig(level=logging.INFO)
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+import sys
+# os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"
+# import the sddr module
+from sddr import Sddr
 
-# ---------------------------
-# Helper Functions
-# ---------------------------
+
 
 def scale_to_range(data, lower=-1, upper=1):
     return (data - np.min(data)) / (np.max(data) - np.min(data)) * (upper - lower) + lower
 
-def build_dnn(input_dim, layer_sizes=[32, 16], activation="relu"):
-    model = Sequential([
-        Input(shape=(input_dim,)),
-        Dense(layer_sizes[0], activation=activation),
-        Dense(layer_sizes[1], activation=activation),
-        Dense(1, activation=None)
-    ])
-    model.compile(optimizer='adam', loss='mse')  # Compile the model
+# def build_dnn(input_dim, layer_sizes=[32, 16], activation="relu"):
+#     model = Sequential([
+#         Input(shape=(input_dim,)),
+#         Dense(layer_sizes[0], activation=activation),
+#         Dense(layer_sizes[1], activation=activation),
+#         Dense(1, activation=None)
+#     ])
+#     model.compile(optimizer='adam', loss='mse')  # Compile the model
 
-    return model
-
-def generate_gp_image(grid_size=28, length_scale=0.2, random_state=None): # , SNR_compare=[2,4]
-    np.random.seed(random_state)
-    x = np.linspace(0, 1, grid_size)
-    y = np.linspace(0, 1, grid_size)
-    X, Y = np.meshgrid(x, y)
-    coords = np.vstack([X.ravel(), Y.ravel()]).T
-
-    kernel = RBF(length_scale=length_scale)
-    gp = GaussianProcessRegressor(kernel=kernel, random_state=random_state)
-    intensity = gp.sample_y(coords, n_samples=1, random_state=random_state).reshape(grid_size, grid_size)
-    
-    intensity_scaled = scale_to_range(intensity)
-    
-    return intensity_scaled
-
-# ---------------------------
-# Simulation Functions
-# ---------------------------
-
-
-def generate_nonlinear_effects(n_samples, J, K, beta, random_state=None): #SNR_compare, 
-    np.random.seed(random_state)
-    Z = np.random.uniform(0, 1, size=(J, n_samples, K)) # doesn't need to scale
-    nonlinear_effects1 = np.zeros((J, n_samples, K))
-
-    for j in range(J):
-        for k in range(K):
-            nonlinear_effects1[j, :, k] = beta[k][j](Z[j][:, k])
-        
-    return Z, scale_to_range(nonlinear_effects1) #a_Z1, a_Z2, , scale_to_range(nonlinear_effects2)
-
-def generate_unstructured_effects(images, dnn_model, K):
-    n_samples = len(images)
-    unstructured_effects = np.zeros((n_samples, K))
-    
-    # Predict unstructured effects using the DNN model
-    predictions = dnn_model.predict(images)
-
-    # Extract the penultimate layer's output
-    penultimate_layer_model = Model(inputs=dnn_model.input, outputs=dnn_model.layers[-2].output)
-    penultimate_output = penultimate_layer_model.predict(images)
-
-    # Extract the weights and bias from the final layer
-    final_layer_weights, final_layer_bias = dnn_model.layers[-1].get_weights()
-
-    for k in range(K):
-        unstructured_effects[:, k] = scale_to_range(predictions[:, 0])
-
-    return unstructured_effects, penultimate_output, final_layer_weights, final_layer_bias # \hat{U}_k, \hat{\psi}_k, \hat{b}_k
-
-def combine_effects(scenario, rep, save_path, unstructured_effects, linear_effects, nonlinear_effects, distribution="poisson", SNR_list=[1,8]):
-    for s in SNR_list:
-        add_SNR(scenario, save_path, unstructured_effects, linear_effects, nonlinear_effects, distribution, s)
-
-def compute_snr(a, etas, dist):
-    if dist == "poisson":
-        lambda_vals = np.exp(etas[:, 0] + a)
-        range_log_lambda = np.ptp(etas[:, 0] + a)
-        mean_sqrt_lambda = np.sqrt(lambda_vals)
-        return (range_log_lambda / mean_sqrt_lambda).mean()
-    if dist == "gaussian":
-        sigma = np.exp(etas[:, 1] + a)
-        range_mu = np.ptp(etas[:, 0])
-        return (range_mu / sigma).mean()
-
-def find_a_for_target_snr(target_snr, etas, dist):
-    def loss_function(a):
-        computed_snr = compute_snr(a, etas, dist)
-        return (computed_snr - target_snr)**2
-    
-    result = minimize_scalar(loss_function, bounds=(-10, 10), method='bounded')
-
-    return result.x
-
-def add_SNR(scenario_index, save_path, unstructured_effects, linear_effects, nonlinear_effects, distribution="poisson", SNR=1):
-    os.makedirs(save_path, exist_ok=True)
-    scenario_index += f"_dist_{distribution}_SNR_{SNR}"
-    K = linear_effects.shape[2]
-    N = linear_effects.shape[1]  # Number of data points
-    etas = np.zeros((N, K))
-    etas[:, 0] = linear_effects[:, :, 0].sum(axis=0) + nonlinear_effects[:, :, 0].sum(axis=0) + unstructured_effects[:, 0]
-    range_etas = np.ptp(etas[:, 0])
-    print("range_etas: ", range_etas)
-    std_eta = np.std(etas[:, 0])
-    print("std_eta: ", std_eta)
-    if distribution == "poisson":
-        # a = ((range_etas/SNR)**2 - etas[:, k].mean()) # a1 in (12)
-        a = find_a_for_target_snr(SNR, etas, "poisson")
-        etas[:, 0] += a
-    elif distribution == "gamma":
-        a = range_etas / SNR # sigma
-        etas[:, 0] += a
-    elif distribution == "gaussian":
-        etas[:, 1] = linear_effects[:, :, 1].sum(axis=0) + nonlinear_effects[:, :, 1].sum(axis=0) + unstructured_effects[:, 1]
-        # a = np.log(np.ptp(etas[:, 0]) / SNR) - etas[:, 1] # a2 in (17)
-        # etas[:, 1] += a
-        a = find_a_for_target_snr(SNR, etas, "gaussian")
-        etas[:, 1] += a
-    else:
-        raise ValueError(f"Unsupported distribution: {distribution}")
-    
-    
-    save_with_var_name(a, 'a', 'npy', save_path, scenario_index)
-    save_with_var_name(etas, 'etas', 'npy', save_path, scenario_index)
-    # Generate response based on distribution
-    responses = simulate_response(etas, distribution, a)
-    save_with_var_name(responses, 'responses', 'npy', save_path, scenario_index)
-
-def simulate_response(etas, distribution, a):
-    n_samples = etas.shape[0]
-    if distribution == "poisson":
-        mu = np.exp(etas[:, 0])
-        return np.random.poisson(mu)
-    elif distribution == "gamma":
-        mu = np.exp(etas[:, 0]) # non-negative
-        sigma = a
-        shape = (mu / sigma) ** 2
-        scale = sigma ** 2 / mu
-        return np.random.gamma(shape, scale, n_samples) # scale must be non-negative
-    elif distribution == "gaussian":
-        mu = etas[:, 0]
-        sigma = np.exp(etas[:, 1])
-        return np.random.normal(mu, sigma, n_samples)
-    else:
-        raise ValueError(f"Unsupported distribution: {distribution}")
+#     return model
 
 def save_with_var_name(var, var_name, var_type, save_path, scenario_index):
     if var_type == 'npy':
         np.save(f"{save_path}/{var_name}_{scenario_index}.npy", var)
     if var_type == 'keras':
         var.save(f"{save_path}/{var_name}_{scenario_index}.keras")
+    if var_type == 'jpgs':
+        images_path = f"{save_path}/{var_name}_{scenario_index}"
+        os.makedirs(images_path, exist_ok=True)
+        for idx, img in enumerate(var):
+            # Normalize and convert to uint8
+            normalized_img = (img * 255 / np.max(img)).astype(np.uint8)
+            # Convert the NumPy array to an image
+            normalized_img = Image.fromarray(normalized_img).convert("L")
+            normalized_img.save(f"{images_path}/{var_name}_{scenario_index}_{idx}.jpg")
+    if var_type == 'pth':
+        var.save(f"{var_name}_{scenario_index}.pth")
+    if var_type == 'df':
+        var.to_csv(f"{save_path}/{var_name}_{scenario_index}.csv", index=False)
+
     logging.info(f"Saved {var_name} to {save_path}/{var_name}_{scenario_index}.npy")
     
-# ---------------------------
-# Generate Task Function for Parallel Execution
-# ---------------------------
+def read_with_var_name(var_name, var_type, save_path, scenario_index):
+    if var_type == 'npy':
+        return np.load(f"{save_path}/{var_name}_{scenario_index}.npy")
+    if var_type == 'keras':
+        return tf.keras.models.load_model(f"{save_path}/{var_name}_{scenario_index}.keras")
 
-def generate_task(n_sample, distribution_list, SNR_list, grid_size, alpha_l, beta_nl, n_rep, 
-                  save_path, compute_type='parallel'):
+def plot_true_and_ci(true_effect, partial_effect, param, spline_index):
+    """
+    Plots the estimated partial effect with its 95% CI and overlays the true nonlinear effect.
+    
+    Parameters:
+      - true_effect: 1D array of shape (n_samples,) for the true effect for this spline.
+      - partial_effect: tuple (feature, pred, ci950, ci951, ci250, ci251) from ssdr.eval.
+      - param: parameter name (e.g., 'loc' or 'scale' or 'rate').
+      - spline_index: index of the current spline.
+    """
+    feature, pred, ci950, ci951, _, _ = partial_effect
+
+    # Sort by feature for better plotting.
+    sort_idx = np.argsort(feature)
+    feature_sorted = np.array(feature)[sort_idx]
+    pred_sorted = np.array(pred)[sort_idx]
+    ci950_sorted = np.array(ci950)[sort_idx]
+    ci951_sorted = np.array(ci951)[sort_idx]
+    true_effect_sorted = np.array(true_effect)[sort_idx]
+
+    plt.figure(figsize=(8, 6))
+    plt.plot(feature_sorted, pred_sorted, label="Estimated Partial Effect", color="blue")
+    plt.fill_between(feature_sorted, ci950_sorted, ci951_sorted, color="blue", alpha=0.3, label="95% CI")
+    plt.scatter(feature_sorted, true_effect_sorted, color="red", marker="x", label="True Nonlinear Effect")
+    plt.title(f"Parameter: {param} - Spline {spline_index}")
+    plt.xlabel("Feature")
+    plt.ylabel("Effect")
+    plt.legend()
+    plt.show()
+    
+# ---------------------------
+# Train Task Function for Parallel Execution
+# ---------------------------
+def predict_effects(scenario_index_folder, read_path, save_path, case, data, train_parameters,
+                    num_knots, grid_size, output_dimension_dnn, true_nonlinear_effects):
+    distribution, snr, method = case
+    # os.makedirs(save_path, exist_ok=True)
+    scenario_index = scenario_index_folder + f"_dist_{distribution}_SNR_{snr}"
+
+    # a = read_with_var_name('a', 'npy', save_path, scenario_index)
+    # etas = read_with_var_name('etas', 'npy', save_path, scenario_index)
+    y = read_with_var_name('y', 'npy', read_path, scenario_index)
+    data['Y'] = y
+    # print(scenario_index)
+    # print(data)
+    # Train base SSDR model
+    deep_models_dict = {
+        'dnn': {
+            'model': nn.Sequential(
+                nn.Flatten(1, -1),
+                nn.Linear(grid_size*grid_size,output_dimension_dnn),
+                nn.ReLU()
+                ),
+            'output_shape': output_dimension_dnn},
+    }
+
+    # provide the location and datatype of the unstructured data
+    unstructured_data = {
+    'Image' : {
+        'path' : f"{read_path}/images_jpg_{scenario_index_folder}/",
+        'datatype' : 'image'
+    }
+    }
+    
+    if distribution == "poisson":
+        distribution_SSDR = "Poisson" # compatible form
+        formulas = {'rate': f"~ 1 + X1 + X2 + spline(Z1, bs='bs', df={num_knots+4}) + spline(Z2, bs='bs', df={num_knots+4}) + dnn(Image)"}
+        degrees_of_freedom = {'rate':num_knots+4}
+    elif distribution == "gamma":
+        distribution_SSDR = "Gamma" # compatible form
+        formulas = {
+        'loc': f"~ 1 + X1 + X2 + spline(Z1, bs='bs', df={num_knots+4}) + spline(Z2, bs='bs', df={num_knots+4}) + dnn(Image)",
+        'scale': '~ 1'
+        }
+        degrees_of_freedom = {'loc':num_knots+4, 'scale':num_knots+4}
+    elif distribution == "gaussian_homo":
+        distribution_SSDR = "Normal" # compatible form
+        formulas = {
+        'loc': f"~ 1 + X1 + X2 + spline(Z1, bs='bs', df={num_knots+4}) + spline(Z2, bs='bs', df={num_knots+4}) + dnn(Image)",
+        'scale': '~ 1'
+        }
+        degrees_of_freedom = {'loc':num_knots+4, 'scale':num_knots+4}
+    elif distribution == "gaussian_hetero":
+        distribution_SSDR = "Normal" # compatible form
+        formulas = {
+        'loc': f"~ 1 + X1 + X2 + spline(Z1, bs='bs', df={num_knots+4}) + spline(Z2, bs='bs', df={num_knots+4}) + dnn(Image)",
+        'scale': f"~ 1 + X1 + X2 + spline(Z1, bs='bs', df={num_knots+4}) + spline(Z2, bs='bs', df={num_knots+4}) + dnn(Image)",
+        }
+        degrees_of_freedom = {'loc':num_knots+4, 'scale':num_knots+4}
+
+    train_parameters['degrees_of_freedom'] = degrees_of_freedom
+    
+    
+    # model.fit([X_struct, X_unstruct], y, epochs=50, batch_size=32, verbose=1)
+    if method == "point_estimates":
+        # define your training hyperparameters
+        ssdr = Sddr(output_dir=save_path,
+            distribution=distribution_SSDR,
+            formulas=formulas,
+            deep_models_dict=deep_models_dict,
+            train_parameters=train_parameters,
+            modify=True
+            )
+        # print(train_parameters['epochs'])
+        scenario_index += f"_{method}"
+        model_path = f"{save_path}/ssdr_{scenario_index}.pth"
+        # print(model_path)
+        if os.path.exists(model_path):
+            # Here, final_epochs is your intended final epoch count (e.g., 300) 
+            ssdr.load(model_path, data)
+            ssdr.train(target="Y", structured_data=data, resume=True)
+        else:  
+            ssdr.train(structured_data=data,
+                target="Y",
+                unstructured_data = unstructured_data,
+                plot=True)
+            save_with_var_name(ssdr, 'ssdr', 'pth', save_path, scenario_index)
+        
+        
+        # Create an empty list to store the result rows.
+        results = []
+
+        # Loop over each parameter group in degrees_of_freedom.
+        for k in degrees_of_freedom.keys():
+            # Get the coefficient dictionary for parameter group k.
+            # This dictionary is expected to have keys corresponding to feature names.
+            
+            # Combine the features (if you want to process both kinds together)
+            coeff_dict = ssdr.coeff(k)
+            
+            for feature in coeff_dict.keys():
+                # Extract the point estimate for the feature.
+                # (Assuming ssdr.coeff(k)[feature] returns a list/array where the first element is the estimate.)                
+                # Append a dictionary with the desired columns.
+                results.append({
+                    'scenario_index': scenario_index,  # scenario_index should be defined in your code
+                    'param_y': k,
+                    'param_eta': feature,
+                    'value': coeff_dict[feature]
+                })
+
+        # Convert the list of dictionaries to a DataFrame.
+        df_results = pd.DataFrame(results)
+        save_with_var_name(df_results, 'point_estimates', 'df', save_path, scenario_index)
+        return df_results
+    # if method == "point_estimates":
+    #     # define your training hyperparameters and train the model
+    #     ssdr = Sddr(output_dir=save_path,
+    #                 distribution=distribution_SSDR,
+    #                 formulas=formulas,
+    #                 deep_models_dict=deep_models_dict,
+    #                 train_parameters=train_parameters,
+    #                 modify=True)
+    #     scenario_index += f"_{method}"
+    #     model_path = f"{save_path}/ssdr_{scenario_index}.pth"
+    #     print(model_path)
+    #     if os.path.exists(model_path):
+    #         # load and resume training
+    #         ssdr.load(model_path, data)
+    #         ssdr.train(target="Y", structured_data=data, resume=True)
+    #     else:
+    #         ssdr.train(structured_data=data,
+    #                 target="Y",
+    #                 unstructured_data=unstructured_data,
+    #                 plot=True)
+    #         save_with_var_name(ssdr, 'ssdr', 'pth', save_path, scenario_index)
+        
+    #     # Create an empty list to store result rows.
+    #     results = []
+        
+    #     # Loop over each parameter group in degrees_of_freedom.
+    #     for k in degrees_of_freedom.keys():
+    #         # Get the coefficient dictionary (point estimates) for the structured head.
+    #         coeff_dict = ssdr.coeff(k)
+            
+    #         # Also get the corresponding structured weights and latent features from the deep branch.
+    #         # (get_weights_and_latent_features returns a dict with keys 'structured_weights' and 'latent_features'.)
+    #         extra_info = ssdr.get_weights_and_latent_features(k, data)
+            
+    #         # Loop over each term in the coefficient dictionary.
+    #         for term in coeff_dict.keys():
+    #             results.append({
+    #                 'scenario_index': scenario_index,  # the current scenario index
+    #                 'param_y': k,
+    #                 'param_eta': term,
+    #                 'value': coeff_dict[term],
+    #                 'structured_weight': extra_info['structured_weights'][term],
+    #                 # If latent_features is a tensor, convert to list for storage.
+    #                 'latent_features': (extra_info['latent_features'].cpu().numpy().tolist() 
+    #                                     if extra_info['latent_features'] is not None 
+    #                                     else None)
+    #             })
+        
+    #     # Convert the list of dictionaries to a DataFrame.
+    #     df_results = pd.DataFrame(results)
+    #     save_with_var_name(df_results, 'point_estimates', 'df', save_path, scenario_index)
+    #     return df_results
+
+    # Deep ensemble
+    elif method == "deep_ensemble":
+        # Train ensemble of models
+        n_ensemble = 5
+        # ensemble_models = []
+        # for i in range(n_ensemble):
+        #     # define your training hyperparameters
+        #     train_parameters = {
+        #         'batch_size': 3,
+        #         'epochs': 100,
+        #         'degrees_of_freedom': degrees_of_freedom,
+        #         'optimizer' : optim.Adam,
+        #         'val_split': 0.15,
+        #         'early_stop_epsilon': 0.001,
+        #     }
+        #     ensemble_model = build_ssdr_model(X_struct.shape[1], X_unstruct.shape[1])
+        #     ensemble_model.fit([X_struct, X_unstruct], y, epochs=50, verbose=0)
+        #     ensemble_models.append(ensemble_model)
+        
+        # # Predict and compute ensemble uncertainty
+        # ensemble_predictions = np.array([
+        #     model.predict([X_struct_eval, X_unstruct_eval]) for model in ensemble_models
+        # ])
+        # mean_predictions = np.mean(ensemble_predictions, axis=0)
+        # uncertainty = np.std(ensemble_predictions, axis=0)
+    
+    # Dropout sampling
+    elif method == "dropout_sampling":
+        # define your training hyperparameters
+        ssdr = Sddr(output_dir=save_path,
+            distribution=distribution_SSDR,
+            formulas=formulas,
+            deep_models_dict=deep_models_dict,
+            train_parameters=train_parameters,
+            modify=True
+            )
+        # print(train_parameters['epochs'])
+        scenario_index += f"_{method}"
+        model_path = f"{save_path}/ssdr_{scenario_index}.pth"
+        if os.path.exists(model_path):
+            # Here, final_epochs is your intended final epoch count (e.g., 300) 
+            ssdr.load(model_path, data)
+            ssdr.train(target="Y", structured_data=data, resume=True)
+        else:  
+            ssdr.train(structured_data=data,
+                target="Y",
+                unstructured_data = unstructured_data,
+                plot=True)
+            
+            save_with_var_name(ssdr, 'ssdr', 'pth', save_path, scenario_index)
+
+        
+        eval_dict = {}
+        for k in degrees_of_freedom.keys():
+            eval_results = ssdr.eval(k, plot=False)
+            eval_dict[k] = eval_results
+        
+        param_to_index = {"rate": 0, "loc": 0, "scale": 1}
+    
+        # Compute coverage rates for each parameter.
+        coverage_rates = {}
+        for param, partial_effects in eval_dict.items():
+            if len(partial_effects)>0:
+                coverage_rates[param] = {}
+                # For Gaussian (or gamma) cases, we assume true_nonlinear_effects is a dict with keys matching the parameter names.
+                # For Poisson, true_nonlinear_effects is a list.
+                true_effects = true_nonlinear_effects[:,:,param_to_index[param]]
+
+                # for idx, effect in enumerate(partial_effects):
+                #     if len(effect) == 6:
+                #         _, _, ci950, ci951, _, _ = effect
+                #         true_effect = true_effects[idx,:]
+                #         covered = np.logical_and(true_effect >= ci950, true_effect <= ci951)
+                #         coverage_rate = np.mean(covered)
+                #         coverage_rates[param][f'spline_{idx}'] = coverage_rate
+                #     else:
+                #         coverage_rates[param][f'spline_{idx}'] = None
+                for idx, effect in enumerate(partial_effects):
+                    if len(effect) == 6:
+                        feature, _, ci950, ci951, _, _ = effect
+                        
+                        # Get the corresponding true effect for this spline; shape: (n_samples, )
+                        true_effect = true_effects[idx, :]
+                        plot_true_and_ci(true_effect, effect, param, idx)
+                        # Sort both the feature and true effect to ensure proper alignment.
+                        sort_idx = np.argsort(feature)
+                        sorted_feature = np.array(feature)[sort_idx]
+                        sorted_ci950 = ci950[sort_idx]
+                        sorted_ci951 = ci951[sort_idx]
+                        sorted_true_effect = true_effect[sort_idx]
+                        
+                        # Now compute coverage.
+                        covered = np.logical_and(sorted_true_effect >= sorted_ci950, sorted_true_effect <= sorted_ci951)
+                        coverage_rate = np.mean(covered)
+                        coverage_rates[param][f'spline_{idx}'] = coverage_rate
+                    else:
+                        coverage_rates[param][f'spline_{idx}'] = None
+
+        
+        print("Coverage rates for replicate:")
+        for param, cov_dict in coverage_rates.items():
+            print(f"Parameter {param}:")
+            for key, val in cov_dict.items():
+                if val is not None:
+                    print(f"  {key}: {val:.2%}")
+                else:
+                    print(f"  {key}: N/A")
+        
+        return coverage_rates
+    
+    # # Last-layer inference
+    # elif method == "last_layer":
+    #     mean_predictions, uncertainty = last_layer_inference(
+    #         model, X_struct_eval, X_unstruct_eval
+    #     )
+    
+    else:
+        raise ValueError("Unsupported method. Choose from 'deep_ensemble', 'dropout_sampling', or 'last_layer'.")
+    
+    
+    
+    
+    
+    # # Calculate confidence intervals and coverage rates
+    # confidence_level = 0.95
+    # z = norm.ppf(1 - (1 - confidence_level) / 2)
+    # lower_bound = mean_predictions - z * uncertainty
+    # upper_bound = mean_predictions + z * uncertainty
+    # coverage_rate = np.mean((y_eval >= lower_bound) & (y_eval <= upper_bound))
+    
+    # return {
+    #     "mean_predictions": mean_predictions,
+    #     "uncertainty": uncertainty,
+    #     "coverage_rate": coverage_rate,
+    #     "lower_bound": lower_bound,
+    #     "upper_bound": upper_bound
+    # }
+
+    # train_per_case(scenario, save_path, distribution, snr, X, images, y, epochs=50, batch_size=32, learning_rate=0.01, verbose=0)
+
+    # return sddr
+    
+def training_task(n_sample, distribution_list, SNR_list, method_list, grid_size, train_parameters, 
+                  num_knots, n_rep, read_path, save_path, compute_type='parallel'):
     
     # Set random seed for reproducibility
     np.random.seed(n_sample+n_rep)
-    # Build the DNN model (mock)
-    dnn_model = build_dnn(grid_size * grid_size)
+    logging.info(f"Reading dataset: Number of obs {n_sample} | Replication {n_rep}")
 
-    logging.info(f"Generating dataset: Number of obs {n_sample} | Replication {n_rep}")
-    I = 2
-    K = 2 # predefine
-    # Generate structured and unstructured effects
-    X, linear_effects = generate_linear_effects(n_sample, I, K, alpha_l, random_state=n_sample+n_rep)
-    Z, nonlinear_effects = generate_nonlinear_effects(n_sample, I, K, beta_nl, random_state=n_sample+n_rep)
-    images = np.zeros((n_sample, grid_size, grid_size))
+    scenario_index = f"n_{n_sample}_rep_{n_rep}"
+    X = read_with_var_name('X', 'npy', read_path, scenario_index)
+    # linear_effects = read_with_var_name('linear_effects', 'npy', read_path, scenario_index)
+    # print(X.shape)
+    Z = read_with_var_name('Z', 'npy', read_path, scenario_index)
+    nonlinear_effects = read_with_var_name('nonlinear_effects', 'npy', read_path, scenario_index)
+    # print(Z.shape)
+    # Step 1: Transpose X and Z
+    X_transposed = X.T  # Shape (10, 2)
+    Z_transposed = Z.T  # Shape (10, 2)
 
-    for i in range(n_sample):
-        images[i] = generate_gp_image(grid_size, length_scale=0.2, random_state=(n_sample+n_rep)*n_sample-i)
+    # Step 2: Combine X and Z
+    combined_data = np.hstack((X_transposed, Z_transposed))  # Shape (10, 4)
+    df = pd.DataFrame(combined_data, columns=['X1', 'X2', 'Z1', 'Z2'])
+    df['Image'] = [f'images_jpg_{scenario_index}_{i}.jpg' for i in range(len(df))]
+    # print(df)
+    # images = read_with_var_name('images', 'npy', save_path, scenario_index)
     
-    scenario_index = '_'.join(map(str, ['n', n_sample, 'rep',n_rep]))
-    save_with_var_name(X, 'X', 'npy', save_path, scenario_index)
-    save_with_var_name(linear_effects, 'linear_effects', 'npy', save_path, scenario_index)
-    save_with_var_name(Z, 'Z', 'npy', save_path, scenario_index)
-    save_with_var_name(nonlinear_effects, 'nonlinear_effects', 'npy', save_path, scenario_index)
-    save_with_var_name(images, 'images', 'npy', save_path, scenario_index)
+    # dnn_model = read_with_var_name('dnn_model', 'keras', save_path, scenario_index)
+    # unstructured_effects = read_with_var_name('unstructured_effects', 'npy', save_path, scenario_index)
+    U_k = read_with_var_name('U_k', 'npy', read_path, scenario_index)
+    # psi_k = read_with_var_name('psi_k', 'npy', save_path, scenario_index)
+    # b_k = read_with_var_name('b_k', 'npy', save_path, scenario_index)
+    output_dimension_dnn = U_k.shape[1]
+    combinations = list(product(distribution_list, SNR_list, method_list))
     
-    # Flatten images before passing to the DNN model
-    flattened_images = images.reshape(n_sample, -1)  
-    logging.info(f"Generated X, Z and images: Number of obs {n_sample} | Replication {n_rep}")
-
-    
-    unstructured_effects, U_k, psi_k, b_k = generate_unstructured_effects(flattened_images, dnn_model, K)
-
-    logging.info(f"Generated unstructured_effects: Number of obs {n_sample} | Replication {n_rep}")
-
-    
-    save_with_var_name(unstructured_effects, 'unstructured_effects', 'npy', save_path, scenario_index)
-    save_with_var_name(U_k, 'U_k', 'npy', save_path, scenario_index)
-    save_with_var_name(psi_k, 'psi_k', 'npy', save_path, scenario_index)
-    save_with_var_name(b_k, 'b_k', 'npy', save_path, scenario_index)
-    save_with_var_name(dnn_model, 'dnn_model', 'keras', save_path, scenario_index)
-    
-    # Combine effects
-    # Parallel processing
+    # For each combination, call predict_effects.
+    coverage_results = {}
     if compute_type == 'parallel':
-        # parellel computing can't be nested by default, use concurrent computing for each executer
-        with ThreadPoolExecutor() as inner_executor:
-            inner_executor.map(combine_effects, [(scenario_index, n_rep, save_path, unstructured_effects, linear_effects, nonlinear_effects, d, SNR_list) 
-                                        for d in distribution_list])
-    if compute_type == 'serial':
-        for d in distribution_list:
-            combine_effects(scenario_index, n_rep, save_path, unstructured_effects, linear_effects, nonlinear_effects, d, SNR_list)    
+        def process_combination(c):
+            coverage_rates = predict_effects(scenario_index, read_path, save_path, c, df, train_parameters,
+                                             num_knots, grid_size, output_dimension_dnn, nonlinear_effects)
+            key = f"n_{n_sample}_rep_{n_rep}_dist_{c[0]}_SNR_{c[1]}_method_{c[2]}"
+            return key, coverage_rates
+
+        with ThreadPoolExecutor() as executor:
+            results = executor.map(process_combination, combinations)
+        
+        for key, coverage_rates in results:
+            coverage_results[key] = coverage_rates
+
+        return n_sample, n_rep, coverage_results
     
+    if compute_type == 'serial':
+        for c in combinations:
+            coverage_rates = predict_effects(scenario_index, read_path, save_path, c, df, train_parameters,
+                                             num_knots, grid_size, output_dimension_dnn, nonlinear_effects)    
+            # Store the coverage rates using a key that identifies the combination and replication.
+            key = f"n_{n_sample}_rep_{n_rep}_dist_{c[0]}_SNR_{c[1]}_method_{c[2]}"
+            coverage_results[key] = coverage_rates
+        return n_sample, n_rep, coverage_results
 # ---------------------------
 # Parallel Execution Function
 # ---------------------------
 
-def scenarios_generate(n_list, distribution_list, SNR_list, grid_size, alpha_l, beta_nl, n_rep, n_cores,
+def uq_comparison(n_list, distribution_list, SNR_list, method_list, grid_size,
+                  train_parameters_list, num_knots, n_rep, n_cores, save_path,
                   compute_type='parallel'):
-    logging.info(f"Starting {compute_type} dataset generation...")
+    logging.info(f"Starting {compute_type} training...")
     start_time = datetime.now()
-    n_r = [(i, r) for i in n_list for r in range(n_rep)]
-    if compute_type == 'parallel':
-        # Use pool.starmap to pass multiple arguments to the method
-        save_path = os.path.join(os.environ["TMPDIR"], "output")
-        os.makedirs(save_path, exist_ok=True)
-        with mp.Pool(n_cores) as pool:
-            pool.starmap(generate_task, [(i, distribution_list, SNR_list, grid_size, 
-                                            alpha_l, beta_nl, r, save_path, compute_type) 
-                                        for (i, r) in n_r])
-        end_time = datetime.now()
-        logging.info(f"Parallel dataset generation completed in {end_time - start_time}.")
-    if compute_type == 'serial':
-        save_path = "../data_generation/output_local"
-        for (i, r) in n_r:
-            generate_task(n_sample=i, distribution_list=distribution_list, 
-                        SNR_list=SNR_list, grid_size=grid_size, alpha_l=alpha_l,
-                        beta_nl=beta_nl, n_rep=r, 
-                        save_path=save_path, compute_type=compute_type)
-        end_time = datetime.now()
-        logging.info(f"Serial dataset generation completed in {end_time - start_time}.")
+    replicates = [(i, r) for i in n_list for r in range(n_rep)]
+    read_path = "../data_generation/output"
+    os.makedirs(save_path, exist_ok=True)
     
+    results = []
+    if compute_type == 'parallel':
+        with mp.Pool(n_cores) as pool:
+            results = pool.starmap(
+                training_task,
+                [(i, distribution_list, SNR_list, method_list, grid_size, train_parameters_list[n_list.index(i)], 
+                  num_knots, r, read_path, save_path, compute_type)
+                 for (i, r) in replicates]
+            )
+    elif compute_type == 'serial':
+        for (i, r) in replicates:
+            results.append(training_task(n_sample=i, distribution_list=distribution_list, 
+                                         SNR_list=SNR_list, method_list=method_list, grid_size=grid_size, 
+                                         train_parameters=train_parameters_list[n_list.index(i)], 
+                                         num_knots=num_knots, n_rep=r, 
+                                         read_path=read_path, save_path=save_path, compute_type=compute_type))
+    end_time = datetime.now()
+    logging.info(f"Training completed in {end_time - start_time}.")
+    return results
 
 # ---------------------------
 # Scenario Setup
 # ---------------------------
+if __name__ == '__main__':
 
-# n_list = [100, 500, 1000]
-n_list = [10]
-distribution_list = ["poisson", "gamma", "gaussian"]
-SNR_list=[1,8]
-n_rep=2
-grid_size = 28
-n_core = mp.cpu_count()
-print(f"Number of cores: {n_core}")
-# Define coefficients
-alpha_l = {0: [3, -1], 1: [-0.5, 6]}
+    # n_list = [100, 500, 1000]
+    n_list = [1000]
+    distribution_list = ["gaussian_homo"] # "gamma", "poisson", 
+    SNR_list=[8] #,8]
+    # method_list = ['deep_ensemble', 'dropout_sampling', 'last_layer']
+    method_list = ['point_estimates']
+    n_rep=100
+    grid_size = 28
+    n_core = mp.cpu_count()
+    print(f"Number of cores: {n_core}")
+    # define output directory
+    # save_path = os.path.join(os.environ["TMPDIR"], "output")
 
-# Define named functions for nonlinear effects
-def nonlinear_effect_1_z1(z1):
-    return scale_to_range(3 * np.sin(6 * z1))
+    save_path = './outputs'
 
-def nonlinear_effect_1_z2(z2):
-    return scale_to_range(np.exp(5 * z2))
+    # # For n=100:
+    # train_parameters_small = {
+    #     'batch_size': 16,              # Smaller batch size due to limited sample size.
+    #     'epochs': 100,
+    #     # 'degrees_of_freedom': {'rate': 3},  # For Poisson; adjust accordingly for other distributions.
+    #     'optimizer': optim.Adam,
+    #     'val_split': 0.20,             # Possibly a higher split for very small samples.
+    #     'early_stop_epsilon': 0.001,
+    #     # 'dropout_rate': 0.01           # Start with 0.01; consider 0.01-0.05 range.
+    # }
 
-def nonlinear_effect_2_z1(z1):
-    return scale_to_range(np.cos(8 * z1))
+    # # For n=500 and n=1000:
+    train_parameters_large = {
+        'batch_size': 32,              # Larger batch size as more data is available.
+        'epochs': 100,
+        # 'degrees_of_freedom': {'rate': 3},  # Or {'loc': 3, 'scale': 3} for Gaussian cases.
+        'optimizer': optim.Adam,
+        'val_split': 0.15,
+        'early_stop_epsilon': 0.001,
+        # 'dropout_rate': 0.01           # Can experiment with 0.01 to 0.05.
+    }
+    # For n=100:
+    # train_parameters_100 = {
+    #     'batch_size': 100,              # Smaller batch size due to limited sample size.
+    #     'epochs': 100,
+    #     # 'degrees_of_freedom': {'rate': 3},  # For Poisson; adjust accordingly for other distributions.
+    #     'optimizer': optim.Adam,
+    #     'val_split': 0.20,             # Possibly a higher split for very small samples.
+    #     'early_stop_epsilon': 0.001,
+    #     # 'dropout_rate': 0.01           # Start with 0.01; consider 0.01-0.05 range.
+    # }
 
-def nonlinear_effect_2_z2(z2):
-    return scale_to_range(0.1 * np.sqrt(z2))
+    # # For n=500
+    # train_parameters_500 = {
+    #     'batch_size': 500,              # Larger batch size as more data is available.
+    #     'epochs': 100,
+    #     # 'degrees_of_freedom': {'rate': 3},  # Or {'loc': 3, 'scale': 3} for Gaussian cases.
+    #     'optimizer': optim.Adam,
+    #     'val_split': 0.15,
+    #     'early_stop_epsilon': 0.001,
+    #     # 'dropout_rate': 0.01           # Can experiment with 0.01 to 0.05.
+    # }
+    
+    # # For n=1000:
+    # train_parameters_1000 = {
+    #     'batch_size': 1000,              # Larger batch size as more data is available.
+    #     'epochs': 100,
+    #     # 'degrees_of_freedom': {'rate': 3},  # Or {'loc': 3, 'scale': 3} for Gaussian cases.
+    #     'optimizer': optim.Adam,
+    #     'val_split': 0.15,
+    #     'early_stop_epsilon': 0.001,
+    #     # 'dropout_rate': 0.01           # Can experiment with 0.01 to 0.05.
+    # }
 
-# Example coefficients for nonlinear effects
-beta_nl = {
-    0: [nonlinear_effect_1_z1, nonlinear_effect_1_z2],
-    1: [nonlinear_effect_2_z1, nonlinear_effect_2_z2]
-}
+    num_knots = 10
+    # train_parameters_list = [train_parameters_small, train_parameters_large, train_parameters_large]
+    train_parameters_list = [train_parameters_large] # , train_parameters_500, train_parameters_1000
 
-scenarios_generate(n_list, distribution_list, SNR_list, grid_size, alpha_l, beta_nl, n_rep, n_cores=n_core,
-                  compute_type='parallel') # parallel
+    results = uq_comparison(n_list, distribution_list, SNR_list, method_list, grid_size, train_parameters_list,
+                            num_knots,
+                            n_rep, n_cores=n_core, save_path=save_path, compute_type='serial') # parallel
+    
+    
+    
+    # # Aggregate the coverage results across replicates.
+    # aggregated_coverage = {}
+    # for n_sample, rep, cov_dict in results:
+    #     for key, cov in cov_dict.items():
+    #         if key not in aggregated_coverage:
+    #             aggregated_coverage[key] = []
+    #         aggregated_coverage[key].append(cov)
+
+    # # Compute the average coverage rate for each scenario and parameter.
+    # for key, cov_list in aggregated_coverage.items():
+    #     avg_cov = {}
+    #     for param in cov_list[0]:
+    #         replicate_means = []
+    #         for replicate_cov in cov_list:
+    #             # replicate_cov[param] is a dictionary of spline coverage rates,
+    #             # e.g. {'spline_0': 0.85, 'spline_1': 0.90}
+    #             spline_rates = [r for r in replicate_cov.get(param, {}).values() if r is not None]
+    #             if spline_rates:
+    #                 replicate_means.append(np.mean(spline_rates))
+    #         avg_cov[param] = np.mean(replicate_means) if replicate_means else None
+    #     print(f"Scenario {key}: Average Coverage Rates: {avg_cov}")
+
+    # # Optionally, save the aggregated coverage results.
+    # save_with_var_name(aggregated_coverage, "aggregated_coverage", "npy", save_path, "all_scenarios")

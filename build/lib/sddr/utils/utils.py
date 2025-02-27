@@ -81,7 +81,7 @@ def split_formula(formula, net_names_list):
 
 
 
-def make_matrix_positive_semi_definite(A,machine_epsilon):
+def make_matrix_positive_semi_definite(A,machine_epsilon): # make_psd
     """
     Transforms an input matrix such that it is semipositive definite.
 
@@ -136,7 +136,7 @@ def df_fun(lam, d, hat1):
 
 
 
-def df2lambda(dm, P, df, lam = None, hat1 = True, lam_max = 1e+15):
+def df2lambda(dm, P, df, lam = None, hat1 = True, lam_max = 1e+15): # DRO
     """
     Calculates lambda from degrees of freedom (default) or degrees of freedom from lambda.
 
@@ -171,12 +171,13 @@ def df2lambda(dm, P, df, lam = None, hat1 = True, lam_max = 1e+15):
     if df != None:
         rank_dm = np.linalg.matrix_rank(dm)
         if df >= rank_dm:
-            warnings.simplefilter('always')
-            warnings.warn("""df too large: Degrees of freedom (df = {0}) cannot be larger than the rank of the design matrix (rank = {1}). 
-            Unpenalized base-learner with df = {1} will be used. Re-consider model specification.""".format(df,rank_dm), stacklevel=2)
+            # warnings.simplefilter('always')
+            # warnings.warn("""df too large: Degrees of freedom (df = {0}) cannot be larger than the rank of the design matrix (rank = {1}). 
+            # Unpenalized base-learner with df = {1} will be used. Re-consider model specification.""".format(df,  ), stacklevel=2)
             lam = 0
+            print(df)
             return df, lam
-
+    print("df < rank_dm")
     ## if lambda is given, but equal 0, return rank of design matrix as df
     if lam != None:
         if lam == 0:
@@ -283,12 +284,16 @@ def _get_penalty_matrix_from_factor_info(factor_info):
 
 def get_P_from_design_matrix(dm, dfs):
     """
-    Computes and returns the penalty matrix that corresponds to a patsy design matrix. The penalties are multiplied by the regularization parameters lambda
+    Computes and returns the penalty matrix that corresponds to a patsy design matrix.
+    The penalties are multiplied by the regularization parameters lambda
     computed from given degrees of freedom.
-    The result is a single block diagonal penalty matrix that combines the penalty matrices of each term in the formula that was used to create the design
-    matrix. Only smooting splines terms have a non-zero penalty matrix.
-    The degrees of freedom can either be given as a single value, then all individual penalty matrices are multiplied with a single lambda.
-    Or they can be given as a list, then all (non-zero) penalty matrices are multiplied by different lambdas. The multiplication is in the order of the terms
+    The result is a single block diagonal penalty matrix that combines the penalty
+    matrices of each term in the formula that was used to create the design
+    matrix. Only smoothing splines terms have a non-zero penalty matrix.
+    The degrees of freedom can either be given as a single value, then all individual
+    penalty matrices are multiplied with a single lambda.
+    Or they can be given as a list, then all (non-zero) penalty matrices are multiplied
+    by different lambdas. The multiplication is in the order of the terms
     in the formula.
     
     Parameters
@@ -487,77 +492,208 @@ def _orthogonalize(constraints, X):
     return constrained_X
 
 
+# def orthogonalize_spline_wrt_non_splines(structured_matrix, 
+#                                          spline_info, 
+#                                          non_spline_info):
+#     '''
+#     Changes the structured matrix by orthogonalizing all spline terms with respect to all non spline terms.
+#     Orthogonalization of spline term is only with respect to the non-spline terms that contain a subset of the features that are input to the spline (inlcuding the intercept). E.g. spline(x3, bs='bs', df=9, degree=3) is orthogonalized with respect to the intercept and x3. If any terms x2, x4 ... appear they are ignored in this orthogonalization.
+    
+#     The change on the structured matrix is done inplace!
+    
+#     Parameters
+#     ----------
+#         structured_matrix: patsy.dmatrix
+#             The design matrix for the structured part of the formula - computed by patsy
+#         spline_info: dict
+#             dictionary with keys list_of_spline_slices and list_of_spline_input_features. As produced by
+#             get_info_from_design_matrix
+#         non_spline_info: dict
+#             dictionary with keys list_of_non_spline_slices and list_of_non_spline_input_features. 
+#     '''
+    
+#     for spline_slice, spline_input_features in zip(spline_info['list_of_spline_slices'], 
+#                                                    spline_info['list_of_spline_input_features']):
+        
+#         X = structured_matrix.iloc[:,spline_slice]
+#         # construct constraint matrix
+#         constraints = []
+#         for non_spline_slice, non_spline_input_features in zip(non_spline_info['list_of_non_spline_slices'], non_spline_info['list_of_non_spline_input_features']):
+#             if set(non_spline_input_features).issubset(set(spline_input_features)):
+#                 constraints.append(structured_matrix.iloc[:,non_spline_slice].values)
+
+#         if len(constraints)>0:
+#             constraints = np.concatenate(constraints,axis=1)
+#             constrained_X = _orthogonalize(constraints, np.array(X))
+#             structured_matrix.iloc[:,spline_slice] = constrained_X
+        
 def orthogonalize_spline_wrt_non_splines(structured_matrix, 
                                          spline_info, 
-                                         non_spline_info):
+                                         non_spline_info,
+                                         modify=True,
+                                         corr_threshold=0.5):
     '''
-    Changes the structured matrix by orthogonalizing all spline terms with respect to all non spline terms.
-    Orthogonalization of spline term is only with respect to the non-spline terms that contain a subset of the features that are input to the spline (inlcuding the intercept). E.g. spline(x3, bs='bs', df=9, degree=3) is orthogonalized with respect to the intercept and x3. If any terms x2, x4 ... appear they are ignored in this orthogonalization.
+    Changes the structured matrix by orthogonalizing all spline terms with respect
+    to non-spline terms.
+    
+    If modify is True, in addition to checking if the non-spline input features are a subset
+    of the spline input features, the function also checks the Pearson correlation between
+    the spline and non-spline columns. If the absolute correlation exceeds corr_threshold,
+    the non-spline term is used as a constraint.
+    
+    If modify is False, only the subset check is used.
     
     The change on the structured matrix is done inplace!
     
     Parameters
     ----------
-        structured_matrix: patsy.dmatrix
-            The design matrix for the structured part of the formula - computed by patsy
-        spline_info: dict
-            dictionary with keys list_of_spline_slices and list_of_spline_input_features. As produced by
-            get_info_from_design_matrix
-        non_spline_info: dict
-            dictionary with keys list_of_non_spline_slices and list_of_non_spline_input_features. 
+    structured_matrix: patsy.dmatrix
+        The design matrix for the structured part of the formula - computed by patsy.
+    spline_info: dict
+        Dictionary with keys 'list_of_spline_slices' and 'list_of_spline_input_features'.
+    non_spline_info: dict
+        Dictionary with keys 'list_of_non_spline_slices' and 'list_of_non_spline_input_features'.
+    corr_threshold: float, optional (default=0.5)
+        Threshold for the absolute correlation between non-spline and spline columns,
+        above which the non-spline term is used as a constraint when modify is True.
+    modify: bool, optional (default=True)
+        Determines whether to use the modified version with the correlation check. If False,
+        only the subset check is performed.
     '''
     
     for spline_slice, spline_input_features in zip(spline_info['list_of_spline_slices'], 
                                                    spline_info['list_of_spline_input_features']):
-        
-        X = structured_matrix.iloc[:,spline_slice]
-        # construct constraint matrix
+        # Extract the spline part of the design matrix for this term
+        X = structured_matrix.iloc[:, spline_slice]
         constraints = []
-        for non_spline_slice, non_spline_input_features in zip(non_spline_info['list_of_non_spline_slices'], non_spline_info['list_of_non_spline_input_features']):
-            if set(non_spline_input_features).issubset(set(spline_input_features)):
-                constraints.append(structured_matrix.iloc[:,non_spline_slice].values)
-
-        if len(constraints)>0:
-            constraints = np.concatenate(constraints,axis=1)
-            constrained_X = _orthogonalize(constraints, np.array(X))
-            structured_matrix.iloc[:,spline_slice] = constrained_X
         
+        for non_spline_slice, non_spline_input_features in zip(non_spline_info['list_of_non_spline_slices'], 
+                                                               non_spline_info['list_of_non_spline_input_features']):
+            # Extract the non-spline part
+            non_spline_data = structured_matrix.iloc[:, non_spline_slice].values
             
+            # Always check the subset relationship first.
+            if set(non_spline_input_features).issubset(set(spline_input_features)):
+                constraints.append(non_spline_data)
+            elif modify:
+                # If not a subset, but modify==True, then check the correlation.
+                spline_data = X.values
+                include_constraint = False
+                n_non = non_spline_data.shape[1]
+                n_spline = spline_data.shape[1]
+                for j in range(n_non):
+                    for k in range(n_spline):
+                        # Compute Pearson correlation between column j of non-spline and column k of spline
+                        corr_val = np.corrcoef(non_spline_data[:, j], spline_data[:, k])[0, 1]
+                        if abs(corr_val) > corr_threshold:
+                            include_constraint = True
+                            break
+                    if include_constraint:
+                        break
+                if include_constraint:
+                    constraints.append(non_spline_data)
+                    
+        if len(constraints) > 0:
+            # Concatenate all constraint matrices horizontally
+            constraints = np.concatenate(constraints, axis=1)
+            # Apply the orthogonalization: project out the variation explained by constraints
+            constrained_X = _orthogonalize(constraints, np.array(X))
+            structured_matrix.iloc[:, spline_slice] = constrained_X
+                     
+# def compute_orthogonalization_pattern_deepnets(net_feature_names, 
+#                                                spline_info, 
+#                                                non_spline_info):
+#     '''
+#     Computes the orthogonalization pattern that tells with respect to which structured terms the features of a deep neural network should be orthogonalized. Returned is a list of slices which is then used in the orthogonalization to slice the design matrix for the strucutred part of the formula.
+#     Orthogonalization of deep net term is only with respect to the structured terms that contain a subset of the features that are input to the deep neural network (inlcuding the intercept). E.g. d1(x3) is orthogonalized with respect to the intercept,x3 and a spline that has as only input x3. If any terms x2, x4 or a spline with another input than x2 e.g. spline(x1,x3) or spline(x1) appear they are ignored in this orthogonalization.
+    
+#     Parameters
+#     ----------
+#         net_feature_names: list of strings
+#             list of names of input features to the deep neural network
+#         spline_info: dict
+#             dictionary with keys list_of_spline_slices and list_of_spline_input_features. As produced by 
+#             get_info_from_design_matrix
+#         non_spline_info: dict
+#             dictionary with keys list_of_non_spline_slices and list_of_non_spline_input_features. 
+            
+#     Returns
+#     -------
+#         orthogonalization_pattern: list of slice objects
+#             For each term in the design matrix wrt that the deep neural network should be orthogonalized there is 
+#             a slice in the list.
+#     '''
+    
+    
+#     orthogonalization_pattern = []
+#     for non_spline_slice, non_spline_input_features in zip(non_spline_info['list_of_non_spline_slices'],
+#                                                            non_spline_info['list_of_non_spline_input_features']):
+        
+#         if set(non_spline_input_features).issubset(set(net_feature_names)):
+#             orthogonalization_pattern.append(non_spline_slice)
+            
+#     for spline_slice, spline_input_features in zip(spline_info['list_of_spline_slices'],
+#                                                    spline_info['list_of_spline_input_features']):
+        
+#         if set(spline_input_features).issubset(set(net_feature_names)):
+#             orthogonalization_pattern.append(spline_slice)
+#     return orthogonalization_pattern
 def compute_orthogonalization_pattern_deepnets(net_feature_names, 
                                                spline_info, 
-                                               non_spline_info):
+                                               non_spline_info,
+                                               modify=True,
+                                               intersection_threshold=0.5):
     '''
-    Computes the orthogonalization pattern that tells with respect to which structured terms the features of a deep neural network should be orthogonalized. Returned is a list of slices which is then used in the orthogonalization to slice the design matrix for the strucutred part of the formula.
-    Orthogonalization of deep net term is only with respect to the structured terms that contain a subset of the features that are input to the deep neural network (inlcuding the intercept). E.g. d1(x3) is orthogonalized with respect to the intercept,x3 and a spline that has as only input x3. If any terms x2, x4 or a spline with another input than x2 e.g. spline(x1,x3) or spline(x1) appear they are ignored in this orthogonalization.
+    Computes the orthogonalization pattern that tells with respect to which structured terms
+    the features of a deep neural network should be orthogonalized.
+    
+    For each structured term (both non-spline and spline), if the term's input features are a subset
+    of the deep net's input features, then its slice is included. If not, and if modify==True, then
+    the function also checks the fraction of the term's features that appear in the deep net's feature list.
+    If that fraction is at least intersection_threshold, the slice is included.
     
     Parameters
     ----------
         net_feature_names: list of strings
-            list of names of input features to the deep neural network
+            Names of the deep network's input features.
         spline_info: dict
-            dictionary with keys list_of_spline_slices and list_of_spline_input_features. As produced by 
-            get_info_from_design_matrix
+            Dictionary with keys 'list_of_spline_slices' and 'list_of_spline_input_features'.
         non_spline_info: dict
-            dictionary with keys list_of_non_spline_slices and list_of_non_spline_input_features. 
+            Dictionary with keys 'list_of_non_spline_slices' and 'list_of_non_spline_input_features'.
+        modify: bool, optional (default=True)
+            Whether to use the modified logic with the intersection check.
+        intersection_threshold: float, optional (default=0.5)
+            Minimum fraction of features that must appear in net_feature_names for inclusion.
             
     Returns
     -------
-        orthogonalization_pattern: list of slice objects
-            For each term in the design matrix wrt that the deep neural network should be orthogonalized there is 
-            a slice in the list.
+        orthogonalization_pattern: list
+            A list of slice objects (or indices) that indicate which parts of the design matrix should
+            be used to orthogonalize the deep network outputs.
     '''
     
-    
     orthogonalization_pattern = []
+    
+    # Process non-spline terms
     for non_spline_slice, non_spline_input_features in zip(non_spline_info['list_of_non_spline_slices'],
                                                            non_spline_info['list_of_non_spline_input_features']):
-        
         if set(non_spline_input_features).issubset(set(net_feature_names)):
             orthogonalization_pattern.append(non_spline_slice)
-            
+        elif modify:
+            intersection = set(non_spline_input_features).intersection(set(net_feature_names))
+            ratio = len(intersection) / float(len(non_spline_input_features)) if non_spline_input_features else 0
+            if ratio >= intersection_threshold:
+                orthogonalization_pattern.append(non_spline_slice)
+                
+    # Process spline terms
     for spline_slice, spline_input_features in zip(spline_info['list_of_spline_slices'],
                                                    spline_info['list_of_spline_input_features']):
-        
         if set(spline_input_features).issubset(set(net_feature_names)):
             orthogonalization_pattern.append(spline_slice)
+        elif modify:
+            intersection = set(spline_input_features).intersection(set(net_feature_names))
+            ratio = len(intersection) / float(len(spline_input_features)) if spline_input_features else 0
+            if ratio >= intersection_threshold:
+                orthogonalization_pattern.append(spline_slice)
+    
     return orthogonalization_pattern

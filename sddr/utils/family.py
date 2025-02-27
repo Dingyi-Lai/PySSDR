@@ -87,8 +87,8 @@ class Family():
             Transformed output
         '''
         pred_trafo = dict()
-        add_const = 1e-8
-        
+        # add_const = 1e-8 # avoid any inconsistency and see if it works
+        add_const = 0
         if self.family == "Normal":
             pred_trafo["loc"] = pred["loc"]
             pred_trafo["scale"] = add_const + pred["scale"].exp()

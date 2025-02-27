@@ -1,6 +1,7 @@
 import numpy as np
 import os
-import imageio
+# import imageio
+import imageio.v2 as imageio
 
 mnist = np.load('mnist.npy')
 num_imgs = mnist.shape[0]

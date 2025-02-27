@@ -5,7 +5,9 @@ from PIL import Image
 from torchvision.transforms import ToTensor
 import os
 #import cv2
-import imageio
+# import imageio
+import imageio.v2 as imageio
+
 import numpy as np
 
 class SddrDataset(Dataset):

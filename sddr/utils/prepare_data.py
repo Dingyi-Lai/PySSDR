@@ -21,6 +21,9 @@ class PrepareData(object):
             Degrees from freedom from which the smoothing parameter lambda is computed.
             Either a single value for all penalities of all splines, or a list of values, each for one of the splines that 
             appears in the formula.
+        modify: bool, optional (default=True)
+            If True, use the modified version with a correlation check when selecting slices for orthogonalization.
+            If False, use the original version which concatenates all slices.
         verbose: boolean - default False
             If True, the results of the splitting will be print.
             
@@ -57,7 +60,7 @@ class PrepareData(object):
             features).
        
     '''
-    def __init__(self, formulas, deep_models_dict, degrees_of_freedom, verbose=False):
+    def __init__(self, formulas, deep_models_dict, degrees_of_freedom, modify=True, verbose=False):
         
         self.formulas = formulas
         self.deep_models_dict = deep_models_dict
@@ -65,7 +68,7 @@ class PrepareData(object):
 
         self.network_info_dict = dict()
         self.formula_terms_dict = dict()
-
+        self.modify = modify
         #parse the content of the formulas for each parameter
         for param in formulas.keys():
 
@@ -208,7 +211,7 @@ class PrepareData(object):
                 
                 self.network_info_dict[param]['orthogonalization_pattern'][net_name] = orthogonalization_pattern
             # orthogonalize splines with respect to non-splines (including an intercept if it is there)
-            orthogonalize_spline_wrt_non_splines(structured_matrix, spline_info, non_spline_info)
+            orthogonalize_spline_wrt_non_splines(structured_matrix, spline_info, non_spline_info, self.modify)
 
             # add content to the dicts to be returned
             prepared_data[param]["structured"] = torch.from_numpy(structured_matrix.values).float()

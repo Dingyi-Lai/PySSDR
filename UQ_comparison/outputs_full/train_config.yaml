@@ -1,0 +1,23 @@
+deep_models_dict:
+  dnn:
+    model: "Sequential(\n  (0): Flatten(start_dim=1, end_dim=-1)\n  (1): Linear(in_features=784,\
+      \ out_features=16, bias=True)\n  (2): ReLU()\n)"
+    output_shape: 16
+distribution: Normal
+formulas:
+  loc: ~ 1 + X1 + X2 + spline(Z1, bs='bs', df=14) + spline(Z2, bs='bs', df=14) + dnn(Image)
+  scale: ~ 1
+modify: true
+output_dir: ./outputs_full
+train_parameters:
+  batch_size: 100
+  degrees_of_freedom:
+    loc: 14
+    scale: 14
+  early_stop_epsilon: 0.001
+  epochs: 100
+  optimizer: "Adam (\nParameter Group 0\n    amsgrad: False\n    betas: (0.9, 0.999)\n\
+    \    capturable: False\n    differentiable: False\n    eps: 1e-08\n    foreach:\
+    \ None\n    fused: None\n    lr: 0.001\n    maximize: False\n    weight_decay:\
+    \ 0\n)"
+  val_split: 0.2
