@@ -1,0 +1,32 @@
+Number of cores: 152
+Using device: cpu
+Using device: cpu
+Using device: cpu
+Using device: cpu
+Using device: cpu
+Using device: cpu
+Using device: cpu
+Using device: cpu
+Using device: cpu
+Using device: cpu
+
+============================= JOB FEEDBACK =============================
+
+Job ID: 1504697
+Cluster: haic
+User/Group: pa6512/scc
+Account: scc
+State: COMPLETED (exit code 0)
+Partition: normal
+Nodes: 1
+Cores per node: 152
+Nodelist: haicn1702
+CPU Utilized: 00:00:15
+CPU Efficiency: 0.49% of 00:50:40 core-walltime
+Job Wall-clock time: 00:00:20
+Starttime: Mon Mar  3 11:37:58 2025
+Endtime: Mon Mar  3 11:38:18 2025
+Memory Utilized: 4.14 MB
+Memory Efficiency: 0.00% of 128.00 GB
+Energy Consumed: 6455 Joule / 1.79305555555556 Watthours
+Average node power draw: 322.75 Watt

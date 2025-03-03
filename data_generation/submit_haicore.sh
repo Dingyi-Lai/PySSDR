@@ -20,7 +20,7 @@ module load jupyter/ai
 cd $SLURM_SUBMIT_DIR
 
 # Run your Python script
-python data_generation_parallel.py
+python data_generation_parallel_generalized.py
 
 # Copy results from TMPDIR to home after job finishes
-cp -r $TMPDIR/output ~/PySSDR/data_generation
+cp -r $TMPDIR/output_wo_unstructured ~/PySSDR/data_generation

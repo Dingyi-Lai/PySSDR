@@ -101,11 +101,13 @@ class SddrDataset(Dataset):
         self.transform = ToTensor()
 
     def load_image(self, root_path, image_path):
+        logging.info(f"Before Image loading...")
         img = imageio.imread(os.path.join(root_path, image_path))
         # next 3 lines are used to resize images to size for testing the use of alexnet
         #img = cv2.resize(img,(227,227))
         #img = cv2.cvtColor(img,cv2.COLOR_GRAY2RGB)
         #img = Image.open(os.path.join(root_path, image_path))
+        logging.info(f"After Image loading...")
         img = self.transform(img)
         return img
 

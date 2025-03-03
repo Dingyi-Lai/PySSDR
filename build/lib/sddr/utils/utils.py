@@ -171,9 +171,9 @@ def df2lambda(dm, P, df, lam = None, hat1 = True, lam_max = 1e+15): # DRO
     if df != None:
         rank_dm = np.linalg.matrix_rank(dm)
         if df >= rank_dm:
-            # warnings.simplefilter('always')
-            # warnings.warn("""df too large: Degrees of freedom (df = {0}) cannot be larger than the rank of the design matrix (rank = {1}). 
-            # Unpenalized base-learner with df = {1} will be used. Re-consider model specification.""".format(df,  ), stacklevel=2)
+            warnings.simplefilter('always')
+            warnings.warn("""df too large: Degrees of freedom (df = {0}) cannot be larger than the rank of the design matrix (rank = {1}). 
+            Unpenalized base-learner with df = {1} will be used. Re-consider model specification.""".format(df, rank_dm), stacklevel=2)
             lam = 0
             print(df)
             return df, lam
@@ -491,6 +491,33 @@ def _orthogonalize(constraints, X):
     constrained_X = X - np.matmul(Projection_Matrix,X)
     return constrained_X
 
+def check_orthogonalization(constraints, constrained_X, tol=1e-8):
+    """
+    Check if the columns of constrained_X are orthogonal to the column space of constraints.
+
+    Parameters
+    ----------
+    constraints : np.array, shape (n, m)
+        The matrix whose column space we want to be orthogonal to.
+    constrained_X : np.array, shape (n, k)
+        The matrix after orthogonalization.
+    tol : float, optional
+        Tolerance level for numerical zeros.
+
+    Returns
+    -------
+    bool
+        True if constraints.T @ constrained_X is (approximately) zero; False otherwise.
+    """
+    # Compute the dot product between the constraint matrix and constrained_X
+    product = np.dot(constraints.T, constrained_X)
+    
+    # Check if the product is near zero (elementwise)
+    if np.allclose(product, np.zeros_like(product), atol=tol):
+        return True
+    else:
+        return False
+
 
 # def orthogonalize_spline_wrt_non_splines(structured_matrix, 
 #                                          spline_info, 
@@ -531,7 +558,8 @@ def orthogonalize_spline_wrt_non_splines(structured_matrix,
                                          spline_info, 
                                          non_spline_info,
                                          modify=True,
-                                         corr_threshold=0.5):
+                                         corr_threshold=0.5,
+                                         ortho_manual=False):
     '''
     Changes the structured matrix by orthogonalizing all spline terms with respect
     to non-spline terms.
@@ -542,6 +570,11 @@ def orthogonalize_spline_wrt_non_splines(structured_matrix,
     the non-spline term is used as a constraint.
     
     If modify is False, only the subset check is used.
+    
+    The parameter ortho_manual controls whether the orthogonalization layer is activated
+    manually. If True, all non-spline terms are used as constraints (both in preparation
+    and after building deep heads). If False, the function uses the above subset/correlation
+    check.
     
     The change on the structured matrix is done inplace!
     
@@ -567,31 +600,39 @@ def orthogonalize_spline_wrt_non_splines(structured_matrix,
         X = structured_matrix.iloc[:, spline_slice]
         constraints = []
         
-        for non_spline_slice, non_spline_input_features in zip(non_spline_info['list_of_non_spline_slices'], 
-                                                               non_spline_info['list_of_non_spline_input_features']):
-            # Extract the non-spline part
-            non_spline_data = structured_matrix.iloc[:, non_spline_slice].values
-            
-            # Always check the subset relationship first.
-            if set(non_spline_input_features).issubset(set(spline_input_features)):
+        if ortho_manual:
+            # Activate orthogonalization manually: use all non-spline terms as constraints
+            for non_spline_slice, non_spline_input_features in zip(non_spline_info['list_of_non_spline_slices'], 
+                                                                    non_spline_info['list_of_non_spline_input_features']):
+                non_spline_data = structured_matrix.iloc[:, non_spline_slice].values
                 constraints.append(non_spline_data)
-            elif modify:
-                # If not a subset, but modify==True, then check the correlation.
-                spline_data = X.values
-                include_constraint = False
-                n_non = non_spline_data.shape[1]
-                n_spline = spline_data.shape[1]
-                for j in range(n_non):
-                    for k in range(n_spline):
-                        # Compute Pearson correlation between column j of non-spline and column k of spline
-                        corr_val = np.corrcoef(non_spline_data[:, j], spline_data[:, k])[0, 1]
-                        if abs(corr_val) > corr_threshold:
-                            include_constraint = True
+        else:
+            # Use the original logic: subset check and, if modify==True, correlation check.
+            for non_spline_slice, non_spline_input_features in zip(non_spline_info['list_of_non_spline_slices'], 
+                                                                    non_spline_info['list_of_non_spline_input_features']):
+                # Extract the non-spline part
+                non_spline_data = structured_matrix.iloc[:, non_spline_slice].values
+                
+                # Always check the subset relationship first.
+                if set(non_spline_input_features).issubset(set(spline_input_features)):
+                    constraints.append(non_spline_data)
+                elif modify:
+                    # If not a subset, but modify==True, then check the correlation.
+                    spline_data = X.values
+                    include_constraint = False
+                    n_non = non_spline_data.shape[1]
+                    n_spline = spline_data.shape[1]
+                    for j in range(n_non):
+                        for k in range(n_spline):
+                            # Compute Pearson correlation between column j of non-spline and column k of spline
+                            corr_val = np.corrcoef(non_spline_data[:, j], spline_data[:, k])[0, 1]
+                            if abs(corr_val) > corr_threshold:
+                                include_constraint = True
+                                break
+                        if include_constraint:
                             break
                     if include_constraint:
-                        break
-                if include_constraint:
-                    constraints.append(non_spline_data)
+                        constraints.append(non_spline_data)
                     
         if len(constraints) > 0:
             # Concatenate all constraint matrices horizontally
@@ -599,6 +640,9 @@ def orthogonalize_spline_wrt_non_splines(structured_matrix,
             # Apply the orthogonalization: project out the variation explained by constraints
             constrained_X = _orthogonalize(constraints, np.array(X))
             structured_matrix.iloc[:, spline_slice] = constrained_X
+        
+        if not check_orthogonalization(constrained_X, X, tol=1e-8):
+                print("Warning: The non_spline and spline are not orthogonal!")
                      
 # def compute_orthogonalization_pattern_deepnets(net_feature_names, 
 #                                                spline_info, 
@@ -642,7 +686,8 @@ def compute_orthogonalization_pattern_deepnets(net_feature_names,
                                                spline_info, 
                                                non_spline_info,
                                                modify=True,
-                                               intersection_threshold=0.5):
+                                               intersection_threshold=0.5,
+                                               ortho_manual=False):
     '''
     Computes the orthogonalization pattern that tells with respect to which structured terms
     the features of a deep neural network should be orthogonalized.
@@ -651,6 +696,9 @@ def compute_orthogonalization_pattern_deepnets(net_feature_names,
     of the deep net's input features, then its slice is included. If not, and if modify==True, then
     the function also checks the fraction of the term's features that appear in the deep net's feature list.
     If that fraction is at least intersection_threshold, the slice is included.
+    
+    If ortho_manual is True, then all slices (from both non-spline and spline terms) are included
+    as constraints.
     
     Parameters
     ----------
@@ -664,6 +712,8 @@ def compute_orthogonalization_pattern_deepnets(net_feature_names,
             Whether to use the modified logic with the intersection check.
         intersection_threshold: float, optional (default=0.5)
             Minimum fraction of features that must appear in net_feature_names for inclusion.
+        ortho_manual: bool, optional (default=False)
+            If True, all slices (both non-spline and spline) are included.
             
     Returns
     -------
@@ -673,6 +723,12 @@ def compute_orthogonalization_pattern_deepnets(net_feature_names,
     '''
     
     orthogonalization_pattern = []
+    
+    if ortho_manual:
+        # Activate manual orthogonalization: include all non-spline and spline slices.
+        orthogonalization_pattern.extend(non_spline_info['list_of_non_spline_slices'])
+        orthogonalization_pattern.extend(spline_info['list_of_spline_slices'])
+        return orthogonalization_pattern
     
     # Process non-spline terms
     for non_spline_slice, non_spline_input_features in zip(non_spline_info['list_of_non_spline_slices'],
@@ -697,3 +753,4 @@ def compute_orthogonalization_pattern_deepnets(net_feature_names,
                 orthogonalization_pattern.append(spline_slice)
     
     return orthogonalization_pattern
+

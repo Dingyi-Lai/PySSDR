@@ -71,7 +71,8 @@ class Sddr(object):
         self.prepare_data = PrepareData(formulas,
                                         self.config['deep_models_dict'],
                                         self.config['train_parameters']['degrees_of_freedom'],
-                                        self.config['modify'])
+                                        self.config['modify'],
+                                        self.config['ortho_manual'])
         
         # Set up the output directory.
         if 'output_dir' in self.config.keys():
@@ -90,7 +91,13 @@ class Sddr(object):
             self.dataset = SddrDataset(structured_data, self.prepare_data, target, unstructured_data, fit=False)
         else:
             self.dataset = SddrDataset(structured_data, self.prepare_data, target, unstructured_data)
-            self.net = SddrNet(self.family, self.prepare_data.network_info_dict, self.p)
+            self.net = SddrNet(self.family, self.# The code `prepare_data` is likely a function or
+            # method call in Python, but without seeing the
+            # actual implementation of the function, it is not
+            # possible to determine exactly what it is doing. The
+            # function name suggests that it is likely involved
+            # in preparing or processing data in some way.
+            prepare_data.network_info_dict, self.p, self.config['modify'], self.config['ortho_manual'])
             self.net = self.net.to(self.device)
             self.P = self.prepare_data.get_penalty_matrix(self.device)
             self._setup_optim()

@@ -24,6 +24,9 @@ class PrepareData(object):
         modify: bool, optional (default=True)
             If True, use the modified version with a correlation check when selecting slices for orthogonalization.
             If False, use the original version which concatenates all slices.
+        ortho_manual: bool, optional (default=False)
+            If True, activate the orthogonalization layer manually, including in preparation and after building deep heads.
+            If False, follow the modified or original check before orthogonalization.
         verbose: boolean - default False
             If True, the results of the splitting will be print.
             
@@ -60,7 +63,7 @@ class PrepareData(object):
             features).
        
     '''
-    def __init__(self, formulas, deep_models_dict, degrees_of_freedom, modify=True, verbose=False):
+    def __init__(self, formulas, deep_models_dict, degrees_of_freedom, modify=True, ortho_manual=False, verbose=False):
         
         self.formulas = formulas
         self.deep_models_dict = deep_models_dict
@@ -69,6 +72,7 @@ class PrepareData(object):
         self.network_info_dict = dict()
         self.formula_terms_dict = dict()
         self.modify = modify
+        self.ortho_manual = ortho_manual
         #parse the content of the formulas for each parameter
         for param in formulas.keys():
 
@@ -90,7 +94,8 @@ class PrepareData(object):
             self.network_info_dict[param]['deep_models_dict'] = dict()
             self.network_info_dict[param]['deep_shapes'] = dict()
             self.network_info_dict[param]['orthogonalization_pattern'] = dict()
-            
+            # self.network_info_dict[param]['modify'] = modify
+            # self.network_info_dict[param]['ortho_manual'] = ortho_manual
             
             # formula_terms_dict contains the splitted formula of structured and unstructured part as well as the names of the features are input to the different neural networks
             self.formula_terms_dict[param] = dict()
@@ -207,12 +212,14 @@ class PrepareData(object):
                 net_feature_names = self.formula_terms_dict[param]['net_feature_names'][net_name]
                 orthogonalization_pattern = compute_orthogonalization_pattern_deepnets(net_feature_names, 
                                                                                        spline_info, 
-                                                                                       non_spline_info) 
+                                                                                       non_spline_info,
+                                                                                       self.modify,
+                                                                                       self.ortho_manual) 
                 
                 self.network_info_dict[param]['orthogonalization_pattern'][net_name] = orthogonalization_pattern
             # orthogonalize splines with respect to non-splines (including an intercept if it is there)
-            orthogonalize_spline_wrt_non_splines(structured_matrix, spline_info, non_spline_info, self.modify)
-
+            orthogonalize_spline_wrt_non_splines(structured_matrix, spline_info, non_spline_info, self.modify, 0.5, self.ortho_manual)
+            
             # add content to the dicts to be returned
             prepared_data[param]["structured"] = torch.from_numpy(structured_matrix.values).float()
 
