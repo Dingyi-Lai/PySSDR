@@ -112,7 +112,8 @@ def read_with_var_name(var_name, var_type, save_path, scenario_index):
 # Train Task Function for Parallel Execution
 # ---------------------------
 def predict_effects(scenario_index_folder, read_path, save_path, case, data, train_parameters,
-                    num_knots, grid_size, output_dimension_dnn, true_nonlinear_effects, add_nonlinear=True,
+                    num_knots, grid_size, output_dimension_dnn, 
+                    add_linear=True, add_nonlinear=True,
                     add_unstructured=True, modify=True, ortho_manual=False):
     distribution, snr, method = case
     # os.makedirs(save_path, exist_ok=True)
@@ -138,7 +139,7 @@ def predict_effects(scenario_index_folder, read_path, save_path, case, data, tra
                 nn.Linear(grid_size*grid_size, 32, bias=False),
                 nn.ReLU(),
                 nn.Linear(32, 16),
-                nn.ReLU(),
+                # nn.ReLU(),
                 # nn.Linear(16, 1)
                 ),
             
@@ -154,37 +155,39 @@ def predict_effects(scenario_index_folder, read_path, save_path, case, data, tra
     }
     
     item_formula = ""
+    if add_linear:
+        item_formula += f" + X1 + X2"
     if add_nonlinear:
-        item_formula += " + spline(Z1, bs='bs', df={num_knots+4}) + spline(Z2, bs='bs', df={num_knots+4})"
+        item_formula += f" + spline(Z1, bs='bs', df={num_knots+3}) + spline(Z2, bs='bs', df={num_knots+3})"
     if add_unstructured:
-        item_formula += " + dnn(Image)"
+        item_formula += f" + dnn(Image)"
         
         
     if distribution == "poisson":
         distribution_SSDR = "Poisson" # compatible form
-        formulas = {'rate': f"~ 1 + X1 + X2"+item_formula}
-        degrees_of_freedom = {'rate':num_knots+4}
+        formulas = {'rate': f"~ 1"+item_formula}
+        degrees_of_freedom = {'rate':num_knots+3}
     elif distribution == "gamma":
         distribution_SSDR = "Gamma" # compatible form
         formulas = {
-        'loc': f"~ 1 + X1 + X2"+item_formula,
+        'loc': f"~ 1"+item_formula,
         'scale': '~ 1'
         }
-        degrees_of_freedom = {'loc':num_knots+4, 'scale':num_knots+4}
+        degrees_of_freedom = {'loc':num_knots+3, 'scale':num_knots+3}
     elif distribution == "gaussian_homo":
         distribution_SSDR = "Normal" # compatible form
         formulas = {
-        'loc': f"~ -1 + X1"+item_formula, #  + X2
+        'loc': f"~ 1"+item_formula, #
         'scale': '~ 1'
         }
-        degrees_of_freedom = {'loc':num_knots+4, 'scale':num_knots+4}
+        degrees_of_freedom = {'loc':num_knots+3, 'scale':num_knots+3}
     elif distribution == "gaussian_hetero":
         distribution_SSDR = "Normal" # compatible form
         formulas = {
-        'loc': f"~ 1 + X1 + X2"+item_formula,
-        'scale': f"~ 1 + X1 + X2"+item_formula,
+        'loc': f"~ 1"+item_formula,
+        'scale': f"~ 1"+item_formula,
         }
-        degrees_of_freedom = {'loc':num_knots+4, 'scale':num_knots+4}
+        degrees_of_freedom = {'loc':num_knots+3, 'scale':num_knots+3}
 
     train_parameters['degrees_of_freedom'] = degrees_of_freedom
     
@@ -199,23 +202,25 @@ def predict_effects(scenario_index_folder, read_path, save_path, case, data, tra
             deep_models_dict=deep_models_dict,
             train_parameters=train_parameters,
             modify=modify,
-            ortho_manual = ortho_manual
+            ortho_manual = ortho_manual,
+            use_spline_for_struct = False,
+            n_knots = num_knots
             )
         # print(train_parameters['epochs'])
         scenario_index += f"_{method}"
-        model_path = f"{save_path}/ssdr_{scenario_index}.pth"
+        # model_path = f"{save_path}/ssdr_{scenario_index}.pth"
         # print(model_path)
-        if os.path.exists(model_path):
-            # Here, final_epochs is your intended final epoch count (e.g., 300) 
-            ssdr.load(model_path, data)
-            ssdr.train(target="Y", structured_data=data, resume=True)
-        else:  
-            ssdr.train(structured_data=data,
-                target="Y",
-                unstructured_data = unstructured_data,
-                plot=True)
-            save_with_var_name(ssdr, 'ssdr', 'pth', save_path, scenario_index)
-        
+        # if os.path.exists(model_path):
+        #     # Here, final_epochs is your intended final epoch count (e.g., 300) 
+        #     ssdr.load(model_path, data)
+        #     ssdr.train(target="Y", structured_data=data, resume=True)
+        # else:  
+        ssdr.train(structured_data=data,
+            target="Y",
+            # unstructured_data = unstructured_data,
+            plot=False)
+        save_with_var_name(ssdr, 'ssdr', 'pth', save_path, scenario_index)
+        logging.info(f"Save the model {scenario_index} in {save_path}")
         
         # Create an empty list to store the result rows.
         results = []
@@ -242,6 +247,7 @@ def predict_effects(scenario_index_folder, read_path, save_path, case, data, tra
         # Convert the list of dictionaries to a DataFrame.
         df_results = pd.DataFrame(results)
         save_with_var_name(df_results, 'point_estimates', 'df', save_path, scenario_index)
+        logging.info(f"Save the estimates for {scenario_index} in {save_path}")
         return df_results
     # if method == "point_estimates":
     #     # define your training hyperparameters and train the model
@@ -440,27 +446,36 @@ def predict_effects(scenario_index_folder, read_path, save_path, case, data, tra
     
 def training_task(n_sample, distribution_list, SNR_list, method_list, grid_size, train_parameters, 
                   num_knots, n_rep, read_path, save_path, compute_type='parallel',
-                  add_nonlinear=True, add_unstructured=True, modify=True, ortho_manual=False):
+                  add_linear=True, add_nonlinear=True, add_unstructured=True, modify=True, ortho_manual=False):
     
     # Set random seed for reproducibility
     np.random.seed(n_sample+n_rep)
     logging.info(f"Reading dataset: Number of obs {n_sample} | Replication {n_rep}")
 
     scenario_index = f"n_{n_sample}_rep_{n_rep}"
-    X = read_with_var_name('X', 'npy', read_path, scenario_index)
-    # linear_effects = read_with_var_name('linear_effects', 'npy', read_path, scenario_index)
-    # print(X.shape)
-    Z = read_with_var_name('Z', 'npy', read_path, scenario_index)
-    nonlinear_effects = read_with_var_name('nonlinear_effects', 'npy', read_path, scenario_index)
-    # print(Z.shape)
-    # Step 1: Transpose X and Z
-    X_transposed = X.T  # Shape (10, 2)
-    Z_transposed = Z.T  # Shape (10, 2)
+    parts = []
+    column_names = []
 
-    # Step 2: Combine X and Z
-    combined_data = np.hstack((X_transposed, Z_transposed))  # Shape (10, 4)
-    df = pd.DataFrame(combined_data, columns=['X1', 'X2', 'Z1', 'Z2'])
-    
+    if add_linear:
+        X = read_with_var_name('X', 'npy', read_path, scenario_index)
+        X_transposed = X.T  # e.g. shape (10, 2)
+        parts.append(X_transposed)
+        column_names.extend(['X1', 'X2'])
+
+    if add_nonlinear:
+        Z = read_with_var_name('Z', 'npy', read_path, scenario_index)
+        # nonlinear_effects = read_with_var_name('nonlinear_effects', 'npy', read_path, scenario_index)
+        Z_transposed = Z.T  # e.g. shape (10, 2)
+        parts.append(Z_transposed)
+        column_names.extend(['Z1', 'Z2'])
+
+    # If both parts are false, you can decide what to do (e.g., throw an error).
+    if not parts:
+        raise ValueError("Neither linear nor nonlinear data was selected!")
+
+    combined_data = np.hstack(parts)
+    df = pd.DataFrame(combined_data, columns=column_names)
+
     U_k = None
     output_dimension_dnn = 0
     
@@ -483,39 +498,30 @@ def training_task(n_sample, distribution_list, SNR_list, method_list, grid_size,
     if compute_type == 'parallel':
         def process_combination(c):
             df_results = predict_effects(scenario_index, read_path, save_path, c, df, train_parameters,
-                                             num_knots, grid_size, output_dimension_dnn, nonlinear_effects,
-                                             add_nonlinear, add_unstructured, modify, ortho_manual)
-            # key = f"n_{n_sample}_rep_{n_rep}_dist_{c[0]}_SNR_{c[1]}_method_{c[2]}"
+                                             num_knots, grid_size, output_dimension_dnn,
+                                             add_linear, add_nonlinear, add_unstructured, modify, ortho_manual)
             return df_results
 
         with ThreadPoolExecutor() as executor:
             _ = executor.map(process_combination, combinations)
         
-        # for key, coverage_rates in results:
-        #     coverage_results[key] = coverage_rates
-
-        # return df_results
-    
     if compute_type == 'serial':
         for c in combinations:
-            _ = predict_effects(scenario_index, read_path, save_path, c, df, train_parameters,
-                                             num_knots, grid_size, output_dimension_dnn, nonlinear_effects,
-                                             add_nonlinear, add_unstructured, modify, ortho_manual)    
-            # Store the coverage rates using a key that identifies the combination and replication.
-            # key = f"n_{n_sample}_rep_{n_rep}_dist_{c[0]}_SNR_{c[1]}_method_{c[2]}"
-            # coverage_results[key] = coverage_rates
-        # return df_results
+            predict_effects(scenario_index, read_path, save_path, c, df, train_parameters,
+                                             num_knots, grid_size, output_dimension_dnn,
+                                             add_linear, add_nonlinear, add_unstructured, modify, ortho_manual)    
+
 # ---------------------------
 # Parallel Execution Function
 # ---------------------------
 
 def uq_comparison(n_list, distribution_list, SNR_list, method_list, grid_size,
                   train_parameters_list, num_knots, n_rep, n_cores, save_path,
-                  compute_type='parallel', add_nonlinear=True, add_unstructured=True, modify=True, ortho_manual=False):
+                  compute_type='parallel', add_linear=True, add_nonlinear=True, add_unstructured=True, modify=True, ortho_manual=False):
     logging.info(f"Starting {compute_type} training...")
     start_time = datetime.now()
     replicates = [(i, r) for i in n_list for r in range(n_rep)]
-    read_path = "../data_generation/output_wo_unstructured"
+    read_path = "../data_generation/output_linear"
     # read_path = os.environ.get("READ_PATH", "../data_generation/output")
 
     os.makedirs(save_path, exist_ok=True)
@@ -526,7 +532,7 @@ def uq_comparison(n_list, distribution_list, SNR_list, method_list, grid_size,
             pool.starmap(
                 training_task,
                 [(i, distribution_list, SNR_list, method_list, grid_size, train_parameters_list[n_list.index(i)], 
-                  num_knots, r, read_path, save_path, compute_type, add_nonlinear, add_unstructured, modify, ortho_manual)
+                  num_knots, r, read_path, save_path, compute_type, add_linear, add_nonlinear, add_unstructured, modify, ortho_manual)
                  for (i, r) in replicates]
             )
     elif compute_type == 'serial':
@@ -535,7 +541,7 @@ def uq_comparison(n_list, distribution_list, SNR_list, method_list, grid_size,
                                          SNR_list=SNR_list, method_list=method_list, grid_size=grid_size, 
                                          train_parameters=train_parameters_list[n_list.index(i)], 
                                          num_knots=num_knots, n_rep=r, read_path=read_path, save_path=save_path,
-                                         compute_type=compute_type, add_nonlinear=add_nonlinear,
+                                         compute_type=compute_type, add_linear=add_linear, add_nonlinear=add_nonlinear,
                                          add_unstructured=add_unstructured, modify=modify, ortho_manual=ortho_manual)
     end_time = datetime.now()
     logging.info(f"Training completed in {end_time - start_time}.")
@@ -557,9 +563,7 @@ if __name__ == '__main__':
     n_core = mp.cpu_count()
     print(f"Number of cores: {n_core}")
     # define output directory
-    
-
-    
+    nbatch = 32
 
     # # For n=100:
     # train_parameters_small = {
@@ -574,7 +578,7 @@ if __name__ == '__main__':
 
     # # For n=500 and n=1000:
     train_parameters_large = {
-        'batch_size': 32,              # Larger batch size as more data is available.
+        'batch_size': nbatch,              # Larger batch size as more data is available.
         'epochs': 100,
         # 'degrees_of_freedom': {'rate': 3},  # Or {'loc': 3, 'scale': 3} for Gaussian cases.
         'optimizer': optim.Adam,
@@ -615,7 +619,7 @@ if __name__ == '__main__':
     #     # 'dropout_rate': 0.01           # Can experiment with 0.01 to 0.05.
     # }
 
-    num_knots = 6
+    num_knots = 16
     # train_parameters_list = [train_parameters_small, train_parameters_large, train_parameters_large]
     train_parameters_list = [train_parameters_large] # , train_parameters_500, train_parameters_1000
 
@@ -626,12 +630,12 @@ if __name__ == '__main__':
     #                         n_rep, n_cores=n_core, save_path=save_path, compute_type='parallel',
     #                         add_unstructured=True, modify=True, ortho_manual=False) # parallel
     
-    # save_path = './outputs_linear_full_batch'
-    save_path = os.path.join(os.environ["TMPDIR"], "outputs_wo_unstructured")
+    # save_path = './outputs_linear_nknots_16_batch_32'
+    save_path = os.path.join(os.environ["TMPDIR"], "outputs_linear_nknots_"+str(num_knots)+"_batch_"+str(nbatch))
     uq_comparison(n_list, distribution_list, SNR_list, method_list, grid_size, train_parameters_list,
                             num_knots,
                             n_rep, n_cores=n_core, save_path=save_path, compute_type='parallel',
-                            add_nonlinear=True, add_unstructured=False, modify=True, ortho_manual=False) # parallel
+                            add_linear=True, add_nonlinear=False, add_unstructured=False, modify=False, ortho_manual=False) # parallel
     
     # save_path = './outputs_with_unstructured'
     # uq_comparison(n_list, distribution_list, SNR_list, method_list, grid_size, train_parameters_list,

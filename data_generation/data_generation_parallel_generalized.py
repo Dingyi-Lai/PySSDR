@@ -69,11 +69,11 @@ def generate_linear_effects(n_samples, I, K, alpha, random_state=None):
     linear_effects = np.zeros((I, n_samples, K))
     
     for i in range(I):
-        X_scaled[i] = scale_to_range(X[i], 0, 1)
+        X_scaled[i] = scale_to_range(X[i], -1, 1)
         for k in range(K):
             linear_effects[i, :, k] = alpha[k][i] * X_scaled[i]
         
-    return X_scaled, scale_to_range(linear_effects)
+    return X_scaled, linear_effects # scale_to_range(linear_effects)
 
 def generate_nonlinear_effects(n_samples, J, K, beta, random_state=None):
     """
@@ -128,6 +128,7 @@ def combine_effects(scenario_index, save_path,
                     nonlinear_effects,
                     distribution="poisson",
                     s=1,
+                    add_linear=True,
                     add_nonlinear=False,
                     add_unstructured=False):
     """
@@ -141,8 +142,9 @@ def combine_effects(scenario_index, save_path,
     etas = np.zeros((N, K))
 
     # For the first dimension (often 'location' or 'mean'):
-    # Always add linear
-    etas[:, 0] = linear_effects[:, :, 0].sum(axis=0)
+    # Conditionally add linear
+    if add_linear:
+        etas[:, 0] += linear_effects[:, :, 0].sum(axis=0)
     # Conditionally add nonlinear
     if add_nonlinear:
         etas[:, 0] += nonlinear_effects[:, :, 0].sum(axis=0)
@@ -164,7 +166,8 @@ def combine_effects(scenario_index, save_path,
     elif distribution == "gaussian_hetero":
         # For heteroscedastic Gaussian, we also have linear+nonlinear+unstructured for scale
         # in the second dimension (index 1).
-        etas[:, 1] = linear_effects[:, :, 1].sum(axis=0)
+        if add_linear:
+            etas[:, 1] += linear_effects[:, :, 1].sum(axis=0)
         if add_nonlinear:
             etas[:, 1] += nonlinear_effects[:, :, 1].sum(axis=0)
         if add_unstructured:
@@ -263,6 +266,7 @@ def read_with_var_name(var_name, var_type, save_path, scenario_index):
 
 def generate_task(n_sample, distribution_list, SNR_list, grid_size, alpha_l, beta_nl, n_rep, 
                   save_path, compute_type='parallel',
+                  add_linear=True,
                   add_nonlinear=False,
                   add_unstructured=False):
     """
@@ -274,12 +278,21 @@ def generate_task(n_sample, distribution_list, SNR_list, grid_size, alpha_l, bet
 
     I = 2
     K = 2  # location + scale dimension
-    # 1) Generate linear effects (always)
-    X, linear_effects = generate_linear_effects(n_sample, I, K, alpha_l, random_state=n_sample+n_rep)
-    
+    scenario_index = '_'.join(map(str, ['n', n_sample, 'rep', n_rep]))
+    # 1) Generate linear effects
+    if add_linear:
+        X, linear_effects = generate_linear_effects(n_sample, I, K, alpha_l, random_state=n_sample+n_rep)
+        save_with_var_name(X, 'X', 'npy', save_path, scenario_index)
+        save_with_var_name(linear_effects, 'linear_effects', 'npy', save_path, scenario_index)
+    else:
+        # Create placeholders (zeros) so it contributes nothing to eta
+        X = np.zeros((I, n_sample))
+        linear_effects = np.zeros((I, n_sample, K))
     # 2) Generate nonlinear effects (only if add_nonlinear=True)
     if add_nonlinear:
         Z, nonlinear_effects = generate_nonlinear_effects(n_sample, I, K, beta_nl, random_state=n_sample+n_rep)
+        save_with_var_name(Z, 'Z', 'npy', save_path, scenario_index)
+        save_with_var_name(nonlinear_effects, 'nonlinear_effects', 'npy', save_path, scenario_index)
     else:
         # Create placeholders (zeros) so it contributes nothing to eta
         Z = np.zeros((I, n_sample))
@@ -291,19 +304,10 @@ def generate_task(n_sample, distribution_list, SNR_list, grid_size, alpha_l, bet
         for i in range(n_sample):
             images[i] = generate_gp_image(grid_size, length_scale=0.2,
                                           random_state=(n_sample + n_rep)*n_sample - i)
-    else:
-        images = None
-
-    # 4) Save intermediate data
-    scenario_index = '_'.join(map(str, ['n', n_sample, 'rep', n_rep]))
-    save_with_var_name(X, 'X', 'npy', save_path, scenario_index)
-    save_with_var_name(linear_effects, 'linear_effects', 'npy', save_path, scenario_index)
-    save_with_var_name(Z, 'Z', 'npy', save_path, scenario_index)
-    save_with_var_name(nonlinear_effects, 'nonlinear_effects', 'npy', save_path, scenario_index)
-
-    if add_unstructured:
         save_with_var_name(images, 'images', 'npy', save_path, scenario_index)
         save_with_var_name(images, 'images_jpg', 'jpgs', save_path, scenario_index)
+    else:
+        images = None
 
     logging.info(f"Generated X, Z, images: n={n_sample}, rep={n_rep}")
 
@@ -335,6 +339,7 @@ def generate_task(n_sample, distribution_list, SNR_list, grid_size, alpha_l, bet
                         nonlinear_effects,
                         d,
                         s,
+                        add_linear,
                         add_nonlinear,
                         add_unstructured
                     )
@@ -352,6 +357,7 @@ def generate_task(n_sample, distribution_list, SNR_list, grid_size, alpha_l, bet
                     nonlinear_effects,
                     distribution=d,
                     s=s,
+                    add_linear=add_linear,
                     add_nonlinear=add_nonlinear,
                     add_unstructured=add_unstructured
                 )
@@ -371,6 +377,7 @@ def scenarios_generate(n_list,
                        n_rep,
                        n_cores,
                        compute_type='parallel',
+                       add_linear=True,
                        add_nonlinear=False,
                        add_unstructured=False):
     """
@@ -381,7 +388,7 @@ def scenarios_generate(n_list,
 
     # Decide on the folder to store data
     if compute_type == 'parallel':
-        save_path = os.path.join(os.environ["TMPDIR"], "output_wo_unstructured")  # or another path
+        save_path = os.path.join(os.environ["TMPDIR"], "output_linear")  # or another path
     else:
         save_path = "../data_generation/output_debug_local"
     os.makedirs(save_path, exist_ok=True)
@@ -404,6 +411,7 @@ def scenarios_generate(n_list,
                         r,
                         save_path,
                         compute_type,
+                        add_linear,
                         add_nonlinear,
                         add_unstructured
                     )
@@ -422,6 +430,7 @@ def scenarios_generate(n_list,
                 n_rep=r,
                 save_path=save_path,
                 compute_type=compute_type,
+                add_linear=add_linear,
                 add_nonlinear=add_nonlinear,
                 add_unstructured=add_unstructured
             )
@@ -444,8 +453,8 @@ if __name__ == "__main__":
 
     # Define linear coefficients alpha_l
     alpha_l = {
-        0: [3, -1],      # For location: alpha_0 for X1, X2
-        1: [-0.5, 6]     # For scale (or second dimension)
+        0: [1, -1],      # For location: alpha_0 for X1, X2
+        1: [-1, 1]     # For scale (or second dimension)
     }
 
     # Define some example nonlinear functions
@@ -478,6 +487,7 @@ if __name__ == "__main__":
         n_rep=n_rep,
         n_cores=n_core,
         compute_type='parallel',   # or 'serial'
-        add_nonlinear=True,       # no nonlinear
+        add_linear=True,
+        add_nonlinear=False,       # no nonlinear
         add_unstructured=False     # no unstructured
     )

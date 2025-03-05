@@ -20,8 +20,10 @@ module load jupyter/ai
 # Go to the directory where the script is located
 cd $SLURM_SUBMIT_DIR
 
+rm -rf $TMPDIR/outputs_linear_nknots_16_batch_32/*
+
 # Run your Python script
 python training_wo_unstructured.py
 
 # Copy results from TMPDIR to home after job finishes
-cp -r $TMPDIR/outputs_wo_unstructured ~/PySSDR/UQ_comparison
+cp -rf $TMPDIR/outputs_linear_nknots_16_batch_32 ~/PySSDR/UQ_comparison
