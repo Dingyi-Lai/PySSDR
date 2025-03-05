@@ -4,8 +4,8 @@
 #SBATCH --error=error_%j.log         # Error log file
 #SBATCH --time=72:00:00              # Max runtime (hh:mm:ss)
 #SBATCH --ntasks=1                     # One main task
-#SBATCH --cpus-per-task=100            # Use 152 cores for multiprocessing
-#SBATCH --mem=66G                     # Memory per node
+#SBATCH --cpus-per-task=80            # Use 152 cores for multiprocessing
+#SBATCH --mem=40G                     # Memory per node
 #SBATCH --partition=normal            # Partition (batch queue)
 #SBATCH --mail-type=ALL              # Get email on job start, end, fail
 #SBATCH --mail-user=pa6512@kit.edu  # Your email for notifications
@@ -26,4 +26,4 @@ cd $SLURM_SUBMIT_DIR
 python training_wo_unstructured.py
 
 # Copy results from TMPDIR to home after job finishes
-cp -rf $TMPDIR/outputs_structured_nknots_6_batch_32 ~/PySSDR/UQ_comparison
+cp -rf $TMPDIR/outputs_structured_nknots_6_batch_32_manual ~/PySSDR/UQ_comparison

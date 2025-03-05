@@ -510,7 +510,7 @@ def uq_comparison(n_list, distribution_list, SNR_list, method_list, grid_size,
     logging.info(f"Starting {compute_type} training...")
     start_time = datetime.now()
     replicates = [(i, r) for i in n_list for r in range(n_rep)]
-    read_path = "../data_generation/output_nonlinear"
+    read_path = "../data_generation/output_structured[-1_1]"
     # read_path = os.environ.get("READ_PATH", "../data_generation/output")
 
     os.makedirs(save_path, exist_ok=True)
@@ -619,12 +619,13 @@ if __name__ == '__main__':
     #                         n_rep, n_cores=n_core, save_path=save_path, compute_type='parallel',
     #                         add_unstructured=True, modify=True, ortho_manual=False) # parallel
     
-    save_path = './outputs_structured_nknots_6_batch_32'
+    # save_path = './outputs_structured_nknots_6_batch_32'
     # save_path = os.path.join(os.environ["TMPDIR"], "outputs_nonlinear_nknots_"+str(num_knots)+"_batch_"+str(nbatch))
+    save_path = os.path.join(os.environ["TMPDIR"], "outputs_structured_nknots_6_batch_32_manual")
     uq_comparison(n_list, distribution_list, SNR_list, method_list, grid_size, train_parameters_list,
                             num_knots,
                             n_rep, n_cores=n_core, save_path=save_path, compute_type='parallel',
-                            add_linear=True, add_nonlinear=True, add_unstructured=False, modify=False, ortho_manual=False) # parallel
+                            add_linear=True, add_nonlinear=True, add_unstructured=False, modify=True, ortho_manual=True) # parallel
     
     # save_path = './outputs_with_unstructured'
     # uq_comparison(n_list, distribution_list, SNR_list, method_list, grid_size, train_parameters_list,

@@ -4,8 +4,8 @@
 #SBATCH --error=error_%j.log         # Error log file
 #SBATCH --time=72:00:00              # Max runtime (hh:mm:ss)
 #SBATCH --ntasks=1                     # One main task
-#SBATCH --cpus-per-task=152            # Use 152 cores for multiprocessing
-#SBATCH --mem=128G                     # Memory per node
+#SBATCH --cpus-per-task=100            # Use 152 cores for multiprocessing
+#SBATCH --mem=66G                     # Memory per node
 #SBATCH --partition=normal            # Partition (batch queue)
 #SBATCH --mail-type=ALL              # Get email on job start, end, fail
 #SBATCH --mail-user=pa6512@kit.edu  # Your email for notifications
@@ -23,4 +23,4 @@ cd $SLURM_SUBMIT_DIR
 python data_generation_parallel_generalized.py
 
 # Copy results from TMPDIR to home after job finishes
-cp -r $TMPDIR/output_linear ~/PySSDR/data_generation
+cp -r $TMPDIR/output_structured[-1_1] ~/PySSDR/data_generation

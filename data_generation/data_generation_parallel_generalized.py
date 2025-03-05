@@ -81,7 +81,7 @@ def generate_nonlinear_effects(n_samples, J, K, beta, random_state=None):
     beta[k][j] is a function, e.g. beta[0][0] = f(Z1).
     """
     np.random.seed(random_state)
-    Z = np.random.uniform(-1, 1, size=(J, n_samples))  # shape (J, n_samples)
+    Z = np.random.uniform(0, 1, size=(J, n_samples))  # shape (J, n_samples)
     nonlinear_effects = np.zeros((J, n_samples, K))
 
     for j in range(J):
@@ -389,6 +389,7 @@ def scenarios_generate(n_list,
     # Decide on the folder to store data
     if compute_type == 'parallel':
         save_path = os.path.join(os.environ["TMPDIR"], "output_structured[-1_1]")  # or another path
+        # save_path = "../data_generation/output_structured[-1_1]"
     else:
         save_path = "../data_generation/output_structured[-1_1]"
     os.makedirs(save_path, exist_ok=True)
