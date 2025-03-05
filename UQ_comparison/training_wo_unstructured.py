@@ -40,17 +40,6 @@ from sddr import Sddr
 def scale_to_range(data, lower=-1, upper=1):
     return (data - np.min(data)) / (np.max(data) - np.min(data)) * (upper - lower) + lower
 
-# def build_dnn(input_dim, layer_sizes=[32, 16], activation="relu"):
-#     model = Sequential([
-#         Input(shape=(input_dim,)),
-#         Dense(layer_sizes[0], activation=activation),
-#         Dense(layer_sizes[1], activation=activation),
-#         Dense(1, activation=None)
-#     ])
-#     model.compile(optimizer='adam', loss='mse')  # Compile the model
-
-#     return model
-
 def save_with_var_name(var, var_name, var_type, save_path, scenario_index):
     if var_type == 'npy':
         np.save(f"{save_path}/{var_name}_{scenario_index}.npy", var)
@@ -521,7 +510,7 @@ def uq_comparison(n_list, distribution_list, SNR_list, method_list, grid_size,
     logging.info(f"Starting {compute_type} training...")
     start_time = datetime.now()
     replicates = [(i, r) for i in n_list for r in range(n_rep)]
-    read_path = "../data_generation/output_linear"
+    read_path = "../data_generation/output_nonlinear"
     # read_path = os.environ.get("READ_PATH", "../data_generation/output")
 
     os.makedirs(save_path, exist_ok=True)
@@ -619,7 +608,7 @@ if __name__ == '__main__':
     #     # 'dropout_rate': 0.01           # Can experiment with 0.01 to 0.05.
     # }
 
-    num_knots = 16
+    num_knots = 6
     # train_parameters_list = [train_parameters_small, train_parameters_large, train_parameters_large]
     train_parameters_list = [train_parameters_large] # , train_parameters_500, train_parameters_1000
 
@@ -630,12 +619,12 @@ if __name__ == '__main__':
     #                         n_rep, n_cores=n_core, save_path=save_path, compute_type='parallel',
     #                         add_unstructured=True, modify=True, ortho_manual=False) # parallel
     
-    # save_path = './outputs_linear_nknots_16_batch_32'
-    save_path = os.path.join(os.environ["TMPDIR"], "outputs_linear_nknots_"+str(num_knots)+"_batch_"+str(nbatch))
+    save_path = './outputs_structured_nknots_6_batch_32'
+    # save_path = os.path.join(os.environ["TMPDIR"], "outputs_nonlinear_nknots_"+str(num_knots)+"_batch_"+str(nbatch))
     uq_comparison(n_list, distribution_list, SNR_list, method_list, grid_size, train_parameters_list,
                             num_knots,
                             n_rep, n_cores=n_core, save_path=save_path, compute_type='parallel',
-                            add_linear=True, add_nonlinear=False, add_unstructured=False, modify=False, ortho_manual=False) # parallel
+                            add_linear=True, add_nonlinear=True, add_unstructured=False, modify=False, ortho_manual=False) # parallel
     
     # save_path = './outputs_with_unstructured'
     # uq_comparison(n_list, distribution_list, SNR_list, method_list, grid_size, train_parameters_list,
