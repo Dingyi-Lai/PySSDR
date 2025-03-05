@@ -72,7 +72,8 @@ class Sddr(object):
                                         self.config['deep_models_dict'],
                                         self.config['train_parameters']['degrees_of_freedom'],
                                         self.config['modify'],
-                                        self.config['ortho_manual'])
+                                        self.config['ortho_manual'],
+                                        True)
         
         # Set up the output directory.
         if 'output_dir' in self.config.keys():
@@ -192,7 +193,133 @@ class Sddr(object):
             plt.xlabel('Epochs')
             plt.savefig(os.path.join(self.config['output_dir'], 'train_loss.png'))
             plt.show()
-    
+    # def train(self, target, structured_data, unstructured_data=dict(), resume=False, plot=False):
+    #     '''
+    #     Trains the SddrNet for a specified number of epochs.
+    #     '''
+    #     epoch_print_interval = max(1, int(self.config['train_parameters']['epochs'] / 10))
+        
+    #     if resume:
+    #         self.dataset = SddrDataset(structured_data, self.prepare_data, target, unstructured_data, fit=False)
+    #     else:
+    #         self.dataset = SddrDataset(structured_data, self.prepare_data, target, unstructured_data)
+    #         self.net = SddrNet(self.family, self.prepare_data.network_info_dict, self.p, 
+    #                         self.config['modify'], self.config['ortho_manual'])
+    #         self.net = self.net.to(self.device)
+            
+    #         # *** Warm Start for Structured Predictor ***
+    #         # Compute OLS: beta_ols = (X^T X)^{-1} X^T y
+    #         X_list = []
+    #         y_list = []
+    #         for item in self.dataset:
+    #             # 'structured' key holds the design matrix for the structured part.
+    #             X_list.append(item['datadict']['structured'])
+    #             y_list.append(item['target'])
+    #         X_all = torch.cat(X_list, dim=0).cpu().numpy()  # shape (N, p)
+    #         y_all = torch.cat(y_list, dim=0).cpu().numpy()    # shape (N,) or (N,1)
+    #         if y_all.ndim == 1:
+    #             y_all = y_all.reshape(-1, 1)  # ensure shape (N, 1)
+    #         beta_ols = np.linalg.inv(X_all.T @ X_all) @ (X_all.T @ y_all)  # shape (p, 1)
+            
+    #         # Update each parameter's structured head with the warm-start OLS estimate.
+    #         # Note: The structured_head weight expects shape (1, p)
+    #         for param in self.net.single_parameter_sddr_list.keys():
+    #             self.net.single_parameter_sddr_list[param].structured_head.weight.data = \
+    #                 torch.from_numpy(beta_ols.T).float().to(self.device)
+    #             # Optionally, if a bias term is used (structured_bias=True), you can compute and set it separately.
+            
+    #         self.P = self.prepare_data.get_penalty_matrix(self.device)
+    #         self._setup_optim()
+    #         self.cur_epoch = 0
+            
+    #     val_split = self.config['train_parameters'].get('val_split', 0.2)
+    #     n_val = int(len(self.dataset) * val_split)
+    #     n_train = len(self.dataset) - n_val
+    #     train, val = random_split(self.dataset, [n_train, n_val])
+        
+    #     self.train_loader = DataLoader(train, batch_size=self.config['train_parameters']['batch_size'])
+    #     self.val_loader = DataLoader(val, batch_size=self.config['train_parameters']['batch_size'])
+    #     train_loss_list = []
+    #     val_loss_list = []
+        
+    #     if 'early_stop_epochs' in self.config['train_parameters'].keys():
+    #         early_stop_counter = 0
+    #         if not resume:
+    #             self.cur_best_loss = sys.maxsize
+    #         eps = self.config['train_parameters'].get('early_stop_epsilon', 0.001)
+        
+    #     print('Beginning training ...')
+    #     for epoch in range(self.cur_epoch, self.config['train_parameters']['epochs']):
+    #         self.net.train()
+    #         self.epoch_train_loss = 0
+    #         for batch in self.train_loader:
+    #             target_batch = batch['target'].float().to(self.device)
+    #             datadict_batch = batch['datadict']
+    #             # Send each input batch to the device.
+    #             for param in datadict_batch.keys():
+    #                 for data_part in datadict_batch[param].keys():
+    #                     datadict_batch[param][data_part] = datadict_batch[param][data_part].to(self.device)
+                
+    #             self.optimizer.zero_grad()
+    #             output = self.net(datadict_batch)[0]  # only the distribution layer output
+    #             loss = torch.mean(self.net.get_log_loss(target_batch))
+    #             loss += self.net.get_regularization(self.P).squeeze_() 
+    #             loss.backward()
+    #             self.optimizer.step()
+    #             self.epoch_train_loss += loss.item()
+            
+    #         self.epoch_train_loss /= len(self.train_loader)
+    #         if epoch % epoch_print_interval == 0:
+    #             print('Train Epoch: {} \t Training Loss: {:.6f}'.format(epoch, self.epoch_train_loss))
+    #         train_loss_list.append(self.epoch_train_loss)
+            
+    #         with torch.no_grad():
+    #             self.net.eval()
+    #             self.epoch_val_loss = 0
+    #             for batch in self.val_loader:
+    #                 target_batch = batch['target'].float().to(self.device)
+    #                 datadict_batch = batch['datadict']
+    #                 for param in datadict_batch.keys():
+    #                     for data_part in datadict_batch[param].keys():
+    #                         datadict_batch[param][data_part] = datadict_batch[param][data_part].to(self.device)
+    #                 _ = self.net(datadict_batch)[0]
+    #                 val_batch_loss = torch.mean(self.net.get_log_loss(target_batch))
+    #                 val_batch_loss += self.net.get_regularization(self.P).squeeze_() 
+    #                 self.epoch_val_loss += val_batch_loss.item()
+    #             if len(self.val_loader) != 0:
+    #                 self.epoch_val_loss /= len(self.val_loader)
+    #             val_loss_list.append(self.epoch_val_loss)
+                
+    #             if 'early_stop_epochs' in self.config['train_parameters'].keys():
+    #                 dif = self.cur_best_loss - self.epoch_val_loss
+    #                 if dif > eps:
+    #                     self.cur_best_loss = self.epoch_val_loss
+    #                     early_stop_counter = 0 
+    #                 else:
+    #                     early_stop_counter += 1
+    #         if epoch % epoch_print_interval == 0 and len(self.val_loader) != 0:
+    #             print('Train Epoch: {} \t Validation Loss: {:.6f}'.format(epoch, self.epoch_val_loss))
+    #         if ('early_stop_epochs' in self.config['train_parameters'].keys() and 
+    #             early_stop_counter == self.config['train_parameters']['early_stop_epochs']):
+    #             print('Validation loss has not improved for the last {} epochs! Stopping training.'.format(early_stop_counter))
+    #             break
+        
+    #     if plot:
+    #         plt.figure()
+    #         if plot == 'log':
+    #             plt.plot(np.log(train_loss_list), label='train')
+    #             if len(self.val_loader) != 0:
+    #                 plt.plot(np.log(val_loss_list), label='validation')
+    #         else:
+    #             plt.plot(train_loss_list, label='train')
+    #             if len(self.val_loader) != 0:
+    #                 plt.plot(val_loss_list, label='validation')
+    #         plt.legend(loc='upper left')
+    #         plt.ylabel('Loss')
+    #         plt.xlabel('Epochs')
+    #         plt.savefig(os.path.join(self.config['output_dir'], 'train_loss.png'))
+    #         plt.show()
+
     def eval(self, param, bins=10, plot=True, data=None, get_feature=None):
         """
         Evaluates the trained SddrNet for a specific distribution parameter.

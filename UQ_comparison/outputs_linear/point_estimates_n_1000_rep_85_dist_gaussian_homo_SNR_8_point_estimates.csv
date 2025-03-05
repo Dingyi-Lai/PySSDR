@@ -1,5 +1,0 @@
-scenario_index,param_y,param_eta,value
-n_1000_rep_85_dist_gaussian_homo_SNR_8_point_estimates,loc,Intercept,[-1.1714483]
-n_1000_rep_85_dist_gaussian_homo_SNR_8_point_estimates,loc,X1,[-0.5134573]
-n_1000_rep_85_dist_gaussian_homo_SNR_8_point_estimates,loc,X2,[-0.04233349]
-n_1000_rep_85_dist_gaussian_homo_SNR_8_point_estimates,scale,Intercept,[0.7721872]
