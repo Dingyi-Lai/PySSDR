@@ -69,7 +69,7 @@ def generate_linear_effects(n_samples, I, K, alpha, random_state=None):
     linear_effects = np.zeros((I, n_samples, K))
     
     for i in range(I):
-        X_scaled[i] = scale_to_range(X[i], -1, 1)
+        X_scaled[i] = scale_to_range(X[i])
         for k in range(K):
             linear_effects[i, :, k] = alpha[k][i] * X_scaled[i]
         
@@ -388,7 +388,7 @@ def scenarios_generate(n_list,
 
     # Decide on the folder to store data
     if compute_type == 'parallel':
-        save_path = os.path.join(os.environ["TMPDIR"], "output_structured[-1_1]")  # or another path
+        save_path = os.path.join(os.environ["TMPDIR"], "output_structured[0_1]")  # or another path
         # save_path = "../data_generation/output_structured[-1_1]"
     else:
         save_path = "../data_generation/output_structured[-1_1]"
