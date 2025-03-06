@@ -26,4 +26,4 @@ cd $SLURM_SUBMIT_DIR
 python training_wo_unstructured.py
 
 # Copy results from TMPDIR to home after job finishes
-cp -rf $TMPDIR/outputs_linear_batch_32_original ~/PySSDR/UQ_comparison
+cp -rf $TMPDIR/outputs_structured_nknots_6_batch_32_original ~/PySSDR/UQ_comparison

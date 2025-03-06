@@ -1,0 +1,4822 @@
+Number of cores: 152
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 58674.679615
+Train Epoch: 0 	 Validation Loss: 63372.595313
+Train Epoch: 0 	 Training Loss: 2.233169
+Train Epoch: 0 	 Validation Loss: 2.325967
+Train Epoch: 10 	 Training Loss: 36725.651403
+Train Epoch: 10 	 Training Loss: 2.182899
+Train Epoch: 10 	 Validation Loss: 2.299671
+Train Epoch: 10 	 Validation Loss: 39911.664062
+Train Epoch: 20 	 Training Loss: 25173.519604
+Train Epoch: 20 	 Validation Loss: 27454.557812
+Train Epoch: 20 	 Training Loss: 2.150813
+Train Epoch: 20 	 Validation Loss: 2.279457
+Train Epoch: 30 	 Training Loss: 2.129784
+Train Epoch: 30 	 Validation Loss: 2.265304
+Train Epoch: 30 	 Training Loss: 18286.601020
+Train Epoch: 30 	 Validation Loss: 19991.982031
+Train Epoch: 40 	 Training Loss: 13833.250470
+Train Epoch: 40 	 Validation Loss: 15149.800586
+Train Epoch: 40 	 Training Loss: 2.116492
+Train Epoch: 40 	 Validation Loss: 2.255925
+Train Epoch: 50 	 Training Loss: 10779.217828
+Train Epoch: 50 	 Validation Loss: 11820.616113
+Train Epoch: 50 	 Training Loss: 2.108241
+Train Epoch: 50 	 Validation Loss: 2.249764
+Train Epoch: 60 	 Training Loss: 8589.872125
+Train Epoch: 60 	 Validation Loss: 9429.320020
+Train Epoch: 60 	 Training Loss: 2.103100
+Train Epoch: 60 	 Validation Loss: 2.245694
+Train Epoch: 70 	 Training Loss: 6965.347313
+Train Epoch: 70 	 Validation Loss: 7652.178320
+Train Epoch: 70 	 Training Loss: 2.099833
+Train Epoch: 70 	 Validation Loss: 2.242986
+Train Epoch: 80 	 Training Loss: 5726.416178
+Train Epoch: 80 	 Validation Loss: 6295.143750
+Train Epoch: 80 	 Training Loss: 2.097699
+Train Epoch: 80 	 Validation Loss: 2.241179
+Train Epoch: 90 	 Training Loss: 4760.347078
+Train Epoch: 90 	 Validation Loss: 5235.889600
+Train Epoch: 90 	 Training Loss: 2.096263
+Train Epoch: 90 	 Validation Loss: 2.239977
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2681.847647
+Train Epoch: 0 	 Validation Loss: 2753.604956
+Train Epoch: 0 	 Training Loss: 5.591460
+Train Epoch: 0 	 Validation Loss: 5.295062
+Train Epoch: 10 	 Training Loss: 1672.291653
+Train Epoch: 10 	 Validation Loss: 1727.129321
+Train Epoch: 10 	 Training Loss: 3.684434
+Train Epoch: 10 	 Validation Loss: 3.557011
+Train Epoch: 20 	 Training Loss: 2.911278
+Train Epoch: 20 	 Validation Loss: 2.852812
+Train Epoch: 20 	 Training Loss: 1141.459565
+Train Epoch: 20 	 Validation Loss: 1183.374573
+Train Epoch: 30 	 Training Loss: 826.978692
+Train Epoch: 30 	 Training Loss: 2.540004
+Train Epoch: 30 	 Validation Loss: 859.551660
+Train Epoch: 30 	 Validation Loss: 2.515005
+Train Epoch: 40 	 Training Loss: 2.343437
+Train Epoch: 40 	 Validation Loss: 2.336608
+Train Epoch: 40 	 Training Loss: 624.629391
+Train Epoch: 40 	 Validation Loss: 650.417627
+Train Epoch: 50 	 Training Loss: 486.404921
+Train Epoch: 50 	 Validation Loss: 507.164404
+Train Epoch: 50 	 Training Loss: 2.233424
+Train Epoch: 50 	 Validation Loss: 2.237270
+Train Epoch: 60 	 Training Loss: 2.170023
+Train Epoch: 60 	 Validation Loss: 2.180566
+Train Epoch: 60 	 Training Loss: 387.629917
+Train Epoch: 60 	 Validation Loss: 404.578699
+Train Epoch: 70 	 Training Loss: 2.133043
+Train Epoch: 70 	 Validation Loss: 2.148062
+Train Epoch: 70 	 Training Loss: 314.532687
+Train Epoch: 70 	 Validation Loss: 328.533807
+Train Epoch: 80 	 Training Loss: 258.913511
+Train Epoch: 80 	 Validation Loss: 270.593622
+Train Epoch: 80 	 Training Loss: 2.111446
+Train Epoch: 80 	 Validation Loss: 2.129672
+Train Epoch: 90 	 Training Loss: 215.632696
+Train Epoch: 90 	 Validation Loss: 225.457040
+Train Epoch: 90 	 Training Loss: 2.098870
+Train Epoch: 90 	 Validation Loss: 2.119574
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.250487
+Train Epoch: 0 	 Validation Loss: 2.214024
+Train Epoch: 0 	 Training Loss: 5.388981
+Train Epoch: 0 	 Validation Loss: 6.048713
+Train Epoch: 10 	 Training Loss: 2.194023
+Train Epoch: 10 	 Validation Loss: 2.170715
+Train Epoch: 10 	 Training Loss: 3.617178
+Train Epoch: 10 	 Validation Loss: 4.018961
+Train Epoch: 20 	 Training Loss: 2.158045
+Train Epoch: 20 	 Validation Loss: 2.147596
+Train Epoch: 20 	 Training Loss: 2.885619
+Train Epoch: 20 	 Validation Loss: 3.161485
+Train Epoch: 30 	 Training Loss: 2.135142
+Train Epoch: 30 	 Validation Loss: 2.134435
+Train Epoch: 30 	 Training Loss: 2.530561
+Train Epoch: 30 	 Validation Loss: 2.735392
+Train Epoch: 40 	 Training Loss: 2.120785
+Train Epoch: 40 	 Validation Loss: 2.126769
+Train Epoch: 40 	 Training Loss: 2.341456
+Train Epoch: 40 	 Validation Loss: 2.502377
+Train Epoch: 50 	 Training Loss: 2.111856
+Train Epoch: 50 	 Validation Loss: 2.122244
+Train Epoch: 50 	 Training Loss: 2.235391
+Train Epoch: 50 	 Validation Loss: 2.367393
+Train Epoch: 60 	 Training Loss: 2.106328
+Train Epoch: 60 	 Validation Loss: 2.119581
+Train Epoch: 60 	 Training Loss: 2.174332
+Train Epoch: 60 	 Validation Loss: 2.286426
+Train Epoch: 70 	 Training Loss: 2.102899
+Train Epoch: 70 	 Validation Loss: 2.118031
+Train Epoch: 70 	 Training Loss: 2.138863
+Train Epoch: 70 	 Validation Loss: 2.236832
+Train Epoch: 80 	 Training Loss: 2.100751
+Train Epoch: 80 	 Validation Loss: 2.117139
+Train Epoch: 80 	 Training Loss: 2.118298
+Train Epoch: 80 	 Validation Loss: 2.206055
+Train Epoch: 90 	 Training Loss: 2.099378
+Train Epoch: 90 	 Validation Loss: 2.116632
+Train Epoch: 90 	 Training Loss: 2.106450
+Train Epoch: 90 	 Validation Loss: 2.186759
+Using device: cpu
+Using device: cpu
+9
+9
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.344166
+Train Epoch: 0 	 Validation Loss: 2.299061
+9
+9
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 11.290520
+Train Epoch: 0 	 Validation Loss: 10.554320
+Train Epoch: 10 	 Training Loss: 2.306352
+Train Epoch: 10 	 Validation Loss: 2.259592
+Train Epoch: 10 	 Training Loss: 7.023854
+Train Epoch: 10 	 Validation Loss: 6.608320
+Train Epoch: 20 	 Training Loss: 2.278373
+Train Epoch: 20 	 Validation Loss: 2.228625
+Train Epoch: 20 	 Training Loss: 5.067876
+Train Epoch: 20 	 Validation Loss: 4.793506
+Train Epoch: 30 	 Training Loss: 2.258317
+Train Epoch: 30 	 Validation Loss: 2.206492
+Train Epoch: 30 	 Training Loss: 4.017286
+Train Epoch: 30 	 Validation Loss: 3.819782
+Train Epoch: 40 	 Training Loss: 2.244503
+Train Epoch: 40 	 Validation Loss: 2.191354
+Train Epoch: 40 	 Training Loss: 3.396462
+Train Epoch: 40 	 Validation Loss: 3.246229
+Train Epoch: 50 	 Training Loss: 2.235252
+Train Epoch: 50 	 Validation Loss: 2.181302
+Train Epoch: 50 	 Training Loss: 3.006251
+Train Epoch: 50 	 Validation Loss: 2.887453
+Train Epoch: 60 	 Training Loss: 2.229156
+Train Epoch: 60 	 Validation Loss: 2.174740
+Train Epoch: 60 	 Training Loss: 2.750748
+Train Epoch: 60 	 Validation Loss: 2.654011
+Train Epoch: 70 	 Training Loss: 2.225158
+Train Epoch: 70 	 Validation Loss: 2.170486
+Train Epoch: 70 	 Training Loss: 2.578906
+Train Epoch: 70 	 Validation Loss: 2.498261
+Train Epoch: 80 	 Training Loss: 2.222524
+Train Epoch: 80 	 Validation Loss: 2.167727
+Train Epoch: 80 	 Training Loss: 2.461420
+Train Epoch: 80 	 Validation Loss: 2.392854
+Train Epoch: 90 	 Training Loss: 2.220768
+Train Epoch: 90 	 Validation Loss: 2.165931
+Train Epoch: 90 	 Training Loss: 2.380439
+Train Epoch: 90 	 Validation Loss: 2.321133
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.321792
+Beginning training ...
+Train Epoch: 0 	 Validation Loss: 2.379613
+Train Epoch: 0 	 Training Loss: 3.366978
+Train Epoch: 0 	 Validation Loss: 3.193469
+Train Epoch: 10 	 Training Loss: 2.273795
+Train Epoch: 10 	 Validation Loss: 2.312124
+Train Epoch: 10 	 Training Loss: 2.642117
+Train Epoch: 10 	 Validation Loss: 2.542895
+Train Epoch: 20 	 Training Loss: 2.387534
+Train Epoch: 20 	 Validation Loss: 2.317776
+Train Epoch: 20 	 Training Loss: 2.240169
+Train Epoch: 20 	 Validation Loss: 2.262166
+Train Epoch: 30 	 Training Loss: 2.285481
+Train Epoch: 30 	 Validation Loss: 2.229949
+Train Epoch: 30 	 Training Loss: 2.218180
+Train Epoch: 30 	 Validation Loss: 2.227800
+Train Epoch: 40 	 Training Loss: 2.241103
+Train Epoch: 40 	 Validation Loss: 2.193209
+Train Epoch: 40 	 Training Loss: 2.204057
+Train Epoch: 40 	 Validation Loss: 2.205328
+Train Epoch: 50 	 Training Loss: 2.220098
+Train Epoch: 50 	 Validation Loss: 2.176532
+Train Epoch: 50 	 Training Loss: 2.194841
+Train Epoch: 50 	 Validation Loss: 2.190904
+Train Epoch: 60 	 Training Loss: 2.208773
+Train Epoch: 60 	 Validation Loss: 2.167751
+Train Epoch: 60 	 Training Loss: 2.188663
+Train Epoch: 60 	 Validation Loss: 2.181624
+Train Epoch: 70 	 Training Loss: 2.201546
+Train Epoch: 70 	 Validation Loss: 2.162118
+Train Epoch: 70 	 Training Loss: 2.184409
+Train Epoch: 70 	 Validation Loss: 2.175581
+Train Epoch: 80 	 Training Loss: 2.181409
+Train Epoch: 80 	 Validation Loss: 2.171581
+Train Epoch: 80 	 Training Loss: 2.196236
+Train Epoch: 80 	 Validation Loss: 2.157945
+Train Epoch: 90 	 Training Loss: 2.179246
+Train Epoch: 90 	 Validation Loss: 2.168890
+Train Epoch: 90 	 Training Loss: 2.192040
+Train Epoch: 90 	 Validation Loss: 2.154721
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.215720
+Train Epoch: 0 	 Validation Loss: 2.190132
+Train Epoch: 0 	 Training Loss: 5.097058
+Train Epoch: 0 	 Validation Loss: 5.321375
+Train Epoch: 10 	 Training Loss: 2.146003
+Train Epoch: 10 	 Validation Loss: 2.114727
+Train Epoch: 10 	 Training Loss: 3.405953
+Train Epoch: 10 	 Validation Loss: 3.509835
+Train Epoch: 20 	 Training Loss: 2.103489
+Train Epoch: 20 	 Validation Loss: 2.069081
+Train Epoch: 20 	 Training Loss: 2.732190
+Train Epoch: 20 	 Validation Loss: 2.788591
+Train Epoch: 30 	 Training Loss: 2.076911
+Train Epoch: 30 	 Validation Loss: 2.040911
+Train Epoch: 30 	 Training Loss: 2.412575
+Train Epoch: 30 	 Validation Loss: 2.447414
+Train Epoch: 40 	 Training Loss: 2.060326
+Train Epoch: 40 	 Validation Loss: 2.023672
+Train Epoch: 40 	 Training Loss: 2.245891
+Train Epoch: 40 	 Validation Loss: 2.269788
+Train Epoch: 50 	 Training Loss: 2.049902
+Train Epoch: 50 	 Validation Loss: 2.013292
+Train Epoch: 50 	 Training Loss: 2.154292
+Train Epoch: 50 	 Validation Loss: 2.172139
+Train Epoch: 60 	 Training Loss: 2.043233
+Train Epoch: 60 	 Validation Loss: 2.007167
+Train Epoch: 60 	 Training Loss: 2.102572
+Train Epoch: 60 	 Validation Loss: 2.116846
+Train Epoch: 70 	 Training Loss: 2.038852
+Train Epoch: 70 	 Validation Loss: 2.003641
+Train Epoch: 70 	 Training Loss: 2.073005
+Train Epoch: 70 	 Validation Loss: 2.085065
+Train Epoch: 80 	 Training Loss: 2.035887
+Train Epoch: 80 	 Validation Loss: 2.001685
+Train Epoch: 80 	 Training Loss: 2.055987
+Train Epoch: 80 	 Validation Loss: 2.066636
+Train Epoch: 90 	 Training Loss: 2.033821
+Train Epoch: 90 	 Validation Loss: 2.000670
+Train Epoch: 90 	 Training Loss: 2.046076
+Train Epoch: 90 	 Validation Loss: 2.055819
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 5.758856
+Train Epoch: 0 	 Validation Loss: 5.512186
+Train Epoch: 0 	 Training Loss: 2.277545
+Train Epoch: 0 	 Validation Loss: 2.130052
+Train Epoch: 10 	 Training Loss: 2.222342
+Train Epoch: 10 	 Validation Loss: 2.070737
+Train Epoch: 10 	 Training Loss: 3.798160
+Train Epoch: 10 	 Validation Loss: 3.694283
+Train Epoch: 20 	 Training Loss: 2.993492
+Train Epoch: 20 	 Validation Loss: 2.939718
+Train Epoch: 20 	 Training Loss: 2.185984
+Train Epoch: 20 	 Validation Loss: 2.033228
+Train Epoch: 30 	 Training Loss: 2.162887
+Train Epoch: 30 	 Validation Loss: 2.009771
+Train Epoch: 30 	 Training Loss: 2.603172
+Train Epoch: 30 	 Validation Loss: 2.571100
+Train Epoch: 40 	 Training Loss: 2.394448
+Train Epoch: 40 	 Validation Loss: 2.373287
+Train Epoch: 40 	 Training Loss: 2.148374
+Train Epoch: 40 	 Validation Loss: 1.995301
+Train Epoch: 50 	 Training Loss: 2.276471
+Train Epoch: 50 	 Validation Loss: 2.261370
+Train Epoch: 50 	 Training Loss: 2.139358
+Train Epoch: 50 	 Validation Loss: 1.986669
+Train Epoch: 60 	 Training Loss: 2.207815
+Train Epoch: 60 	 Validation Loss: 2.196320
+Train Epoch: 60 	 Training Loss: 2.133821
+Train Epoch: 60 	 Validation Loss: 1.981759
+Train Epoch: 70 	 Training Loss: 2.167398
+Train Epoch: 70 	 Validation Loss: 2.158150
+Train Epoch: 70 	 Training Loss: 2.130438
+Train Epoch: 70 	 Validation Loss: 1.979119
+Train Epoch: 80 	 Training Loss: 2.128365
+Train Epoch: 80 	 Validation Loss: 1.977798
+Train Epoch: 80 	 Training Loss: 2.143610
+Train Epoch: 80 	 Validation Loss: 2.135808
+Train Epoch: 90 	 Training Loss: 2.127079
+Train Epoch: 90 	 Validation Loss: 1.977209
+Train Epoch: 90 	 Training Loss: 2.129700
+Train Epoch: 90 	 Validation Loss: 2.122848
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 4.851094
+Train Epoch: 0 	 Validation Loss: 5.046420
+Train Epoch: 0 	 Training Loss: 2.188987
+Train Epoch: 0 	 Validation Loss: 2.176073
+Train Epoch: 10 	 Training Loss: 2.118037
+Train Epoch: 10 	 Training Loss: 3.271749
+Train Epoch: 10 	 Validation Loss: 3.488488
+Train Epoch: 10 	 Validation Loss: 2.111473
+Train Epoch: 20 	 Training Loss: 2.080843
+Train Epoch: 20 	 Validation Loss: 2.081443
+Train Epoch: 20 	 Training Loss: 2.647294
+Train Epoch: 20 	 Validation Loss: 2.841294
+Train Epoch: 30 	 Training Loss: 2.059127
+Train Epoch: 30 	 Training Loss: 2.354025
+Train Epoch: 30 	 Validation Loss: 2.523783
+Train Epoch: 30 	 Validation Loss: 2.065996
+Train Epoch: 40 	 Training Loss: 2.046401
+Train Epoch: 40 	 Validation Loss: 2.058141
+Train Epoch: 40 	 Training Loss: 2.203163
+Train Epoch: 40 	 Validation Loss: 2.353005
+Train Epoch: 50 	 Training Loss: 2.039019
+Train Epoch: 50 	 Validation Loss: 2.054306
+Train Epoch: 50 	 Training Loss: 2.121718
+Train Epoch: 50 	 Validation Loss: 2.256147
+Train Epoch: 60 	 Training Loss: 2.076779
+Train Epoch: 60 	 Validation Loss: 2.199543
+Train Epoch: 60 	 Training Loss: 2.034768
+Train Epoch: 60 	 Validation Loss: 2.052523
+Train Epoch: 70 	 Training Loss: 2.032309
+Train Epoch: 70 	 Validation Loss: 2.051724
+Train Epoch: 70 	 Training Loss: 2.051858
+Train Epoch: 70 	 Validation Loss: 2.165931
+Train Epoch: 80 	 Training Loss: 2.030857
+Train Epoch: 80 	 Validation Loss: 2.051364
+Train Epoch: 80 	 Training Loss: 2.038096
+Train Epoch: 80 	 Validation Loss: 2.145819
+Train Epoch: 90 	 Training Loss: 2.029967
+Train Epoch: 90 	 Validation Loss: 2.051187
+Train Epoch: 90 	 Training Loss: 2.030527
+Train Epoch: 90 	 Validation Loss: 2.133744
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.212106
+Train Epoch: 0 	 Validation Loss: 2.192772
+Train Epoch: 0 	 Training Loss: 47659.523076
+Train Epoch: 0 	 Validation Loss: 53487.066406
+Train Epoch: 10 	 Training Loss: 2.161209
+Train Epoch: 10 	 Validation Loss: 2.137658
+Train Epoch: 10 	 Training Loss: 29887.017723
+Train Epoch: 10 	 Validation Loss: 33741.012891
+Train Epoch: 20 	 Training Loss: 2.132824
+Train Epoch: 20 	 Validation Loss: 2.105603
+Train Epoch: 20 	 Training Loss: 20481.085720
+Train Epoch: 20 	 Validation Loss: 23207.881641
+Train Epoch: 30 	 Training Loss: 2.115079
+Train Epoch: 30 	 Validation Loss: 2.084915
+Train Epoch: 30 	 Training Loss: 14873.560294
+Train Epoch: 30 	 Validation Loss: 16896.529297
+Train Epoch: 40 	 Training Loss: 2.104118
+Train Epoch: 40 	 Validation Loss: 2.071642
+Train Epoch: 40 	 Training Loss: 11248.570819
+Train Epoch: 40 	 Validation Loss: 12801.845703
+Train Epoch: 50 	 Training Loss: 2.097371
+Train Epoch: 50 	 Validation Loss: 2.063166
+Train Epoch: 50 	 Training Loss: 8763.363209
+Train Epoch: 50 	 Validation Loss: 9987.098047
+Train Epoch: 60 	 Training Loss: 2.093142
+Train Epoch: 60 	 Validation Loss: 2.057689
+Train Epoch: 60 	 Training Loss: 6982.267551
+Train Epoch: 60 	 Validation Loss: 7965.660840
+Train Epoch: 70 	 Training Loss: 2.090398
+Train Epoch: 70 	 Validation Loss: 2.054054
+Train Epoch: 70 	 Training Loss: 5660.993010
+Train Epoch: 70 	 Validation Loss: 6463.647754
+Train Epoch: 80 	 Training Loss: 2.088545
+Train Epoch: 80 	 Validation Loss: 2.051562
+Train Epoch: 80 	 Training Loss: 4653.539117
+Train Epoch: 80 	 Validation Loss: 5316.871582
+Train Epoch: 90 	 Training Loss: 2.087245
+Train Epoch: 90 	 Validation Loss: 2.049795
+Train Epoch: 90 	 Training Loss: 3868.114882
+Train Epoch: 90 	 Validation Loss: 4421.866504
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 5.291334
+Train Epoch: 0 	 Validation Loss: 4.991584
+Train Epoch: 0 	 Training Loss: 7.774321
+Train Epoch: 0 	 Validation Loss: 7.542943
+Train Epoch: 10 	 Training Loss: 3.561557
+Train Epoch: 10 	 Validation Loss: 3.402806
+Train Epoch: 10 	 Training Loss: 4.763057
+Train Epoch: 10 	 Validation Loss: 4.735912
+Train Epoch: 20 	 Training Loss: 2.855163
+Train Epoch: 20 	 Validation Loss: 2.748633
+Train Epoch: 20 	 Training Loss: 3.534694
+Train Epoch: 20 	 Validation Loss: 3.560561
+Train Epoch: 30 	 Training Loss: 2.512046
+Train Epoch: 30 	 Validation Loss: 2.431190
+Train Epoch: 30 	 Training Loss: 2.927511
+Train Epoch: 30 	 Validation Loss: 2.968972
+Train Epoch: 40 	 Training Loss: 2.592307
+Train Epoch: 40 	 Validation Loss: 2.637569
+Train Epoch: 40 	 Training Loss: 2.329061
+Train Epoch: 40 	 Validation Loss: 2.263094
+Train Epoch: 50 	 Training Loss: 2.226398
+Train Epoch: 50 	 Validation Loss: 2.169933
+Train Epoch: 50 	 Training Loss: 2.394364
+Train Epoch: 50 	 Validation Loss: 2.439348
+Train Epoch: 60 	 Training Loss: 2.167353
+Train Epoch: 60 	 Validation Loss: 2.117284
+Train Epoch: 60 	 Training Loss: 2.272666
+Train Epoch: 60 	 Validation Loss: 2.315996
+Train Epoch: 70 	 Training Loss: 2.133118
+Train Epoch: 70 	 Validation Loss: 2.087465
+Train Epoch: 70 	 Training Loss: 2.196194
+Train Epoch: 70 	 Validation Loss: 2.237531
+Train Epoch: 80 	 Training Loss: 2.113307
+Train Epoch: 80 	 Validation Loss: 2.070714
+Train Epoch: 80 	 Training Loss: 2.147753
+Train Epoch: 80 	 Validation Loss: 2.187176
+Train Epoch: 90 	 Training Loss: 2.101904
+Train Epoch: 90 	 Validation Loss: 2.061396
+Train Epoch: 90 	 Training Loss: 2.117156
+Train Epoch: 90 	 Validation Loss: 2.154910
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 5.052931
+Train Epoch: 0 	 Validation Loss: 5.981483
+Train Epoch: 0 	 Training Loss: 2.206548
+Train Epoch: 0 	 Validation Loss: 2.255260
+Train Epoch: 10 	 Training Loss: 3.379811
+Train Epoch: 10 	 Validation Loss: 4.049088
+Train Epoch: 10 	 Training Loss: 2.137055
+Train Epoch: 10 	 Validation Loss: 2.196692
+Train Epoch: 20 	 Training Loss: 2.712803
+Train Epoch: 20 	 Validation Loss: 3.222369
+Train Epoch: 20 	 Training Loss: 2.098842
+Train Epoch: 20 	 Validation Loss: 2.161051
+Train Epoch: 30 	 Training Loss: 2.076151
+Train Epoch: 30 	 Validation Loss: 2.139761
+Train Epoch: 30 	 Training Loss: 2.398745
+Train Epoch: 30 	 Validation Loss: 2.806139
+Train Epoch: 40 	 Training Loss: 2.062540
+Train Epoch: 40 	 Validation Loss: 2.127486
+Train Epoch: 40 	 Training Loss: 2.236098
+Train Epoch: 40 	 Validation Loss: 2.575206
+Train Epoch: 50 	 Training Loss: 2.054360
+Train Epoch: 50 	 Validation Loss: 2.120600
+Train Epoch: 50 	 Training Loss: 2.147374
+Train Epoch: 50 	 Validation Loss: 2.439269
+Train Epoch: 60 	 Training Loss: 2.049399
+Train Epoch: 60 	 Validation Loss: 2.116869
+Train Epoch: 60 	 Training Loss: 2.097728
+Train Epoch: 60 	 Validation Loss: 2.356250
+Train Epoch: 70 	 Training Loss: 2.046325
+Train Epoch: 70 	 Validation Loss: 2.114956
+Train Epoch: 70 	 Training Loss: 2.069687
+Train Epoch: 70 	 Validation Loss: 2.304382
+Train Epoch: 80 	 Training Loss: 2.044362
+Train Epoch: 80 	 Validation Loss: 2.114083
+Train Epoch: 80 	 Training Loss: 2.053822
+Train Epoch: 80 	 Validation Loss: 2.271541
+Train Epoch: 90 	 Training Loss: 2.043063
+Train Epoch: 90 	 Validation Loss: 2.113796
+Train Epoch: 90 	 Training Loss: 2.044804
+Train Epoch: 90 	 Validation Loss: 2.250624
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 68817.563802
+Train Epoch: 0 	 Validation Loss: 63334.501563
+Train Epoch: 0 	 Training Loss: 2.247589
+Train Epoch: 0 	 Validation Loss: 2.128614
+Train Epoch: 10 	 Training Loss: 2.200323
+Train Epoch: 10 	 Validation Loss: 2.070720
+Train Epoch: 10 	 Training Loss: 43399.387659
+Train Epoch: 10 	 Validation Loss: 40148.731641
+Train Epoch: 20 	 Training Loss: 29818.703414
+Train Epoch: 20 	 Validation Loss: 27683.871875
+Train Epoch: 20 	 Training Loss: 2.167738
+Train Epoch: 20 	 Validation Loss: 2.038424
+Train Epoch: 30 	 Training Loss: 21692.753725
+Train Epoch: 30 	 Validation Loss: 20188.984180
+Train Epoch: 30 	 Training Loss: 2.144807
+Train Epoch: 30 	 Validation Loss: 2.018805
+Train Epoch: 40 	 Training Loss: 16426.733181
+Train Epoch: 40 	 Validation Loss: 15314.978906
+Train Epoch: 40 	 Training Loss: 2.129218
+Train Epoch: 40 	 Validation Loss: 2.007517
+Train Epoch: 50 	 Training Loss: 12809.933666
+Train Epoch: 50 	 Validation Loss: 11958.728906
+Train Epoch: 50 	 Training Loss: 2.118906
+Train Epoch: 50 	 Validation Loss: 2.001580
+Train Epoch: 60 	 Training Loss: 10214.237504
+Train Epoch: 60 	 Validation Loss: 9545.213086
+Train Epoch: 60 	 Training Loss: 2.112183
+Train Epoch: 60 	 Validation Loss: 1.998826
+Train Epoch: 70 	 Training Loss: 8286.509494
+Train Epoch: 70 	 Validation Loss: 7749.958203
+Train Epoch: 70 	 Training Loss: 2.107807
+Train Epoch: 70 	 Validation Loss: 1.997819
+Train Epoch: 80 	 Training Loss: 6815.309516
+Train Epoch: 80 	 Validation Loss: 6378.121973
+Train Epoch: 80 	 Training Loss: 2.104934
+Train Epoch: 80 	 Validation Loss: 1.997698
+Train Epoch: 90 	 Training Loss: 5667.455087
+Train Epoch: 90 	 Validation Loss: 5306.684912
+Train Epoch: 90 	 Training Loss: 2.103019
+Train Epoch: 90 	 Validation Loss: 1.997986
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.282394
+Train Epoch: 0 	 Validation Loss: 2.160154
+Train Epoch: 0 	 Training Loss: 5.684648
+Train Epoch: 0 	 Validation Loss: 5.585969
+Train Epoch: 10 	 Training Loss: 3.807143
+Train Epoch: 10 	 Training Loss: 2.235330
+Train Epoch: 10 	 Validation Loss: 2.117740
+Train Epoch: 10 	 Validation Loss: 3.788305
+Train Epoch: 20 	 Training Loss: 3.019598
+Train Epoch: 20 	 Validation Loss: 3.027869
+Train Epoch: 20 	 Training Loss: 2.202413
+Train Epoch: 20 	 Validation Loss: 2.091432
+Train Epoch: 30 	 Training Loss: 2.630062
+Train Epoch: 30 	 Validation Loss: 2.649515
+Train Epoch: 30 	 Training Loss: 2.179926
+Train Epoch: 30 	 Validation Loss: 2.074985
+Train Epoch: 40 	 Training Loss: 2.419193
+Train Epoch: 40 	 Validation Loss: 2.443666
+Train Epoch: 40 	 Training Loss: 2.164983
+Train Epoch: 40 	 Validation Loss: 2.065359
+Train Epoch: 50 	 Training Loss: 2.155282
+Train Epoch: 50 	 Validation Loss: 2.060287
+Train Epoch: 50 	 Training Loss: 2.299076
+Train Epoch: 50 	 Validation Loss: 2.325899
+Train Epoch: 60 	 Training Loss: 2.149063
+Train Epoch: 60 	 Validation Loss: 2.058056
+Train Epoch: 60 	 Training Loss: 2.228807
+Train Epoch: 60 	 Validation Loss: 2.256778
+Train Epoch: 70 	 Training Loss: 2.145072
+Train Epoch: 70 	 Validation Loss: 2.057475
+Train Epoch: 70 	 Training Loss: 2.187269
+Train Epoch: 70 	 Validation Loss: 2.215872
+Train Epoch: 80 	 Training Loss: 2.142473
+Train Epoch: 80 	 Validation Loss: 2.057784
+Train Epoch: 80 	 Training Loss: 2.162721
+Train Epoch: 80 	 Validation Loss: 2.191785
+Train Epoch: 90 	 Training Loss: 2.140738
+Train Epoch: 90 	 Validation Loss: 2.058530
+Train Epoch: 90 	 Training Loss: 2.148294
+Train Epoch: 90 	 Validation Loss: 2.177829
+Using device: cpu
+Using device: cpu
+9
+9
+Beginning training ...
+9
+9
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.281744
+Train Epoch: 0 	 Validation Loss: 2.232018
+Train Epoch: 0 	 Training Loss: 5.902916
+Train Epoch: 0 	 Validation Loss: 5.970664
+Train Epoch: 10 	 Training Loss: 2.210785
+Train Epoch: 10 	 Validation Loss: 2.175920
+Train Epoch: 10 	 Training Loss: 3.799783
+Train Epoch: 10 	 Validation Loss: 3.884570
+Train Epoch: 20 	 Training Loss: 2.158574
+Train Epoch: 20 	 Validation Loss: 2.138409
+Train Epoch: 20 	 Training Loss: 2.962717
+Train Epoch: 20 	 Validation Loss: 3.039084
+Train Epoch: 30 	 Training Loss: 2.564226
+Train Epoch: 30 	 Validation Loss: 2.630806
+Train Epoch: 30 	 Training Loss: 2.124162
+Train Epoch: 30 	 Validation Loss: 2.116410
+Train Epoch: 40 	 Training Loss: 2.102952
+Train Epoch: 40 	 Training Loss: 2.354215
+Train Epoch: 40 	 Validation Loss: 2.412795
+Train Epoch: 40 	 Validation Loss: 2.104234
+Train Epoch: 50 	 Training Loss: 2.236776
+Train Epoch: 50 	 Validation Loss: 2.289215
+Train Epoch: 50 	 Training Loss: 2.090191
+Train Epoch: 50 	 Validation Loss: 2.097503
+Train Epoch: 60 	 Training Loss: 2.168911
+Train Epoch: 60 	 Validation Loss: 2.216720
+Train Epoch: 60 	 Training Loss: 2.082552
+Train Epoch: 60 	 Validation Loss: 2.093782
+Train Epoch: 70 	 Training Loss: 2.129095
+Train Epoch: 70 	 Validation Loss: 2.173453
+Train Epoch: 70 	 Training Loss: 2.077979
+Train Epoch: 70 	 Validation Loss: 2.091783
+Train Epoch: 80 	 Training Loss: 2.105653
+Train Epoch: 80 	 Validation Loss: 2.147490
+Train Epoch: 80 	 Training Loss: 2.075232
+Train Epoch: 80 	 Validation Loss: 2.090780
+Train Epoch: 90 	 Training Loss: 2.091888
+Train Epoch: 90 	 Validation Loss: 2.131952
+Train Epoch: 90 	 Training Loss: 2.073562
+Train Epoch: 90 	 Validation Loss: 2.090342
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 4058.853050
+Train Epoch: 0 	 Validation Loss: 4099.892432
+Train Epoch: 0 	 Training Loss: 48670.368490
+Train Epoch: 0 	 Validation Loss: 46414.810937
+Train Epoch: 10 	 Training Loss: 2567.519965
+Train Epoch: 10 	 Validation Loss: 2607.678369
+Train Epoch: 10 	 Training Loss: 30418.712963
+Train Epoch: 10 	 Validation Loss: 29172.919531
+Train Epoch: 20 	 Training Loss: 1767.992131
+Train Epoch: 20 	 Validation Loss: 1802.181421
+Train Epoch: 20 	 Training Loss: 20786.525391
+Train Epoch: 20 	 Validation Loss: 20009.972461
+Train Epoch: 30 	 Training Loss: 1288.505367
+Train Epoch: 30 	 Validation Loss: 1316.691492
+Train Epoch: 30 	 Training Loss: 15065.064308
+Train Epoch: 30 	 Validation Loss: 14539.435156
+Train Epoch: 40 	 Training Loss: 977.299529
+Train Epoch: 40 	 Validation Loss: 1000.459985
+Train Epoch: 40 	 Training Loss: 11376.354329
+Train Epoch: 40 	 Validation Loss: 10999.709180
+Train Epoch: 50 	 Training Loss: 763.330261
+Train Epoch: 50 	 Validation Loss: 782.453418
+Train Epoch: 50 	 Training Loss: 8852.632668
+Train Epoch: 50 	 Validation Loss: 8571.390137
+Train Epoch: 60 	 Training Loss: 609.649491
+Train Epoch: 60 	 Validation Loss: 625.550873
+Train Epoch: 60 	 Training Loss: 7046.832529
+Train Epoch: 60 	 Validation Loss: 6830.257617
+Train Epoch: 70 	 Training Loss: 495.451508
+Train Epoch: 70 	 Validation Loss: 508.769177
+Train Epoch: 70 	 Training Loss: 5708.942844
+Train Epoch: 70 	 Validation Loss: 5538.163867
+Train Epoch: 80 	 Training Loss: 408.261767
+Train Epoch: 80 	 Validation Loss: 419.490411
+Train Epoch: 80 	 Training Loss: 4689.915781
+Train Epoch: 80 	 Validation Loss: 4552.720508
+Train Epoch: 90 	 Training Loss: 340.217196
+Train Epoch: 90 	 Validation Loss: 349.741223
+Train Epoch: 90 	 Training Loss: 3896.171830
+Train Epoch: 90 	 Validation Loss: 3784.306787
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.237609
+Train Epoch: 0 	 Validation Loss: 2.226280
+Train Epoch: 0 	 Training Loss: 3.170862
+Train Epoch: 0 	 Validation Loss: 3.147166
+Train Epoch: 10 	 Training Loss: 2.542925
+Train Epoch: 10 	 Validation Loss: 2.524406
+Train Epoch: 10 	 Training Loss: 2.191884
+Train Epoch: 10 	 Validation Loss: 2.185175
+Train Epoch: 20 	 Training Loss: 2.308898
+Train Epoch: 20 	 Validation Loss: 2.290398
+Train Epoch: 20 	 Training Loss: 2.163008
+Train Epoch: 20 	 Validation Loss: 2.161490
+Train Epoch: 30 	 Training Loss: 2.143395
+Train Epoch: 30 	 Validation Loss: 2.147354
+Train Epoch: 30 	 Training Loss: 2.211888
+Train Epoch: 30 	 Validation Loss: 2.192524
+Train Epoch: 40 	 Training Loss: 2.130366
+Train Epoch: 40 	 Validation Loss: 2.139714
+Train Epoch: 40 	 Training Loss: 2.169507
+Train Epoch: 40 	 Validation Loss: 2.148909
+Train Epoch: 50 	 Training Loss: 2.121763
+Train Epoch: 50 	 Validation Loss: 2.136175
+Train Epoch: 50 	 Training Loss: 2.150166
+Train Epoch: 50 	 Validation Loss: 2.128051
+Train Epoch: 60 	 Training Loss: 2.116023
+Train Epoch: 60 	 Validation Loss: 2.135064
+Train Epoch: 60 	 Training Loss: 2.140615
+Train Epoch: 60 	 Validation Loss: 2.116758
+Train Epoch: 70 	 Training Loss: 2.135182
+Train Epoch: 70 	 Validation Loss: 2.109437
+Train Epoch: 70 	 Training Loss: 2.112114
+Train Epoch: 70 	 Validation Loss: 2.135323
+Train Epoch: 80 	 Training Loss: 2.131531
+Train Epoch: 80 	 Validation Loss: 2.103847
+Train Epoch: 80 	 Training Loss: 2.109390
+Train Epoch: 80 	 Validation Loss: 2.136326
+Train Epoch: 90 	 Training Loss: 2.107452
+Train Epoch: 90 	 Validation Loss: 2.137707
+Train Epoch: 90 	 Training Loss: 2.128775
+Train Epoch: 90 	 Validation Loss: 2.099209
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 5.660414
+Train Epoch: 0 	 Validation Loss: 5.868797
+Train Epoch: 0 	 Training Loss: 3595.361328
+Train Epoch: 0 	 Validation Loss: 2945.326270
+Train Epoch: 10 	 Training Loss: 3.691960
+Train Epoch: 10 	 Validation Loss: 3.961396
+Train Epoch: 10 	 Training Loss: 2280.190109
+Train Epoch: 10 	 Validation Loss: 1877.324072
+Train Epoch: 20 	 Training Loss: 2.905868
+Train Epoch: 20 	 Validation Loss: 3.157811
+Train Epoch: 20 	 Training Loss: 1571.285337
+Train Epoch: 20 	 Validation Loss: 1298.547339
+Train Epoch: 30 	 Training Loss: 2.532401
+Train Epoch: 30 	 Validation Loss: 2.756950
+Train Epoch: 30 	 Training Loss: 1145.708442
+Train Epoch: 30 	 Validation Loss: 949.361218
+Train Epoch: 40 	 Training Loss: 2.336006
+Train Epoch: 40 	 Validation Loss: 2.536003
+Train Epoch: 40 	 Training Loss: 869.330499
+Train Epoch: 40 	 Validation Loss: 721.786743
+Train Epoch: 50 	 Training Loss: 2.226587
+Train Epoch: 50 	 Validation Loss: 2.406764
+Train Epoch: 50 	 Training Loss: 679.228814
+Train Epoch: 50 	 Validation Loss: 564.838019
+Train Epoch: 60 	 Training Loss: 2.163752
+Train Epoch: 60 	 Validation Loss: 2.328499
+Train Epoch: 60 	 Training Loss: 542.650092
+Train Epoch: 60 	 Validation Loss: 451.849146
+Train Epoch: 70 	 Training Loss: 2.127238
+Train Epoch: 70 	 Validation Loss: 2.280229
+Train Epoch: 70 	 Training Loss: 441.137964
+Train Epoch: 70 	 Validation Loss: 367.735828
+Train Epoch: 80 	 Training Loss: 2.106031
+Train Epoch: 80 	 Validation Loss: 2.250272
+Train Epoch: 80 	 Training Loss: 363.619969
+Train Epoch: 80 	 Validation Loss: 303.422046
+Train Epoch: 90 	 Training Loss: 303.115841
+Train Epoch: 90 	 Validation Loss: 253.172443
+Train Epoch: 90 	 Training Loss: 2.093802
+Train Epoch: 90 	 Validation Loss: 2.231747
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 5.537235
+Train Epoch: 0 	 Validation Loss: 5.390974
+Train Epoch: 0 	 Training Loss: 2.244353
+Train Epoch: 0 	 Validation Loss: 2.227228
+Train Epoch: 10 	 Training Loss: 3.668205
+Train Epoch: 10 	 Validation Loss: 3.641101
+Train Epoch: 10 	 Training Loss: 2.184250
+Train Epoch: 10 	 Validation Loss: 2.172722
+Train Epoch: 20 	 Training Loss: 2.907524
+Train Epoch: 20 	 Validation Loss: 2.913238
+Train Epoch: 20 	 Training Loss: 2.145136
+Train Epoch: 20 	 Validation Loss: 2.139820
+Train Epoch: 30 	 Training Loss: 2.540609
+Train Epoch: 30 	 Validation Loss: 2.556971
+Train Epoch: 30 	 Training Loss: 2.120394
+Train Epoch: 30 	 Validation Loss: 2.120437
+Train Epoch: 40 	 Training Loss: 2.345904
+Train Epoch: 40 	 Validation Loss: 2.365919
+Train Epoch: 40 	 Training Loss: 2.105286
+Train Epoch: 40 	 Validation Loss: 2.109350
+Train Epoch: 50 	 Training Loss: 2.096246
+Train Epoch: 50 	 Training Loss: 2.236880
+Train Epoch: 50 	 Validation Loss: 2.258071
+Train Epoch: 50 	 Validation Loss: 2.103035
+Train Epoch: 60 	 Training Loss: 2.090856
+Train Epoch: 60 	 Validation Loss: 2.099358
+Train Epoch: 60 	 Training Loss: 2.174086
+Train Epoch: 60 	 Validation Loss: 2.195563
+Train Epoch: 70 	 Training Loss: 2.087605
+Train Epoch: 70 	 Validation Loss: 2.097126
+Train Epoch: 70 	 Training Loss: 2.137485
+Train Epoch: 70 	 Validation Loss: 2.158983
+Train Epoch: 80 	 Training Loss: 2.085597
+Train Epoch: 80 	 Validation Loss: 2.095700
+Train Epoch: 80 	 Training Loss: 2.116094
+Train Epoch: 80 	 Validation Loss: 2.137620
+Train Epoch: 90 	 Training Loss: 2.084314
+Train Epoch: 90 	 Validation Loss: 2.094742
+Train Epoch: 90 	 Training Loss: 2.103581
+Train Epoch: 90 	 Validation Loss: 2.125263
+Using device: cpu
+Using device: cpu
+9
+9
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.288893
+Train Epoch: 0 	 Validation Loss: 2.253599
+9
+9
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 11.964793
+Train Epoch: 0 	 Validation Loss: 10.287487
+Train Epoch: 10 	 Training Loss: 2.238265
+Train Epoch: 10 	 Validation Loss: 2.210577
+Train Epoch: 10 	 Training Loss: 7.141566
+Train Epoch: 10 	 Validation Loss: 6.243884
+Train Epoch: 20 	 Training Loss: 2.203699
+Train Epoch: 20 	 Validation Loss: 2.181982
+Train Epoch: 20 	 Training Loss: 5.051887
+Train Epoch: 20 	 Validation Loss: 4.486682
+Train Epoch: 30 	 Training Loss: 2.181631
+Train Epoch: 30 	 Validation Loss: 2.164626
+Train Epoch: 30 	 Training Loss: 3.967633
+Train Epoch: 30 	 Validation Loss: 3.575487
+Train Epoch: 40 	 Training Loss: 2.167974
+Train Epoch: 40 	 Validation Loss: 2.154727
+Train Epoch: 40 	 Training Loss: 3.339371
+Train Epoch: 40 	 Validation Loss: 3.049421
+Train Epoch: 50 	 Training Loss: 2.159594
+Train Epoch: 50 	 Validation Loss: 2.149360
+Train Epoch: 50 	 Training Loss: 2.948557
+Train Epoch: 50 	 Validation Loss: 2.724261
+Train Epoch: 60 	 Training Loss: 2.154440
+Train Epoch: 60 	 Validation Loss: 2.146596
+Train Epoch: 60 	 Training Loss: 2.693839
+Train Epoch: 60 	 Validation Loss: 2.514302
+Train Epoch: 70 	 Training Loss: 2.151242
+Train Epoch: 70 	 Validation Loss: 2.145259
+Train Epoch: 70 	 Training Loss: 2.522706
+Train Epoch: 70 	 Validation Loss: 2.375039
+Train Epoch: 80 	 Training Loss: 2.149225
+Train Epoch: 80 	 Validation Loss: 2.144666
+Train Epoch: 80 	 Training Loss: 2.405573
+Train Epoch: 80 	 Validation Loss: 2.281348
+Train Epoch: 90 	 Training Loss: 2.147918
+Train Epoch: 90 	 Validation Loss: 2.144439
+Train Epoch: 90 	 Training Loss: 2.324641
+Train Epoch: 90 	 Validation Loss: 2.218083
+Using device: cpu
+Using device: cpu
+9
+9
+Beginning training ...
+9
+9
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.244728
+Train Epoch: 0 	 Validation Loss: 2.288555
+Train Epoch: 0 	 Training Loss: 5.636591
+Train Epoch: 0 	 Validation Loss: 5.176170
+Train Epoch: 10 	 Training Loss: 2.185610
+Train Epoch: 10 	 Validation Loss: 2.240522
+Train Epoch: 10 	 Training Loss: 3.737734
+Train Epoch: 10 	 Validation Loss: 3.458017
+Train Epoch: 20 	 Training Loss: 2.146604
+Train Epoch: 20 	 Validation Loss: 2.206077
+Train Epoch: 20 	 Training Loss: 2.955036
+Train Epoch: 20 	 Validation Loss: 2.759481
+Train Epoch: 30 	 Training Loss: 2.574110
+Train Epoch: 30 	 Validation Loss: 2.425799
+Train Epoch: 30 	 Training Loss: 2.119920
+Train Epoch: 30 	 Validation Loss: 2.182114
+Train Epoch: 40 	 Training Loss: 2.102029
+Train Epoch: 40 	 Validation Loss: 2.165864
+Train Epoch: 40 	 Training Loss: 2.370295
+Train Epoch: 40 	 Validation Loss: 2.251477
+Train Epoch: 50 	 Training Loss: 2.090334
+Train Epoch: 50 	 Validation Loss: 2.155070
+Train Epoch: 50 	 Training Loss: 2.255163
+Train Epoch: 50 	 Validation Loss: 2.155979
+Train Epoch: 60 	 Training Loss: 2.082838
+Train Epoch: 60 	 Validation Loss: 2.147992
+Train Epoch: 60 	 Training Loss: 2.188172
+Train Epoch: 60 	 Validation Loss: 2.102600
+Train Epoch: 70 	 Training Loss: 2.148637
+Train Epoch: 70 	 Validation Loss: 2.072741
+Train Epoch: 70 	 Training Loss: 2.078071
+Train Epoch: 70 	 Validation Loss: 2.143372
+Train Epoch: 80 	 Training Loss: 2.125173
+Train Epoch: 80 	 Validation Loss: 2.056246
+Train Epoch: 80 	 Training Loss: 2.075029
+Train Epoch: 80 	 Validation Loss: 2.140351
+Train Epoch: 90 	 Training Loss: 2.111181
+Train Epoch: 90 	 Validation Loss: 2.047292
+Train Epoch: 90 	 Training Loss: 2.073057
+Train Epoch: 90 	 Validation Loss: 2.138371
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 3.433617
+Train Epoch: 0 	 Training Loss: 2.305740
+Train Epoch: 0 	 Validation Loss: 2.196861
+Train Epoch: 0 	 Validation Loss: 3.367483
+Train Epoch: 10 	 Training Loss: 2.263935
+Train Epoch: 10 	 Validation Loss: 2.147785
+Train Epoch: 10 	 Training Loss: 2.668687
+Train Epoch: 10 	 Validation Loss: 2.666161
+Train Epoch: 20 	 Training Loss: 2.234914
+Train Epoch: 20 	 Validation Loss: 2.112096
+Train Epoch: 20 	 Training Loss: 2.386305
+Train Epoch: 20 	 Validation Loss: 2.403200
+Train Epoch: 30 	 Training Loss: 2.215479
+Train Epoch: 30 	 Validation Loss: 2.087773
+Train Epoch: 30 	 Training Loss: 2.267286
+Train Epoch: 30 	 Validation Loss: 2.291440
+Train Epoch: 40 	 Training Loss: 2.202946
+Train Epoch: 40 	 Validation Loss: 2.071874
+Train Epoch: 40 	 Training Loss: 2.213792
+Train Epoch: 40 	 Validation Loss: 2.241260
+Train Epoch: 50 	 Training Loss: 2.195127
+Train Epoch: 50 	 Validation Loss: 2.061863
+Train Epoch: 50 	 Training Loss: 2.188687
+Train Epoch: 50 	 Validation Loss: 2.218191
+Train Epoch: 60 	 Training Loss: 2.176185
+Train Epoch: 60 	 Validation Loss: 2.207426
+Train Epoch: 60 	 Training Loss: 2.190344
+Train Epoch: 60 	 Validation Loss: 2.055739
+Train Epoch: 70 	 Training Loss: 2.169276
+Train Epoch: 70 	 Validation Loss: 2.202319
+Train Epoch: 70 	 Training Loss: 2.187421
+Train Epoch: 70 	 Validation Loss: 2.052064
+Train Epoch: 80 	 Training Loss: 2.164894
+Train Epoch: 80 	 Validation Loss: 2.199892
+Train Epoch: 80 	 Training Loss: 2.185601
+Train Epoch: 80 	 Validation Loss: 2.049880
+Train Epoch: 90 	 Training Loss: 2.161768
+Train Epoch: 90 	 Validation Loss: 2.198834
+Train Epoch: 90 	 Training Loss: 2.184428
+Train Epoch: 90 	 Validation Loss: 2.048593
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 71641.842593
+Train Epoch: 0 	 Validation Loss: 63495.325781
+Train Epoch: 0 	 Training Loss: 2.272265
+Train Epoch: 0 	 Validation Loss: 2.153959
+Train Epoch: 10 	 Training Loss: 2.206564
+Train Epoch: 10 	 Validation Loss: 2.079736
+Train Epoch: 10 	 Training Loss: 44934.968461
+Train Epoch: 10 	 Validation Loss: 40050.664062
+Train Epoch: 20 	 Training Loss: 30768.982205
+Train Epoch: 20 	 Validation Loss: 27527.537500
+Train Epoch: 20 	 Training Loss: 2.160510
+Train Epoch: 20 	 Validation Loss: 2.030071
+Train Epoch: 30 	 Training Loss: 22330.566515
+Train Epoch: 30 	 Validation Loss: 20029.486719
+Train Epoch: 30 	 Training Loss: 2.131036
+Train Epoch: 30 	 Validation Loss: 2.000684
+Train Epoch: 40 	 Training Loss: 16879.699472
+Train Epoch: 40 	 Validation Loss: 15168.338477
+Train Epoch: 40 	 Training Loss: 2.113150
+Train Epoch: 40 	 Validation Loss: 1.985364
+Train Epoch: 50 	 Training Loss: 13145.069119
+Train Epoch: 50 	 Validation Loss: 11828.698437
+Train Epoch: 50 	 Training Loss: 2.102456
+Train Epoch: 50 	 Validation Loss: 1.978397
+Train Epoch: 60 	 Training Loss: 10469.911802
+Train Epoch: 60 	 Validation Loss: 9431.477148
+Train Epoch: 60 	 Training Loss: 2.096025
+Train Epoch: 60 	 Validation Loss: 1.975905
+Train Epoch: 70 	 Training Loss: 8486.214717
+Train Epoch: 70 	 Validation Loss: 7650.949609
+Train Epoch: 70 	 Training Loss: 2.092090
+Train Epoch: 70 	 Validation Loss: 1.975616
+Train Epoch: 80 	 Training Loss: 6974.209256
+Train Epoch: 80 	 Validation Loss: 6292.005762
+Train Epoch: 80 	 Training Loss: 2.089620
+Train Epoch: 80 	 Validation Loss: 1.976307
+Train Epoch: 90 	 Training Loss: 5795.770544
+Train Epoch: 90 	 Validation Loss: 5231.716211
+Train Epoch: 90 	 Training Loss: 2.088019
+Train Epoch: 90 	 Validation Loss: 1.977363
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 5.340550
+Train Epoch: 0 	 Validation Loss: 5.598350
+Train Epoch: 0 	 Training Loss: 2.240665
+Train Epoch: 0 	 Validation Loss: 2.215484
+Train Epoch: 10 	 Training Loss: 3.580266
+Train Epoch: 10 	 Validation Loss: 3.788924
+Train Epoch: 10 	 Training Loss: 2.187171
+Train Epoch: 10 	 Validation Loss: 2.159323
+Train Epoch: 20 	 Training Loss: 2.152058
+Train Epoch: 20 	 Validation Loss: 2.122715
+Train Epoch: 20 	 Training Loss: 2.859655
+Train Epoch: 20 	 Validation Loss: 3.023105
+Train Epoch: 30 	 Training Loss: 2.128411
+Train Epoch: 30 	 Validation Loss: 2.097751
+Train Epoch: 30 	 Training Loss: 2.510570
+Train Epoch: 30 	 Validation Loss: 2.641983
+Train Epoch: 40 	 Training Loss: 2.112989
+Train Epoch: 40 	 Validation Loss: 2.081152
+Train Epoch: 40 	 Training Loss: 2.325018
+Train Epoch: 40 	 Validation Loss: 2.434102
+Train Epoch: 50 	 Training Loss: 2.103197
+Train Epoch: 50 	 Validation Loss: 2.070414
+Train Epoch: 50 	 Training Loss: 2.221178
+Train Epoch: 50 	 Validation Loss: 2.314475
+Train Epoch: 60 	 Training Loss: 2.097068
+Train Epoch: 60 	 Validation Loss: 2.063610
+Train Epoch: 60 	 Training Loss: 2.161495
+Train Epoch: 60 	 Validation Loss: 2.243457
+Train Epoch: 70 	 Training Loss: 2.093242
+Train Epoch: 70 	 Validation Loss: 2.059362
+Train Epoch: 70 	 Training Loss: 2.126799
+Train Epoch: 70 	 Validation Loss: 2.200546
+Train Epoch: 80 	 Training Loss: 2.090835
+Train Epoch: 80 	 Validation Loss: 2.056742
+Train Epoch: 80 	 Training Loss: 2.106561
+Train Epoch: 80 	 Validation Loss: 2.174355
+Train Epoch: 90 	 Training Loss: 2.089298
+Train Epoch: 90 	 Validation Loss: 2.055149
+Train Epoch: 90 	 Training Loss: 2.094713
+Train Epoch: 90 	 Validation Loss: 2.158244
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 6.125703
+Train Epoch: 0 	 Validation Loss: 5.989231
+Train Epoch: 0 	 Training Loss: 2.277428
+Train Epoch: 0 	 Validation Loss: 2.337543
+Train Epoch: 10 	 Training Loss: 4.008817
+Train Epoch: 10 	 Validation Loss: 4.003997
+Train Epoch: 10 	 Training Loss: 2.225702
+Train Epoch: 10 	 Validation Loss: 2.290949
+Train Epoch: 20 	 Training Loss: 3.134495
+Train Epoch: 20 	 Validation Loss: 3.168278
+Train Epoch: 20 	 Training Loss: 2.191985
+Train Epoch: 20 	 Validation Loss: 2.260713
+Train Epoch: 30 	 Training Loss: 2.704828
+Train Epoch: 30 	 Validation Loss: 2.751312
+Train Epoch: 30 	 Training Loss: 2.170542
+Train Epoch: 30 	 Validation Loss: 2.242186
+Train Epoch: 40 	 Training Loss: 2.472316
+Train Epoch: 40 	 Validation Loss: 2.522495
+Train Epoch: 40 	 Training Loss: 2.156825
+Train Epoch: 40 	 Validation Loss: 2.230727
+Train Epoch: 50 	 Training Loss: 2.339232
+Train Epoch: 50 	 Validation Loss: 2.389727
+Train Epoch: 50 	 Training Loss: 2.147929
+Train Epoch: 50 	 Validation Loss: 2.223305
+Train Epoch: 60 	 Training Loss: 2.260648
+Train Epoch: 60 	 Validation Loss: 2.310240
+Train Epoch: 60 	 Training Loss: 2.142066
+Train Epoch: 60 	 Validation Loss: 2.218185
+Train Epoch: 70 	 Training Loss: 2.213563
+Train Epoch: 70 	 Validation Loss: 2.261938
+Train Epoch: 70 	 Training Loss: 2.138122
+Train Epoch: 70 	 Validation Loss: 2.214430
+Train Epoch: 80 	 Training Loss: 2.185245
+Train Epoch: 80 	 Validation Loss: 2.232486
+Train Epoch: 80 	 Training Loss: 2.135403
+Train Epoch: 80 	 Validation Loss: 2.211546
+Train Epoch: 90 	 Training Loss: 2.168241
+Train Epoch: 90 	 Validation Loss: 2.214608
+Train Epoch: 90 	 Training Loss: 2.133484
+Train Epoch: 90 	 Validation Loss: 2.209269
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.313942
+Train Epoch: 0 	 Validation Loss: 2.290980
+Train Epoch: 0 	 Training Loss: 6.325828
+Train Epoch: 0 	 Validation Loss: 5.679246
+Train Epoch: 10 	 Training Loss: 2.268557
+Train Epoch: 10 	 Validation Loss: 2.241932
+Train Epoch: 10 	 Training Loss: 4.155574
+Train Epoch: 10 	 Validation Loss: 3.756596
+Train Epoch: 20 	 Training Loss: 2.236859
+Train Epoch: 20 	 Validation Loss: 2.209605
+Train Epoch: 20 	 Training Loss: 3.244257
+Train Epoch: 20 	 Validation Loss: 2.968327
+Train Epoch: 30 	 Training Loss: 2.215488
+Train Epoch: 30 	 Validation Loss: 2.190353
+Train Epoch: 30 	 Training Loss: 2.790791
+Train Epoch: 30 	 Validation Loss: 2.586421
+Train Epoch: 40 	 Training Loss: 2.201378
+Train Epoch: 40 	 Validation Loss: 2.179947
+Train Epoch: 40 	 Training Loss: 2.542651
+Train Epoch: 40 	 Validation Loss: 2.383724
+Train Epoch: 50 	 Training Loss: 2.192153
+Train Epoch: 50 	 Validation Loss: 2.175109
+Train Epoch: 50 	 Training Loss: 2.399161
+Train Epoch: 50 	 Validation Loss: 2.270825
+Train Epoch: 60 	 Training Loss: 2.186121
+Train Epoch: 60 	 Validation Loss: 2.173604
+Train Epoch: 60 	 Training Loss: 2.313619
+Train Epoch: 60 	 Validation Loss: 2.206741
+Train Epoch: 70 	 Training Loss: 2.182131
+Train Epoch: 70 	 Validation Loss: 2.173983
+Train Epoch: 70 	 Training Loss: 2.261911
+Train Epoch: 70 	 Validation Loss: 2.170546
+Train Epoch: 80 	 Training Loss: 2.179431
+Train Epoch: 80 	 Validation Loss: 2.175352
+Train Epoch: 80 	 Training Loss: 2.230583
+Train Epoch: 80 	 Validation Loss: 2.150685
+Train Epoch: 90 	 Training Loss: 2.177554
+Train Epoch: 90 	 Validation Loss: 2.177174
+Train Epoch: 90 	 Training Loss: 2.211689
+Train Epoch: 90 	 Validation Loss: 2.140408
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.248919
+Train Epoch: 0 	 Validation Loss: 2.290101
+Train Epoch: 0 	 Training Loss: 5.607469
+Train Epoch: 0 	 Validation Loss: 5.815322
+Train Epoch: 10 	 Training Loss: 2.177877
+Train Epoch: 10 	 Training Loss: 3.698093
+Train Epoch: 10 	 Validation Loss: 3.796581
+Train Epoch: 10 	 Validation Loss: 2.243123
+Train Epoch: 20 	 Training Loss: 2.926630
+Train Epoch: 20 	 Validation Loss: 2.976438
+Train Epoch: 20 	 Training Loss: 2.131726
+Train Epoch: 20 	 Validation Loss: 2.216569
+Train Epoch: 30 	 Training Loss: 2.103059
+Train Epoch: 30 	 Validation Loss: 2.203510
+Train Epoch: 30 	 Training Loss: 2.554450
+Train Epoch: 30 	 Validation Loss: 2.580515
+Train Epoch: 40 	 Training Loss: 2.085961
+Train Epoch: 40 	 Validation Loss: 2.197882
+Train Epoch: 40 	 Training Loss: 2.356239
+Train Epoch: 40 	 Validation Loss: 2.369710
+Train Epoch: 50 	 Training Loss: 2.076033
+Train Epoch: 50 	 Validation Loss: 2.195832
+Train Epoch: 50 	 Training Loss: 2.244580
+Train Epoch: 50 	 Validation Loss: 2.250906
+Train Epoch: 60 	 Training Loss: 2.070327
+Train Epoch: 60 	 Validation Loss: 2.195265
+Train Epoch: 60 	 Training Loss: 2.179784
+Train Epoch: 60 	 Validation Loss: 2.181823
+Train Epoch: 70 	 Training Loss: 2.066999
+Train Epoch: 70 	 Validation Loss: 2.195186
+Train Epoch: 70 	 Training Loss: 2.141727
+Train Epoch: 70 	 Validation Loss: 2.141061
+Train Epoch: 80 	 Training Loss: 2.064976
+Train Epoch: 80 	 Validation Loss: 2.195196
+Train Epoch: 80 	 Training Loss: 2.119360
+Train Epoch: 80 	 Validation Loss: 2.116909
+Train Epoch: 90 	 Training Loss: 2.063668
+Train Epoch: 90 	 Validation Loss: 2.195185
+Train Epoch: 90 	 Training Loss: 2.106281
+Train Epoch: 90 	 Validation Loss: 2.102604
+Using device: cpu
+Using device: cpu
+9
+9
+Beginning training ...
+9
+9
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 208336.914931
+Train Epoch: 0 	 Training Loss: 2.291222
+Train Epoch: 0 	 Validation Loss: 2.259024
+Train Epoch: 0 	 Validation Loss: 184175.468750
+Train Epoch: 10 	 Training Loss: 130591.410880
+Train Epoch: 10 	 Validation Loss: 116081.071875
+Train Epoch: 10 	 Training Loss: 2.249755
+Train Epoch: 10 	 Validation Loss: 2.215023
+Train Epoch: 20 	 Training Loss: 2.222666
+Train Epoch: 20 	 Training Loss: 89387.166377
+Train Epoch: 20 	 Validation Loss: 2.186879
+Train Epoch: 20 	 Validation Loss: 79750.328125
+Train Epoch: 30 	 Training Loss: 2.205866
+Train Epoch: 30 	 Validation Loss: 2.170269
+Train Epoch: 30 	 Training Loss: 64856.094907
+Train Epoch: 30 	 Validation Loss: 58011.030469
+Train Epoch: 40 	 Training Loss: 49015.473235
+Train Epoch: 40 	 Validation Loss: 43922.550000
+Train Epoch: 40 	 Training Loss: 2.195887
+Train Epoch: 40 	 Validation Loss: 2.161252
+Train Epoch: 50 	 Training Loss: 38164.968461
+Train Epoch: 50 	 Validation Loss: 34246.356641
+Train Epoch: 50 	 Training Loss: 2.190180
+Train Epoch: 50 	 Validation Loss: 2.156858
+Train Epoch: 60 	 Training Loss: 30394.017867
+Train Epoch: 60 	 Validation Loss: 27302.137891
+Train Epoch: 60 	 Training Loss: 2.186991
+Train Epoch: 60 	 Validation Loss: 2.155060
+Train Epoch: 70 	 Training Loss: 24632.441949
+Train Epoch: 70 	 Validation Loss: 22145.135547
+Train Epoch: 70 	 Training Loss: 2.185202
+Train Epoch: 70 	 Validation Loss: 2.154593
+Train Epoch: 80 	 Training Loss: 20241.353769
+Train Epoch: 80 	 Validation Loss: 18209.656641
+Train Epoch: 80 	 Training Loss: 2.184154
+Train Epoch: 80 	 Validation Loss: 2.154744
+Train Epoch: 90 	 Training Loss: 16819.311704
+Train Epoch: 90 	 Validation Loss: 15139.396680
+Train Epoch: 90 	 Training Loss: 2.183491
+Train Epoch: 90 	 Validation Loss: 2.155144
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 1805.691085
+Train Epoch: 0 	 Validation Loss: 1839.114282
+Train Epoch: 0 	 Training Loss: 5.434434
+Train Epoch: 0 	 Validation Loss: 5.009597
+Train Epoch: 10 	 Training Loss: 3.605351
+Train Epoch: 10 	 Validation Loss: 3.392495
+Train Epoch: 10 	 Training Loss: 1141.708799
+Train Epoch: 10 	 Validation Loss: 1168.846423
+Train Epoch: 20 	 Training Loss: 2.866736
+Train Epoch: 20 	 Validation Loss: 2.737132
+Train Epoch: 20 	 Training Loss: 785.866579
+Train Epoch: 20 	 Validation Loss: 807.457642
+Train Epoch: 30 	 Training Loss: 2.513077
+Train Epoch: 30 	 Validation Loss: 2.424840
+Train Epoch: 30 	 Training Loss: 572.777903
+Train Epoch: 30 	 Validation Loss: 589.965314
+Train Epoch: 40 	 Training Loss: 2.326834
+Train Epoch: 40 	 Validation Loss: 2.262343
+Train Epoch: 40 	 Training Loss: 434.633794
+Train Epoch: 40 	 Validation Loss: 448.462231
+Train Epoch: 50 	 Training Loss: 2.223445
+Train Epoch: 50 	 Validation Loss: 2.173909
+Train Epoch: 50 	 Training Loss: 339.739848
+Train Epoch: 50 	 Validation Loss: 351.001813
+Train Epoch: 60 	 Training Loss: 2.164510
+Train Epoch: 60 	 Validation Loss: 2.125013
+Train Epoch: 60 	 Training Loss: 271.636619
+Train Epoch: 60 	 Validation Loss: 280.912363
+Train Epoch: 70 	 Training Loss: 2.130591
+Train Epoch: 70 	 Validation Loss: 2.098162
+Train Epoch: 70 	 Training Loss: 221.065873
+Train Epoch: 70 	 Validation Loss: 228.781696
+Train Epoch: 80 	 Training Loss: 2.111079
+Train Epoch: 80 	 Validation Loss: 2.083819
+Train Epoch: 80 	 Training Loss: 182.480725
+Train Epoch: 80 	 Validation Loss: 188.953690
+Train Epoch: 90 	 Training Loss: 2.099887
+Train Epoch: 90 	 Validation Loss: 2.076540
+Train Epoch: 90 	 Training Loss: 152.386076
+Train Epoch: 90 	 Validation Loss: 157.855804
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 5.562736
+Train Epoch: 0 	 Validation Loss: 4.910196
+Train Epoch: 0 	 Training Loss: 3139.674312
+Train Epoch: 0 	 Validation Loss: 2676.394482
+Train Epoch: 10 	 Training Loss: 3.672461
+Train Epoch: 10 	 Validation Loss: 3.279518
+Train Epoch: 10 	 Training Loss: 1976.984393
+Train Epoch: 10 	 Validation Loss: 1694.723608
+Train Epoch: 20 	 Training Loss: 2.905722
+Train Epoch: 20 	 Validation Loss: 2.630224
+Train Epoch: 20 	 Training Loss: 1358.438404
+Train Epoch: 20 	 Validation Loss: 1168.748437
+Train Epoch: 30 	 Training Loss: 2.538024
+Train Epoch: 30 	 Validation Loss: 2.327338
+Train Epoch: 30 	 Training Loss: 988.715133
+Train Epoch: 30 	 Validation Loss: 852.824670
+Train Epoch: 40 	 Training Loss: 2.343831
+Train Epoch: 40 	 Validation Loss: 2.173372
+Train Epoch: 40 	 Training Loss: 749.279848
+Train Epoch: 40 	 Validation Loss: 647.524731
+Train Epoch: 50 	 Training Loss: 2.235538
+Train Epoch: 50 	 Validation Loss: 2.091875
+Train Epoch: 50 	 Training Loss: 584.917433
+Train Epoch: 50 	 Validation Loss: 506.235010
+Train Epoch: 60 	 Training Loss: 2.173439
+Train Epoch: 60 	 Validation Loss: 2.048423
+Train Epoch: 60 	 Training Loss: 467.011913
+Train Epoch: 60 	 Validation Loss: 404.683099
+Train Epoch: 70 	 Training Loss: 2.137465
+Train Epoch: 70 	 Validation Loss: 2.025772
+Train Epoch: 70 	 Training Loss: 379.486566
+Train Epoch: 70 	 Validation Loss: 329.182397
+Train Epoch: 80 	 Training Loss: 2.116655
+Train Epoch: 80 	 Validation Loss: 2.014608
+Train Epoch: 80 	 Training Loss: 312.716391
+Train Epoch: 80 	 Validation Loss: 271.515219
+Train Epoch: 90 	 Training Loss: 2.104695
+Train Epoch: 90 	 Validation Loss: 2.009657
+Train Epoch: 90 	 Training Loss: 260.642991
+Train Epoch: 90 	 Validation Loss: 226.497034
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 54534.052951
+Train Epoch: 0 	 Validation Loss: 52403.644922
+Train Epoch: 0 	 Training Loss: 2.236452
+Train Epoch: 0 	 Validation Loss: 2.328835
+Train Epoch: 10 	 Training Loss: 34156.104601
+Train Epoch: 10 	 Validation Loss: 33006.981250
+Train Epoch: 10 	 Training Loss: 2.173955
+Train Epoch: 10 	 Validation Loss: 2.290597
+Train Epoch: 20 	 Training Loss: 2.133568
+Train Epoch: 20 	 Validation Loss: 2.266431
+Train Epoch: 20 	 Training Loss: 23374.655129
+Train Epoch: 20 	 Validation Loss: 22671.838672
+Train Epoch: 30 	 Training Loss: 2.107304
+Train Epoch: 30 	 Validation Loss: 2.252554
+Train Epoch: 30 	 Training Loss: 16957.957899
+Train Epoch: 30 	 Validation Loss: 16489.649414
+Train Epoch: 40 	 Training Loss: 2.090871
+Train Epoch: 40 	 Validation Loss: 2.245038
+Train Epoch: 40 	 Training Loss: 12815.292173
+Train Epoch: 40 	 Validation Loss: 12484.035156
+Train Epoch: 50 	 Training Loss: 9978.043801
+Train Epoch: 50 	 Validation Loss: 9733.321484
+Train Epoch: 50 	 Training Loss: 2.081025
+Train Epoch: 50 	 Validation Loss: 2.241067
+Train Epoch: 60 	 Training Loss: 7946.267922
+Train Epoch: 60 	 Validation Loss: 7759.472266
+Train Epoch: 60 	 Training Loss: 2.075315
+Train Epoch: 60 	 Validation Loss: 2.238950
+Train Epoch: 70 	 Training Loss: 2.072049
+Train Epoch: 70 	 Training Loss: 6439.996980
+Train Epoch: 70 	 Validation Loss: 6293.779297
+Train Epoch: 70 	 Validation Loss: 2.237767
+Train Epoch: 80 	 Training Loss: 2.070167
+Train Epoch: 80 	 Training Loss: 5292.109248
+Train Epoch: 80 	 Validation Loss: 5175.361035
+Train Epoch: 80 	 Validation Loss: 2.237057
+Train Epoch: 90 	 Training Loss: 4397.597503
+Train Epoch: 90 	 Validation Loss: 4302.887939
+Train Epoch: 90 	 Training Loss: 2.069054
+Train Epoch: 90 	 Validation Loss: 2.236601
+Using device: cpu
+Using device: cpu
+9
+9
+Beginning training ...
+9
+9
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.277830
+Train Epoch: 0 	 Validation Loss: 2.278139
+Train Epoch: 0 	 Training Loss: 5.805161
+Train Epoch: 0 	 Validation Loss: 6.051495
+Train Epoch: 10 	 Training Loss: 2.234753
+Train Epoch: 10 	 Validation Loss: 2.248914
+Train Epoch: 10 	 Training Loss: 3.918143
+Train Epoch: 10 	 Validation Loss: 4.189872
+Train Epoch: 20 	 Training Loss: 2.203260
+Train Epoch: 20 	 Validation Loss: 2.230027
+Train Epoch: 20 	 Training Loss: 3.100524
+Train Epoch: 20 	 Validation Loss: 3.344105
+Train Epoch: 30 	 Training Loss: 2.690218
+Train Epoch: 30 	 Validation Loss: 2.901511
+Train Epoch: 30 	 Training Loss: 2.180717
+Train Epoch: 30 	 Validation Loss: 2.218632
+Train Epoch: 40 	 Training Loss: 2.165083
+Train Epoch: 40 	 Validation Loss: 2.212704
+Train Epoch: 40 	 Training Loss: 2.465406
+Train Epoch: 40 	 Validation Loss: 2.649311
+Train Epoch: 50 	 Training Loss: 2.154518
+Train Epoch: 50 	 Validation Loss: 2.210483
+Train Epoch: 50 	 Training Loss: 2.335794
+Train Epoch: 50 	 Validation Loss: 2.497967
+Train Epoch: 60 	 Training Loss: 2.147495
+Train Epoch: 60 	 Validation Loss: 2.210528
+Train Epoch: 60 	 Training Loss: 2.258968
+Train Epoch: 60 	 Validation Loss: 2.404242
+Train Epoch: 70 	 Training Loss: 2.142847
+Train Epoch: 70 	 Validation Loss: 2.211779
+Train Epoch: 70 	 Training Loss: 2.212874
+Train Epoch: 70 	 Validation Loss: 2.345116
+Train Epoch: 80 	 Training Loss: 2.185164
+Train Epoch: 80 	 Validation Loss: 2.307441
+Train Epoch: 80 	 Training Loss: 2.139747
+Train Epoch: 80 	 Validation Loss: 2.213541
+Train Epoch: 90 	 Training Loss: 2.137641
+Train Epoch: 90 	 Validation Loss: 2.215407
+Train Epoch: 90 	 Training Loss: 2.168560
+Train Epoch: 90 	 Validation Loss: 2.283310
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 242399.240162
+Train Epoch: 0 	 Validation Loss: 228546.237500
+Train Epoch: 0 	 Training Loss: 2.338367
+Train Epoch: 0 	 Validation Loss: 2.320874
+Train Epoch: 10 	 Training Loss: 153128.901910
+Train Epoch: 10 	 Validation Loss: 145169.209375
+Train Epoch: 10 	 Training Loss: 2.290285
+Train Epoch: 10 	 Validation Loss: 2.275736
+Train Epoch: 20 	 Training Loss: 105380.833333
+Train Epoch: 20 	 Validation Loss: 100264.287500
+Train Epoch: 20 	 Training Loss: 2.255275
+Train Epoch: 20 	 Validation Loss: 2.242411
+Train Epoch: 30 	 Training Loss: 2.230958
+Train Epoch: 30 	 Validation Loss: 2.219521
+Train Epoch: 30 	 Training Loss: 76751.017216
+Train Epoch: 30 	 Validation Loss: 73206.025781
+Train Epoch: 40 	 Training Loss: 2.214990
+Train Epoch: 40 	 Validation Loss: 2.204790
+Train Epoch: 40 	 Training Loss: 58168.616464
+Train Epoch: 40 	 Validation Loss: 55581.623437
+Train Epoch: 50 	 Training Loss: 45390.680339
+Train Epoch: 50 	 Validation Loss: 43430.471875
+Train Epoch: 50 	 Training Loss: 2.204912
+Train Epoch: 50 	 Validation Loss: 2.195825
+Train Epoch: 60 	 Training Loss: 36211.642144
+Train Epoch: 60 	 Validation Loss: 34683.954688
+Train Epoch: 60 	 Training Loss: 2.198695
+Train Epoch: 60 	 Validation Loss: 2.190647
+Train Epoch: 70 	 Training Loss: 29389.547237
+Train Epoch: 70 	 Validation Loss: 28172.865625
+Train Epoch: 70 	 Training Loss: 2.194879
+Train Epoch: 70 	 Validation Loss: 2.187819
+Train Epoch: 80 	 Training Loss: 2.192506
+Train Epoch: 80 	 Validation Loss: 2.186386
+Train Epoch: 80 	 Training Loss: 24179.775825
+Train Epoch: 80 	 Validation Loss: 23194.137109
+Train Epoch: 90 	 Training Loss: 20112.862377
+Train Epoch: 90 	 Validation Loss: 19303.453711
+Train Epoch: 90 	 Training Loss: 2.190987
+Train Epoch: 90 	 Validation Loss: 2.185755
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.269698
+Train Epoch: 0 	 Validation Loss: 2.256184
+Train Epoch: 0 	 Training Loss: 5.903975
+Train Epoch: 0 	 Validation Loss: 5.704569
+Train Epoch: 10 	 Training Loss: 2.201918
+Train Epoch: 10 	 Validation Loss: 2.193051
+Train Epoch: 10 	 Training Loss: 3.832615
+Train Epoch: 10 	 Validation Loss: 3.687789
+Train Epoch: 20 	 Training Loss: 3.000844
+Train Epoch: 20 	 Validation Loss: 2.884772
+Train Epoch: 20 	 Training Loss: 2.156988
+Train Epoch: 20 	 Validation Loss: 2.153056
+Train Epoch: 30 	 Training Loss: 2.601263
+Train Epoch: 30 	 Validation Loss: 2.504596
+Train Epoch: 30 	 Training Loss: 2.129997
+Train Epoch: 30 	 Validation Loss: 2.130255
+Train Epoch: 40 	 Training Loss: 2.114372
+Train Epoch: 40 	 Validation Loss: 2.117926
+Train Epoch: 40 	 Training Loss: 2.389014
+Train Epoch: 40 	 Validation Loss: 2.306388
+Train Epoch: 50 	 Training Loss: 2.105214
+Train Epoch: 50 	 Validation Loss: 2.111364
+Train Epoch: 50 	 Training Loss: 2.269557
+Train Epoch: 50 	 Validation Loss: 2.197385
+Train Epoch: 60 	 Training Loss: 2.099709
+Train Epoch: 60 	 Validation Loss: 2.107940
+Train Epoch: 60 	 Training Loss: 2.200182
+Train Epoch: 60 	 Validation Loss: 2.135910
+Train Epoch: 70 	 Training Loss: 2.159334
+Train Epoch: 70 	 Validation Loss: 2.101079
+Train Epoch: 70 	 Training Loss: 2.096321
+Train Epoch: 70 	 Validation Loss: 2.106230
+Train Epoch: 80 	 Training Loss: 2.135229
+Train Epoch: 80 	 Validation Loss: 2.081570
+Train Epoch: 80 	 Training Loss: 2.094187
+Train Epoch: 80 	 Validation Loss: 2.105437
+Train Epoch: 90 	 Training Loss: 2.121052
+Train Epoch: 90 	 Validation Loss: 2.070904
+Train Epoch: 90 	 Training Loss: 2.092804
+Train Epoch: 90 	 Validation Loss: 2.105113
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 4033.265471
+Train Epoch: 0 	 Validation Loss: 3402.585742
+Train Epoch: 0 	 Training Loss: 46826.636863
+Train Epoch: 0 	 Validation Loss: 43909.991406
+Train Epoch: 10 	 Training Loss: 2528.897895
+Train Epoch: 10 	 Validation Loss: 2144.267114
+Train Epoch: 10 	 Training Loss: 29359.234664
+Train Epoch: 10 	 Validation Loss: 27675.331250
+Train Epoch: 20 	 Training Loss: 1728.760109
+Train Epoch: 20 	 Validation Loss: 1471.512769
+Train Epoch: 20 	 Training Loss: 20089.841833
+Train Epoch: 20 	 Validation Loss: 19007.491016
+Train Epoch: 30 	 Training Loss: 1253.405845
+Train Epoch: 30 	 Validation Loss: 1069.769690
+Train Epoch: 30 	 Training Loss: 14573.183702
+Train Epoch: 30 	 Validation Loss: 13822.803516
+Train Epoch: 40 	 Training Loss: 947.028813
+Train Epoch: 40 	 Validation Loss: 809.883997
+Train Epoch: 40 	 Training Loss: 11012.009639
+Train Epoch: 40 	 Validation Loss: 10463.920313
+Train Epoch: 50 	 Training Loss: 737.491975
+Train Epoch: 50 	 Validation Loss: 631.660419
+Train Epoch: 50 	 Training Loss: 8573.320331
+Train Epoch: 50 	 Validation Loss: 8157.630859
+Train Epoch: 60 	 Training Loss: 587.622277
+Train Epoch: 60 	 Validation Loss: 503.922485
+Train Epoch: 60 	 Training Loss: 6827.155065
+Train Epoch: 60 	 Validation Loss: 6502.890479
+Train Epoch: 70 	 Training Loss: 476.630032
+Train Epoch: 70 	 Validation Loss: 409.167322
+Train Epoch: 70 	 Training Loss: 5532.742251
+Train Epoch: 70 	 Validation Loss: 5274.274023
+Train Epoch: 80 	 Training Loss: 392.124408
+Train Epoch: 80 	 Validation Loss: 336.931082
+Train Epoch: 80 	 Training Loss: 4546.386041
+Train Epoch: 80 	 Validation Loss: 4336.842725
+Train Epoch: 90 	 Training Loss: 326.327668
+Train Epoch: 90 	 Validation Loss: 280.628677
+Train Epoch: 90 	 Training Loss: 3777.800854
+Train Epoch: 90 	 Validation Loss: 3605.607642
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.268747
+Train Epoch: 0 	 Validation Loss: 2.241921
+Train Epoch: 0 	 Training Loss: 5.620234
+Train Epoch: 0 	 Validation Loss: 5.710350
+Train Epoch: 10 	 Training Loss: 2.218850
+Train Epoch: 10 	 Validation Loss: 2.187418
+Train Epoch: 10 	 Training Loss: 3.734265
+Train Epoch: 10 	 Validation Loss: 3.814026
+Train Epoch: 20 	 Training Loss: 2.183243
+Train Epoch: 20 	 Training Loss: 2.960962
+Train Epoch: 20 	 Validation Loss: 3.022089
+Train Epoch: 20 	 Validation Loss: 2.150274
+Train Epoch: 30 	 Training Loss: 2.158438
+Train Epoch: 30 	 Validation Loss: 2.125533
+Train Epoch: 30 	 Training Loss: 2.584344
+Train Epoch: 30 	 Validation Loss: 2.631674
+Train Epoch: 40 	 Training Loss: 2.141734
+Train Epoch: 40 	 Validation Loss: 2.109626
+Train Epoch: 40 	 Training Loss: 2.382875
+Train Epoch: 40 	 Validation Loss: 2.420565
+Train Epoch: 50 	 Training Loss: 2.269307
+Train Epoch: 50 	 Validation Loss: 2.300179
+Train Epoch: 50 	 Training Loss: 2.130809
+Train Epoch: 50 	 Validation Loss: 2.099782
+Train Epoch: 60 	 Training Loss: 2.203553
+Train Epoch: 60 	 Validation Loss: 2.229484
+Train Epoch: 60 	 Training Loss: 2.123788
+Train Epoch: 60 	 Validation Loss: 2.093933
+Train Epoch: 70 	 Training Loss: 2.165109
+Train Epoch: 70 	 Validation Loss: 2.187369
+Train Epoch: 70 	 Training Loss: 2.119288
+Train Epoch: 70 	 Validation Loss: 2.090622
+Train Epoch: 80 	 Training Loss: 2.142660
+Train Epoch: 80 	 Validation Loss: 2.162133
+Train Epoch: 80 	 Training Loss: 2.116367
+Train Epoch: 80 	 Validation Loss: 2.088884
+Train Epoch: 90 	 Training Loss: 2.129632
+Train Epoch: 90 	 Validation Loss: 2.146950
+Train Epoch: 90 	 Training Loss: 2.114424
+Train Epoch: 90 	 Validation Loss: 2.088104
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 108216.737992
+Train Epoch: 0 	 Validation Loss: 102682.802344
+Train Epoch: 0 	 Training Loss: 2.270076
+Train Epoch: 0 	 Validation Loss: 2.264649
+Train Epoch: 10 	 Training Loss: 2.219393
+Train Epoch: 10 	 Validation Loss: 2.220406
+Train Epoch: 10 	 Training Loss: 67883.776620
+Train Epoch: 10 	 Validation Loss: 64765.250391
+Train Epoch: 20 	 Training Loss: 46474.338542
+Train Epoch: 20 	 Training Loss: 2.182112
+Train Epoch: 20 	 Validation Loss: 2.189868
+Train Epoch: 20 	 Validation Loss: 44505.582422
+Train Epoch: 30 	 Training Loss: 33723.748698
+Train Epoch: 30 	 Validation Loss: 32377.993750
+Train Epoch: 30 	 Training Loss: 2.155839
+Train Epoch: 30 	 Validation Loss: 2.170033
+Train Epoch: 40 	 Training Loss: 25488.834021
+Train Epoch: 40 	 Validation Loss: 24516.854102
+Train Epoch: 40 	 Training Loss: 2.138310
+Train Epoch: 40 	 Validation Loss: 2.158027
+Train Epoch: 50 	 Training Loss: 19847.521521
+Train Epoch: 50 	 Validation Loss: 19116.987305
+Train Epoch: 50 	 Training Loss: 2.127119
+Train Epoch: 50 	 Validation Loss: 2.151177
+Train Epoch: 60 	 Training Loss: 15807.008337
+Train Epoch: 60 	 Validation Loss: 15241.336035
+Train Epoch: 60 	 Training Loss: 2.120176
+Train Epoch: 60 	 Validation Loss: 2.147417
+Train Epoch: 70 	 Training Loss: 12811.124602
+Train Epoch: 70 	 Validation Loss: 12362.977637
+Train Epoch: 70 	 Training Loss: 2.115920
+Train Epoch: 70 	 Validation Loss: 2.145371
+Train Epoch: 80 	 Training Loss: 10527.806641
+Train Epoch: 80 	 Validation Loss: 10166.325977
+Train Epoch: 80 	 Training Loss: 2.113303
+Train Epoch: 80 	 Validation Loss: 2.144220
+Train Epoch: 90 	 Training Loss: 8748.312355
+Train Epoch: 90 	 Validation Loss: 8452.527246
+Train Epoch: 90 	 Training Loss: 2.111666
+Train Epoch: 90 	 Validation Loss: 2.143512
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.235656
+Train Epoch: 0 	 Training Loss: 5.320113
+Train Epoch: 0 	 Validation Loss: 5.826872
+Train Epoch: 0 	 Validation Loss: 2.223263
+Train Epoch: 10 	 Training Loss: 2.172943
+Train Epoch: 10 	 Validation Loss: 2.166283
+Train Epoch: 10 	 Training Loss: 3.538937
+Train Epoch: 10 	 Validation Loss: 3.883795
+Train Epoch: 20 	 Training Loss: 2.134441
+Train Epoch: 20 	 Validation Loss: 2.132600
+Train Epoch: 20 	 Training Loss: 2.824387
+Train Epoch: 20 	 Validation Loss: 3.075636
+Train Epoch: 30 	 Training Loss: 2.483377
+Train Epoch: 30 	 Training Loss: 2.110853
+Train Epoch: 30 	 Validation Loss: 2.112237
+Train Epoch: 30 	 Validation Loss: 2.677616
+Train Epoch: 40 	 Training Loss: 2.096512
+Train Epoch: 40 	 Validation Loss: 2.099863
+Train Epoch: 40 	 Training Loss: 2.304177
+Train Epoch: 40 	 Validation Loss: 2.461649
+Train Epoch: 50 	 Training Loss: 2.087822
+Train Epoch: 50 	 Validation Loss: 2.092398
+Train Epoch: 50 	 Training Loss: 2.204915
+Train Epoch: 50 	 Validation Loss: 2.337573
+Train Epoch: 60 	 Training Loss: 2.148523
+Train Epoch: 60 	 Validation Loss: 2.263887
+Train Epoch: 60 	 Training Loss: 2.082574
+Train Epoch: 60 	 Validation Loss: 2.087997
+Train Epoch: 70 	 Training Loss: 2.079393
+Train Epoch: 70 	 Validation Loss: 2.085488
+Train Epoch: 70 	 Training Loss: 2.116266
+Train Epoch: 70 	 Validation Loss: 2.219336
+Train Epoch: 80 	 Training Loss: 2.077437
+Train Epoch: 80 	 Validation Loss: 2.084122
+Train Epoch: 80 	 Training Loss: 2.097917
+Train Epoch: 80 	 Validation Loss: 2.192181
+Train Epoch: 90 	 Training Loss: 2.076204
+Train Epoch: 90 	 Validation Loss: 2.083436
+Train Epoch: 90 	 Training Loss: 2.087605
+Train Epoch: 90 	 Validation Loss: 2.175591
+Using device: cpu
+Using device: cpu
+9
+9
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 8562.276729
+Train Epoch: 0 	 Validation Loss: 7522.507129
+9
+9
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 201046.869502
+Train Epoch: 0 	 Validation Loss: 201612.793750
+Train Epoch: 10 	 Training Loss: 5356.511221
+Train Epoch: 10 	 Validation Loss: 4734.395752
+Train Epoch: 10 	 Training Loss: 126950.050203
+Train Epoch: 10 	 Validation Loss: 127962.918750
+Train Epoch: 20 	 Training Loss: 3665.616853
+Train Epoch: 20 	 Validation Loss: 3252.163330
+Train Epoch: 20 	 Training Loss: 87219.360532
+Train Epoch: 20 	 Validation Loss: 88244.650000
+Train Epoch: 30 	 Training Loss: 2659.757582
+Train Epoch: 30 	 Validation Loss: 2365.925146
+Train Epoch: 30 	 Training Loss: 63441.864294
+Train Epoch: 30 	 Validation Loss: 64353.327344
+Train Epoch: 40 	 Training Loss: 2010.543362
+Train Epoch: 40 	 Validation Loss: 1791.839331
+Train Epoch: 40 	 Training Loss: 48034.081019
+Train Epoch: 40 	 Validation Loss: 48815.064063
+Train Epoch: 50 	 Training Loss: 1565.990277
+Train Epoch: 50 	 Validation Loss: 1397.668091
+Train Epoch: 50 	 Training Loss: 37453.021629
+Train Epoch: 50 	 Validation Loss: 38115.214453
+Train Epoch: 60 	 Training Loss: 1247.697112
+Train Epoch: 60 	 Validation Loss: 1114.860486
+Train Epoch: 60 	 Training Loss: 29860.150174
+Train Epoch: 60 	 Validation Loss: 30420.914062
+Train Epoch: 70 	 Training Loss: 1011.760028
+Train Epoch: 70 	 Validation Loss: 904.883069
+Train Epoch: 70 	 Training Loss: 24221.814200
+Train Epoch: 70 	 Validation Loss: 24697.728125
+Train Epoch: 80 	 Training Loss: 831.984469
+Train Epoch: 80 	 Validation Loss: 744.676794
+Train Epoch: 80 	 Training Loss: 19919.167499
+Train Epoch: 80 	 Validation Loss: 20324.458984
+Train Epoch: 90 	 Training Loss: 691.908515
+Train Epoch: 90 	 Validation Loss: 619.712952
+Train Epoch: 90 	 Training Loss: 16562.441045
+Train Epoch: 90 	 Validation Loss: 16908.880664
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.250137
+Train Epoch: 0 	 Validation Loss: 2.240797
+Train Epoch: 0 	 Training Loss: 5.407423
+Train Epoch: 0 	 Validation Loss: 6.485415
+Train Epoch: 10 	 Training Loss: 3.579868
+Train Epoch: 10 	 Validation Loss: 4.243492
+Train Epoch: 10 	 Training Loss: 2.190661
+Train Epoch: 10 	 Validation Loss: 2.183725
+Train Epoch: 20 	 Training Loss: 2.849993
+Train Epoch: 20 	 Validation Loss: 3.305842
+Train Epoch: 20 	 Training Loss: 2.154323
+Train Epoch: 20 	 Validation Loss: 2.147236
+Train Epoch: 30 	 Training Loss: 2.502318
+Train Epoch: 30 	 Validation Loss: 2.840155
+Train Epoch: 30 	 Training Loss: 2.132553
+Train Epoch: 30 	 Validation Loss: 2.123738
+Train Epoch: 40 	 Training Loss: 2.319781
+Train Epoch: 40 	 Validation Loss: 2.584652
+Train Epoch: 40 	 Training Loss: 2.119801
+Train Epoch: 40 	 Validation Loss: 2.108753
+Train Epoch: 50 	 Training Loss: 2.218720
+Train Epoch: 50 	 Validation Loss: 2.435712
+Train Epoch: 50 	 Training Loss: 2.112386
+Train Epoch: 50 	 Validation Loss: 2.099275
+Train Epoch: 60 	 Training Loss: 2.161316
+Train Epoch: 60 	 Validation Loss: 2.345561
+Train Epoch: 60 	 Training Loss: 2.108064
+Train Epoch: 60 	 Validation Loss: 2.093319
+Train Epoch: 70 	 Training Loss: 2.128470
+Train Epoch: 70 	 Validation Loss: 2.289688
+Train Epoch: 70 	 Training Loss: 2.105512
+Train Epoch: 70 	 Validation Loss: 2.089586
+Train Epoch: 80 	 Training Loss: 2.109756
+Train Epoch: 80 	 Validation Loss: 2.254524
+Train Epoch: 80 	 Training Loss: 2.103974
+Train Epoch: 80 	 Validation Loss: 2.087243
+Train Epoch: 90 	 Training Loss: 2.099190
+Train Epoch: 90 	 Validation Loss: 2.232145
+Train Epoch: 90 	 Training Loss: 2.103024
+Train Epoch: 90 	 Validation Loss: 2.085765
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.198281
+Train Epoch: 0 	 Validation Loss: 2.203593
+Train Epoch: 0 	 Training Loss: 4.786512
+Train Epoch: 0 	 Validation Loss: 5.616914
+Train Epoch: 10 	 Training Loss: 2.138781
+Train Epoch: 10 	 Validation Loss: 2.145378
+Train Epoch: 10 	 Training Loss: 3.271399
+Train Epoch: 10 	 Validation Loss: 3.803902
+Train Epoch: 20 	 Training Loss: 2.104366
+Train Epoch: 20 	 Validation Loss: 2.110321
+Train Epoch: 20 	 Training Loss: 2.660647
+Train Epoch: 20 	 Validation Loss: 3.038680
+Train Epoch: 30 	 Training Loss: 2.370119
+Train Epoch: 30 	 Validation Loss: 2.658037
+Train Epoch: 30 	 Training Loss: 2.082288
+Train Epoch: 30 	 Validation Loss: 2.087743
+Train Epoch: 40 	 Training Loss: 2.219208
+Train Epoch: 40 	 Validation Loss: 2.450268
+Train Epoch: 40 	 Training Loss: 2.068556
+Train Epoch: 40 	 Validation Loss: 2.073776
+Train Epoch: 50 	 Training Loss: 2.137166
+Train Epoch: 50 	 Validation Loss: 2.330374
+Train Epoch: 50 	 Training Loss: 2.060282
+Train Epoch: 50 	 Validation Loss: 2.065502
+Train Epoch: 60 	 Training Loss: 2.091662
+Train Epoch: 60 	 Validation Loss: 2.258745
+Train Epoch: 60 	 Training Loss: 2.055362
+Train Epoch: 60 	 Validation Loss: 2.060788
+Train Epoch: 70 	 Training Loss: 2.066310
+Train Epoch: 70 	 Validation Loss: 2.214959
+Train Epoch: 70 	 Training Loss: 2.052405
+Train Epoch: 70 	 Validation Loss: 2.058212
+Train Epoch: 80 	 Training Loss: 2.052226
+Train Epoch: 80 	 Validation Loss: 2.187728
+Train Epoch: 80 	 Training Loss: 2.050566
+Train Epoch: 80 	 Validation Loss: 2.056888
+Train Epoch: 90 	 Training Loss: 2.044402
+Train Epoch: 90 	 Validation Loss: 2.170530
+Train Epoch: 90 	 Training Loss: 2.049363
+Train Epoch: 90 	 Validation Loss: 2.056288
+Using device: cpu
+Using device: cpu
+9
+9
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 6143.523166
+Train Epoch: 0 	 Validation Loss: 6405.658789
+9
+9
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 151387.730903
+Train Epoch: 0 	 Validation Loss: 130266.709375
+Train Epoch: 10 	 Training Loss: 3867.297969
+Train Epoch: 10 	 Validation Loss: 4054.322656
+Train Epoch: 10 	 Training Loss: 94813.249421
+Train Epoch: 10 	 Validation Loss: 82079.474219
+Train Epoch: 20 	 Training Loss: 2654.713112
+Train Epoch: 20 	 Validation Loss: 2793.212598
+Train Epoch: 20 	 Training Loss: 64977.033275
+Train Epoch: 20 	 Validation Loss: 56451.521875
+Train Epoch: 30 	 Training Loss: 1930.375827
+Train Epoch: 30 	 Validation Loss: 2036.111353
+Train Epoch: 30 	 Training Loss: 47191.872251
+Train Epoch: 30 	 Validation Loss: 41099.945703
+Train Epoch: 40 	 Training Loss: 1461.551728
+Train Epoch: 40 	 Validation Loss: 1544.328760
+Train Epoch: 40 	 Training Loss: 35693.425854
+Train Epoch: 40 	 Validation Loss: 31140.462891
+Train Epoch: 50 	 Training Loss: 1139.870483
+Train Epoch: 50 	 Validation Loss: 1205.996997
+Train Epoch: 50 	 Training Loss: 27809.288050
+Train Epoch: 50 	 Validation Loss: 24293.971680
+Train Epoch: 60 	 Training Loss: 909.189623
+Train Epoch: 60 	 Validation Loss: 962.880615
+Train Epoch: 60 	 Training Loss: 22158.146738
+Train Epoch: 60 	 Validation Loss: 19376.871875
+Train Epoch: 70 	 Training Loss: 737.987612
+Train Epoch: 70 	 Validation Loss: 782.158630
+Train Epoch: 70 	 Training Loss: 17965.422164
+Train Epoch: 70 	 Validation Loss: 15723.054102
+Train Epoch: 80 	 Training Loss: 607.408910
+Train Epoch: 80 	 Validation Loss: 644.140259
+Train Epoch: 80 	 Training Loss: 14768.190213
+Train Epoch: 80 	 Validation Loss: 12933.259473
+Train Epoch: 90 	 Training Loss: 505.583333
+Train Epoch: 90 	 Validation Loss: 536.398236
+Train Epoch: 90 	 Training Loss: 12275.329228
+Train Epoch: 90 	 Validation Loss: 10755.833301
+Using device: cpu
+Using device: cpu
+9
+9
+Beginning training ...
+9
+9
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.246741
+Train Epoch: 0 	 Validation Loss: 2.302716
+Train Epoch: 0 	 Training Loss: 5.732616
+Train Epoch: 0 	 Validation Loss: 5.602311
+Train Epoch: 10 	 Training Loss: 2.169217
+Train Epoch: 10 	 Validation Loss: 2.209040
+Train Epoch: 10 	 Training Loss: 3.668461
+Train Epoch: 10 	 Validation Loss: 3.715081
+Train Epoch: 20 	 Training Loss: 2.116966
+Train Epoch: 20 	 Validation Loss: 2.138062
+Train Epoch: 20 	 Training Loss: 2.858889
+Train Epoch: 20 	 Validation Loss: 2.952930
+Train Epoch: 30 	 Training Loss: 2.480655
+Train Epoch: 30 	 Validation Loss: 2.586566
+Train Epoch: 30 	 Training Loss: 2.084629
+Train Epoch: 30 	 Validation Loss: 2.091175
+Train Epoch: 40 	 Training Loss: 2.065833
+Train Epoch: 40 	 Validation Loss: 2.062550
+Train Epoch: 40 	 Training Loss: 2.284615
+Train Epoch: 40 	 Validation Loss: 2.391185
+Train Epoch: 50 	 Training Loss: 2.055160
+Train Epoch: 50 	 Validation Loss: 2.045609
+Train Epoch: 50 	 Training Loss: 2.176636
+Train Epoch: 50 	 Validation Loss: 2.280261
+Train Epoch: 60 	 Training Loss: 2.049085
+Train Epoch: 60 	 Validation Loss: 2.035579
+Train Epoch: 60 	 Training Loss: 2.115109
+Train Epoch: 60 	 Validation Loss: 2.214909
+Train Epoch: 70 	 Training Loss: 2.045543
+Train Epoch: 70 	 Validation Loss: 2.029539
+Train Epoch: 70 	 Training Loss: 2.079476
+Train Epoch: 70 	 Validation Loss: 2.175609
+Train Epoch: 80 	 Training Loss: 2.043385
+Train Epoch: 80 	 Validation Loss: 2.025817
+Train Epoch: 80 	 Training Loss: 2.058728
+Train Epoch: 80 	 Validation Loss: 2.151743
+Train Epoch: 90 	 Training Loss: 2.046634
+Train Epoch: 90 	 Validation Loss: 2.137194
+Train Epoch: 90 	 Training Loss: 2.041992
+Train Epoch: 90 	 Validation Loss: 2.023473
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 5.651980
+Train Epoch: 0 	 Training Loss: 2.265081
+Train Epoch: 0 	 Validation Loss: 2.273115
+Train Epoch: 0 	 Validation Loss: 6.199909
+Train Epoch: 10 	 Training Loss: 3.725219
+Train Epoch: 10 	 Validation Loss: 4.078707
+Train Epoch: 10 	 Training Loss: 2.207772
+Train Epoch: 10 	 Validation Loss: 2.223884
+Train Epoch: 20 	 Training Loss: 2.943246
+Train Epoch: 20 	 Validation Loss: 3.193111
+Train Epoch: 20 	 Training Loss: 2.170938
+Train Epoch: 20 	 Validation Loss: 2.189403
+Train Epoch: 30 	 Training Loss: 2.567498
+Train Epoch: 30 	 Validation Loss: 2.756596
+Train Epoch: 30 	 Training Loss: 2.148678
+Train Epoch: 30 	 Validation Loss: 2.163984
+Train Epoch: 40 	 Training Loss: 2.368478
+Train Epoch: 40 	 Validation Loss: 2.519297
+Train Epoch: 40 	 Training Loss: 2.135484
+Train Epoch: 40 	 Validation Loss: 2.144573
+Train Epoch: 50 	 Training Loss: 2.257180
+Train Epoch: 50 	 Validation Loss: 2.382545
+Train Epoch: 50 	 Training Loss: 2.127706
+Train Epoch: 50 	 Validation Loss: 2.129836
+Train Epoch: 60 	 Training Loss: 2.193220
+Train Epoch: 60 	 Validation Loss: 2.300989
+Train Epoch: 60 	 Training Loss: 2.123128
+Train Epoch: 60 	 Validation Loss: 2.118871
+Train Epoch: 70 	 Training Loss: 2.156138
+Train Epoch: 70 	 Validation Loss: 2.251428
+Train Epoch: 70 	 Training Loss: 2.120416
+Train Epoch: 70 	 Validation Loss: 2.110843
+Train Epoch: 80 	 Training Loss: 2.134724
+Train Epoch: 80 	 Validation Loss: 2.221042
+Train Epoch: 80 	 Training Loss: 2.118778
+Train Epoch: 80 	 Validation Loss: 2.105020
+Train Epoch: 90 	 Training Loss: 2.122506
+Train Epoch: 90 	 Validation Loss: 2.202358
+Train Epoch: 90 	 Training Loss: 2.117755
+Train Epoch: 90 	 Validation Loss: 2.100820
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.218296
+Train Epoch: 0 	 Validation Loss: 2.247545
+Train Epoch: 0 	 Training Loss: 5.441139
+Train Epoch: 0 	 Validation Loss: 5.043158
+Train Epoch: 10 	 Training Loss: 3.532606
+Train Epoch: 10 	 Training Loss: 2.137903
+Train Epoch: 10 	 Validation Loss: 2.170357
+Train Epoch: 10 	 Validation Loss: 3.324498
+Train Epoch: 20 	 Training Loss: 2.791617
+Train Epoch: 20 	 Validation Loss: 2.656923
+Train Epoch: 20 	 Training Loss: 2.089970
+Train Epoch: 20 	 Validation Loss: 2.118912
+Train Epoch: 30 	 Training Loss: 2.445267
+Train Epoch: 30 	 Validation Loss: 2.347410
+Train Epoch: 30 	 Training Loss: 2.062725
+Train Epoch: 30 	 Validation Loss: 2.085563
+Train Epoch: 40 	 Training Loss: 2.265908
+Train Epoch: 40 	 Validation Loss: 2.189476
+Train Epoch: 40 	 Training Loss: 2.047276
+Train Epoch: 40 	 Validation Loss: 2.063689
+Train Epoch: 50 	 Training Loss: 2.038420
+Train Epoch: 50 	 Validation Loss: 2.049217
+Train Epoch: 50 	 Training Loss: 2.167472
+Train Epoch: 50 	 Validation Loss: 2.104668
+Train Epoch: 60 	 Training Loss: 2.033326
+Train Epoch: 60 	 Validation Loss: 2.039661
+Train Epoch: 60 	 Training Loss: 2.111750
+Train Epoch: 60 	 Validation Loss: 2.058107
+Train Epoch: 70 	 Training Loss: 2.030372
+Train Epoch: 70 	 Training Loss: 2.079762
+Train Epoch: 70 	 Validation Loss: 2.032486
+Train Epoch: 70 	 Validation Loss: 2.033355
+Train Epoch: 80 	 Training Loss: 2.061308
+Train Epoch: 80 	 Training Loss: 2.028619
+Train Epoch: 80 	 Validation Loss: 2.018531
+Train Epoch: 80 	 Validation Loss: 2.029179
+Train Epoch: 90 	 Training Loss: 2.027536
+Train Epoch: 90 	 Validation Loss: 2.026394
+Train Epoch: 90 	 Training Loss: 2.050612
+Train Epoch: 90 	 Validation Loss: 2.011027
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.302224
+Train Epoch: 0 	 Validation Loss: 2.332229
+Train Epoch: 0 	 Training Loss: 125386.580440
+Train Epoch: 0 	 Validation Loss: 108838.198438
+Train Epoch: 10 	 Training Loss: 2.255434
+Train Epoch: 10 	 Validation Loss: 2.291899
+Train Epoch: 10 	 Training Loss: 78682.007957
+Train Epoch: 10 	 Validation Loss: 68672.417188
+Train Epoch: 20 	 Training Loss: 2.222066
+Train Epoch: 20 	 Validation Loss: 2.262652
+Train Epoch: 20 	 Training Loss: 53917.443215
+Train Epoch: 20 	 Validation Loss: 47227.938281
+Train Epoch: 30 	 Training Loss: 2.199858
+Train Epoch: 30 	 Validation Loss: 2.241848
+Train Epoch: 30 	 Training Loss: 39153.089482
+Train Epoch: 30 	 Validation Loss: 34379.751563
+Train Epoch: 40 	 Training Loss: 2.185599
+Train Epoch: 40 	 Validation Loss: 2.226879
+Train Epoch: 40 	 Training Loss: 29608.860460
+Train Epoch: 40 	 Validation Loss: 26045.060742
+Train Epoch: 50 	 Training Loss: 2.176553
+Train Epoch: 50 	 Validation Loss: 2.215907
+Train Epoch: 50 	 Training Loss: 23065.741356
+Train Epoch: 50 	 Validation Loss: 20316.276562
+Train Epoch: 60 	 Training Loss: 2.170796
+Train Epoch: 60 	 Validation Loss: 2.207746
+Train Epoch: 60 	 Training Loss: 18376.586082
+Train Epoch: 60 	 Validation Loss: 16202.510547
+Train Epoch: 70 	 Training Loss: 2.167086
+Train Epoch: 70 	 Validation Loss: 2.201619
+Train Epoch: 70 	 Training Loss: 14898.053096
+Train Epoch: 70 	 Validation Loss: 13146.007227
+Train Epoch: 80 	 Training Loss: 2.164645
+Train Epoch: 80 	 Validation Loss: 2.196988
+Train Epoch: 80 	 Training Loss: 12245.789280
+Train Epoch: 80 	 Validation Loss: 10812.577148
+Train Epoch: 90 	 Training Loss: 2.162996
+Train Epoch: 90 	 Validation Loss: 2.193473
+Train Epoch: 90 	 Training Loss: 10178.058359
+Train Epoch: 90 	 Validation Loss: 8991.534570
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 5.676651
+Train Epoch: 0 	 Training Loss: 2.246481
+Train Epoch: 0 	 Validation Loss: 5.354789
+Train Epoch: 0 	 Validation Loss: 2.335941
+Train Epoch: 10 	 Training Loss: 2.204532
+Train Epoch: 10 	 Validation Loss: 2.292789
+Train Epoch: 10 	 Training Loss: 3.806901
+Train Epoch: 10 	 Validation Loss: 3.670690
+Train Epoch: 20 	 Training Loss: 3.019635
+Train Epoch: 20 	 Validation Loss: 2.951027
+Train Epoch: 20 	 Training Loss: 2.177157
+Train Epoch: 20 	 Validation Loss: 2.258296
+Train Epoch: 30 	 Training Loss: 2.158385
+Train Epoch: 30 	 Validation Loss: 2.233036
+Train Epoch: 30 	 Training Loss: 2.630895
+Train Epoch: 30 	 Validation Loss: 2.592400
+Train Epoch: 40 	 Training Loss: 2.145825
+Train Epoch: 40 	 Validation Loss: 2.215068
+Train Epoch: 40 	 Training Loss: 2.420997
+Train Epoch: 40 	 Validation Loss: 2.397769
+Train Epoch: 50 	 Training Loss: 2.137617
+Train Epoch: 50 	 Validation Loss: 2.202394
+Train Epoch: 50 	 Training Loss: 2.301816
+Train Epoch: 50 	 Validation Loss: 2.287041
+Train Epoch: 60 	 Training Loss: 2.132325
+Train Epoch: 60 	 Validation Loss: 2.193439
+Train Epoch: 60 	 Training Loss: 2.232363
+Train Epoch: 60 	 Validation Loss: 2.222568
+Train Epoch: 70 	 Training Loss: 2.128920
+Train Epoch: 70 	 Validation Loss: 2.187059
+Train Epoch: 70 	 Training Loss: 2.191494
+Train Epoch: 70 	 Validation Loss: 2.184771
+Train Epoch: 80 	 Training Loss: 2.126712
+Train Epoch: 80 	 Validation Loss: 2.182454
+Train Epoch: 80 	 Training Loss: 2.167472
+Train Epoch: 80 	 Validation Loss: 2.162707
+Train Epoch: 90 	 Training Loss: 2.125261
+Train Epoch: 90 	 Validation Loss: 2.179082
+Train Epoch: 90 	 Training Loss: 2.153444
+Train Epoch: 90 	 Validation Loss: 2.149958
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 5.629477
+Train Epoch: 0 	 Validation Loss: 5.191504
+Train Epoch: 0 	 Training Loss: 2.256595
+Train Epoch: 0 	 Validation Loss: 2.200888
+Train Epoch: 10 	 Training Loss: 3.730434
+Train Epoch: 10 	 Validation Loss: 3.454925
+Train Epoch: 10 	 Training Loss: 2.199116
+Train Epoch: 10 	 Validation Loss: 2.147186
+Train Epoch: 20 	 Training Loss: 2.952933
+Train Epoch: 20 	 Validation Loss: 2.752169
+Train Epoch: 20 	 Training Loss: 2.160331
+Train Epoch: 20 	 Validation Loss: 2.114265
+Train Epoch: 30 	 Training Loss: 2.576022
+Train Epoch: 30 	 Validation Loss: 2.418424
+Train Epoch: 30 	 Training Loss: 2.135554
+Train Epoch: 30 	 Validation Loss: 2.094686
+Train Epoch: 40 	 Training Loss: 2.375128
+Train Epoch: 40 	 Validation Loss: 2.245458
+Train Epoch: 40 	 Training Loss: 2.120459
+Train Epoch: 40 	 Validation Loss: 2.083495
+Train Epoch: 50 	 Training Loss: 2.262178
+Train Epoch: 50 	 Validation Loss: 2.151743
+Train Epoch: 50 	 Training Loss: 2.111505
+Train Epoch: 50 	 Validation Loss: 2.077185
+Train Epoch: 60 	 Training Loss: 2.196899
+Train Epoch: 60 	 Validation Loss: 2.100198
+Train Epoch: 60 	 Training Loss: 2.106237
+Train Epoch: 60 	 Validation Loss: 2.073553
+Train Epoch: 70 	 Training Loss: 2.158773
+Train Epoch: 70 	 Validation Loss: 2.072088
+Train Epoch: 70 	 Training Loss: 2.103121
+Train Epoch: 70 	 Validation Loss: 2.071347
+Train Epoch: 80 	 Training Loss: 2.136522
+Train Epoch: 80 	 Validation Loss: 2.057212
+Train Epoch: 80 	 Training Loss: 2.101247
+Train Epoch: 80 	 Validation Loss: 2.069906
+Train Epoch: 90 	 Training Loss: 2.123614
+Train Epoch: 90 	 Validation Loss: 2.049740
+Train Epoch: 90 	 Training Loss: 2.100095
+Train Epoch: 90 	 Validation Loss: 2.068892
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 22782.815936
+Train Epoch: 0 	 Validation Loss: 26506.577344
+Train Epoch: 0 	 Training Loss: 2047.454093
+Train Epoch: 0 	 Validation Loss: 1596.402002
+Train Epoch: 10 	 Training Loss: 1278.237099
+Train Epoch: 10 	 Validation Loss: 1002.811951
+Train Epoch: 10 	 Training Loss: 14253.735894
+Train Epoch: 10 	 Validation Loss: 16681.267578
+Train Epoch: 20 	 Training Loss: 873.597711
+Train Epoch: 20 	 Validation Loss: 688.148523
+Train Epoch: 20 	 Training Loss: 9756.327257
+Train Epoch: 20 	 Validation Loss: 11459.624707
+Train Epoch: 30 	 Training Loss: 633.578953
+Train Epoch: 30 	 Validation Loss: 500.541699
+Train Epoch: 30 	 Training Loss: 7079.668710
+Train Epoch: 30 	 Validation Loss: 8336.384277
+Train Epoch: 40 	 Training Loss: 478.999515
+Train Epoch: 40 	 Validation Loss: 379.279541
+Train Epoch: 40 	 Training Loss: 5351.311876
+Train Epoch: 40 	 Validation Loss: 6312.507227
+Train Epoch: 50 	 Training Loss: 373.334430
+Train Epoch: 50 	 Validation Loss: 296.168341
+Train Epoch: 50 	 Training Loss: 4167.379720
+Train Epoch: 50 	 Validation Loss: 4922.481836
+Train Epoch: 60 	 Training Loss: 297.787977
+Train Epoch: 60 	 Validation Loss: 236.626935
+Train Epoch: 60 	 Training Loss: 3319.434900
+Train Epoch: 60 	 Validation Loss: 3924.907813
+Train Epoch: 70 	 Training Loss: 241.858639
+Train Epoch: 70 	 Validation Loss: 192.477737
+Train Epoch: 70 	 Training Loss: 2690.723800
+Train Epoch: 70 	 Validation Loss: 3184.065796
+Train Epoch: 80 	 Training Loss: 199.290109
+Train Epoch: 80 	 Validation Loss: 158.833977
+Train Epoch: 80 	 Training Loss: 2211.549574
+Train Epoch: 80 	 Validation Loss: 2618.697021
+Train Epoch: 90 	 Training Loss: 1838.114217
+Train Epoch: 90 	 Validation Loss: 2177.619019
+Train Epoch: 90 	 Training Loss: 166.156646
+Train Epoch: 90 	 Validation Loss: 132.621893
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 3.194180
+Train Epoch: 0 	 Training Loss: 2.241686
+Train Epoch: 0 	 Validation Loss: 2.176126
+Train Epoch: 0 	 Validation Loss: 2.726229
+Train Epoch: 10 	 Training Loss: 2.176697
+Train Epoch: 10 	 Validation Loss: 2.118637
+Train Epoch: 10 	 Training Loss: 2.512831
+Train Epoch: 10 	 Validation Loss: 2.234209
+Train Epoch: 20 	 Training Loss: 2.133974
+Train Epoch: 20 	 Validation Loss: 2.088112
+Train Epoch: 20 	 Training Loss: 2.269749
+Train Epoch: 20 	 Validation Loss: 2.071576
+Train Epoch: 30 	 Training Loss: 2.106252
+Train Epoch: 30 	 Validation Loss: 2.071538
+Train Epoch: 30 	 Training Loss: 2.170598
+Train Epoch: 30 	 Validation Loss: 2.012700
+Train Epoch: 40 	 Training Loss: 2.088740
+Train Epoch: 40 	 Validation Loss: 2.063145
+Train Epoch: 40 	 Training Loss: 2.126845
+Train Epoch: 40 	 Validation Loss: 1.990809
+Train Epoch: 50 	 Training Loss: 2.077810
+Train Epoch: 50 	 Validation Loss: 2.059340
+Train Epoch: 50 	 Training Loss: 2.106078
+Train Epoch: 50 	 Validation Loss: 1.982139
+Train Epoch: 60 	 Training Loss: 2.071005
+Train Epoch: 60 	 Validation Loss: 2.057998
+Train Epoch: 60 	 Training Loss: 2.095122
+Train Epoch: 60 	 Validation Loss: 1.977620
+Train Epoch: 70 	 Training Loss: 2.066741
+Train Epoch: 70 	 Validation Loss: 2.057909
+Train Epoch: 70 	 Training Loss: 2.088467
+Train Epoch: 70 	 Validation Loss: 1.973997
+Train Epoch: 80 	 Training Loss: 2.064030
+Train Epoch: 80 	 Validation Loss: 2.058404
+Train Epoch: 80 	 Training Loss: 2.083869
+Train Epoch: 80 	 Validation Loss: 1.970435
+Train Epoch: 90 	 Training Loss: 2.062265
+Train Epoch: 90 	 Validation Loss: 2.059125
+Train Epoch: 90 	 Training Loss: 2.080455
+Train Epoch: 90 	 Validation Loss: 1.967006
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 5.253618
+Train Epoch: 0 	 Validation Loss: 4.548435
+Train Epoch: 0 	 Training Loss: 2.202250
+Train Epoch: 0 	 Validation Loss: 2.261934
+Train Epoch: 10 	 Training Loss: 3.479340
+Train Epoch: 10 	 Validation Loss: 3.020406
+Train Epoch: 10 	 Training Loss: 2.130128
+Train Epoch: 10 	 Validation Loss: 2.193442
+Train Epoch: 20 	 Training Loss: 2.779533
+Train Epoch: 20 	 Validation Loss: 2.444822
+Train Epoch: 20 	 Training Loss: 2.087876
+Train Epoch: 20 	 Validation Loss: 2.146759
+Train Epoch: 30 	 Training Loss: 2.448312
+Train Epoch: 30 	 Validation Loss: 2.187893
+Train Epoch: 30 	 Training Loss: 2.061780
+Train Epoch: 30 	 Validation Loss: 2.116755
+Train Epoch: 40 	 Training Loss: 2.275521
+Train Epoch: 40 	 Validation Loss: 2.063413
+Train Epoch: 40 	 Training Loss: 2.045799
+Train Epoch: 40 	 Validation Loss: 2.098535
+Train Epoch: 50 	 Training Loss: 2.180460
+Train Epoch: 50 	 Validation Loss: 2.001367
+Train Epoch: 50 	 Training Loss: 2.036065
+Train Epoch: 50 	 Validation Loss: 2.087874
+Train Epoch: 60 	 Training Loss: 2.030097
+Train Epoch: 60 	 Training Loss: 2.126737
+Train Epoch: 60 	 Validation Loss: 1.970918
+Train Epoch: 60 	 Validation Loss: 2.081830
+Train Epoch: 70 	 Training Loss: 2.026362
+Train Epoch: 70 	 Validation Loss: 2.078532
+Train Epoch: 70 	 Training Loss: 2.096032
+Train Epoch: 70 	 Validation Loss: 1.956926
+Train Epoch: 80 	 Training Loss: 2.023953
+Train Epoch: 80 	 Validation Loss: 2.076846
+Train Epoch: 80 	 Training Loss: 2.078405
+Train Epoch: 80 	 Validation Loss: 1.951407
+Train Epoch: 90 	 Training Loss: 2.022341
+Train Epoch: 90 	 Validation Loss: 2.076102
+Train Epoch: 90 	 Training Loss: 2.068209
+Train Epoch: 90 	 Validation Loss: 1.949988
+Using device: cpu
+Using device: cpu
+9
+9
+Beginning training ...
+9
+9
+Train Epoch: 0 	 Training Loss: 2.310036
+Train Epoch: 0 	 Validation Loss: 2.254625
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 12.350919
+Train Epoch: 0 	 Validation Loss: 10.296371
+Train Epoch: 10 	 Training Loss: 2.258779
+Train Epoch: 10 	 Validation Loss: 2.197220
+Train Epoch: 10 	 Training Loss: 7.318610
+Train Epoch: 10 	 Validation Loss: 6.180383
+Train Epoch: 20 	 Training Loss: 2.223148
+Train Epoch: 20 	 Validation Loss: 2.158394
+Train Epoch: 20 	 Training Loss: 5.147171
+Train Epoch: 20 	 Validation Loss: 4.417592
+Train Epoch: 30 	 Training Loss: 4.023817
+Train Epoch: 30 	 Validation Loss: 3.514407
+Train Epoch: 30 	 Training Loss: 2.199179
+Train Epoch: 30 	 Validation Loss: 2.134483
+Train Epoch: 40 	 Training Loss: 2.183171
+Train Epoch: 40 	 Validation Loss: 2.120319
+Train Epoch: 40 	 Training Loss: 3.374476
+Train Epoch: 40 	 Validation Loss: 2.998340
+Train Epoch: 50 	 Training Loss: 2.172593
+Train Epoch: 50 	 Validation Loss: 2.112294
+Train Epoch: 50 	 Training Loss: 2.971290
+Train Epoch: 50 	 Validation Loss: 2.682288
+Train Epoch: 60 	 Training Loss: 2.708815
+Train Epoch: 60 	 Validation Loss: 2.479967
+Train Epoch: 60 	 Training Loss: 2.165696
+Train Epoch: 60 	 Validation Loss: 2.108099
+Train Epoch: 70 	 Training Loss: 2.161235
+Train Epoch: 70 	 Validation Loss: 2.106235
+Train Epoch: 70 	 Training Loss: 2.532548
+Train Epoch: 70 	 Validation Loss: 2.346928
+Train Epoch: 80 	 Training Loss: 2.158350
+Train Epoch: 80 	 Validation Loss: 2.105731
+Train Epoch: 80 	 Training Loss: 2.411858
+Train Epoch: 80 	 Validation Loss: 2.258268
+Train Epoch: 90 	 Training Loss: 2.156471
+Train Epoch: 90 	 Validation Loss: 2.105984
+Train Epoch: 90 	 Training Loss: 2.328363
+Train Epoch: 90 	 Validation Loss: 2.199079
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 5.482623
+Train Epoch: 0 	 Validation Loss: 5.282953
+Train Epoch: 0 	 Training Loss: 5048.928838
+Train Epoch: 0 	 Validation Loss: 4344.079541
+Train Epoch: 10 	 Training Loss: 3.684876
+Train Epoch: 10 	 Validation Loss: 3.603957
+Train Epoch: 10 	 Training Loss: 3174.961191
+Train Epoch: 10 	 Validation Loss: 2747.573779
+Train Epoch: 20 	 Training Loss: 2.935523
+Train Epoch: 20 	 Validation Loss: 2.897309
+Train Epoch: 20 	 Training Loss: 2180.330422
+Train Epoch: 20 	 Validation Loss: 1893.641504
+Train Epoch: 30 	 Training Loss: 2.568503
+Train Epoch: 30 	 Validation Loss: 2.549453
+Train Epoch: 30 	 Training Loss: 1586.080849
+Train Epoch: 30 	 Validation Loss: 1380.958032
+Train Epoch: 40 	 Training Loss: 2.371672
+Train Epoch: 40 	 Validation Loss: 2.362511
+Train Epoch: 40 	 Training Loss: 1201.330772
+Train Epoch: 40 	 Validation Loss: 1047.871826
+Train Epoch: 50 	 Training Loss: 2.260629
+Train Epoch: 50 	 Validation Loss: 2.257080
+Train Epoch: 50 	 Training Loss: 937.255483
+Train Epoch: 50 	 Validation Loss: 818.671802
+Train Epoch: 60 	 Training Loss: 2.196356
+Train Epoch: 60 	 Validation Loss: 2.196229
+Train Epoch: 60 	 Training Loss: 747.837271
+Train Epoch: 60 	 Validation Loss: 653.947955
+Train Epoch: 70 	 Training Loss: 2.158815
+Train Epoch: 70 	 Validation Loss: 2.160913
+Train Epoch: 70 	 Training Loss: 607.228638
+Train Epoch: 70 	 Validation Loss: 531.482495
+Train Epoch: 80 	 Training Loss: 2.136929
+Train Epoch: 80 	 Validation Loss: 2.140570
+Train Epoch: 80 	 Training Loss: 499.965526
+Train Epoch: 80 	 Validation Loss: 437.945514
+Train Epoch: 90 	 Training Loss: 2.124254
+Train Epoch: 90 	 Validation Loss: 2.129048
+Train Epoch: 90 	 Training Loss: 416.311204
+Train Epoch: 90 	 Validation Loss: 364.924643
+Using device: cpu
+Using device: cpu
+9
+9
+Beginning training ...
+9
+9
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.210606
+Train Epoch: 0 	 Validation Loss: 2.181786
+Train Epoch: 0 	 Training Loss: 5.076790
+Train Epoch: 0 	 Validation Loss: 4.781968
+Train Epoch: 10 	 Training Loss: 2.142662
+Train Epoch: 10 	 Validation Loss: 2.106364
+Train Epoch: 10 	 Training Loss: 3.397777
+Train Epoch: 10 	 Validation Loss: 3.269302
+Train Epoch: 20 	 Training Loss: 2.724819
+Train Epoch: 20 	 Validation Loss: 2.654109
+Train Epoch: 20 	 Training Loss: 2.100592
+Train Epoch: 20 	 Validation Loss: 2.057529
+Train Epoch: 30 	 Training Loss: 2.405939
+Train Epoch: 30 	 Validation Loss: 2.360528
+Train Epoch: 30 	 Training Loss: 2.073893
+Train Epoch: 30 	 Validation Loss: 2.024773
+Train Epoch: 40 	 Training Loss: 2.239683
+Train Epoch: 40 	 Validation Loss: 2.207306
+Train Epoch: 40 	 Training Loss: 2.057328
+Train Epoch: 40 	 Validation Loss: 2.003040
+Train Epoch: 50 	 Training Loss: 2.148266
+Train Epoch: 50 	 Validation Loss: 2.123369
+Train Epoch: 50 	 Training Loss: 2.047059
+Train Epoch: 50 	 Validation Loss: 1.988630
+Train Epoch: 60 	 Training Loss: 2.096552
+Train Epoch: 60 	 Validation Loss: 2.076269
+Train Epoch: 60 	 Training Loss: 2.040519
+Train Epoch: 60 	 Validation Loss: 1.978926
+Train Epoch: 70 	 Training Loss: 2.066858
+Train Epoch: 70 	 Validation Loss: 2.049562
+Train Epoch: 70 	 Training Loss: 2.036157
+Train Epoch: 70 	 Validation Loss: 1.972218
+Train Epoch: 80 	 Training Loss: 2.049609
+Train Epoch: 80 	 Validation Loss: 2.034307
+Train Epoch: 80 	 Training Loss: 2.033090
+Train Epoch: 80 	 Validation Loss: 1.967444
+Train Epoch: 90 	 Training Loss: 2.039382
+Train Epoch: 90 	 Validation Loss: 2.025436
+Train Epoch: 90 	 Training Loss: 2.030828
+Train Epoch: 90 	 Validation Loss: 1.963952
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 26074.801541
+Train Epoch: 0 	 Validation Loss: 25161.231641
+Train Epoch: 0 	 Training Loss: 2.207713
+Train Epoch: 0 	 Validation Loss: 2.313725
+Train Epoch: 10 	 Training Loss: 2.139496
+Train Epoch: 10 	 Validation Loss: 2.273355
+Train Epoch: 10 	 Training Loss: 16280.162543
+Train Epoch: 10 	 Validation Loss: 15799.900391
+Train Epoch: 20 	 Training Loss: 2.097437
+Train Epoch: 20 	 Validation Loss: 2.240783
+Train Epoch: 20 	 Training Loss: 11109.762207
+Train Epoch: 20 	 Validation Loss: 10825.186523
+Train Epoch: 30 	 Training Loss: 2.069816
+Train Epoch: 30 	 Validation Loss: 2.216766
+Train Epoch: 30 	 Training Loss: 8043.769766
+Train Epoch: 30 	 Validation Loss: 7859.383691
+Train Epoch: 40 	 Training Loss: 2.052495
+Train Epoch: 40 	 Validation Loss: 2.200264
+Train Epoch: 40 	 Training Loss: 6069.749105
+Train Epoch: 40 	 Validation Loss: 5942.532031
+Train Epoch: 50 	 Training Loss: 2.042168
+Train Epoch: 50 	 Validation Loss: 2.189199
+Train Epoch: 50 	 Training Loss: 4720.589572
+Train Epoch: 50 	 Validation Loss: 4628.683105
+Train Epoch: 60 	 Training Loss: 2.036234
+Train Epoch: 60 	 Validation Loss: 2.181765
+Train Epoch: 60 	 Training Loss: 3756.036702
+Train Epoch: 60 	 Validation Loss: 3687.284961
+Train Epoch: 70 	 Training Loss: 3041.910522
+Train Epoch: 70 	 Validation Loss: 2989.071191
+Train Epoch: 70 	 Training Loss: 2.032884
+Train Epoch: 70 	 Validation Loss: 2.176666
+Train Epoch: 80 	 Training Loss: 2498.292833
+Train Epoch: 80 	 Validation Loss: 2456.804736
+Train Epoch: 80 	 Training Loss: 2.030985
+Train Epoch: 80 	 Validation Loss: 2.173056
+Train Epoch: 90 	 Training Loss: 2075.063639
+Train Epoch: 90 	 Validation Loss: 2041.920923
+Train Epoch: 90 	 Training Loss: 2.029883
+Train Epoch: 90 	 Validation Loss: 2.170418
+Using device: cpu
+Using device: cpu
+9
+9
+Beginning training ...
+9
+9
+Train Epoch: 0 	 Training Loss: 2.262722
+Train Epoch: 0 	 Validation Loss: 2.165491
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 10.950305
+Train Epoch: 0 	 Validation Loss: 11.666680
+Train Epoch: 10 	 Training Loss: 2.203710
+Train Epoch: 10 	 Validation Loss: 2.112970
+Train Epoch: 10 	 Training Loss: 6.596312
+Train Epoch: 10 	 Validation Loss: 7.135648
+Train Epoch: 20 	 Training Loss: 2.167222
+Train Epoch: 20 	 Validation Loss: 2.085403
+Train Epoch: 20 	 Training Loss: 4.697565
+Train Epoch: 20 	 Validation Loss: 5.118217
+Train Epoch: 30 	 Training Loss: 2.146275
+Train Epoch: 30 	 Validation Loss: 2.071130
+Train Epoch: 30 	 Training Loss: 3.714708
+Train Epoch: 30 	 Validation Loss: 4.054369
+Train Epoch: 40 	 Training Loss: 2.134447
+Train Epoch: 40 	 Validation Loss: 2.063099
+Train Epoch: 40 	 Training Loss: 3.147325
+Train Epoch: 40 	 Validation Loss: 3.429684
+Train Epoch: 50 	 Training Loss: 2.127636
+Train Epoch: 50 	 Training Loss: 2.795927
+Train Epoch: 50 	 Validation Loss: 2.058083
+Train Epoch: 50 	 Validation Loss: 3.036214
+Train Epoch: 60 	 Training Loss: 2.568042
+Train Epoch: 60 	 Validation Loss: 2.776490
+Train Epoch: 60 	 Training Loss: 2.123634
+Train Epoch: 60 	 Validation Loss: 2.054802
+Train Epoch: 70 	 Training Loss: 2.415814
+Train Epoch: 70 	 Validation Loss: 2.599606
+Train Epoch: 70 	 Training Loss: 2.121238
+Train Epoch: 70 	 Validation Loss: 2.052622
+Train Epoch: 80 	 Training Loss: 2.312311
+Train Epoch: 80 	 Validation Loss: 2.476684
+Train Epoch: 80 	 Training Loss: 2.119774
+Train Epoch: 80 	 Validation Loss: 2.051153
+Train Epoch: 90 	 Training Loss: 2.118855
+Train Epoch: 90 	 Validation Loss: 2.050139
+Train Epoch: 90 	 Training Loss: 2.241345
+Train Epoch: 90 	 Validation Loss: 2.390249
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 9016.068350
+Train Epoch: 0 	 Validation Loss: 8761.612207
+Train Epoch: 0 	 Training Loss: 6.085780
+Train Epoch: 0 	 Validation Loss: 5.435965
+Train Epoch: 10 	 Training Loss: 5666.211697
+Train Epoch: 10 	 Validation Loss: 5536.510693
+Train Epoch: 10 	 Training Loss: 4.051338
+Train Epoch: 10 	 Validation Loss: 3.580807
+Train Epoch: 20 	 Training Loss: 3882.691632
+Train Epoch: 20 	 Validation Loss: 3808.443652
+Train Epoch: 20 	 Training Loss: 3.187290
+Train Epoch: 20 	 Validation Loss: 2.823851
+Train Epoch: 30 	 Training Loss: 2819.503355
+Train Epoch: 30 	 Validation Loss: 2772.935840
+Train Epoch: 30 	 Training Loss: 2.755547
+Train Epoch: 30 	 Validation Loss: 2.462719
+Train Epoch: 40 	 Training Loss: 2132.443325
+Train Epoch: 40 	 Validation Loss: 2101.262842
+Train Epoch: 40 	 Training Loss: 2.518611
+Train Epoch: 40 	 Validation Loss: 2.275034
+Train Epoch: 50 	 Training Loss: 1661.584036
+Train Epoch: 50 	 Validation Loss: 1639.664111
+Train Epoch: 50 	 Training Loss: 2.381385
+Train Epoch: 50 	 Validation Loss: 2.173366
+Train Epoch: 60 	 Training Loss: 2.299584
+Train Epoch: 60 	 Training Loss: 1324.245585
+Train Epoch: 60 	 Validation Loss: 1308.248792
+Train Epoch: 60 	 Validation Loss: 2.117831
+Train Epoch: 70 	 Training Loss: 1074.075469
+Train Epoch: 70 	 Validation Loss: 1062.051941
+Train Epoch: 70 	 Training Loss: 2.250256
+Train Epoch: 70 	 Validation Loss: 2.088192
+Train Epoch: 80 	 Training Loss: 883.379641
+Train Epoch: 80 	 Validation Loss: 874.125439
+Train Epoch: 80 	 Training Loss: 2.220539
+Train Epoch: 80 	 Validation Loss: 2.073354
+Train Epoch: 90 	 Training Loss: 734.748483
+Train Epoch: 90 	 Validation Loss: 727.487793
+Train Epoch: 90 	 Training Loss: 2.202811
+Train Epoch: 90 	 Validation Loss: 2.066893
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.249010
+Train Epoch: 0 	 Validation Loss: 2.221928
+Train Epoch: 0 	 Training Loss: 5.620562
+Train Epoch: 0 	 Validation Loss: 4.979404
+Train Epoch: 10 	 Training Loss: 2.197683
+Train Epoch: 10 	 Validation Loss: 2.155723
+Train Epoch: 10 	 Training Loss: 3.734356
+Train Epoch: 10 	 Validation Loss: 3.462761
+Train Epoch: 20 	 Training Loss: 2.164521
+Train Epoch: 20 	 Validation Loss: 2.114021
+Train Epoch: 20 	 Training Loss: 2.960745
+Train Epoch: 20 	 Validation Loss: 2.828335
+Train Epoch: 30 	 Training Loss: 2.583629
+Train Epoch: 30 	 Validation Loss: 2.514945
+Train Epoch: 30 	 Training Loss: 2.143081
+Train Epoch: 30 	 Validation Loss: 2.089368
+Train Epoch: 40 	 Training Loss: 2.381383
+Train Epoch: 40 	 Validation Loss: 2.345493
+Train Epoch: 40 	 Training Loss: 2.129563
+Train Epoch: 40 	 Validation Loss: 2.075903
+Train Epoch: 50 	 Training Loss: 2.266908
+Train Epoch: 50 	 Validation Loss: 2.249301
+Train Epoch: 50 	 Training Loss: 2.121247
+Train Epoch: 50 	 Validation Loss: 2.069214
+Train Epoch: 60 	 Training Loss: 2.200291
+Train Epoch: 60 	 Validation Loss: 2.193501
+Train Epoch: 60 	 Training Loss: 2.116215
+Train Epoch: 60 	 Validation Loss: 2.066311
+Train Epoch: 70 	 Training Loss: 2.161148
+Train Epoch: 70 	 Validation Loss: 2.161067
+Train Epoch: 70 	 Training Loss: 2.113181
+Train Epoch: 70 	 Validation Loss: 2.065353
+Train Epoch: 80 	 Training Loss: 2.138223
+Train Epoch: 80 	 Validation Loss: 2.142480
+Train Epoch: 80 	 Training Loss: 2.111329
+Train Epoch: 80 	 Validation Loss: 2.065290
+Train Epoch: 90 	 Training Loss: 2.124956
+Train Epoch: 90 	 Validation Loss: 2.132128
+Train Epoch: 90 	 Training Loss: 2.110169
+Train Epoch: 90 	 Validation Loss: 2.065577
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 5.496438
+Train Epoch: 0 	 Training Loss: 2.235009
+Train Epoch: 0 	 Validation Loss: 2.296812
+Train Epoch: 0 	 Validation Loss: 5.515361
+Train Epoch: 10 	 Training Loss: 2.173039
+Train Epoch: 10 	 Validation Loss: 2.243337
+Train Epoch: 10 	 Training Loss: 3.652838
+Train Epoch: 10 	 Validation Loss: 3.740761
+Train Epoch: 20 	 Training Loss: 2.134417
+Train Epoch: 20 	 Validation Loss: 2.203562
+Train Epoch: 20 	 Training Loss: 2.898798
+Train Epoch: 20 	 Validation Loss: 2.991800
+Train Epoch: 30 	 Training Loss: 2.109998
+Train Epoch: 30 	 Validation Loss: 2.175235
+Train Epoch: 30 	 Training Loss: 2.534094
+Train Epoch: 30 	 Validation Loss: 2.619593
+Train Epoch: 40 	 Training Loss: 2.094900
+Train Epoch: 40 	 Validation Loss: 2.155470
+Train Epoch: 40 	 Training Loss: 2.340114
+Train Epoch: 40 	 Validation Loss: 2.416443
+Train Epoch: 50 	 Training Loss: 2.085660
+Train Epoch: 50 	 Validation Loss: 2.141799
+Train Epoch: 50 	 Training Loss: 2.231215
+Train Epoch: 50 	 Validation Loss: 2.299259
+Train Epoch: 60 	 Training Loss: 2.079969
+Train Epoch: 60 	 Validation Loss: 2.132356
+Train Epoch: 60 	 Training Loss: 2.168305
+Train Epoch: 60 	 Validation Loss: 2.229431
+Train Epoch: 70 	 Training Loss: 2.076377
+Train Epoch: 70 	 Validation Loss: 2.125798
+Train Epoch: 70 	 Training Loss: 2.131511
+Train Epoch: 70 	 Validation Loss: 2.187025
+Train Epoch: 80 	 Training Loss: 2.074025
+Train Epoch: 80 	 Validation Loss: 2.121201
+Train Epoch: 80 	 Training Loss: 2.109932
+Train Epoch: 80 	 Validation Loss: 2.160950
+Train Epoch: 90 	 Training Loss: 2.097269
+Train Epoch: 90 	 Validation Loss: 2.144714
+Train Epoch: 90 	 Training Loss: 2.072424
+Train Epoch: 90 	 Validation Loss: 2.117944
+Using device: cpu
+Using device: cpu
+9
+9
+Beginning training ...
+9
+9
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.225529
+Train Epoch: 0 	 Validation Loss: 2.205227
+Train Epoch: 0 	 Training Loss: 5.277064
+Train Epoch: 0 	 Validation Loss: 5.210445
+Train Epoch: 10 	 Training Loss: 2.151623
+Train Epoch: 10 	 Validation Loss: 2.143560
+Train Epoch: 10 	 Training Loss: 3.483285
+Train Epoch: 10 	 Validation Loss: 3.467974
+Train Epoch: 20 	 Training Loss: 2.773411
+Train Epoch: 20 	 Validation Loss: 2.770483
+Train Epoch: 20 	 Training Loss: 2.104510
+Train Epoch: 20 	 Validation Loss: 2.111582
+Train Epoch: 30 	 Training Loss: 2.438040
+Train Epoch: 30 	 Validation Loss: 2.439307
+Train Epoch: 30 	 Training Loss: 2.075491
+Train Epoch: 30 	 Validation Loss: 2.097860
+Train Epoch: 40 	 Training Loss: 2.263417
+Train Epoch: 40 	 Validation Loss: 2.266447
+Train Epoch: 40 	 Training Loss: 2.058248
+Train Epoch: 40 	 Validation Loss: 2.094063
+Train Epoch: 50 	 Training Loss: 2.167419
+Train Epoch: 50 	 Validation Loss: 2.171333
+Train Epoch: 50 	 Training Loss: 2.048251
+Train Epoch: 50 	 Validation Loss: 2.094845
+Train Epoch: 60 	 Training Loss: 2.113159
+Train Epoch: 60 	 Validation Loss: 2.117596
+Train Epoch: 60 	 Training Loss: 2.042550
+Train Epoch: 60 	 Validation Loss: 2.097306
+Train Epoch: 70 	 Training Loss: 2.082158
+Train Epoch: 70 	 Validation Loss: 2.086967
+Train Epoch: 70 	 Training Loss: 2.039309
+Train Epoch: 70 	 Validation Loss: 2.100066
+Train Epoch: 80 	 Training Loss: 2.064428
+Train Epoch: 80 	 Validation Loss: 2.069560
+Train Epoch: 80 	 Training Loss: 2.037443
+Train Epoch: 80 	 Validation Loss: 2.102567
+Train Epoch: 90 	 Training Loss: 2.054298
+Train Epoch: 90 	 Validation Loss: 2.059755
+Train Epoch: 90 	 Training Loss: 2.036340
+Train Epoch: 90 	 Validation Loss: 2.104651
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 4.921377
+Train Epoch: 0 	 Validation Loss: 5.248582
+Train Epoch: 0 	 Training Loss: 2.200508
+Train Epoch: 0 	 Validation Loss: 2.187841
+Train Epoch: 10 	 Training Loss: 3.296319
+Train Epoch: 10 	 Validation Loss: 3.488651
+Train Epoch: 10 	 Training Loss: 2.127175
+Train Epoch: 10 	 Validation Loss: 2.112287
+Train Epoch: 20 	 Training Loss: 2.662680
+Train Epoch: 20 	 Validation Loss: 2.791548
+Train Epoch: 20 	 Training Loss: 2.088464
+Train Epoch: 20 	 Validation Loss: 2.072099
+Train Epoch: 30 	 Training Loss: 2.366934
+Train Epoch: 30 	 Validation Loss: 2.462574
+Train Epoch: 30 	 Training Loss: 2.066563
+Train Epoch: 30 	 Validation Loss: 2.050567
+Train Epoch: 40 	 Training Loss: 2.214929
+Train Epoch: 40 	 Validation Loss: 2.291510
+Train Epoch: 40 	 Training Loss: 2.053818
+Train Epoch: 40 	 Validation Loss: 2.039358
+Train Epoch: 50 	 Training Loss: 2.132758
+Train Epoch: 50 	 Validation Loss: 2.197645
+Train Epoch: 50 	 Training Loss: 2.046243
+Train Epoch: 50 	 Validation Loss: 2.033748
+Train Epoch: 60 	 Training Loss: 2.087304
+Train Epoch: 60 	 Validation Loss: 2.144705
+Train Epoch: 60 	 Training Loss: 2.041607
+Train Epoch: 60 	 Validation Loss: 2.031073
+Train Epoch: 70 	 Training Loss: 2.061999
+Train Epoch: 70 	 Validation Loss: 2.114526
+Train Epoch: 70 	 Training Loss: 2.038655
+Train Epoch: 70 	 Validation Loss: 2.029902
+Train Epoch: 80 	 Training Loss: 2.047918
+Train Epoch: 80 	 Validation Loss: 2.097317
+Train Epoch: 80 	 Training Loss: 2.036688
+Train Epoch: 80 	 Validation Loss: 2.029491
+Train Epoch: 90 	 Training Loss: 2.040052
+Train Epoch: 90 	 Validation Loss: 2.087557
+Train Epoch: 90 	 Training Loss: 2.035317
+Train Epoch: 90 	 Validation Loss: 2.029466
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 4.803307
+Train Epoch: 0 	 Validation Loss: 5.102131
+Train Epoch: 0 	 Training Loss: 2.179392
+Train Epoch: 0 	 Validation Loss: 2.238181
+Train Epoch: 10 	 Training Loss: 3.293346
+Train Epoch: 10 	 Validation Loss: 3.528008
+Train Epoch: 10 	 Training Loss: 2.113791
+Train Epoch: 10 	 Validation Loss: 2.180708
+Train Epoch: 20 	 Training Loss: 2.678525
+Train Epoch: 20 	 Validation Loss: 2.860229
+Train Epoch: 20 	 Training Loss: 2.083313
+Train Epoch: 20 	 Validation Loss: 2.141612
+Train Epoch: 30 	 Training Loss: 2.383584
+Train Epoch: 30 	 Validation Loss: 2.528367
+Train Epoch: 30 	 Training Loss: 2.065974
+Train Epoch: 30 	 Validation Loss: 2.113107
+Train Epoch: 40 	 Training Loss: 2.229234
+Train Epoch: 40 	 Validation Loss: 2.348339
+Train Epoch: 40 	 Training Loss: 2.055888
+Train Epoch: 40 	 Validation Loss: 2.093060
+Train Epoch: 50 	 Training Loss: 2.144712
+Train Epoch: 50 	 Validation Loss: 2.245608
+Train Epoch: 50 	 Training Loss: 2.049985
+Train Epoch: 50 	 Validation Loss: 2.079067
+Train Epoch: 60 	 Training Loss: 2.097510
+Train Epoch: 60 	 Validation Loss: 2.185239
+Train Epoch: 60 	 Training Loss: 2.046469
+Train Epoch: 60 	 Validation Loss: 2.069263
+Train Epoch: 70 	 Training Loss: 2.071066
+Train Epoch: 70 	 Validation Loss: 2.149130
+Train Epoch: 70 	 Training Loss: 2.044311
+Train Epoch: 70 	 Validation Loss: 2.062326
+Train Epoch: 80 	 Training Loss: 2.056341
+Train Epoch: 80 	 Validation Loss: 2.127242
+Train Epoch: 80 	 Training Loss: 2.042934
+Train Epoch: 80 	 Validation Loss: 2.057353
+Train Epoch: 90 	 Training Loss: 2.048189
+Train Epoch: 90 	 Validation Loss: 2.113763
+Train Epoch: 90 	 Training Loss: 2.042017
+Train Epoch: 90 	 Validation Loss: 2.053731
+Using device: cpu
+Using device: cpu
+9
+9
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.259415
+Train Epoch: 0 	 Validation Loss: 2.356010
+9
+9
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 11.561183
+Train Epoch: 0 	 Validation Loss: 10.353095
+Train Epoch: 10 	 Training Loss: 2.207947
+Train Epoch: 10 	 Validation Loss: 2.324728
+Train Epoch: 10 	 Training Loss: 6.934860
+Train Epoch: 10 	 Validation Loss: 6.232160
+Train Epoch: 20 	 Training Loss: 2.173461
+Train Epoch: 20 	 Validation Loss: 2.303018
+Train Epoch: 20 	 Training Loss: 4.935491
+Train Epoch: 20 	 Validation Loss: 4.453981
+Train Epoch: 30 	 Training Loss: 2.150868
+Train Epoch: 30 	 Validation Loss: 2.289104
+Train Epoch: 30 	 Training Loss: 3.893325
+Train Epoch: 30 	 Validation Loss: 3.535183
+Train Epoch: 40 	 Training Loss: 3.287663
+Train Epoch: 40 	 Validation Loss: 3.007430
+Train Epoch: 40 	 Training Loss: 2.136387
+Train Epoch: 40 	 Validation Loss: 2.280701
+Train Epoch: 50 	 Training Loss: 2.910418
+Train Epoch: 50 	 Validation Loss: 2.683312
+Train Epoch: 50 	 Training Loss: 2.127203
+Train Epoch: 50 	 Validation Loss: 2.275976
+Train Epoch: 60 	 Training Loss: 2.664576
+Train Epoch: 60 	 Validation Loss: 2.475593
+Train Epoch: 60 	 Training Loss: 2.121385
+Train Epoch: 60 	 Validation Loss: 2.273618
+Train Epoch: 70 	 Training Loss: 2.499625
+Train Epoch: 70 	 Validation Loss: 2.338989
+Train Epoch: 70 	 Training Loss: 2.117666
+Train Epoch: 70 	 Validation Loss: 2.272725
+Train Epoch: 80 	 Training Loss: 2.386986
+Train Epoch: 80 	 Validation Loss: 2.247972
+Train Epoch: 80 	 Training Loss: 2.115252
+Train Epoch: 80 	 Validation Loss: 2.272701
+Train Epoch: 90 	 Training Loss: 2.309407
+Train Epoch: 90 	 Validation Loss: 2.187192
+Train Epoch: 90 	 Training Loss: 2.113652
+Train Epoch: 90 	 Validation Loss: 2.273164
+Using device: cpu
+Using device: cpu
+9
+9
+Beginning training ...
+9
+9
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.208576
+Train Epoch: 0 	 Validation Loss: 2.266252
+Train Epoch: 0 	 Training Loss: 5.366344
+Train Epoch: 0 	 Validation Loss: 4.623664
+Train Epoch: 10 	 Training Loss: 2.136208
+Train Epoch: 10 	 Training Loss: 3.569367
+Train Epoch: 10 	 Validation Loss: 2.227845
+Train Epoch: 10 	 Validation Loss: 3.194762
+Train Epoch: 20 	 Training Loss: 2.841197
+Train Epoch: 20 	 Validation Loss: 2.615127
+Train Epoch: 20 	 Training Loss: 2.094066
+Train Epoch: 20 	 Validation Loss: 2.207671
+Train Epoch: 30 	 Training Loss: 2.491436
+Train Epoch: 30 	 Validation Loss: 2.339328
+Train Epoch: 30 	 Training Loss: 2.068510
+Train Epoch: 30 	 Validation Loss: 2.196682
+Train Epoch: 40 	 Training Loss: 2.306847
+Train Epoch: 40 	 Validation Loss: 2.196595
+Train Epoch: 40 	 Training Loss: 2.053261
+Train Epoch: 40 	 Validation Loss: 2.190943
+Train Epoch: 50 	 Training Loss: 2.204122
+Train Epoch: 50 	 Validation Loss: 2.119686
+Train Epoch: 50 	 Training Loss: 2.044330
+Train Epoch: 50 	 Validation Loss: 2.188045
+Train Epoch: 60 	 Training Loss: 2.145349
+Train Epoch: 60 	 Validation Loss: 2.077843
+Train Epoch: 60 	 Training Loss: 2.039136
+Train Epoch: 60 	 Validation Loss: 2.186626
+Train Epoch: 70 	 Training Loss: 2.036071
+Train Epoch: 70 	 Validation Loss: 2.185957
+Train Epoch: 70 	 Training Loss: 2.111332
+Train Epoch: 70 	 Validation Loss: 2.055445
+Train Epoch: 80 	 Training Loss: 2.034191
+Train Epoch: 80 	 Training Loss: 2.091596
+Train Epoch: 80 	 Validation Loss: 2.043971
+Train Epoch: 80 	 Validation Loss: 2.185664
+Train Epoch: 90 	 Training Loss: 2.032971
+Train Epoch: 90 	 Validation Loss: 2.185570
+Train Epoch: 90 	 Training Loss: 2.080133
+Train Epoch: 90 	 Validation Loss: 2.038559
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 6599.946904
+Train Epoch: 0 	 Validation Loss: 6126.058789
+Train Epoch: 0 	 Training Loss: 2.311083
+Train Epoch: 0 	 Validation Loss: 2.279112
+Train Epoch: 10 	 Training Loss: 4153.487269
+Train Epoch: 10 	 Validation Loss: 3876.662061
+Train Epoch: 10 	 Training Loss: 2.264811
+Train Epoch: 10 	 Validation Loss: 2.236461
+Train Epoch: 20 	 Training Loss: 2849.072229
+Train Epoch: 20 	 Validation Loss: 2669.360132
+Train Epoch: 20 	 Training Loss: 2.231908
+Train Epoch: 20 	 Validation Loss: 2.205100
+Train Epoch: 30 	 Training Loss: 2070.496971
+Train Epoch: 30 	 Validation Loss: 1945.018945
+Train Epoch: 30 	 Training Loss: 2.209701
+Train Epoch: 30 	 Validation Loss: 2.183540
+Train Epoch: 40 	 Training Loss: 2.195115
+Train Epoch: 40 	 Training Loss: 1566.918037
+Train Epoch: 40 	 Validation Loss: 1474.781006
+Train Epoch: 40 	 Validation Loss: 2.169188
+Train Epoch: 50 	 Training Loss: 1221.576653
+Train Epoch: 50 	 Validation Loss: 1151.414990
+Train Epoch: 50 	 Training Loss: 2.185682
+Train Epoch: 50 	 Validation Loss: 2.159806
+Train Epoch: 60 	 Training Loss: 974.039111
+Train Epoch: 60 	 Validation Loss: 919.135937
+Train Epoch: 60 	 Training Loss: 2.179652
+Train Epoch: 60 	 Validation Loss: 2.153719
+Train Epoch: 70 	 Training Loss: 2.175820
+Train Epoch: 70 	 Validation Loss: 2.149750
+Train Epoch: 70 	 Training Loss: 790.389366
+Train Epoch: 70 	 Validation Loss: 746.517944
+Train Epoch: 80 	 Training Loss: 650.358270
+Train Epoch: 80 	 Validation Loss: 614.720630
+Train Epoch: 80 	 Training Loss: 2.173383
+Train Epoch: 80 	 Validation Loss: 2.147109
+Train Epoch: 90 	 Training Loss: 2.171818
+Train Epoch: 90 	 Validation Loss: 2.145296
+Train Epoch: 90 	 Training Loss: 541.192014
+Train Epoch: 90 	 Validation Loss: 511.859174
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 102434.314525
+Train Epoch: 0 	 Validation Loss: 102897.294531
+Train Epoch: 0 	 Training Loss: 8664.759603
+Train Epoch: 0 	 Validation Loss: 8219.635937
+Train Epoch: 10 	 Training Loss: 5403.786757
+Train Epoch: 10 	 Training Loss: 64517.591869
+Train Epoch: 10 	 Validation Loss: 65146.944531
+Train Epoch: 10 	 Validation Loss: 5156.359961
+Train Epoch: 20 	 Training Loss: 44270.622685
+Train Epoch: 20 	 Validation Loss: 44866.398438
+Train Epoch: 20 	 Training Loss: 3691.748626
+Train Epoch: 20 	 Validation Loss: 3535.517383
+Train Epoch: 30 	 Training Loss: 32175.239583
+Train Epoch: 30 	 Validation Loss: 32690.089062
+Train Epoch: 30 	 Training Loss: 2675.706814
+Train Epoch: 30 	 Validation Loss: 2568.810522
+Train Epoch: 40 	 Training Loss: 2020.948188
+Train Epoch: 40 	 Validation Loss: 1943.662402
+Train Epoch: 40 	 Training Loss: 24346.655201
+Train Epoch: 40 	 Validation Loss: 24780.897852
+Train Epoch: 50 	 Training Loss: 1573.115035
+Train Epoch: 50 	 Validation Loss: 1514.971094
+Train Epoch: 50 	 Training Loss: 18975.075485
+Train Epoch: 50 	 Validation Loss: 19339.551563
+Train Epoch: 60 	 Training Loss: 1252.749374
+Train Epoch: 60 	 Validation Loss: 1207.690344
+Train Epoch: 60 	 Training Loss: 15122.989728
+Train Epoch: 60 	 Validation Loss: 15429.444727
+Train Epoch: 70 	 Training Loss: 1015.445118
+Train Epoch: 70 	 Validation Loss: 979.721240
+Train Epoch: 70 	 Training Loss: 12263.987431
+Train Epoch: 70 	 Validation Loss: 12522.693555
+Train Epoch: 80 	 Training Loss: 834.731287
+Train Epoch: 80 	 Validation Loss: 805.898169
+Train Epoch: 80 	 Training Loss: 10083.184697
+Train Epoch: 80 	 Validation Loss: 10302.591699
+Train Epoch: 90 	 Training Loss: 693.991687
+Train Epoch: 90 	 Validation Loss: 670.386469
+Train Epoch: 90 	 Training Loss: 8382.427915
+Train Epoch: 90 	 Validation Loss: 8569.348145
+Using device: cpu
+Using device: cpu
+9
+9
+Beginning training ...
+9
+9
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.244617
+Train Epoch: 0 	 Validation Loss: 2.230143
+Train Epoch: 0 	 Training Loss: 5.355938
+Train Epoch: 0 	 Validation Loss: 5.490417
+Train Epoch: 10 	 Training Loss: 2.200029
+Train Epoch: 10 	 Validation Loss: 2.199457
+Train Epoch: 10 	 Training Loss: 3.664746
+Train Epoch: 10 	 Validation Loss: 3.787932
+Train Epoch: 20 	 Training Loss: 2.170473
+Train Epoch: 20 	 Validation Loss: 2.180881
+Train Epoch: 20 	 Training Loss: 2.942611
+Train Epoch: 20 	 Validation Loss: 3.041575
+Train Epoch: 30 	 Training Loss: 2.150338
+Train Epoch: 30 	 Validation Loss: 2.168819
+Train Epoch: 30 	 Training Loss: 2.582737
+Train Epoch: 30 	 Validation Loss: 2.662391
+Train Epoch: 40 	 Training Loss: 2.137055
+Train Epoch: 40 	 Validation Loss: 2.161265
+Train Epoch: 40 	 Training Loss: 2.387960
+Train Epoch: 40 	 Validation Loss: 2.453377
+Train Epoch: 50 	 Training Loss: 2.128529
+Train Epoch: 50 	 Validation Loss: 2.156705
+Train Epoch: 50 	 Training Loss: 2.277654
+Train Epoch: 50 	 Validation Loss: 2.332568
+Train Epoch: 60 	 Training Loss: 2.123127
+Train Epoch: 60 	 Validation Loss: 2.154029
+Train Epoch: 60 	 Training Loss: 2.213785
+Train Epoch: 60 	 Validation Loss: 2.260825
+Train Epoch: 70 	 Training Loss: 2.176559
+Train Epoch: 70 	 Validation Loss: 2.217581
+Train Epoch: 70 	 Training Loss: 2.119692
+Train Epoch: 70 	 Validation Loss: 2.152499
+Train Epoch: 80 	 Training Loss: 2.117471
+Train Epoch: 80 	 Validation Loss: 2.151655
+Train Epoch: 80 	 Training Loss: 2.154938
+Train Epoch: 80 	 Validation Loss: 2.191271
+Train Epoch: 90 	 Training Loss: 2.142474
+Train Epoch: 90 	 Validation Loss: 2.175083
+Train Epoch: 90 	 Training Loss: 2.115997
+Train Epoch: 90 	 Validation Loss: 2.151223
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 16843.691298
+Train Epoch: 0 	 Validation Loss: 17558.802930
+Train Epoch: 0 	 Training Loss: 5.959985
+Train Epoch: 0 	 Validation Loss: 6.179537
+Train Epoch: 10 	 Training Loss: 3.965251
+Train Epoch: 10 	 Training Loss: 10509.830295
+Train Epoch: 10 	 Validation Loss: 11018.836621
+Train Epoch: 10 	 Validation Loss: 4.180534
+Train Epoch: 20 	 Training Loss: 3.127485
+Train Epoch: 20 	 Validation Loss: 3.313177
+Train Epoch: 20 	 Training Loss: 7174.439110
+Train Epoch: 20 	 Validation Loss: 7550.099121
+Train Epoch: 30 	 Training Loss: 2.710792
+Train Epoch: 30 	 Training Loss: 5196.219039
+Train Epoch: 30 	 Validation Loss: 5482.232813
+Train Epoch: 30 	 Validation Loss: 2.870195
+Train Epoch: 40 	 Training Loss: 2.483327
+Train Epoch: 40 	 Validation Loss: 2.622211
+Train Epoch: 40 	 Training Loss: 3922.223814
+Train Epoch: 40 	 Validation Loss: 4145.656689
+Train Epoch: 50 	 Training Loss: 2.352412
+Train Epoch: 50 	 Validation Loss: 2.475688
+Train Epoch: 50 	 Training Loss: 3051.314770
+Train Epoch: 50 	 Validation Loss: 3229.506885
+Train Epoch: 60 	 Training Loss: 2428.555999
+Train Epoch: 60 	 Validation Loss: 2573.037744
+Train Epoch: 60 	 Training Loss: 2.274919
+Train Epoch: 60 	 Validation Loss: 2.386400
+Train Epoch: 70 	 Training Loss: 1967.414994
+Train Epoch: 70 	 Validation Loss: 2086.144458
+Train Epoch: 70 	 Training Loss: 2.228527
+Train Epoch: 70 	 Validation Loss: 2.331148
+Train Epoch: 80 	 Training Loss: 1616.335368
+Train Epoch: 80 	 Validation Loss: 1714.971997
+Train Epoch: 80 	 Training Loss: 2.200766
+Train Epoch: 80 	 Validation Loss: 2.296821
+Train Epoch: 90 	 Training Loss: 1342.980032
+Train Epoch: 90 	 Validation Loss: 1425.662915
+Train Epoch: 90 	 Training Loss: 2.184281
+Train Epoch: 90 	 Validation Loss: 2.275604
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.198903
+Train Epoch: 0 	 Validation Loss: 2.220326
+Train Epoch: 0 	 Training Loss: 4.830873
+Train Epoch: 0 	 Validation Loss: 5.527652
+Train Epoch: 10 	 Training Loss: 2.135206
+Train Epoch: 10 	 Validation Loss: 2.157814
+Train Epoch: 10 	 Training Loss: 3.263635
+Train Epoch: 10 	 Validation Loss: 3.852870
+Train Epoch: 20 	 Training Loss: 2.098068
+Train Epoch: 20 	 Validation Loss: 2.116191
+Train Epoch: 20 	 Training Loss: 2.641520
+Train Epoch: 20 	 Validation Loss: 3.127684
+Train Epoch: 30 	 Training Loss: 2.074770
+Train Epoch: 30 	 Validation Loss: 2.087261
+Train Epoch: 30 	 Training Loss: 2.348068
+Train Epoch: 30 	 Validation Loss: 2.757172
+Train Epoch: 40 	 Training Loss: 2.060660
+Train Epoch: 40 	 Validation Loss: 2.067522
+Train Epoch: 40 	 Training Loss: 2.196262
+Train Epoch: 40 	 Validation Loss: 2.549514
+Train Epoch: 50 	 Training Loss: 2.052325
+Train Epoch: 50 	 Validation Loss: 2.054106
+Train Epoch: 50 	 Training Loss: 2.113714
+Train Epoch: 50 	 Validation Loss: 2.426502
+Train Epoch: 60 	 Training Loss: 2.047397
+Train Epoch: 60 	 Validation Loss: 2.044901
+Train Epoch: 60 	 Training Loss: 2.067664
+Train Epoch: 60 	 Validation Loss: 2.351099
+Train Epoch: 70 	 Training Loss: 2.044406
+Train Epoch: 70 	 Validation Loss: 2.038468
+Train Epoch: 70 	 Training Loss: 2.041651
+Train Epoch: 70 	 Validation Loss: 2.303899
+Train Epoch: 80 	 Training Loss: 2.042511
+Train Epoch: 80 	 Validation Loss: 2.033868
+Train Epoch: 80 	 Training Loss: 2.026808
+Train Epoch: 80 	 Validation Loss: 2.274001
+Train Epoch: 90 	 Training Loss: 2.041250
+Train Epoch: 90 	 Validation Loss: 2.030500
+Train Epoch: 90 	 Training Loss: 2.018176
+Train Epoch: 90 	 Validation Loss: 2.254982
+Using device: cpu
+Using device: cpu
+9
+9
+Beginning training ...
+9
+9
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 5.632619
+Train Epoch: 0 	 Validation Loss: 6.242974
+Train Epoch: 0 	 Training Loss: 2.266441
+Train Epoch: 0 	 Validation Loss: 2.249731
+Train Epoch: 10 	 Training Loss: 3.670051
+Train Epoch: 10 	 Validation Loss: 4.028739
+Train Epoch: 10 	 Training Loss: 2.204579
+Train Epoch: 10 	 Validation Loss: 2.182325
+Train Epoch: 20 	 Training Loss: 2.164518
+Train Epoch: 20 	 Validation Loss: 2.137697
+Train Epoch: 20 	 Training Loss: 2.894461
+Train Epoch: 20 	 Validation Loss: 3.133922
+Train Epoch: 30 	 Training Loss: 2.527008
+Train Epoch: 30 	 Validation Loss: 2.702154
+Train Epoch: 30 	 Training Loss: 2.139606
+Train Epoch: 30 	 Validation Loss: 2.110055
+Train Epoch: 40 	 Training Loss: 2.124094
+Train Epoch: 40 	 Validation Loss: 2.093473
+Train Epoch: 40 	 Training Loss: 2.334306
+Train Epoch: 40 	 Validation Loss: 2.471296
+Train Epoch: 50 	 Training Loss: 2.114399
+Train Epoch: 50 	 Validation Loss: 2.083766
+Train Epoch: 50 	 Training Loss: 2.227306
+Train Epoch: 50 	 Validation Loss: 2.340071
+Train Epoch: 60 	 Training Loss: 2.108382
+Train Epoch: 60 	 Validation Loss: 2.078270
+Train Epoch: 60 	 Training Loss: 2.166116
+Train Epoch: 60 	 Validation Loss: 2.262759
+Train Epoch: 70 	 Training Loss: 2.104668
+Train Epoch: 70 	 Validation Loss: 2.075297
+Train Epoch: 70 	 Training Loss: 2.130729
+Train Epoch: 70 	 Validation Loss: 2.216319
+Train Epoch: 80 	 Training Loss: 2.102369
+Train Epoch: 80 	 Validation Loss: 2.073797
+Train Epoch: 80 	 Training Loss: 2.110277
+Train Epoch: 80 	 Validation Loss: 2.188183
+Train Epoch: 90 	 Training Loss: 2.100925
+Train Epoch: 90 	 Validation Loss: 2.073133
+Train Epoch: 90 	 Training Loss: 2.098530
+Train Epoch: 90 	 Validation Loss: 2.171105
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.206520
+Train Epoch: 0 	 Validation Loss: 2.141519
+Train Epoch: 0 	 Training Loss: 5.058400
+Train Epoch: 0 	 Validation Loss: 4.493682
+Train Epoch: 10 	 Training Loss: 2.125499
+Train Epoch: 10 	 Validation Loss: 2.073639
+Train Epoch: 10 	 Training Loss: 3.352300
+Train Epoch: 10 	 Validation Loss: 3.082756
+Train Epoch: 20 	 Training Loss: 2.074821
+Train Epoch: 20 	 Validation Loss: 2.039779
+Train Epoch: 20 	 Training Loss: 2.676966
+Train Epoch: 20 	 Validation Loss: 2.532796
+Train Epoch: 30 	 Training Loss: 2.043852
+Train Epoch: 30 	 Training Loss: 2.361987
+Train Epoch: 30 	 Validation Loss: 2.022284
+Train Epoch: 30 	 Validation Loss: 2.280565
+Train Epoch: 40 	 Training Loss: 2.200227
+Train Epoch: 40 	 Validation Loss: 2.154115
+Train Epoch: 40 	 Training Loss: 2.025415
+Train Epoch: 40 	 Validation Loss: 2.013368
+Train Epoch: 50 	 Training Loss: 2.112513
+Train Epoch: 50 	 Validation Loss: 2.088037
+Train Epoch: 50 	 Training Loss: 2.014612
+Train Epoch: 50 	 Validation Loss: 2.009173
+Train Epoch: 60 	 Training Loss: 2.063553
+Train Epoch: 60 	 Validation Loss: 2.053289
+Train Epoch: 60 	 Training Loss: 2.008334
+Train Epoch: 60 	 Validation Loss: 2.007532
+Train Epoch: 70 	 Training Loss: 2.035834
+Train Epoch: 70 	 Validation Loss: 2.035518
+Train Epoch: 70 	 Training Loss: 2.004669
+Train Epoch: 70 	 Validation Loss: 2.007172
+Train Epoch: 80 	 Training Loss: 2.020010
+Train Epoch: 80 	 Validation Loss: 2.027097
+Train Epoch: 80 	 Training Loss: 2.002487
+Train Epoch: 80 	 Validation Loss: 2.007380
+Train Epoch: 90 	 Training Loss: 2.010862
+Train Epoch: 90 	 Validation Loss: 2.023799
+Train Epoch: 90 	 Training Loss: 2.001145
+Train Epoch: 90 	 Validation Loss: 2.007799
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.230524
+Train Epoch: 0 	 Validation Loss: 2.249778
+Train Epoch: 0 	 Training Loss: 35463.308919
+Train Epoch: 0 	 Validation Loss: 34524.778125
+Train Epoch: 10 	 Training Loss: 2.174107
+Train Epoch: 10 	 Validation Loss: 2.210408
+Train Epoch: 10 	 Training Loss: 22325.966797
+Train Epoch: 10 	 Validation Loss: 21859.976562
+Train Epoch: 20 	 Training Loss: 2.138141
+Train Epoch: 20 	 Validation Loss: 2.186025
+Train Epoch: 20 	 Training Loss: 15333.429724
+Train Epoch: 20 	 Validation Loss: 15067.708789
+Train Epoch: 30 	 Training Loss: 2.114176
+Train Epoch: 30 	 Validation Loss: 2.170015
+Train Epoch: 30 	 Training Loss: 11152.178602
+Train Epoch: 30 	 Validation Loss: 10985.984375
+Train Epoch: 40 	 Training Loss: 8443.599646
+Train Epoch: 40 	 Validation Loss: 8332.518652
+Train Epoch: 40 	 Training Loss: 2.098580
+Train Epoch: 40 	 Validation Loss: 2.159617
+Train Epoch: 50 	 Training Loss: 6583.815357
+Train Epoch: 50 	 Validation Loss: 6505.788379
+Train Epoch: 50 	 Training Loss: 2.088617
+Train Epoch: 50 	 Validation Loss: 2.152927
+Train Epoch: 60 	 Training Loss: 2.082309
+Train Epoch: 60 	 Training Loss: 5249.373336
+Train Epoch: 60 	 Validation Loss: 5192.416504
+Train Epoch: 60 	 Validation Loss: 2.148672
+Train Epoch: 70 	 Training Loss: 4258.500552
+Train Epoch: 70 	 Validation Loss: 4215.642480
+Train Epoch: 70 	 Training Loss: 2.078319
+Train Epoch: 70 	 Validation Loss: 2.146010
+Train Epoch: 80 	 Training Loss: 3502.393808
+Train Epoch: 80 	 Validation Loss: 3469.341650
+Train Epoch: 80 	 Training Loss: 2.075779
+Train Epoch: 80 	 Validation Loss: 2.144385
+Train Epoch: 90 	 Training Loss: 2912.540120
+Train Epoch: 90 	 Validation Loss: 2886.531982
+Train Epoch: 90 	 Training Loss: 2.074139
+Train Epoch: 90 	 Validation Loss: 2.143433
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 5.784479
+Train Epoch: 0 	 Training Loss: 10944.776060
+Train Epoch: 0 	 Validation Loss: 6.308711
+Train Epoch: 0 	 Validation Loss: 11921.263086
+Train Epoch: 10 	 Training Loss: 6876.650246
+Train Epoch: 10 	 Validation Loss: 7528.825293
+Train Epoch: 10 	 Training Loss: 3.826704
+Train Epoch: 10 	 Validation Loss: 4.212919
+Train Epoch: 20 	 Training Loss: 3.014677
+Train Epoch: 20 	 Training Loss: 4708.316578
+Train Epoch: 20 	 Validation Loss: 5174.515625
+Train Epoch: 20 	 Validation Loss: 3.309958
+Train Epoch: 30 	 Training Loss: 3416.887695
+Train Epoch: 30 	 Validation Loss: 3765.021191
+Train Epoch: 30 	 Training Loss: 2.616637
+Train Epoch: 30 	 Validation Loss: 2.852231
+Train Epoch: 40 	 Training Loss: 2582.952049
+Train Epoch: 40 	 Validation Loss: 2851.456738
+Train Epoch: 40 	 Training Loss: 2.402129
+Train Epoch: 40 	 Validation Loss: 2.596986
+Train Epoch: 50 	 Training Loss: 2.279943
+Train Epoch: 50 	 Training Loss: 2011.768075
+Train Epoch: 50 	 Validation Loss: 2.446013
+Train Epoch: 50 	 Validation Loss: 2223.991260
+Train Epoch: 60 	 Training Loss: 1602.741672
+Train Epoch: 60 	 Validation Loss: 1773.699707
+Train Epoch: 60 	 Training Loss: 2.208165
+Train Epoch: 60 	 Validation Loss: 2.353351
+Train Epoch: 70 	 Training Loss: 1299.513636
+Train Epoch: 70 	 Validation Loss: 1439.313562
+Train Epoch: 70 	 Training Loss: 2.165373
+Train Epoch: 70 	 Validation Loss: 2.295137
+Train Epoch: 80 	 Training Loss: 2.139746
+Train Epoch: 80 	 Validation Loss: 2.258010
+Train Epoch: 80 	 Training Loss: 1068.445661
+Train Epoch: 80 	 Validation Loss: 1184.151538
+Train Epoch: 90 	 Training Loss: 2.124398
+Train Epoch: 90 	 Validation Loss: 2.234069
+Train Epoch: 90 	 Training Loss: 888.396439
+Train Epoch: 90 	 Validation Loss: 985.105261
+Using device: cpu
+Using device: cpu
+9
+9
+Beginning training ...
+9
+9
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.245611
+Train Epoch: 0 	 Validation Loss: 2.328064
+Train Epoch: 0 	 Training Loss: 5.856236
+Train Epoch: 0 	 Validation Loss: 4.243701
+Train Epoch: 10 	 Training Loss: 2.190685
+Train Epoch: 10 	 Validation Loss: 2.272205
+Train Epoch: 10 	 Training Loss: 3.831592
+Train Epoch: 10 	 Validation Loss: 2.944506
+Train Epoch: 20 	 Training Loss: 2.152983
+Train Epoch: 20 	 Validation Loss: 2.228809
+Train Epoch: 20 	 Training Loss: 3.007905
+Train Epoch: 20 	 Validation Loss: 2.433126
+Train Epoch: 30 	 Training Loss: 2.126806
+Train Epoch: 30 	 Validation Loss: 2.198022
+Train Epoch: 30 	 Training Loss: 2.609336
+Train Epoch: 30 	 Validation Loss: 2.198471
+Train Epoch: 40 	 Training Loss: 2.109059
+Train Epoch: 40 	 Validation Loss: 2.177323
+Train Epoch: 40 	 Training Loss: 2.396686
+Train Epoch: 40 	 Validation Loss: 2.082866
+Train Epoch: 50 	 Training Loss: 2.276668
+Train Epoch: 50 	 Training Loss: 2.097303
+Train Epoch: 50 	 Validation Loss: 2.164010
+Train Epoch: 50 	 Validation Loss: 2.025021
+Train Epoch: 60 	 Training Loss: 2.206787
+Train Epoch: 60 	 Validation Loss: 1.997179
+Train Epoch: 60 	 Training Loss: 2.089646
+Train Epoch: 60 	 Validation Loss: 2.155795
+Train Epoch: 70 	 Training Loss: 2.165461
+Train Epoch: 70 	 Validation Loss: 1.985370
+Train Epoch: 70 	 Training Loss: 2.084703
+Train Epoch: 70 	 Validation Loss: 2.150940
+Train Epoch: 80 	 Training Loss: 2.140847
+Train Epoch: 80 	 Validation Loss: 1.982030
+Train Epoch: 80 	 Training Loss: 2.081512
+Train Epoch: 80 	 Validation Loss: 2.148225
+Train Epoch: 90 	 Training Loss: 2.126098
+Train Epoch: 90 	 Validation Loss: 1.982890
+Train Epoch: 90 	 Training Loss: 2.079442
+Train Epoch: 90 	 Validation Loss: 2.146840
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 8.900123
+Train Epoch: 0 	 Validation Loss: 7.511414
+Train Epoch: 0 	 Training Loss: 50434.012442
+Train Epoch: 0 	 Validation Loss: 54213.363281
+Train Epoch: 10 	 Training Loss: 5.496699
+Train Epoch: 10 	 Validation Loss: 4.713525
+Train Epoch: 10 	 Training Loss: 31523.943287
+Train Epoch: 10 	 Validation Loss: 34072.856641
+Train Epoch: 20 	 Training Loss: 21537.063151
+Train Epoch: 20 	 Validation Loss: 23366.170703
+Train Epoch: 20 	 Training Loss: 4.037881
+Train Epoch: 20 	 Validation Loss: 3.520868
+Train Epoch: 30 	 Training Loss: 15606.362956
+Train Epoch: 30 	 Validation Loss: 16975.431250
+Train Epoch: 30 	 Training Loss: 3.292998
+Train Epoch: 30 	 Validation Loss: 2.919013
+Train Epoch: 40 	 Training Loss: 11783.566913
+Train Epoch: 40 	 Validation Loss: 12841.102148
+Train Epoch: 40 	 Training Loss: 2.870097
+Train Epoch: 40 	 Validation Loss: 2.583225
+Train Epoch: 50 	 Training Loss: 9168.544795
+Train Epoch: 50 	 Validation Loss: 10005.309570
+Train Epoch: 50 	 Training Loss: 2.613560
+Train Epoch: 50 	 Validation Loss: 2.384225
+Train Epoch: 60 	 Training Loss: 7297.673955
+Train Epoch: 60 	 Validation Loss: 7972.256738
+Train Epoch: 60 	 Training Loss: 2.451362
+Train Epoch: 60 	 Validation Loss: 2.262188
+Train Epoch: 70 	 Training Loss: 5911.734538
+Train Epoch: 70 	 Validation Loss: 6463.686621
+Train Epoch: 70 	 Training Loss: 2.346263
+Train Epoch: 70 	 Validation Loss: 2.186234
+Train Epoch: 80 	 Training Loss: 4856.206299
+Train Epoch: 80 	 Validation Loss: 5313.234570
+Train Epoch: 80 	 Training Loss: 2.277327
+Train Epoch: 80 	 Validation Loss: 2.139050
+Train Epoch: 90 	 Training Loss: 4034.102223
+Train Epoch: 90 	 Validation Loss: 4416.217871
+Train Epoch: 90 	 Training Loss: 2.232000
+Train Epoch: 90 	 Validation Loss: 2.110279
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 173521.996528
+Train Epoch: 0 	 Validation Loss: 146262.196875
+Train Epoch: 0 	 Training Loss: 14869.192238
+Train Epoch: 0 	 Validation Loss: 12171.146680
+Train Epoch: 10 	 Training Loss: 108711.263021
+Train Epoch: 10 	 Validation Loss: 92149.705469
+Train Epoch: 10 	 Training Loss: 9338.254033
+Train Epoch: 10 	 Validation Loss: 7685.536719
+Train Epoch: 20 	 Training Loss: 74401.377170
+Train Epoch: 20 	 Validation Loss: 63300.922656
+Train Epoch: 20 	 Training Loss: 6399.195331
+Train Epoch: 20 	 Validation Loss: 5286.230127
+Train Epoch: 30 	 Training Loss: 4647.039126
+Train Epoch: 30 	 Validation Loss: 3848.639600
+Train Epoch: 30 	 Training Loss: 53978.757885
+Train Epoch: 30 	 Validation Loss: 46041.835156
+Train Epoch: 40 	 Training Loss: 3514.558937
+Train Epoch: 40 	 Validation Loss: 2916.139697
+Train Epoch: 40 	 Training Loss: 40792.673177
+Train Epoch: 40 	 Validation Loss: 34858.123437
+Train Epoch: 50 	 Training Loss: 2738.315886
+Train Epoch: 50 	 Validation Loss: 2275.266357
+Train Epoch: 50 	 Training Loss: 31761.183087
+Train Epoch: 50 	 Validation Loss: 27177.583398
+Train Epoch: 60 	 Training Loss: 2182.100491
+Train Epoch: 60 	 Validation Loss: 1815.110913
+Train Epoch: 60 	 Training Loss: 25293.345667
+Train Epoch: 60 	 Validation Loss: 21665.902930
+Train Epoch: 70 	 Training Loss: 1769.552228
+Train Epoch: 70 	 Validation Loss: 1473.261255
+Train Epoch: 70 	 Training Loss: 20498.200666
+Train Epoch: 70 	 Validation Loss: 17572.995898
+Train Epoch: 80 	 Training Loss: 1455.037182
+Train Epoch: 80 	 Validation Loss: 1212.307129
+Train Epoch: 80 	 Training Loss: 16843.816298
+Train Epoch: 80 	 Validation Loss: 14449.714258
+Train Epoch: 90 	 Training Loss: 1209.875737
+Train Epoch: 90 	 Training Loss: 13995.977973
+Train Epoch: 90 	 Validation Loss: 12013.169629
+Train Epoch: 90 	 Validation Loss: 1008.684387
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.247957
+Train Epoch: 0 	 Validation Loss: 2.276686
+Train Epoch: 0 	 Training Loss: 71486.387876
+Train Epoch: 0 	 Validation Loss: 60062.407813
+Train Epoch: 10 	 Training Loss: 44602.539641
+Train Epoch: 10 	 Validation Loss: 37701.901563
+Train Epoch: 10 	 Training Loss: 2.197341
+Train Epoch: 10 	 Validation Loss: 2.229187
+Train Epoch: 20 	 Training Loss: 30470.087240
+Train Epoch: 20 	 Validation Loss: 25852.838281
+Train Epoch: 20 	 Training Loss: 2.164994
+Train Epoch: 20 	 Validation Loss: 2.197220
+Train Epoch: 30 	 Training Loss: 22079.790003
+Train Epoch: 30 	 Validation Loss: 18782.146094
+Train Epoch: 30 	 Training Loss: 2.143619
+Train Epoch: 30 	 Validation Loss: 2.176335
+Train Epoch: 40 	 Training Loss: 16671.771991
+Train Epoch: 40 	 Validation Loss: 14208.146289
+Train Epoch: 40 	 Training Loss: 2.129760
+Train Epoch: 40 	 Validation Loss: 2.163424
+Train Epoch: 50 	 Training Loss: 12972.265752
+Train Epoch: 50 	 Validation Loss: 11070.733594
+Train Epoch: 50 	 Training Loss: 2.121003
+Train Epoch: 50 	 Validation Loss: 2.155924
+Train Epoch: 60 	 Training Loss: 10325.405563
+Train Epoch: 60 	 Validation Loss: 8821.370801
+Train Epoch: 60 	 Training Loss: 2.115570
+Train Epoch: 60 	 Validation Loss: 2.151878
+Train Epoch: 70 	 Training Loss: 8364.532028
+Train Epoch: 70 	 Validation Loss: 7152.244434
+Train Epoch: 70 	 Training Loss: 2.112212
+Train Epoch: 70 	 Validation Loss: 2.149919
+Train Epoch: 80 	 Training Loss: 6871.070765
+Train Epoch: 80 	 Validation Loss: 5879.304980
+Train Epoch: 80 	 Training Loss: 2.110115
+Train Epoch: 80 	 Validation Loss: 2.149166
+Train Epoch: 90 	 Training Loss: 5707.838108
+Train Epoch: 90 	 Validation Loss: 4886.761084
+Train Epoch: 90 	 Training Loss: 2.108773
+Train Epoch: 90 	 Validation Loss: 2.149080
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 43683.377821
+Train Epoch: 0 	 Validation Loss: 55628.564844
+Train Epoch: 0 	 Training Loss: 4010.859212
+Train Epoch: 0 	 Validation Loss: 3517.541968
+Train Epoch: 10 	 Training Loss: 2524.239262
+Train Epoch: 10 	 Validation Loss: 2227.459473
+Train Epoch: 10 	 Training Loss: 27306.025825
+Train Epoch: 10 	 Validation Loss: 34976.828125
+Train Epoch: 20 	 Training Loss: 1737.718169
+Train Epoch: 20 	 Validation Loss: 1538.696948
+Train Epoch: 20 	 Training Loss: 18670.896665
+Train Epoch: 20 	 Validation Loss: 24005.045898
+Train Epoch: 30 	 Training Loss: 1266.542083
+Train Epoch: 30 	 Validation Loss: 1124.162158
+Train Epoch: 30 	 Training Loss: 13537.972457
+Train Epoch: 30 	 Validation Loss: 17449.947070
+Train Epoch: 40 	 Training Loss: 960.782621
+Train Epoch: 40 	 Validation Loss: 854.275977
+Train Epoch: 40 	 Training Loss: 10226.757957
+Train Epoch: 40 	 Validation Loss: 13206.012793
+Train Epoch: 50 	 Training Loss: 750.545394
+Train Epoch: 50 	 Validation Loss: 668.253650
+Train Epoch: 50 	 Training Loss: 7960.248210
+Train Epoch: 50 	 Validation Loss: 10293.251855
+Train Epoch: 60 	 Training Loss: 6337.906386
+Train Epoch: 60 	 Validation Loss: 8204.016211
+Train Epoch: 60 	 Training Loss: 599.526626
+Train Epoch: 60 	 Validation Loss: 534.379132
+Train Epoch: 70 	 Training Loss: 5135.582764
+Train Epoch: 70 	 Validation Loss: 6653.144287
+Train Epoch: 70 	 Training Loss: 487.292466
+Train Epoch: 70 	 Validation Loss: 434.739890
+Train Epoch: 80 	 Training Loss: 4219.583044
+Train Epoch: 80 	 Validation Loss: 5470.041553
+Train Epoch: 80 	 Training Loss: 401.589817
+Train Epoch: 80 	 Validation Loss: 358.565649
+Train Epoch: 90 	 Training Loss: 334.697115
+Train Epoch: 90 	 Validation Loss: 299.052429
+Train Epoch: 90 	 Training Loss: 3505.945950
+Train Epoch: 90 	 Validation Loss: 4547.311572
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.217179
+Train Epoch: 0 	 Training Loss: 5.287156
+Train Epoch: 0 	 Validation Loss: 4.038004
+Train Epoch: 0 	 Validation Loss: 2.180961
+Train Epoch: 10 	 Training Loss: 3.525952
+Train Epoch: 10 	 Validation Loss: 2.885657
+Train Epoch: 10 	 Training Loss: 2.157491
+Train Epoch: 10 	 Validation Loss: 2.118449
+Train Epoch: 20 	 Training Loss: 2.818878
+Train Epoch: 20 	 Validation Loss: 2.429999
+Train Epoch: 20 	 Training Loss: 2.122285
+Train Epoch: 20 	 Validation Loss: 2.080667
+Train Epoch: 30 	 Training Loss: 2.480544
+Train Epoch: 30 	 Validation Loss: 2.217424
+Train Epoch: 30 	 Training Loss: 2.100289
+Train Epoch: 30 	 Validation Loss: 2.055911
+Train Epoch: 40 	 Training Loss: 2.302278
+Train Epoch: 40 	 Validation Loss: 2.110140
+Train Epoch: 40 	 Training Loss: 2.086802
+Train Epoch: 40 	 Validation Loss: 2.040150
+Train Epoch: 50 	 Training Loss: 2.203263
+Train Epoch: 50 	 Validation Loss: 2.054616
+Train Epoch: 50 	 Training Loss: 2.078639
+Train Epoch: 50 	 Validation Loss: 2.030520
+Train Epoch: 60 	 Training Loss: 2.146822
+Train Epoch: 60 	 Validation Loss: 2.026412
+Train Epoch: 60 	 Training Loss: 2.073685
+Train Epoch: 60 	 Validation Loss: 2.024858
+Train Epoch: 70 	 Training Loss: 2.114371
+Train Epoch: 70 	 Validation Loss: 2.013068
+Train Epoch: 70 	 Training Loss: 2.070620
+Train Epoch: 70 	 Validation Loss: 2.021655
+Train Epoch: 80 	 Training Loss: 2.095749
+Train Epoch: 80 	 Validation Loss: 2.007757
+Train Epoch: 80 	 Training Loss: 2.068665
+Train Epoch: 80 	 Validation Loss: 2.019930
+Train Epoch: 90 	 Training Loss: 2.085118
+Train Epoch: 90 	 Validation Loss: 2.006582
+Train Epoch: 90 	 Training Loss: 2.067368
+Train Epoch: 90 	 Validation Loss: 2.019075
+Using device: cpu
+Using device: cpu
+9
+9
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.206745
+Train Epoch: 0 	 Validation Loss: 2.191698
+9
+9
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 8.497844
+Train Epoch: 0 	 Validation Loss: 8.207077
+Train Epoch: 10 	 Training Loss: 2.144513
+Train Epoch: 10 	 Validation Loss: 2.139636
+Train Epoch: 10 	 Training Loss: 5.367106
+Train Epoch: 10 	 Validation Loss: 5.215088
+Train Epoch: 20 	 Training Loss: 3.960634
+Train Epoch: 20 	 Validation Loss: 3.868464
+Train Epoch: 20 	 Training Loss: 2.107442
+Train Epoch: 20 	 Validation Loss: 2.111906
+Train Epoch: 30 	 Training Loss: 3.220567
+Train Epoch: 30 	 Validation Loss: 3.159912
+Train Epoch: 30 	 Training Loss: 2.082932
+Train Epoch: 30 	 Validation Loss: 2.094919
+Train Epoch: 40 	 Training Loss: 2.067025
+Train Epoch: 40 	 Validation Loss: 2.084874
+Train Epoch: 40 	 Training Loss: 2.792409
+Train Epoch: 40 	 Validation Loss: 2.750514
+Train Epoch: 50 	 Training Loss: 2.529551
+Train Epoch: 50 	 Validation Loss: 2.499728
+Train Epoch: 50 	 Training Loss: 2.056962
+Train Epoch: 50 	 Validation Loss: 2.079284
+Train Epoch: 60 	 Training Loss: 2.362013
+Train Epoch: 60 	 Validation Loss: 2.340391
+Train Epoch: 60 	 Training Loss: 2.050697
+Train Epoch: 60 	 Validation Loss: 2.076377
+Train Epoch: 70 	 Training Loss: 2.252799
+Train Epoch: 70 	 Validation Loss: 2.236980
+Train Epoch: 70 	 Training Loss: 2.046802
+Train Epoch: 70 	 Validation Loss: 2.074982
+Train Epoch: 80 	 Training Loss: 2.044346
+Train Epoch: 80 	 Validation Loss: 2.074389
+Train Epoch: 80 	 Training Loss: 2.180789
+Train Epoch: 80 	 Validation Loss: 2.169215
+Train Epoch: 90 	 Training Loss: 2.042752
+Train Epoch: 90 	 Validation Loss: 2.074199
+Train Epoch: 90 	 Training Loss: 2.133189
+Train Epoch: 90 	 Validation Loss: 2.124811
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 7083.509060
+Train Epoch: 0 	 Validation Loss: 7266.309375
+Train Epoch: 0 	 Training Loss: 6.170430
+Train Epoch: 0 	 Validation Loss: 6.359196
+Train Epoch: 10 	 Training Loss: 4448.333424
+Train Epoch: 10 	 Validation Loss: 4588.141748
+Train Epoch: 10 	 Training Loss: 3.978515
+Train Epoch: 10 	 Validation Loss: 4.230429
+Train Epoch: 20 	 Training Loss: 3047.561216
+Train Epoch: 20 	 Validation Loss: 3155.085498
+Train Epoch: 20 	 Training Loss: 3.089461
+Train Epoch: 20 	 Validation Loss: 3.323213
+Train Epoch: 30 	 Training Loss: 2212.873323
+Train Epoch: 30 	 Validation Loss: 2296.786450
+Train Epoch: 30 	 Training Loss: 2.661242
+Train Epoch: 30 	 Validation Loss: 2.866091
+Train Epoch: 40 	 Training Loss: 1673.616236
+Train Epoch: 40 	 Validation Loss: 1740.251587
+Train Epoch: 40 	 Training Loss: 2.432749
+Train Epoch: 40 	 Validation Loss: 2.611338
+Train Epoch: 50 	 Training Loss: 1304.118092
+Train Epoch: 50 	 Validation Loss: 1357.878003
+Train Epoch: 50 	 Training Loss: 2.303272
+Train Epoch: 50 	 Validation Loss: 2.460301
+Train Epoch: 60 	 Training Loss: 1039.435911
+Train Epoch: 60 	 Validation Loss: 1083.401758
+Train Epoch: 60 	 Training Loss: 2.227400
+Train Epoch: 60 	 Validation Loss: 2.367232
+Train Epoch: 70 	 Training Loss: 843.170629
+Train Epoch: 70 	 Validation Loss: 879.538586
+Train Epoch: 70 	 Training Loss: 2.182236
+Train Epoch: 70 	 Validation Loss: 2.308481
+Train Epoch: 80 	 Training Loss: 693.581813
+Train Epoch: 80 	 Validation Loss: 723.952490
+Train Epoch: 80 	 Training Loss: 2.155251
+Train Epoch: 80 	 Validation Loss: 2.270804
+Train Epoch: 90 	 Training Loss: 577.001909
+Train Epoch: 90 	 Validation Loss: 602.567017
+Train Epoch: 90 	 Training Loss: 2.139176
+Train Epoch: 90 	 Validation Loss: 2.246345
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.260709
+Train Epoch: 0 	 Validation Loss: 2.276580
+Train Epoch: 0 	 Training Loss: 5.690100
+Train Epoch: 0 	 Validation Loss: 5.408287
+Train Epoch: 10 	 Training Loss: 3.740375
+Train Epoch: 10 	 Validation Loss: 3.609394
+Train Epoch: 10 	 Training Loss: 2.199981
+Train Epoch: 10 	 Validation Loss: 2.227010
+Train Epoch: 20 	 Training Loss: 2.156876
+Train Epoch: 20 	 Validation Loss: 2.194904
+Train Epoch: 20 	 Training Loss: 2.951830
+Train Epoch: 20 	 Validation Loss: 2.878978
+Train Epoch: 30 	 Training Loss: 2.571517
+Train Epoch: 30 	 Validation Loss: 2.527126
+Train Epoch: 30 	 Training Loss: 2.127581
+Train Epoch: 30 	 Validation Loss: 2.175910
+Train Epoch: 40 	 Training Loss: 2.369568
+Train Epoch: 40 	 Validation Loss: 2.341045
+Train Epoch: 40 	 Training Loss: 2.108774
+Train Epoch: 40 	 Validation Loss: 2.166034
+Train Epoch: 50 	 Training Loss: 2.256332
+Train Epoch: 50 	 Validation Loss: 2.237446
+Train Epoch: 50 	 Training Loss: 2.097353
+Train Epoch: 50 	 Validation Loss: 2.161877
+Train Epoch: 60 	 Training Loss: 2.190992
+Train Epoch: 60 	 Validation Loss: 2.178338
+Train Epoch: 60 	 Training Loss: 2.090718
+Train Epoch: 60 	 Validation Loss: 2.160898
+Train Epoch: 70 	 Training Loss: 2.152846
+Train Epoch: 70 	 Validation Loss: 2.144431
+Train Epoch: 70 	 Training Loss: 2.086961
+Train Epoch: 70 	 Validation Loss: 2.161448
+Train Epoch: 80 	 Training Loss: 2.084835
+Train Epoch: 80 	 Validation Loss: 2.162586
+Train Epoch: 80 	 Training Loss: 2.130555
+Train Epoch: 80 	 Validation Loss: 2.125158
+Train Epoch: 90 	 Training Loss: 2.083601
+Train Epoch: 90 	 Validation Loss: 2.163846
+Train Epoch: 90 	 Training Loss: 2.117578
+Train Epoch: 90 	 Validation Loss: 2.114429
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 3389.530915
+Train Epoch: 0 	 Validation Loss: 3518.781543
+Train Epoch: 0 	 Training Loss: 5.417363
+Train Epoch: 0 	 Validation Loss: 5.273352
+Train Epoch: 10 	 Training Loss: 2129.563793
+Train Epoch: 10 	 Validation Loss: 2222.624072
+Train Epoch: 10 	 Training Loss: 3.563772
+Train Epoch: 10 	 Validation Loss: 3.447102
+Train Epoch: 20 	 Training Loss: 1459.462726
+Train Epoch: 20 	 Validation Loss: 1528.919043
+Train Epoch: 20 	 Training Loss: 2.826197
+Train Epoch: 20 	 Validation Loss: 2.733800
+Train Epoch: 30 	 Training Loss: 1060.181862
+Train Epoch: 30 	 Validation Loss: 1113.455066
+Train Epoch: 30 	 Training Loss: 2.477318
+Train Epoch: 30 	 Validation Loss: 2.403457
+Train Epoch: 40 	 Training Loss: 2.295207
+Train Epoch: 40 	 Validation Loss: 2.235185
+Train Epoch: 40 	 Training Loss: 802.240354
+Train Epoch: 40 	 Validation Loss: 844.076843
+Train Epoch: 50 	 Training Loss: 625.511262
+Train Epoch: 50 	 Validation Loss: 659.009143
+Train Epoch: 50 	 Training Loss: 2.194797
+Train Epoch: 50 	 Validation Loss: 2.145108
+Train Epoch: 60 	 Training Loss: 498.929269
+Train Epoch: 60 	 Validation Loss: 526.176031
+Train Epoch: 60 	 Training Loss: 2.137881
+Train Epoch: 60 	 Validation Loss: 2.095974
+Train Epoch: 70 	 Training Loss: 405.076173
+Train Epoch: 70 	 Validation Loss: 427.524231
+Train Epoch: 70 	 Training Loss: 2.105289
+Train Epoch: 70 	 Validation Loss: 2.069317
+Train Epoch: 80 	 Training Loss: 333.550435
+Train Epoch: 80 	 Validation Loss: 352.240131
+Train Epoch: 80 	 Training Loss: 2.086634
+Train Epoch: 80 	 Validation Loss: 2.055253
+Train Epoch: 90 	 Training Loss: 277.817465
+Train Epoch: 90 	 Validation Loss: 293.513553
+Train Epoch: 90 	 Training Loss: 2.075998
+Train Epoch: 90 	 Validation Loss: 2.048227
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.220895
+Train Epoch: 0 	 Validation Loss: 2.154095
+Train Epoch: 0 	 Training Loss: 5.265898
+Train Epoch: 0 	 Validation Loss: 4.261540
+Train Epoch: 10 	 Training Loss: 2.155089
+Train Epoch: 10 	 Validation Loss: 2.099369
+Train Epoch: 10 	 Training Loss: 3.494477
+Train Epoch: 10 	 Validation Loss: 2.929748
+Train Epoch: 20 	 Training Loss: 2.113737
+Train Epoch: 20 	 Validation Loss: 2.076680
+Train Epoch: 20 	 Training Loss: 2.788167
+Train Epoch: 20 	 Validation Loss: 2.416014
+Train Epoch: 30 	 Training Loss: 2.086999
+Train Epoch: 30 	 Validation Loss: 2.068366
+Train Epoch: 30 	 Training Loss: 2.453222
+Train Epoch: 30 	 Validation Loss: 2.183694
+Train Epoch: 40 	 Training Loss: 2.069862
+Train Epoch: 40 	 Validation Loss: 2.067088
+Train Epoch: 40 	 Training Loss: 2.278518
+Train Epoch: 40 	 Validation Loss: 2.070350
+Train Epoch: 50 	 Training Loss: 2.059065
+Train Epoch: 50 	 Validation Loss: 2.069270
+Train Epoch: 50 	 Training Loss: 2.182479
+Train Epoch: 50 	 Validation Loss: 2.013822
+Train Epoch: 60 	 Training Loss: 2.128281
+Train Epoch: 60 	 Validation Loss: 1.986366
+Train Epoch: 60 	 Training Loss: 2.052348
+Train Epoch: 60 	 Validation Loss: 2.072933
+Train Epoch: 70 	 Training Loss: 2.097403
+Train Epoch: 70 	 Validation Loss: 1.974211
+Train Epoch: 70 	 Training Loss: 2.048171
+Train Epoch: 70 	 Validation Loss: 2.076974
+Train Epoch: 80 	 Training Loss: 2.079810
+Train Epoch: 80 	 Validation Loss: 1.970028
+Train Epoch: 80 	 Training Loss: 2.045542
+Train Epoch: 80 	 Validation Loss: 2.080840
+Train Epoch: 90 	 Training Loss: 2.069801
+Train Epoch: 90 	 Validation Loss: 1.969761
+Train Epoch: 90 	 Training Loss: 2.043849
+Train Epoch: 90 	 Validation Loss: 2.084303
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 5.693880
+Train Epoch: 0 	 Training Loss: 2.295579
+Train Epoch: 0 	 Validation Loss: 2.247068
+Train Epoch: 0 	 Validation Loss: 6.436616
+Train Epoch: 10 	 Training Loss: 3.820254
+Train Epoch: 10 	 Validation Loss: 4.315873
+Train Epoch: 10 	 Training Loss: 2.252309
+Train Epoch: 10 	 Validation Loss: 2.201976
+Train Epoch: 20 	 Training Loss: 3.031175
+Train Epoch: 20 	 Training Loss: 2.218631
+Train Epoch: 20 	 Validation Loss: 3.387041
+Train Epoch: 20 	 Validation Loss: 2.168602
+Train Epoch: 30 	 Training Loss: 2.639670
+Train Epoch: 30 	 Validation Loss: 2.910550
+Train Epoch: 30 	 Training Loss: 2.193524
+Train Epoch: 30 	 Validation Loss: 2.145846
+Train Epoch: 40 	 Training Loss: 2.427048
+Train Epoch: 40 	 Validation Loss: 2.642863
+Train Epoch: 40 	 Training Loss: 2.175553
+Train Epoch: 40 	 Validation Loss: 2.131711
+Train Epoch: 50 	 Training Loss: 2.305550
+Train Epoch: 50 	 Validation Loss: 2.483905
+Train Epoch: 50 	 Training Loss: 2.163106
+Train Epoch: 50 	 Validation Loss: 2.123934
+Train Epoch: 60 	 Training Loss: 2.154679
+Train Epoch: 60 	 Validation Loss: 2.120453
+Train Epoch: 60 	 Training Loss: 2.234246
+Train Epoch: 60 	 Validation Loss: 2.386181
+Train Epoch: 70 	 Training Loss: 2.149044
+Train Epoch: 70 	 Validation Loss: 2.119645
+Train Epoch: 70 	 Training Loss: 2.191953
+Train Epoch: 70 	 Validation Loss: 2.324765
+Train Epoch: 80 	 Training Loss: 2.145287
+Train Epoch: 80 	 Validation Loss: 2.120360
+Train Epoch: 80 	 Training Loss: 2.166869
+Train Epoch: 80 	 Validation Loss: 2.285598
+Train Epoch: 90 	 Training Loss: 2.142769
+Train Epoch: 90 	 Validation Loss: 2.121848
+Train Epoch: 90 	 Training Loss: 2.152074
+Train Epoch: 90 	 Validation Loss: 2.260331
+Using device: cpu
+9
+9
+Using device: cpu
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 7385.837312
+Train Epoch: 0 	 Validation Loss: 6596.909668
+Train Epoch: 0 	 Training Loss: 6.239834
+Train Epoch: 0 	 Validation Loss: 5.625931
+Train Epoch: 10 	 Training Loss: 4654.338985
+Train Epoch: 10 	 Validation Loss: 4184.616357
+Train Epoch: 10 	 Training Loss: 4.060979
+Train Epoch: 10 	 Validation Loss: 3.733035
+Train Epoch: 20 	 Training Loss: 3209.237630
+Train Epoch: 20 	 Validation Loss: 2894.972412
+Train Epoch: 20 	 Training Loss: 3.159355
+Train Epoch: 20 	 Validation Loss: 2.950380
+Train Epoch: 30 	 Training Loss: 2341.523835
+Train Epoch: 30 	 Validation Loss: 2117.046338
+Train Epoch: 30 	 Training Loss: 2.718505
+Train Epoch: 30 	 Validation Loss: 2.570558
+Train Epoch: 40 	 Training Loss: 1777.407326
+Train Epoch: 40 	 Validation Loss: 1609.677026
+Train Epoch: 40 	 Training Loss: 2.480832
+Train Epoch: 40 	 Validation Loss: 2.368599
+Train Epoch: 50 	 Training Loss: 1388.964950
+Train Epoch: 50 	 Validation Loss: 1259.475830
+Train Epoch: 50 	 Training Loss: 2.345146
+Train Epoch: 50 	 Validation Loss: 2.255663
+Train Epoch: 60 	 Training Loss: 1109.614473
+Train Epoch: 60 	 Validation Loss: 1007.165613
+Train Epoch: 60 	 Training Loss: 2.265180
+Train Epoch: 60 	 Validation Loss: 2.191040
+Train Epoch: 70 	 Training Loss: 901.800076
+Train Epoch: 70 	 Validation Loss: 819.196606
+Train Epoch: 70 	 Training Loss: 2.217362
+Train Epoch: 70 	 Validation Loss: 2.153979
+Train Epoch: 80 	 Training Loss: 742.982631
+Train Epoch: 80 	 Validation Loss: 675.378650
+Train Epoch: 80 	 Training Loss: 2.188696
+Train Epoch: 80 	 Validation Loss: 2.133056
+Train Epoch: 90 	 Training Loss: 618.927253
+Train Epoch: 90 	 Validation Loss: 562.933746
+Train Epoch: 90 	 Training Loss: 2.171595
+Train Epoch: 90 	 Validation Loss: 2.121623
+Using device: cpu
+Using device: cpu
+9
+9
+Beginning training ...
+9
+9
+Train Epoch: 0 	 Training Loss: 2.304719
+Train Epoch: 0 	 Validation Loss: 2.338050
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 11.682913
+Train Epoch: 0 	 Validation Loss: 13.166950
+Train Epoch: 10 	 Training Loss: 2.249623
+Train Epoch: 10 	 Validation Loss: 2.300630
+Train Epoch: 10 	 Training Loss: 6.973009
+Train Epoch: 10 	 Validation Loss: 7.859451
+Train Epoch: 20 	 Training Loss: 2.210780
+Train Epoch: 20 	 Validation Loss: 2.277537
+Train Epoch: 20 	 Training Loss: 4.944510
+Train Epoch: 20 	 Validation Loss: 5.531437
+Train Epoch: 30 	 Training Loss: 2.184211
+Train Epoch: 30 	 Training Loss: 3.891640
+Train Epoch: 30 	 Validation Loss: 2.263429
+Train Epoch: 30 	 Validation Loss: 4.309765
+Train Epoch: 40 	 Training Loss: 3.281451
+Train Epoch: 40 	 Validation Loss: 3.595685
+Train Epoch: 40 	 Training Loss: 2.166146
+Train Epoch: 40 	 Validation Loss: 2.254755
+Train Epoch: 50 	 Training Loss: 2.153982
+Train Epoch: 50 	 Validation Loss: 2.249549
+Train Epoch: 50 	 Training Loss: 2.901938
+Train Epoch: 50 	 Validation Loss: 3.147924
+Train Epoch: 60 	 Training Loss: 2.145918
+Train Epoch: 60 	 Validation Loss: 2.246590
+Train Epoch: 60 	 Training Loss: 2.654699
+Train Epoch: 60 	 Validation Loss: 2.853584
+Train Epoch: 70 	 Training Loss: 2.140632
+Train Epoch: 70 	 Validation Loss: 2.245029
+Train Epoch: 70 	 Training Loss: 2.488704
+Train Epoch: 70 	 Validation Loss: 2.653819
+Train Epoch: 80 	 Training Loss: 2.137174
+Train Epoch: 80 	 Validation Loss: 2.244289
+Train Epoch: 80 	 Training Loss: 2.375179
+Train Epoch: 80 	 Validation Loss: 2.515353
+Train Epoch: 90 	 Training Loss: 2.134888
+Train Epoch: 90 	 Validation Loss: 2.244004
+Train Epoch: 90 	 Training Loss: 2.296801
+Train Epoch: 90 	 Validation Loss: 2.418127
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.234803
+Train Epoch: 0 	 Validation Loss: 2.165082
+Train Epoch: 0 	 Training Loss: 5.126056
+Train Epoch: 0 	 Validation Loss: 5.593144
+Train Epoch: 10 	 Training Loss: 3.468436
+Train Epoch: 10 	 Validation Loss: 3.754751
+Train Epoch: 10 	 Training Loss: 2.179350
+Train Epoch: 10 	 Validation Loss: 2.096246
+Train Epoch: 20 	 Training Loss: 2.145423
+Train Epoch: 20 	 Validation Loss: 2.055758
+Train Epoch: 20 	 Training Loss: 2.788984
+Train Epoch: 20 	 Validation Loss: 2.982306
+Train Epoch: 30 	 Training Loss: 2.123774
+Train Epoch: 30 	 Validation Loss: 2.029177
+Train Epoch: 30 	 Training Loss: 2.461566
+Train Epoch: 30 	 Validation Loss: 2.601866
+Train Epoch: 40 	 Training Loss: 2.110349
+Train Epoch: 40 	 Validation Loss: 2.011834
+Train Epoch: 40 	 Training Loss: 2.288995
+Train Epoch: 40 	 Validation Loss: 2.396604
+Train Epoch: 50 	 Training Loss: 2.102151
+Train Epoch: 50 	 Validation Loss: 2.000562
+Train Epoch: 50 	 Training Loss: 2.193536
+Train Epoch: 50 	 Validation Loss: 2.279750
+Train Epoch: 60 	 Training Loss: 2.097143
+Train Epoch: 60 	 Validation Loss: 1.993172
+Train Epoch: 60 	 Training Loss: 2.139518
+Train Epoch: 60 	 Validation Loss: 2.211087
+Train Epoch: 70 	 Training Loss: 2.094043
+Train Epoch: 70 	 Validation Loss: 1.988235
+Train Epoch: 70 	 Training Loss: 2.108768
+Train Epoch: 70 	 Validation Loss: 2.169970
+Train Epoch: 80 	 Training Loss: 2.092079
+Train Epoch: 80 	 Validation Loss: 1.984851
+Train Epoch: 80 	 Training Loss: 2.091336
+Train Epoch: 80 	 Validation Loss: 2.145017
+Train Epoch: 90 	 Training Loss: 2.090799
+Train Epoch: 90 	 Validation Loss: 1.982463
+Train Epoch: 90 	 Training Loss: 2.081522
+Train Epoch: 90 	 Validation Loss: 2.129651
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 5.454912
+Train Epoch: 0 	 Validation Loss: 5.266158
+Train Epoch: 0 	 Training Loss: 5068.983028
+Train Epoch: 0 	 Validation Loss: 3716.773633
+Train Epoch: 10 	 Training Loss: 3.683721
+Train Epoch: 10 	 Validation Loss: 3.552059
+Train Epoch: 10 	 Training Loss: 3160.658791
+Train Epoch: 10 	 Validation Loss: 2330.993335
+Train Epoch: 20 	 Training Loss: 2.939441
+Train Epoch: 20 	 Validation Loss: 2.836901
+Train Epoch: 20 	 Training Loss: 2158.348208
+Train Epoch: 20 	 Validation Loss: 1597.755688
+Train Epoch: 30 	 Training Loss: 2.573492
+Train Epoch: 30 	 Validation Loss: 2.488830
+Train Epoch: 30 	 Training Loss: 1563.965101
+Train Epoch: 30 	 Validation Loss: 1160.786548
+Train Epoch: 40 	 Training Loss: 2.376779
+Train Epoch: 40 	 Validation Loss: 2.304212
+Train Epoch: 40 	 Training Loss: 1181.173487
+Train Epoch: 40 	 Validation Loss: 878.395203
+Train Epoch: 50 	 Training Loss: 2.265668
+Train Epoch: 50 	 Validation Loss: 2.201656
+Train Epoch: 50 	 Training Loss: 919.489484
+Train Epoch: 50 	 Validation Loss: 684.854663
+Train Epoch: 60 	 Training Loss: 2.201346
+Train Epoch: 60 	 Validation Loss: 2.143508
+Train Epoch: 60 	 Training Loss: 732.371243
+Train Epoch: 60 	 Validation Loss: 546.194189
+Train Epoch: 70 	 Training Loss: 2.163831
+Train Epoch: 70 	 Validation Loss: 2.110467
+Train Epoch: 70 	 Training Loss: 593.815559
+Train Epoch: 70 	 Validation Loss: 443.366089
+Train Epoch: 80 	 Training Loss: 2.142049
+Train Epoch: 80 	 Validation Loss: 2.091893
+Train Epoch: 80 	 Training Loss: 488.334917
+Train Epoch: 80 	 Validation Loss: 364.991071
+Train Epoch: 90 	 Training Loss: 406.213612
+Train Epoch: 90 	 Training Loss: 2.129545
+Train Epoch: 90 	 Validation Loss: 303.914893
+Train Epoch: 90 	 Validation Loss: 2.081633
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 59652.523582
+Train Epoch: 0 	 Validation Loss: 56341.632812
+Train Epoch: 0 	 Training Loss: 2.238708
+Train Epoch: 0 	 Validation Loss: 2.254586
+Train Epoch: 10 	 Training Loss: 37619.910012
+Train Epoch: 10 	 Validation Loss: 35725.497656
+Train Epoch: 10 	 Training Loss: 2.172604
+Train Epoch: 10 	 Validation Loss: 2.197828
+Train Epoch: 20 	 Training Loss: 25839.923503
+Train Epoch: 20 	 Validation Loss: 24630.495312
+Train Epoch: 20 	 Training Loss: 2.131598
+Train Epoch: 20 	 Validation Loss: 2.162751
+Train Epoch: 30 	 Training Loss: 18793.333333
+Train Epoch: 30 	 Validation Loss: 17959.801953
+Train Epoch: 30 	 Training Loss: 2.107132
+Train Epoch: 30 	 Validation Loss: 2.142427
+Train Epoch: 40 	 Training Loss: 14228.227503
+Train Epoch: 40 	 Validation Loss: 13622.441992
+Train Epoch: 40 	 Training Loss: 2.092881
+Train Epoch: 40 	 Validation Loss: 2.131423
+Train Epoch: 50 	 Training Loss: 11093.670989
+Train Epoch: 50 	 Validation Loss: 10636.155176
+Train Epoch: 50 	 Training Loss: 2.084563
+Train Epoch: 50 	 Validation Loss: 2.125923
+Train Epoch: 60 	 Training Loss: 8844.580223
+Train Epoch: 60 	 Validation Loss: 8488.953320
+Train Epoch: 60 	 Training Loss: 2.079663
+Train Epoch: 60 	 Validation Loss: 2.123547
+Train Epoch: 70 	 Training Loss: 7174.580377
+Train Epoch: 70 	 Validation Loss: 6891.961621
+Train Epoch: 70 	 Training Loss: 2.076739
+Train Epoch: 70 	 Validation Loss: 2.122861
+Train Epoch: 80 	 Training Loss: 5900.279107
+Train Epoch: 80 	 Validation Loss: 5671.742529
+Train Epoch: 80 	 Training Loss: 2.074959
+Train Epoch: 80 	 Validation Loss: 2.123030
+Train Epoch: 90 	 Training Loss: 4906.179543
+Train Epoch: 90 	 Validation Loss: 4718.789404
+Train Epoch: 90 	 Training Loss: 2.073846
+Train Epoch: 90 	 Validation Loss: 2.123590
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.281281
+Train Epoch: 0 	 Validation Loss: 2.264574
+Train Epoch: 0 	 Training Loss: 6.013479
+Train Epoch: 0 	 Validation Loss: 5.767022
+Train Epoch: 10 	 Training Loss: 2.220751
+Train Epoch: 10 	 Validation Loss: 2.227481
+Train Epoch: 10 	 Training Loss: 3.954880
+Train Epoch: 10 	 Validation Loss: 3.808719
+Train Epoch: 20 	 Training Loss: 2.179985
+Train Epoch: 20 	 Validation Loss: 2.209001
+Train Epoch: 20 	 Training Loss: 3.096541
+Train Epoch: 20 	 Validation Loss: 2.996075
+Train Epoch: 30 	 Training Loss: 2.675928
+Train Epoch: 30 	 Validation Loss: 2.600543
+Train Epoch: 30 	 Training Loss: 2.154300
+Train Epoch: 30 	 Validation Loss: 2.201648
+Train Epoch: 40 	 Training Loss: 2.448973
+Train Epoch: 40 	 Training Loss: 2.138424
+Train Epoch: 40 	 Validation Loss: 2.199820
+Train Epoch: 40 	 Validation Loss: 2.389112
+Train Epoch: 50 	 Training Loss: 2.128612
+Train Epoch: 50 	 Validation Loss: 2.200574
+Train Epoch: 50 	 Training Loss: 2.319454
+Train Epoch: 50 	 Validation Loss: 2.269883
+Train Epoch: 60 	 Training Loss: 2.243252
+Train Epoch: 60 	 Validation Loss: 2.200784
+Train Epoch: 60 	 Training Loss: 2.122537
+Train Epoch: 60 	 Validation Loss: 2.202451
+Train Epoch: 70 	 Training Loss: 2.118749
+Train Epoch: 70 	 Validation Loss: 2.204673
+Train Epoch: 70 	 Training Loss: 2.197833
+Train Epoch: 70 	 Validation Loss: 2.160378
+Train Epoch: 80 	 Training Loss: 2.170743
+Train Epoch: 80 	 Validation Loss: 2.136855
+Train Epoch: 80 	 Training Loss: 2.116351
+Train Epoch: 80 	 Validation Loss: 2.206833
+Train Epoch: 90 	 Training Loss: 2.154704
+Train Epoch: 90 	 Validation Loss: 2.123338
+Train Epoch: 90 	 Training Loss: 2.114797
+Train Epoch: 90 	 Validation Loss: 2.208750
+Using device: cpu
+Using device: cpu
+9
+9
+Beginning training ...
+9
+9
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.265116
+Train Epoch: 0 	 Validation Loss: 2.281392
+Train Epoch: 0 	 Training Loss: 5.753979
+Train Epoch: 0 	 Validation Loss: 5.669382
+Train Epoch: 10 	 Training Loss: 2.217334
+Train Epoch: 10 	 Validation Loss: 2.254564
+Train Epoch: 10 	 Training Loss: 3.863235
+Train Epoch: 10 	 Validation Loss: 3.826225
+Train Epoch: 20 	 Training Loss: 2.184228
+Train Epoch: 20 	 Validation Loss: 2.241523
+Train Epoch: 20 	 Training Loss: 3.064482
+Train Epoch: 20 	 Validation Loss: 3.037623
+Train Epoch: 30 	 Training Loss: 2.666964
+Train Epoch: 30 	 Validation Loss: 2.642995
+Train Epoch: 30 	 Training Loss: 2.161508
+Train Epoch: 30 	 Validation Loss: 2.236540
+Train Epoch: 40 	 Training Loss: 2.450275
+Train Epoch: 40 	 Validation Loss: 2.427401
+Train Epoch: 40 	 Training Loss: 2.146251
+Train Epoch: 40 	 Validation Loss: 2.236162
+Train Epoch: 50 	 Training Loss: 2.325936
+Train Epoch: 50 	 Validation Loss: 2.303581
+Train Epoch: 50 	 Training Loss: 2.136192
+Train Epoch: 50 	 Validation Loss: 2.238104
+Train Epoch: 60 	 Training Loss: 2.252657
+Train Epoch: 60 	 Validation Loss: 2.230539
+Train Epoch: 60 	 Training Loss: 2.129622
+Train Epoch: 60 	 Validation Loss: 2.240960
+Train Epoch: 70 	 Training Loss: 2.209027
+Train Epoch: 70 	 Validation Loss: 2.186934
+Train Epoch: 70 	 Training Loss: 2.125327
+Train Epoch: 70 	 Validation Loss: 2.243952
+Train Epoch: 80 	 Training Loss: 2.122493
+Train Epoch: 80 	 Validation Loss: 2.246709
+Train Epoch: 80 	 Training Loss: 2.183081
+Train Epoch: 80 	 Validation Loss: 2.160820
+Train Epoch: 90 	 Training Loss: 2.120595
+Train Epoch: 90 	 Validation Loss: 2.249094
+Train Epoch: 90 	 Training Loss: 2.167770
+Train Epoch: 90 	 Validation Loss: 2.145151
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 4375.596689
+Train Epoch: 0 	 Validation Loss: 4131.474023
+Train Epoch: 0 	 Training Loss: 5.929946
+Train Epoch: 0 	 Validation Loss: 5.742558
+Train Epoch: 10 	 Training Loss: 3.876222
+Train Epoch: 10 	 Validation Loss: 3.815378
+Train Epoch: 10 	 Training Loss: 2736.507948
+Train Epoch: 10 	 Validation Loss: 2598.529590
+Train Epoch: 20 	 Training Loss: 3.045783
+Train Epoch: 20 	 Validation Loss: 3.021344
+Train Epoch: 20 	 Training Loss: 1871.895508
+Train Epoch: 20 	 Validation Loss: 1784.100806
+Train Epoch: 30 	 Training Loss: 2.643992
+Train Epoch: 30 	 Validation Loss: 2.632946
+Train Epoch: 30 	 Training Loss: 1358.012627
+Train Epoch: 30 	 Validation Loss: 1297.606165
+Train Epoch: 40 	 Training Loss: 2.428591
+Train Epoch: 40 	 Validation Loss: 2.423517
+Train Epoch: 40 	 Training Loss: 1026.560900
+Train Epoch: 40 	 Validation Loss: 982.700415
+Train Epoch: 50 	 Training Loss: 2.306238
+Train Epoch: 50 	 Validation Loss: 2.304257
+Train Epoch: 50 	 Training Loss: 799.720912
+Train Epoch: 50 	 Validation Loss: 766.613232
+Train Epoch: 60 	 Training Loss: 2.234603
+Train Epoch: 60 	 Validation Loss: 2.234436
+Train Epoch: 60 	 Training Loss: 637.379705
+Train Epoch: 60 	 Validation Loss: 611.652704
+Train Epoch: 70 	 Training Loss: 2.192162
+Train Epoch: 70 	 Validation Loss: 2.193187
+Train Epoch: 70 	 Training Loss: 517.090222
+Train Epoch: 70 	 Validation Loss: 496.648560
+Train Epoch: 80 	 Training Loss: 2.167034
+Train Epoch: 80 	 Validation Loss: 2.168931
+Train Epoch: 80 	 Training Loss: 425.464810
+Train Epoch: 80 	 Validation Loss: 408.936487
+Train Epoch: 90 	 Training Loss: 2.152276
+Train Epoch: 90 	 Validation Loss: 2.154889
+Train Epoch: 90 	 Training Loss: 354.099310
+Train Epoch: 90 	 Validation Loss: 340.547418
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.273517
+Train Epoch: 0 	 Validation Loss: 2.261693
+Train Epoch: 0 	 Training Loss: 5.743634
+Train Epoch: 0 	 Validation Loss: 5.992562
+Train Epoch: 10 	 Training Loss: 3.796928
+Train Epoch: 10 	 Validation Loss: 3.994443
+Train Epoch: 10 	 Training Loss: 2.222657
+Train Epoch: 10 	 Validation Loss: 2.199960
+Train Epoch: 20 	 Training Loss: 2.994996
+Train Epoch: 20 	 Validation Loss: 3.150549
+Train Epoch: 20 	 Training Loss: 2.188635
+Train Epoch: 20 	 Validation Loss: 2.157807
+Train Epoch: 30 	 Training Loss: 2.604618
+Train Epoch: 30 	 Validation Loss: 2.730182
+Train Epoch: 30 	 Training Loss: 2.166460
+Train Epoch: 30 	 Validation Loss: 2.131110
+Train Epoch: 40 	 Training Loss: 2.395466
+Train Epoch: 40 	 Validation Loss: 2.499581
+Train Epoch: 40 	 Training Loss: 2.152130
+Train Epoch: 40 	 Validation Loss: 2.114918
+Train Epoch: 50 	 Training Loss: 2.277072
+Train Epoch: 50 	 Validation Loss: 2.365514
+Train Epoch: 50 	 Training Loss: 2.142953
+Train Epoch: 50 	 Validation Loss: 2.105356
+Train Epoch: 60 	 Training Loss: 2.208053
+Train Epoch: 60 	 Training Loss: 2.137143
+Train Epoch: 60 	 Validation Loss: 2.099804
+Train Epoch: 60 	 Validation Loss: 2.284787
+Train Epoch: 70 	 Training Loss: 2.167321
+Train Epoch: 70 	 Validation Loss: 2.235139
+Train Epoch: 70 	 Training Loss: 2.133483
+Train Epoch: 70 	 Validation Loss: 2.096588
+Train Epoch: 80 	 Training Loss: 2.143256
+Train Epoch: 80 	 Validation Loss: 2.204175
+Train Epoch: 80 	 Training Loss: 2.131168
+Train Epoch: 80 	 Validation Loss: 2.094686
+Train Epoch: 90 	 Training Loss: 2.129099
+Train Epoch: 90 	 Validation Loss: 2.184608
+Train Epoch: 90 	 Training Loss: 2.129682
+Train Epoch: 90 	 Validation Loss: 2.093501
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.251290
+Train Epoch: 0 	 Validation Loss: 2.251035
+Train Epoch: 0 	 Training Loss: 5.416429
+Train Epoch: 0 	 Validation Loss: 6.305179
+Train Epoch: 10 	 Training Loss: 2.177547
+Train Epoch: 10 	 Training Loss: 3.538276
+Train Epoch: 10 	 Validation Loss: 2.198517
+Train Epoch: 10 	 Validation Loss: 4.159613
+Train Epoch: 20 	 Training Loss: 2.803013
+Train Epoch: 20 	 Validation Loss: 3.264802
+Train Epoch: 20 	 Training Loss: 2.130395
+Train Epoch: 20 	 Validation Loss: 2.170330
+Train Epoch: 30 	 Training Loss: 2.458009
+Train Epoch: 30 	 Validation Loss: 2.819660
+Train Epoch: 30 	 Training Loss: 2.102256
+Train Epoch: 30 	 Validation Loss: 2.155218
+Train Epoch: 40 	 Training Loss: 2.278793
+Train Epoch: 40 	 Validation Loss: 2.574199
+Train Epoch: 40 	 Training Loss: 2.085800
+Train Epoch: 40 	 Validation Loss: 2.146406
+Train Epoch: 50 	 Training Loss: 2.180226
+Train Epoch: 50 	 Validation Loss: 2.430014
+Train Epoch: 50 	 Training Loss: 2.076105
+Train Epoch: 50 	 Validation Loss: 2.140985
+Train Epoch: 60 	 Training Loss: 2.124382
+Train Epoch: 60 	 Validation Loss: 2.341872
+Train Epoch: 60 	 Training Loss: 2.070320
+Train Epoch: 60 	 Validation Loss: 2.137675
+Train Epoch: 70 	 Training Loss: 2.092350
+Train Epoch: 70 	 Validation Loss: 2.286585
+Train Epoch: 70 	 Training Loss: 2.066807
+Train Epoch: 70 	 Validation Loss: 2.135714
+Train Epoch: 80 	 Training Loss: 2.073926
+Train Epoch: 80 	 Validation Loss: 2.251310
+Train Epoch: 80 	 Training Loss: 2.064623
+Train Epoch: 80 	 Validation Loss: 2.134598
+Train Epoch: 90 	 Training Loss: 2.063310
+Train Epoch: 90 	 Validation Loss: 2.228538
+Train Epoch: 90 	 Training Loss: 2.063228
+Train Epoch: 90 	 Validation Loss: 2.134005
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 5.227440
+Train Epoch: 0 	 Training Loss: 2.225970
+Train Epoch: 0 	 Validation Loss: 2.284834
+Train Epoch: 0 	 Validation Loss: 4.929600
+Train Epoch: 10 	 Training Loss: 2.160259
+Train Epoch: 10 	 Validation Loss: 2.247467
+Train Epoch: 10 	 Training Loss: 3.515234
+Train Epoch: 10 	 Validation Loss: 3.422118
+Train Epoch: 20 	 Training Loss: 2.114715
+Train Epoch: 20 	 Validation Loss: 2.224165
+Train Epoch: 20 	 Training Loss: 2.812313
+Train Epoch: 20 	 Validation Loss: 2.788210
+Train Epoch: 30 	 Training Loss: 2.082909
+Train Epoch: 30 	 Validation Loss: 2.211129
+Train Epoch: 30 	 Training Loss: 2.471724
+Train Epoch: 30 	 Validation Loss: 2.475941
+Train Epoch: 40 	 Training Loss: 2.061903
+Train Epoch: 40 	 Validation Loss: 2.205309
+Train Epoch: 40 	 Training Loss: 2.290821
+Train Epoch: 40 	 Validation Loss: 2.308110
+Train Epoch: 50 	 Training Loss: 2.048666
+Train Epoch: 50 	 Validation Loss: 2.203709
+Train Epoch: 50 	 Training Loss: 2.189630
+Train Epoch: 50 	 Validation Loss: 2.213444
+Train Epoch: 60 	 Training Loss: 2.040531
+Train Epoch: 60 	 Validation Loss: 2.204176
+Train Epoch: 60 	 Training Loss: 2.131433
+Train Epoch: 60 	 Validation Loss: 2.158729
+Train Epoch: 70 	 Training Loss: 2.035533
+Train Epoch: 70 	 Validation Loss: 2.205453
+Train Epoch: 70 	 Training Loss: 2.097517
+Train Epoch: 70 	 Validation Loss: 2.126829
+Train Epoch: 80 	 Training Loss: 2.032399
+Train Epoch: 80 	 Validation Loss: 2.206917
+Train Epoch: 80 	 Training Loss: 2.077629
+Train Epoch: 80 	 Validation Loss: 2.108260
+Train Epoch: 90 	 Training Loss: 2.030367
+Train Epoch: 90 	 Validation Loss: 2.208298
+Train Epoch: 90 	 Training Loss: 2.065879
+Train Epoch: 90 	 Validation Loss: 2.097525
+Using device: cpu
+Using device: cpu
+9
+9
+Beginning training ...
+9
+9
+Train Epoch: 0 	 Training Loss: 11017.324020
+Train Epoch: 0 	 Validation Loss: 10294.614258
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 266430.108218
+Train Epoch: 0 	 Validation Loss: 232854.453125
+Train Epoch: 10 	 Training Loss: 6852.909650
+Train Epoch: 10 	 Validation Loss: 6441.918066
+Train Epoch: 10 	 Training Loss: 167193.366898
+Train Epoch: 10 	 Validation Loss: 146903.414062
+Train Epoch: 20 	 Training Loss: 4672.155093
+Train Epoch: 20 	 Validation Loss: 4408.437891
+Train Epoch: 20 	 Training Loss: 114463.491030
+Train Epoch: 20 	 Validation Loss: 100947.859375
+Train Epoch: 30 	 Training Loss: 3381.223018
+Train Epoch: 30 	 Validation Loss: 3198.523389
+Train Epoch: 30 	 Training Loss: 83058.769821
+Train Epoch: 30 	 Validation Loss: 73438.367969
+Train Epoch: 40 	 Training Loss: 2550.888667
+Train Epoch: 40 	 Validation Loss: 2417.486426
+Train Epoch: 40 	 Training Loss: 62776.076100
+Train Epoch: 40 	 Validation Loss: 55606.983594
+Train Epoch: 50 	 Training Loss: 1983.783728
+Train Epoch: 50 	 Validation Loss: 1882.622998
+Train Epoch: 50 	 Training Loss: 48881.365524
+Train Epoch: 50 	 Validation Loss: 43358.608594
+Train Epoch: 60 	 Training Loss: 1578.554683
+Train Epoch: 60 	 Validation Loss: 1499.648096
+Train Epoch: 60 	 Training Loss: 38929.491247
+Train Epoch: 60 	 Validation Loss: 34567.721094
+Train Epoch: 70 	 Training Loss: 1278.656377
+Train Epoch: 70 	 Validation Loss: 1215.762354
+Train Epoch: 70 	 Training Loss: 31550.566840
+Train Epoch: 70 	 Validation Loss: 28038.957031
+Train Epoch: 80 	 Training Loss: 1050.442783
+Train Epoch: 80 	 Validation Loss: 999.455713
+Train Epoch: 80 	 Training Loss: 25926.646701
+Train Epoch: 80 	 Validation Loss: 23056.449219
+Train Epoch: 90 	 Training Loss: 872.822342
+Train Epoch: 90 	 Validation Loss: 830.924854
+Train Epoch: 90 	 Training Loss: 21543.691334
+Train Epoch: 90 	 Validation Loss: 19169.188672
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 5.414161
+Train Epoch: 0 	 Validation Loss: 5.353832
+Train Epoch: 0 	 Training Loss: 2.258920
+Train Epoch: 0 	 Validation Loss: 2.115395
+Train Epoch: 10 	 Training Loss: 2.210424
+Train Epoch: 10 	 Validation Loss: 2.058493
+Train Epoch: 10 	 Training Loss: 3.608867
+Train Epoch: 10 	 Validation Loss: 3.623385
+Train Epoch: 20 	 Training Loss: 2.177978
+Train Epoch: 20 	 Validation Loss: 2.027829
+Train Epoch: 20 	 Training Loss: 2.876277
+Train Epoch: 20 	 Validation Loss: 2.909415
+Train Epoch: 30 	 Training Loss: 2.155848
+Train Epoch: 30 	 Validation Loss: 2.009905
+Train Epoch: 30 	 Training Loss: 2.523468
+Train Epoch: 30 	 Validation Loss: 2.560875
+Train Epoch: 40 	 Training Loss: 2.141013
+Train Epoch: 40 	 Validation Loss: 1.999862
+Train Epoch: 40 	 Training Loss: 2.336998
+Train Epoch: 40 	 Validation Loss: 2.374248
+Train Epoch: 50 	 Training Loss: 2.131228
+Train Epoch: 50 	 Validation Loss: 1.994700
+Train Epoch: 50 	 Training Loss: 2.233302
+Train Epoch: 50 	 Validation Loss: 2.269010
+Train Epoch: 60 	 Training Loss: 2.174187
+Train Epoch: 60 	 Validation Loss: 2.208035
+Train Epoch: 60 	 Training Loss: 2.124835
+Train Epoch: 60 	 Validation Loss: 1.992428
+Train Epoch: 70 	 Training Loss: 2.140224
+Train Epoch: 70 	 Validation Loss: 2.172282
+Train Epoch: 70 	 Training Loss: 2.120666
+Train Epoch: 70 	 Validation Loss: 1.991768
+Train Epoch: 80 	 Training Loss: 2.120766
+Train Epoch: 80 	 Validation Loss: 2.151240
+Train Epoch: 80 	 Training Loss: 2.117934
+Train Epoch: 80 	 Validation Loss: 1.991946
+Train Epoch: 90 	 Training Loss: 2.109688
+Train Epoch: 90 	 Validation Loss: 2.138813
+Train Epoch: 90 	 Training Loss: 2.116123
+Train Epoch: 90 	 Validation Loss: 1.992509
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 5.386058
+Train Epoch: 0 	 Validation Loss: 5.409142
+Train Epoch: 0 	 Training Loss: 4002.038122
+Train Epoch: 0 	 Validation Loss: 4763.660645
+Train Epoch: 10 	 Training Loss: 3.548592
+Train Epoch: 10 	 Validation Loss: 3.604761
+Train Epoch: 10 	 Training Loss: 2508.277249
+Train Epoch: 10 	 Validation Loss: 3001.927832
+Train Epoch: 20 	 Training Loss: 2.815202
+Train Epoch: 20 	 Validation Loss: 2.869701
+Train Epoch: 20 	 Training Loss: 1715.602693
+Train Epoch: 20 	 Validation Loss: 2061.044849
+Train Epoch: 30 	 Training Loss: 2.468690
+Train Epoch: 30 	 Validation Loss: 2.516445
+Train Epoch: 30 	 Training Loss: 1244.406885
+Train Epoch: 30 	 Validation Loss: 1498.788110
+Train Epoch: 40 	 Training Loss: 2.288153
+Train Epoch: 40 	 Validation Loss: 2.329571
+Train Epoch: 40 	 Training Loss: 940.547042
+Train Epoch: 40 	 Validation Loss: 1134.833142
+Train Epoch: 50 	 Training Loss: 2.188826
+Train Epoch: 50 	 Validation Loss: 2.225131
+Train Epoch: 50 	 Training Loss: 732.643611
+Train Epoch: 50 	 Validation Loss: 885.107007
+Train Epoch: 60 	 Training Loss: 2.132688
+Train Epoch: 60 	 Validation Loss: 2.165030
+Train Epoch: 60 	 Training Loss: 583.889913
+Train Epoch: 60 	 Validation Loss: 706.039258
+Train Epoch: 70 	 Training Loss: 2.100699
+Train Epoch: 70 	 Validation Loss: 2.130014
+Train Epoch: 70 	 Training Loss: 473.691795
+Train Epoch: 70 	 Validation Loss: 573.153613
+Train Epoch: 80 	 Training Loss: 389.769526
+Train Epoch: 80 	 Validation Loss: 471.810797
+Train Epoch: 80 	 Training Loss: 2.082550
+Train Epoch: 80 	 Validation Loss: 2.109582
+Train Epoch: 90 	 Training Loss: 2.072365
+Train Epoch: 90 	 Validation Loss: 2.097704
+Train Epoch: 90 	 Training Loss: 324.413672
+Train Epoch: 90 	 Validation Loss: 392.796313
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 2.211267
+Train Epoch: 0 	 Validation Loss: 2.224015
+Train Epoch: 0 	 Training Loss: 5.143142
+Train Epoch: 0 	 Validation Loss: 5.141935
+Train Epoch: 10 	 Training Loss: 2.147656
+Train Epoch: 10 	 Validation Loss: 2.178931
+Train Epoch: 10 	 Training Loss: 3.472227
+Train Epoch: 10 	 Validation Loss: 3.434759
+Train Epoch: 20 	 Training Loss: 2.108778
+Train Epoch: 20 	 Validation Loss: 2.154041
+Train Epoch: 20 	 Training Loss: 2.790272
+Train Epoch: 20 	 Validation Loss: 2.745344
+Train Epoch: 30 	 Training Loss: 2.083719
+Train Epoch: 30 	 Validation Loss: 2.139835
+Train Epoch: 30 	 Training Loss: 2.462333
+Train Epoch: 30 	 Validation Loss: 2.418016
+Train Epoch: 40 	 Training Loss: 2.067937
+Train Epoch: 40 	 Validation Loss: 2.132728
+Train Epoch: 40 	 Training Loss: 2.290044
+Train Epoch: 40 	 Validation Loss: 2.248365
+Train Epoch: 50 	 Training Loss: 2.058215
+Train Epoch: 50 	 Validation Loss: 2.129976
+Train Epoch: 50 	 Training Loss: 2.195110
+Train Epoch: 50 	 Validation Loss: 2.156231
+Train Epoch: 60 	 Training Loss: 2.052268
+Train Epoch: 60 	 Validation Loss: 2.129597
+Train Epoch: 60 	 Training Loss: 2.141591
+Train Epoch: 60 	 Validation Loss: 2.105111
+Train Epoch: 70 	 Training Loss: 2.048600
+Train Epoch: 70 	 Validation Loss: 2.130354
+Train Epoch: 70 	 Training Loss: 2.111197
+Train Epoch: 70 	 Validation Loss: 2.076585
+Train Epoch: 80 	 Training Loss: 2.046296
+Train Epoch: 80 	 Validation Loss: 2.131555
+Train Epoch: 80 	 Training Loss: 2.093947
+Train Epoch: 80 	 Validation Loss: 2.060688
+Train Epoch: 90 	 Training Loss: 2.044814
+Train Epoch: 90 	 Validation Loss: 2.132848
+Train Epoch: 90 	 Training Loss: 2.084151
+Train Epoch: 90 	 Validation Loss: 2.051795
+Using device: cpu
+Using device: cpu
+9
+9
+9
+9
+Beginning training ...
+Beginning training ...
+Train Epoch: 0 	 Training Loss: 4.871943
+Train Epoch: 0 	 Validation Loss: 4.736151
+Train Epoch: 0 	 Training Loss: 7.041017
+Train Epoch: 0 	 Validation Loss: 6.918763
+Train Epoch: 10 	 Training Loss: 3.328360
+Train Epoch: 10 	 Validation Loss: 3.355793
+Train Epoch: 10 	 Training Loss: 4.467590
+Train Epoch: 10 	 Validation Loss: 4.395488
+Train Epoch: 20 	 Training Loss: 2.696278
+Train Epoch: 20 	 Validation Loss: 2.766778
+Train Epoch: 20 	 Training Loss: 3.377483
+Train Epoch: 20 	 Validation Loss: 3.318452
+Train Epoch: 30 	 Training Loss: 2.393397
+Train Epoch: 30 	 Validation Loss: 2.475039
+Train Epoch: 30 	 Training Loss: 2.829046
+Train Epoch: 30 	 Validation Loss: 2.775736
+Train Epoch: 40 	 Training Loss: 2.235500
+Train Epoch: 40 	 Validation Loss: 2.318453
+Train Epoch: 40 	 Training Loss: 2.523607
+Train Epoch: 40 	 Validation Loss: 2.474203
+Train Epoch: 50 	 Training Loss: 2.149387
+Train Epoch: 50 	 Validation Loss: 2.230667
+Train Epoch: 50 	 Training Loss: 2.342835
+Train Epoch: 50 	 Validation Loss: 2.296595
+Train Epoch: 60 	 Training Loss: 2.101408
+Train Epoch: 60 	 Validation Loss: 2.180427
+Train Epoch: 60 	 Training Loss: 2.231992
+Train Epoch: 60 	 Validation Loss: 2.188397
+Train Epoch: 70 	 Training Loss: 2.074488
+Train Epoch: 70 	 Validation Loss: 2.151535
+Train Epoch: 70 	 Training Loss: 2.162794
+Train Epoch: 70 	 Validation Loss: 2.121378
+Train Epoch: 80 	 Training Loss: 2.059371
+Train Epoch: 80 	 Validation Loss: 2.135042
+Train Epoch: 80 	 Training Loss: 2.119376
+Train Epoch: 80 	 Validation Loss: 2.079700
+Train Epoch: 90 	 Training Loss: 2.050841
+Train Epoch: 90 	 Validation Loss: 2.125808
+Train Epoch: 90 	 Training Loss: 2.092269
+Train Epoch: 90 	 Validation Loss: 2.053920
+
+============================= JOB FEEDBACK =============================
+
+Job ID: 1505383
+Cluster: haic
+User/Group: pa6512/scc
+Account: scc
+State: COMPLETED (exit code 0)
+Partition: normal
+Nodes: 1
+Cores per node: 60
+Nodelist: haicn1706
+CPU Utilized: 00:20:38
+CPU Efficiency: 50.33% of 00:41:00 core-walltime
+Job Wall-clock time: 00:00:41
+Starttime: Thu Mar  6 10:03:34 2025
+Endtime: Thu Mar  6 10:04:15 2025
+Memory Utilized: 5.24 GB
+Memory Efficiency: 17.48% of 30.00 GB
+Energy Consumed: 25110 Joule / 6.975 Watthours
+Average node power draw: 612.439024390244 Watt
