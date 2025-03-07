@@ -646,5 +646,5 @@ class Testorthogonalize_spline_wrt_non_splines(unittest.TestCase):
                 self.assertTrue(test_orthog) #test if orthogonality is correct 
         
         
-if __name__ == '__main__':
-    unittest.main()
+# if __name__ == '__main__':
+    # unittest.main()

@@ -522,29 +522,29 @@ def integration_test_mnist():
     assert maximum_deviation_mnist>0, "Predicted numbers for the mnist not monotonically increasing"
     
     
-if __name__ == '__main__':
-    # run integration tests
-    print("Test with simple GAM")
-    integration_test_simple_gam()  
-    print("---------------------------")
-    print("Passed tests for simple GAM")
+# if __name__ == '__main__':
+#     # run integration tests
+#     print("Test with simple GAM")
+#     integration_test_simple_gam()  
+#     print("---------------------------")
+#     print("Passed tests for simple GAM")
     
-    print("Test with GAMLSS")
-    integration_test_gamlss()   
-    print("-----------------------")
-    print("Passed tests for GAMLSS")
+#     print("Test with GAMLSS")
+#     integration_test_gamlss()   
+#     print("-----------------------")
+#     print("Passed tests for GAMLSS")
     
-    print("Test with MNIST data")
-    integration_test_mnist()   
-    print("-----------------------")
-    print("Passed tests for MNIST data")
+#     print("Test with MNIST data")
+#     integration_test_mnist()   
+#     print("-----------------------")
+#     print("Passed tests for MNIST data")
     
-    print("Test loading a GAMLSS model and predicting")
-    integration_test_load_and_predict()
-    print("-----------------------")
-    print("Passed tests for loading and predicting")
+#     print("Test loading a GAMLSS model and predicting")
+#     integration_test_load_and_predict()
+#     print("-----------------------")
+#     print("Passed tests for loading and predicting")
     
-    print("Test loading a GAMLSS model and resuming training")
-    integration_test_load_and_resume()
-    print("-----------------------")
-    print("Passed tests for loading and resuming training")
+#     print("Test loading a GAMLSS model and resuming training")
+#     integration_test_load_and_resume()
+#     print("-----------------------")
+#     print("Passed tests for loading and resuming training")
