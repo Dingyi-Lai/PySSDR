@@ -1,9 +1,0 @@
-scenario_index,param_y,param_eta,value
-n_1000_rep_80_dist_gaussian_homo_SNR_1_point_estimates,loc,Intercept,[-0.58170456]
-n_1000_rep_80_dist_gaussian_homo_SNR_1_point_estimates,loc,"spline(Z1, bs='bs', df=19)","[ 0.34845692  0.48468792  0.49462518  1.1007649   1.209062    0.36680114
-  0.88371074  0.67005634  0.04682792 -0.27566454 -0.49414673 -0.8428527
- -0.9560044  -0.8592153  -0.6938689  -0.6107324  -0.45598865 -0.5674933 ]"
-n_1000_rep_80_dist_gaussian_homo_SNR_1_point_estimates,loc,"spline(Z2, bs='bs', df=19)","[-0.43492356 -0.42886758 -0.32581103 -0.19964872 -0.28179237 -0.07700268
- -0.5762398  -0.47003213  0.26783845  0.32584533  0.05895668 -0.0137996
-  0.16572832  0.29802898  0.8881096   1.2726489   1.1183991   0.9403634 ]"
-n_1000_rep_80_dist_gaussian_homo_SNR_1_point_estimates,scale,Intercept,[0.45483083]

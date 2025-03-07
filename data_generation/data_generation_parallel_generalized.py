@@ -34,7 +34,7 @@ def build_dnn(input_dim, layer_sizes=[32, 16], activation="relu"):
         Input(shape=(input_dim,)),
         Dense(layer_sizes[0], activation=activation),
         Dense(layer_sizes[1], activation=activation),
-        Dense(1, activation=None)
+        Dense(1, activation=None, use_bias=False)
     ])
     model.compile(optimizer='adam', loss='mse')  # Compile the model
     return model
@@ -69,11 +69,11 @@ def generate_linear_effects(n_samples, I, K, alpha, random_state=None):
     linear_effects = np.zeros((I, n_samples, K))
     
     for i in range(I):
-        X_scaled[i] = scale_to_range(X[i])
+        X_scaled[i] = scale_to_range(X[i], 0, 1)
         for k in range(K):
-            linear_effects[i, :, k] = alpha[k][i] * X_scaled[i]
+            linear_effects[i, :, k] = scale_to_range(alpha[k][i] * X_scaled[i])
         
-    return X_scaled, linear_effects # scale_to_range(linear_effects)
+    return X_scaled, linear_effects
 
 def generate_nonlinear_effects(n_samples, J, K, beta, random_state=None):
     """
@@ -86,9 +86,9 @@ def generate_nonlinear_effects(n_samples, J, K, beta, random_state=None):
 
     for j in range(J):
         for k in range(K):
-            nonlinear_effects[j, :, k] = beta[k][j](Z[j])
+            nonlinear_effects[j, :, k] = scale_to_range(beta[k][j](Z[j]))
         
-    return Z, scale_to_range(nonlinear_effects)
+    return Z, nonlinear_effects
 
 def generate_unstructured_effects(images, save_path, scenario_index, K):
     """
@@ -97,13 +97,12 @@ def generate_unstructured_effects(images, save_path, scenario_index, K):
     n_samples = len(images)
     unstructured_effects = np.zeros((n_samples, K))
     
-    # Build and train a small DNN (mock training here).
-    grid_size = images.shape[1]  # e.g., 28 if images are 28x28
-    dnn_model = build_dnn(grid_size * grid_size)
+    # Build a small DNN (predefined to exclude bias in the final layer)
+    input_dim = images.shape[1]  # e.g., 28*28 if images are 28x28 flattened
+    dnn_model = build_dnn(input_dim)
     
-    # Mock training: We won't actually train, but let's do a quick .fit so the weights update a bit.
-    # For demonstration, we just pass random data as 'y'.
-    dnn_model.fit(images, np.random.rand(n_samples, 1), epochs=1, verbose=0)
+    # (Optional) Mock training: uncomment if needed.
+    # dnn_model.fit(images, np.random.rand(n_samples, 1), epochs=1, verbose=0)
     
     # Predict unstructured effects using the DNN model
     predictions = dnn_model.predict(images)
@@ -112,15 +111,16 @@ def generate_unstructured_effects(images, save_path, scenario_index, K):
     penultimate_layer_model = Model(inputs=dnn_model.inputs, outputs=dnn_model.layers[-2].output)
     penultimate_output = penultimate_layer_model.predict(images)
 
-    # Extract the weights and bias from the final layer
-    final_layer_weights, final_layer_bias = dnn_model.layers[-1].get_weights()
-
+    # Extract the weights from the final layer (no bias is present)
+    final_layer_weights = dnn_model.layers[-1].get_weights()[0]
+    
     # For simplicity, just scale predictions for each dimension k
     for k in range(K):
         unstructured_effects[:, k] = scale_to_range(predictions[:, 0])
 
     save_with_var_name(dnn_model, 'dnn_model', 'keras', save_path, scenario_index)
-    return unstructured_effects, penultimate_output, final_layer_weights, final_layer_bias
+    return unstructured_effects, penultimate_output, final_layer_weights
+
 
 def combine_effects(scenario_index, save_path,
                     unstructured_effects,
@@ -160,7 +160,7 @@ def combine_effects(scenario_index, save_path,
     elif distribution == "gaussian_homo":
         # For homoscedastic Gaussian, we only have one dimension for mu in etas[:,0].
         # The second dimension is constant log-sigma => put it in etas[:,1].
-        a = find_a_for_target_snr(s, etas, "gaussian_homo")
+        a = np.ptp(etas[:, 0])/s
         etas[:, 1] = a
 
     elif distribution == "gaussian_hetero":
@@ -196,10 +196,10 @@ def compute_snr(a, etas, dist):
         range_log_lambda = np.ptp(etas[:, 0] + a)
         mean_sqrt_lambda = np.sqrt(lambda_vals)
         return (range_log_lambda / mean_sqrt_lambda).mean()
-    if dist == "gaussian_homo":
-        sigma = a
-        range_mu = np.ptp(etas[:, 0])
-        return (range_mu / sigma).mean()
+    # if dist == "gaussian_homo":
+    #     sigma = a
+    #     range_mu = np.ptp(etas[:, 0])
+    #     return (range_mu / sigma).mean()
     if dist == "gaussian_hetero":
         sigma = np.exp(etas[:, 1] + a)
         range_mu = np.ptp(etas[:, 0])
@@ -314,13 +314,12 @@ def generate_task(n_sample, distribution_list, SNR_list, grid_size, alpha_l, bet
     # 5) Flatten images and generate unstructured effects if add_unstructured=True
     if add_unstructured:
         flattened_images = images.reshape(n_sample, -1)
-        unstructured_effects, U_k, psi_k, b_k = generate_unstructured_effects(
+        unstructured_effects, U_k, psi_k = generate_unstructured_effects(
             flattened_images, save_path, scenario_index, K
         )
         save_with_var_name(unstructured_effects, 'unstructured_effects', 'npy', save_path, scenario_index)
         save_with_var_name(U_k, 'U_k', 'npy', save_path, scenario_index)
         save_with_var_name(psi_k, 'psi_k', 'npy', save_path, scenario_index)
-        save_with_var_name(b_k, 'b_k', 'npy', save_path, scenario_index)
     else:
         unstructured_effects = np.zeros((n_sample, K))
 
@@ -388,10 +387,10 @@ def scenarios_generate(n_list,
 
     # Decide on the folder to store data
     if compute_type == 'parallel':
-        save_path = os.path.join(os.environ["TMPDIR"], "output_structured[0_1]")  # or another path
+        save_path = os.path.join(os.environ["TMPDIR"], "output_modified_wo_unstructured")  # or another path
         # save_path = "../data_generation/output_structured[-1_1]"
     else:
-        save_path = "../data_generation/output_structured[-1_1]"
+        save_path = "../data_generation/output_modified_wo_unstructured"
     os.makedirs(save_path, exist_ok=True)
 
     # Prepare (n, rep) tasks
@@ -454,8 +453,8 @@ if __name__ == "__main__":
 
     # Define linear coefficients alpha_l
     alpha_l = {
-        0: [1, -1],      # For location: alpha_0 for X1, X2
-        1: [-1, 1]     # For scale (or second dimension)
+        0: [3, -1],      # For location: alpha_0 for X1, X2
+        1: [-0.5, 6]     # For scale (or second dimension)
     }
 
     # Define some example nonlinear functions
