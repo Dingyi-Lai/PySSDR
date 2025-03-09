@@ -140,41 +140,44 @@ def combine_effects(scenario_index, save_path,
     
     # Initialize etas: shape (N, K)
     etas = np.zeros((N, K))
-
+    range_etas = 0
     # For the first dimension (often 'location' or 'mean'):
     # Conditionally add linear
     if add_linear:
         etas[:, 0] += linear_effects[:, :, 0].sum(axis=0)
+        range_etas += linear_effects.shape[0] # 2
     # Conditionally add nonlinear
     if add_nonlinear:
         etas[:, 0] += nonlinear_effects[:, :, 0].sum(axis=0)
+        range_etas += nonlinear_effects.shape[0] # 2
     # Conditionally add unstructured
     if add_unstructured:
         etas[:, 0] += unstructured_effects[:, 0]
+        range_etas += 1
 
-    if distribution == "poisson":
-        # Adjust for SNR
-        a = find_a_for_target_snr(s, etas, "poisson")
-        etas[:, 0] += a
+    # if distribution == "poisson":
+    #     # Adjust for SNR
+    #     a = find_a_for_target_snr(s, range_etas, "poisson")
+    #     etas[:, 0] += a
 
-    elif distribution == "gaussian_homo":
+    if distribution == "gaussian_homo":
         # For homoscedastic Gaussian, we only have one dimension for mu in etas[:,0].
         # The second dimension is constant log-sigma => put it in etas[:,1].
-        a = np.ptp(etas[:, 0])/s
+        a = range_etas/s
         etas[:, 1] = a
 
-    elif distribution == "gaussian_hetero":
-        # For heteroscedastic Gaussian, we also have linear+nonlinear+unstructured for scale
-        # in the second dimension (index 1).
-        if add_linear:
-            etas[:, 1] += linear_effects[:, :, 1].sum(axis=0)
-        if add_nonlinear:
-            etas[:, 1] += nonlinear_effects[:, :, 1].sum(axis=0)
-        if add_unstructured:
-            etas[:, 1] += unstructured_effects[:, 1]
+    # elif distribution == "gaussian_hetero":
+    #     # For heteroscedastic Gaussian, we also have linear+nonlinear+unstructured for scale
+    #     # in the second dimension (index 1).
+    #     if add_linear:
+    #         etas[:, 1] += linear_effects[:, :, 1].sum(axis=0)
+    #     if add_nonlinear:
+    #         etas[:, 1] += nonlinear_effects[:, :, 1].sum(axis=0)
+    #     if add_unstructured:
+    #         etas[:, 1] += unstructured_effects[:, 1]
 
-        a = find_a_for_target_snr(s, etas, "gaussian_hetero")
-        etas[:, 1] += a
+    #     a = find_a_for_target_snr(s, etas, "gaussian_hetero")
+    #     etas[:, 1] += a
 
     else:
         raise ValueError(f"Unsupported distribution: {distribution}")
@@ -190,44 +193,44 @@ def combine_effects(scenario_index, save_path,
 def combine_effects_wrapper(args):
     return combine_effects(*args)
 
-def compute_snr(a, etas, dist):
-    if dist == "poisson":
-        lambda_vals = np.exp(etas[:, 0] + a)
-        range_log_lambda = np.ptp(etas[:, 0] + a)
-        mean_sqrt_lambda = np.sqrt(lambda_vals)
-        return (range_log_lambda / mean_sqrt_lambda).mean()
-    # if dist == "gaussian_homo":
-    #     sigma = a
-    #     range_mu = np.ptp(etas[:, 0])
-    #     return (range_mu / sigma).mean()
-    if dist == "gaussian_hetero":
-        sigma = np.exp(etas[:, 1] + a)
-        range_mu = np.ptp(etas[:, 0])
-        return (range_mu / sigma).mean()
+# def compute_snr(a, etas, range_etas, dist):
+#     if dist == "poisson":
+#         lambda_vals = np.exp(etas[:, 0] + a)
+#         range_log_lambda = range_etas + a
+#         mean_sqrt_lambda = np.sqrt(lambda_vals)
+#         return (range_log_lambda / mean_sqrt_lambda).mean()
+#     # if dist == "gaussian_homo":
+#     #     sigma = a
+#     #     range_mu = np.ptp(etas[:, 0])
+#     #     return (range_mu / sigma).mean()
+#     if dist == "gaussian_hetero":
+#         sigma = np.exp(etas[:, 1] + a)
+#         range_mu = np.ptp(etas[:, 0])
+#         return (range_mu / sigma).mean()
 
-def find_a_for_target_snr(target_snr, etas, dist):
-    def loss_function(a):
-        computed_snr = compute_snr(a, etas, dist)
-        return (computed_snr - target_snr)**2
+# def find_a_for_target_snr(target_snr, range_etas, dist):
+#     def loss_function(a):
+#         computed_snr = compute_snr(a, range_etas, dist)
+#         return (computed_snr - target_snr)**2
     
-    result = minimize_scalar(loss_function, bounds=(-10, 10), method='bounded')
-    return result.x    
+#     result = minimize_scalar(loss_function, bounds=(-10, 10), method='bounded')
+#     return result.x    
 
 def simulate_response(etas, distribution, a):
     """
     Simulates final response y given etas and distribution.
     """
     n_samples = etas.shape[0]
-    if "poisson" in distribution:
-        mu = np.exp(etas[:, 0])
-        return np.random.poisson(mu)
-    elif "gamma" in distribution:
-        mu = np.exp(etas[:, 0]) # non-negative
-        sigma = a
-        shape = (mu / sigma) ** 2
-        scale = sigma ** 2 / mu
-        return np.random.gamma(shape, scale, n_samples) # scale must be non-negative
-    elif "gaussian" in distribution:
+    # if "poisson" in distribution:
+    #     mu = np.exp(etas[:, 0])
+    #     return np.random.poisson(mu)
+    # elif "gamma" in distribution:
+    #     mu = np.exp(etas[:, 0]) # non-negative
+    #     sigma = a
+    #     shape = (mu / sigma) ** 2
+    #     scale = sigma ** 2 / mu
+    #     return np.random.gamma(shape, scale, n_samples) # scale must be non-negative
+    if "gaussian" in distribution:
         mu = etas[:, 0]
         sigma = np.exp(etas[:, 1])  # for hetero; if homo, etas[:,1] = const log-sigma
         return np.random.normal(mu, sigma, n_samples)
@@ -387,7 +390,7 @@ def scenarios_generate(n_list,
 
     # Decide on the folder to store data
     if compute_type == 'parallel':
-        save_path = os.path.join(os.environ["TMPDIR"], "output_modified_wo_unstructured")  # or another path
+        save_path = os.path.join(os.environ["TMPDIR"], "output_modified_wo_unstructured2")  # or another path
         # save_path = "../data_generation/output_structured[-1_1]"
     else:
         save_path = "../data_generation/output_modified_wo_unstructured"
@@ -444,7 +447,7 @@ def scenarios_generate(n_list,
 if __name__ == "__main__":
     # Example usage:
     n_list = [100, 500, 1000]
-    distribution_list = ["poisson", "gaussian_homo", "gaussian_hetero"]
+    distribution_list = ["gaussian_homo"] # "poisson", , "gaussian_hetero"
     SNR_list = [1, 8]
     n_rep = 100  # for testing; can be 100 in real usage
     grid_size = 28

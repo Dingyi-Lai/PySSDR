@@ -6,22 +6,17 @@ deep_models_dict:
     output_shape: 0
 distribution: Normal
 formulas:
-  loc: ~ 1 + X1 + X2 + spline(Z1, bs='bs', df=13) + spline(Z2, bs='bs', df=13)
+  loc: ~ 1 + X1 + X2 + spline(Z1, bs='bs', df=14) + spline(Z2, bs='bs', df=14)
   scale: ~ 1
-modify: false
-n_knots: 10
-ortho_manual: false
-output_dir: /scratch/slurm_tmpdir/job_1505703/outputs_modified_wo_unstructured_nknots_10_batch_32
+output_dir: /scratch/slurm_tmpdir/job_1505976/outputs_modified_wo_unstructured_nknots_10_batch_32
 train_parameters:
   batch_size: 32
   degrees_of_freedom:
-    loc: 13
-    scale: 13
-  early_stop_epsilon: 0.001
+    loc: 14
+    scale: 14
   epochs: 100
   optimizer: "Adam (\nParameter Group 0\n    amsgrad: False\n    betas: (0.9, 0.999)\n\
     \    capturable: False\n    differentiable: False\n    eps: 1e-08\n    foreach:\
     \ None\n    fused: None\n    lr: 0.001\n    maximize: False\n    weight_decay:\
     \ 0\n)"
   val_split: 0.15
-use_spline_for_struct: false

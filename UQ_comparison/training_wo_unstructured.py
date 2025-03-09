@@ -147,7 +147,7 @@ def predict_effects(scenario_index_folder, read_path, save_path, case, data, tra
     if add_linear:
         item_formula += f" + X1 + X2"
     if add_nonlinear:
-        item_formula += f" + spline(Z1, bs='bs', df={num_knots+3}) + spline(Z2, bs='bs', df={num_knots+3})"
+        item_formula += f" + spline(Z1, bs='bs', df={num_knots+4}) + spline(Z2, bs='bs', df={num_knots+4})"
     if add_unstructured:
         item_formula += f" + dnn(Image)"
         
@@ -155,28 +155,28 @@ def predict_effects(scenario_index_folder, read_path, save_path, case, data, tra
     if distribution == "poisson":
         distribution_SSDR = "Poisson" # compatible form
         formulas = {'rate': f"~ 1"+item_formula}
-        degrees_of_freedom = {'rate':num_knots+3}
+        degrees_of_freedom = {'rate':num_knots+4}
     elif distribution == "gamma":
         distribution_SSDR = "Gamma" # compatible form
         formulas = {
         'loc': f"~ 1"+item_formula,
         'scale': '~ 1'
         }
-        degrees_of_freedom = {'loc':num_knots+3, 'scale':num_knots+3}
+        degrees_of_freedom = {'loc':num_knots+4, 'scale':num_knots+4}
     elif distribution == "gaussian_homo":
         distribution_SSDR = "Normal" # compatible form
         formulas = {
         'loc': f"~ 1"+item_formula, #
         'scale': '~ 1'
         }
-        degrees_of_freedom = {'loc':num_knots+3, 'scale':num_knots+3}
+        degrees_of_freedom = {'loc':num_knots+4, 'scale':num_knots+4}
     elif distribution == "gaussian_hetero":
         distribution_SSDR = "Normal" # compatible form
         formulas = {
         'loc': f"~ 1"+item_formula,
         'scale': f"~ 1"+item_formula,
         }
-        degrees_of_freedom = {'loc':num_knots+3, 'scale':num_knots+3}
+        degrees_of_freedom = {'loc':num_knots+4, 'scale':num_knots+4}
 
     train_parameters['degrees_of_freedom'] = degrees_of_freedom
     
@@ -190,10 +190,10 @@ def predict_effects(scenario_index_folder, read_path, save_path, case, data, tra
             formulas=formulas,
             deep_models_dict=deep_models_dict,
             train_parameters=train_parameters,
-            modify=modify,
-            ortho_manual = ortho_manual,
-            use_spline_for_struct = False,
-            n_knots = num_knots
+            # modify=modify,
+            # ortho_manual = ortho_manual,
+            # use_spline_for_struct = False,
+            # n_knots = num_knots
             )
         # print(train_parameters['epochs'])
         scenario_index += f"_{method}"
@@ -207,7 +207,7 @@ def predict_effects(scenario_index_folder, read_path, save_path, case, data, tra
         ssdr.train(structured_data=data,
             target="Y",
             # unstructured_data = unstructured_data,
-            plot=False)
+            plot=True)
         save_with_var_name(ssdr, 'ssdr', 'pth', save_path, scenario_index)
         logging.info(f"Save the model {scenario_index} in {save_path}")
         
@@ -510,7 +510,7 @@ def uq_comparison(n_list, distribution_list, SNR_list, method_list, grid_size,
     logging.info(f"Starting {compute_type} training...")
     start_time = datetime.now()
     replicates = [(i, r) for i in n_list for r in range(n_rep)]
-    read_path = "../data_generation/output_modified_wo_unstructured"
+    read_path = "../data_generation/output_modified_wo_unstructured2"
     # read_path = os.environ.get("READ_PATH", "../data_generation/output")
 
     os.makedirs(save_path, exist_ok=True)
@@ -572,7 +572,7 @@ if __name__ == '__main__':
         # 'degrees_of_freedom': {'rate': 3},  # Or {'loc': 3, 'scale': 3} for Gaussian cases.
         'optimizer': optim.Adam,
         'val_split': 0.15,
-        'early_stop_epsilon': 0.001,
+        # 'early_stop_epsilon': 0.001,
         # 'dropout_rate': 0.01           # Can experiment with 0.01 to 0.05.
     }
     # For n=100:

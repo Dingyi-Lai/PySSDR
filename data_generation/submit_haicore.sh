@@ -23,4 +23,4 @@ cd $SLURM_SUBMIT_DIR
 python data_generation_parallel_generalized.py
 
 # Copy results from TMPDIR to home after job finishes
-cp -r $TMPDIR/output_modified_wo_unstructured ~/PySSDR/data_generation
+cp -r $TMPDIR/output_modified_wo_unstructured2 ~/PySSDR/data_generation

@@ -1,0 +1,22 @@
+deep_models_dict:
+  dnn:
+    model: "Sequential(\n  (0): Flatten(start_dim=1, end_dim=-1)\n  (1): Linear(in_features=784,\
+      \ out_features=32, bias=False)\n  (2): ReLU()\n  (3): Linear(in_features=32,\
+      \ out_features=16, bias=True)\n)"
+    output_shape: 0
+distribution: Normal
+formulas:
+  loc: ~ 1 + X1 + X2 + spline(Z1, bs='bs', df=14) + spline(Z2, bs='bs', df=14)
+  scale: ~ 1
+output_dir: /scratch/slurm_tmpdir/job_1505879/outputs_modified_wo_unstructured_nknots_10_batch_32
+train_parameters:
+  batch_size: 32
+  degrees_of_freedom:
+    loc: 14
+    scale: 14
+  epochs: 500
+  optimizer: "Adam (\nParameter Group 0\n    amsgrad: False\n    betas: (0.9, 0.999)\n\
+    \    capturable: False\n    differentiable: False\n    eps: 1e-08\n    foreach:\
+    \ None\n    fused: None\n    lr: 0.001\n    maximize: False\n    weight_decay:\
+    \ 0\n)"
+  val_split: 0.15
